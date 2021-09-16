@@ -31,11 +31,10 @@ export default class ContactsEn extends Component {
 
         map.addControl(new mapboxgl.NavigationControl());
         map.scrollZoom.disable();
-    
-        new mapboxgl.Popup({ closeOnClick: false })
-            .setLngLat([-9.117035, 38.755914])
-            .setHTML("<h2>ISEL Formula Student</h2><p>Rua Conselheiro Emídio Navarro Nº1, ADEM M0.32<br>1959-007 Lisboa</p>")
-            .addTo(map);
+
+        new mapboxgl.Marker({ color: '#ff5500', rotation: 360 })
+        .setLngLat([-9.117035, 38.755914])
+        .addTo(map);
     }
 
     render() {
@@ -52,13 +51,14 @@ export default class ContactsEn extends Component {
                 <div class="container">
                     <div class="text_wrapper">
                         <h2>Email</h2>
-                        <p>formulastudent@isel.pt</p>
+                        <p><a class="link" href="mailto:formulastudent@isel.pt">formulastudent@isel.pt</a></p>
                     </div>
                 </div>
 
                 <div class="container">
                     <div class="text_wrapper">
                         <h2>Where We Are</h2>
+                        <p>Rua Conselheiro Emídio Navarro Nº1, ADEM M0.32<br/>1959-007 Lisboa</p>
                     </div>
                     <div id='map' ref={this.mapContainer} className="map-container"></div>
                 </div>

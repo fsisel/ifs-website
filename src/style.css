@@ -474,6 +474,7 @@ a.parallelogram:hover .text {
 .product {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 10em 0 5em 0;
 }
 
@@ -644,8 +645,10 @@ textarea:focus {
 /* ########## MAP ########## */
 
 #map { 
-  height: 50em;
   width: 100%; 
+  height: 55vh;
+  max-height: 65em;
+  min-height: 15em;
 }
 
 
@@ -934,6 +937,10 @@ footer .separator {
   .product img {
     width: 100%;
     margin-bottom: 2em;
+  }
+
+  .product.big img {
+    width: 100%;
   }
 
   .product .column {
