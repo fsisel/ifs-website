@@ -21,7 +21,7 @@ export default class Header extends Component {
         return (
             <div id="navbar">
                 <div id="navbar_header">
-                    <a class="logo" href="/"><img src={ logo } alt="ISEL Formula Student"/></a>
+                    <a class="logo" href="/en"><img src={ logo } alt="ISEL Formula Student"/></a>
                     <span></span>
                     <a id="responsive_navbar_language" href="/pt" title="Português">
                         <img class="flag_icon" src={ ptIcon } alt="Portuguese" />

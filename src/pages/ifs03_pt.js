@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Header from '../components/header_en'
-import Footer from '../components/footer_en'
+import Header from '../components/header_pt'
+import Footer from '../components/footer_pt'
 
 import imageIfs03 from '../images/ifs03_1.png'
 import logoIfs03 from '../logos/ifs03_dark.svg'

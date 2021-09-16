@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Header from '../components/header_en'
-import Footer from '../components/footer_en'
+import Header from '../components/header_pt'
+import Footer from '../components/footer_pt'
 
 import sponsorIpl from '../sponsor_logos/light/ipl.svg'
 import sponsorIsel from '../sponsor_logos/light/isel.svg'
@@ -43,7 +43,7 @@ export default class SponsorsEn extends Component {
             <Header/>
 
             <article class="top_margin">
-                <h1>SPONSORS</h1>
+                <h1>PATROCINADORES</h1>
 
                 <div id="sponsor_grid">
                     <div class="sponsors gold">

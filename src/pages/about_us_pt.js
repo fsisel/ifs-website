@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Header from '../components/header_en'
-import Footer from '../components/footer_en'
+import Header from '../components/header_pt'
+import Footer from '../components/footer_pt'
 
 import imageIfsTeam from '../images/ifs_team.jpg'
 import imageIfs02_1 from '../images/ifs02_1.jpg'
@@ -18,7 +18,7 @@ export default class AboutUsEn extends Component {
 
             <article>
                 
-                <h1>ABOUT US</h1>
+                <h1>SOBRE NÓS</h1>
 
                 <div class="container dual right">
                     <div class="image_wrapper">
@@ -26,7 +26,7 @@ export default class AboutUsEn extends Component {
                     </div>
                     <div class="text_wrapper">
                         <div>
-                            <h2>The Competition</h2>
+                            <h2>A Competição</h2>
                             <p>Formula Student is a student engineering competition held annually in several countries. Student teams from around the world design, build, test, and race a small-scale formula style racing car. The cars are judged on a few criteria. It is run by the Institution of Mechanical Engineers and uses the same rules as the original Formula SAE with supplementary regulations. There are dynamics and statics events, each event measures one or more characteristics of the vehicle such as endurance, cost or engineering design, inter alia.</p>
                         </div>
                     </div>
@@ -35,7 +35,7 @@ export default class AboutUsEn extends Component {
                 <div class="container dual left">
                     <div class="text_wrapper">
                         <div>
-                            <h2>The Project</h2>
+                            <h2>O Projeto</h2>
                             <p>This project, in addition to improving our engineering skills above the content learnt in the lectures, also helps us gain soft skills, such as time and resources management, public speaking and teamwork. Furthermore, it helps open professional doors due to having alumni from the team working for companies that sponsor us.</p>
 
                             <p>This year the team is producing IFS03, an electric car which goal is to improve the performance achieved by IFS02.</p>
@@ -48,7 +48,7 @@ export default class AboutUsEn extends Component {
 
                 <div class="container">
                     <div class="text_wrapper">
-                        <h2>History</h2>
+                        <h2>História</h2>
                         <p>ISEL Formula Student team was founded in 2013. Initially it was compound by 7 members, but it has been expanding. Currently, we have 44 members from all ISEL degrees.</p>
 
                         <p>In 2013-2014 the team started the design of IFS01. A combustion vehicle concept was developed that had lightness, reliability and simplicity as its main characteristics. The team participated in the 2014 Silverstone competition in class 2, project class, where it finished in third place.</p>

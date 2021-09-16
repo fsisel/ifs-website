@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Header from '../components/header_en'
-import Footer from '../components/footer_en'
+import Header from '../components/header_pt'
+import Footer from '../components/footer_pt'
 
 import logoDark from '../logos/ifs_logo_dark.svg'
-import ptIcon from '../icons/pt.svg'
+import enIcon from '../icons/en.svg'
 import ifs02_2 from '../images/ifs02_2.jpg'
 import ifs02_1 from '../images/ifs02_1.jpg'
 import ifs03Front from '../images/ifs03_front.png'
@@ -38,15 +38,15 @@ export default class Homepage extends Component {
                     <img class="logo" src={ logoDark } alt="ISEL Formula Student" />
                     
                     <div id="header_menu">
-                        <a href="/en/about_us"><span>ABOUT US</span></a>
-                        <a href="/en/ifs03"><span>IFS03</span></a>
-                        <a href="/en/sponsors"><span>SPONSORS</span></a>
-                        <a href="/en/contacts"><span>CONTACTS</span></a>
+                        <a href="/pt/about_us"><span>SOBRE NÓS</span></a>
+                        <a href="/pt/ifs03"><span>IFS03</span></a>
+                        <a href="/pt/sponsors"><span>PATROCINADORES</span></a>
+                        <a href="/pt/contacts"><span>CONTACTOS</span></a>
                     </div>
 
                     <div id="header_language">
-                        <a href="/pt" title="Português">
-                            <img src={ ptIcon } alt="Portuguese" />
+                        <a href="/en" title="English">
+                            <img src={ enIcon } alt="English" />
                         </a>
                     </div>
                 </div>
@@ -54,16 +54,16 @@ export default class Homepage extends Component {
                 <img class="cover tall" src={ ifs02_2 } alt="IFS02" />
 
                 <article>
-                    <h1>HIGH PERFORMANCE<br/>100% ELECTRIC</h1>
+                    <h1>ALTA PERFORMANCE<br/>100% ELÉTRICO</h1>
 
                     <div class="container dual left">
                         <div class="text_wrapper">
                             <div>
                                 <h2>We make high performance racing cars.</h2>
                                 <p>We are a team of engineering students from Lisbon School of Engineering. Passionate about cars and technology, we design and build a racing car for the formula student competition.</p>
-                                <a href="/en/about_us" class="parallelogram center">
+                                <a href="/pt/about_us" class="parallelogram center">
                                     <div class="orange_detail"></div>
-                                    <div class="text">ABOUT US</div>
+                                    <div class="text">SOBRE NÓS</div>
                                 </a>
                             </div>
                         </div>
@@ -76,12 +76,12 @@ export default class Homepage extends Component {
                         <img src={ifs03Front} alt="IFS03" />
                         <div class="column">
                             <div class="wrapper">
-                                <div class="detail">THE NEW</div>
+                                <div class="detail">NOVO</div>
                                 <div class="text">IFS03</div>
                             </div>
-                            <a href="/en/ifs03" class="parallelogram">
+                            <a href="/pt/ifs03" class="parallelogram">
                                 <div class="orange_detail"></div>
-                                <div class="text">LEARN MORE</div>
+                                <div class="text">SABER MAIS</div>
                             </a>
                         </div>
                     </div>

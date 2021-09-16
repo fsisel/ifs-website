@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Header from '../components/header_en'
-import Footer from '../components/footer_en'
+import Header from '../components/header_pt'
+import Footer from '../components/footer_pt'
 
 import imageFspt from '../images/fspt.jpg'
 
@@ -46,7 +46,7 @@ export default class ContactsEn extends Component {
             <img class="cover" src={imageFspt} alt="IFS and FST" />
 
             <article>
-                <h1>CONTACTS</h1>
+                <h1>CONTACTOS</h1>
 
                 <div class="container">
                     <div class="text_wrapper">
@@ -57,7 +57,7 @@ export default class ContactsEn extends Component {
 
                 <div class="container">
                     <div class="text_wrapper">
-                        <h2>Where We Are</h2>
+                        <h2>Onde Estamos</h2>
                         <p>Rua Conselheiro Emídio Navarro Nº1, ADEM M0.32<br/>1959-007 Lisboa</p>
                     </div>
                     <div id='map' ref={this.mapContainer} className="map-container"></div>
