@@ -534,6 +534,10 @@ a.parallelogram:hover .text {
   justify-content: center;
 }
 
+#sponsor_grid {
+  background-color: #fff;
+}
+
 .sponsors div {
   display: flex;
   flex-wrap: wrap;
