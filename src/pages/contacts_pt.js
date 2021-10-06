@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from '../components/header_pt'
 import Footer from '../components/footer_pt'
 
-import imageFspt from '../images/fspt.jpg'
+import imageFspt from '../images/fspt.webp'
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 

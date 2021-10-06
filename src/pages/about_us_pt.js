@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Header from '../components/header_pt'
 import Footer from '../components/footer_pt'
 
-import imageIfsTeam from '../images/ifs_team.jpg'
-import imageIfs02_1 from '../images/ifs02_1.jpg'
-import imageFsg_teams from '../images/fsg_teams.jpeg'
+import imageIfsTeam from '../images/ifs_team.webp'
+import imageIfs02_1 from '../images/ifs02_1.webp'
+import imageFsg_teams from '../images/fsg_teams.webp'
 
 export default class AboutUsEn extends Component {
 

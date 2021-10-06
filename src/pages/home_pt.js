@@ -4,8 +4,8 @@ import Footer from '../components/footer_pt'
 
 import logoDark from '../logos/ifs_logo_dark.svg'
 import enIcon from '../icons/en.svg'
-import ifs02_2 from '../images/ifs02_2.jpg'
-import ifs02_1 from '../images/ifs02_1.jpg'
+import ifs01_1 from '../images/ifs01_1.webp'
+import ifs02_1 from '../images/ifs02_1.webp'
 import ifs03Front from '../images/ifs03_front.png'
 
 export default class Homepage extends Component {
@@ -51,7 +51,7 @@ export default class Homepage extends Component {
                     </div>
                 </div>
 
-                <img class="cover tall" src={ ifs02_2 } alt="IFS02" />
+                <img class="cover tall" src={ ifs01_1 } alt="IFS01" />
 
                 <article>
                     <h1>ALTA PERFORMANCE<br/>100% ELÉTRICO</h1>
