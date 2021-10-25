@@ -19,7 +19,7 @@ export default class AboutUsEn extends Component {
             <article>
                 
                 <h1>SOBRE NÓS</h1>
-
+                
                 <div class="container dual right">
                     <div class="image_wrapper">
                         <img src={imageFsg_teams} alt="Formula Student Competition" />
@@ -27,7 +27,7 @@ export default class AboutUsEn extends Component {
                     <div class="text_wrapper">
                         <div>
                             <h2>A Competição</h2>
-                            <p>Formula Student is a student engineering competition held annually in several countries. Student teams from around the world design, build, test, and race a small-scale formula style racing car. The cars are judged on a few criteria. It is run by the Institution of Mechanical Engineers and uses the same rules as the original Formula SAE with supplementary regulations. There are dynamics and statics events, each event measures one or more characteristics of the vehicle such as endurance, cost or engineering design, inter alia.</p>
+                            <p>Formula Student é uma competição entre estudantes de engenharia que ocorre anualmente em diversos países. Equipas de estudantes de todo o mundo projetam, constroiem e testam um carro de corridas do estilo Formula com dimensões reduzidas. Os veículos são avaliados com base em múltiplos critérios. Esta competição é gerida pela Institution of Mechanical Engineers e utiliza as mesmas regras que  a Formula SAE original com algumas regulamentações suplementares. Existem eventos dinâmicos e estáticos, cada um destes eventos avalia uma ou mais caracteristicas do veículo como a endurance, cost, design de engenharia entre outras coisas.</p>
                         </div>
                     </div>
                 </div>
@@ -36,9 +36,9 @@ export default class AboutUsEn extends Component {
                     <div class="text_wrapper">
                         <div>
                             <h2>O Projeto</h2>
-                            <p>This project, in addition to improving our engineering skills above the content learnt in the lectures, also helps us gain soft skills, such as time and resources management, public speaking and teamwork. Furthermore, it helps open professional doors due to having alumni from the team working for companies that sponsor us.</p>
-
-                            <p>This year the team is producing IFS03, an electric car which goal is to improve the performance achieved by IFS02.</p>
+                            <p>Este projeto, para além de melhorar as capacidades de engenharias adquiridas durante as aulas, auxilia a aprimorar as soft skills, tais como a gestão de tempo e de recursos, falar para o público também como ajuda a trabalhar em equipa.</p>
+                            <p>Além do mais, ajuda a abrir portas no mercado de trabalho devido aos alumnis da equipa que trabalham em empresas que se estão relacionadas a esta área. </p>
+                            <p>Este ano a equipa está a produzir o veículo IFS03, um carro elétrico, cujo objetivo é melhorar a performance obtida pelo nosso segundo carro o IFS02.</p>
                         </div>
                     </div>
                     <div class="image_wrapper">
@@ -49,19 +49,19 @@ export default class AboutUsEn extends Component {
                 <div class="container">
                     <div class="text_wrapper">
                         <h2>História</h2>
-                        <p>ISEL Formula Student team was founded in 2013. Initially it was compound by 7 members, but it has been expanding. Currently, we have 44 members from all ISEL degrees.</p>
+                        <p>A ISEL Formula Student foi fundada em 2013. Inicialmente era composta apenas por 7 membros, mas tem vindo a crescer. Atualmente, são 44 os membros que participam na equipa sendo estes de todos os cursos do ISEL.</p>
 
-                        <p>In 2013-2014 the team started the design of IFS01. A combustion vehicle concept was developed that had lightness, reliability and simplicity as its main characteristics. The team participated in the 2014 Silverstone competition in class 2, project class, where it finished in third place.</p>
+                        <p>Em 2013-2014 a equipa começou a projetar o carro IFS01. É um veículo a combustão que tem como caracteristicas principais a sua leveza, segurança e simplicidade. A equipa, em 2014, participou na competição de Silverstone na classe 2, project class, onde acabou em terceiro lugar.</p>
 
-                        <p>In 2014-2015 the team begin the manufacturing process of IFS01 and competed in Barcelona with the prototype. In Barcelona it stood out as the best 1st year car in the competition.</p>
+                        <p>Nos anos 2014-2015, a equipa começou o processo de manufatura do IFS01 e competiu em Barcelona com o protótipo. Nessa mesma competição o veículo foi destacado como o melhor carro dentre as equipas com apenas um ano.</p>
 
-                        <p>2015-2016 was a year to improve IFS01 with a project called IFS01 EVO and the team competed in the Czech Republic 2017 with a better performance.</p>
+                        <p>A época de 2015-2016 foi a altura para melhorar o veículo IFS01 com o projeto IFS01 EVO. A equipa participou na competição na República Checa, em 2017, com uma melhor performance.</p>
 
-                        <p>In 2016-2017 the ambition continued with the new project IFS02, an electric vehicle with similar objectives as IFS01.</p>
+                        <p>Com ambição sempre presente, em 2016-2017 a equipa deu inicio a um novo projeto, o IFS02, um veículo elétrico com objetivos similares aos do IFS01.</p>
 
-                        <p>2017-2018 the team competed in Barcelona with the IFS02’s prototype and in 2018-2019 once the vehicle was manufactured the team participated in Formula Student Germany.</p>
+                        <p>Em 2017-2018, a equipa competiu em Barcelona com o protótipo do IFS02 e na época de 2018-2019 já com o veículo manufaturado a equipa participou na competição Formula Student na Alemanha.</p>
 
-                        <p>2019-2020 was an atypical year, the team participated in Formula Student UK class 2 ending in the 4th position on business due to the IFS03e prototype.</p>
+                        <p>A época de 2019-2020 foi atipica, a equipa competiu na Formula Student UK, na class 2, acabando em 4º lugar na competição de Business devido ao protótipo do veículo IFS03e.</p>
                     </div>
                 </div>
 

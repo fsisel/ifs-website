@@ -59,8 +59,8 @@ export default class Homepage extends Component {
                     <div class="container dual left">
                         <div class="text_wrapper">
                             <div>
-                                <h2>We make high performance racing cars.</h2>
-                                <p>We are a team of engineering students from Lisbon School of Engineering. Passionate about cars and technology, we design and build a racing car for the formula student competition.</p>
+                                <h2>Construimos carros de corridas de alta performance.</h2>
+                                <p>A equipa ISEL Formula Student é constituida por alunos de engenharia do Instituto Superior de Engenharia de Lisboa (ISEL). A paixão por carros e tecnologia leva a equipa a projetar e construir um carro de corridas capaz de participar nas competições de Formula Student.</p>
                                 <a href="/pt/about_us" class="parallelogram center">
                                     <div class="orange_detail"></div>
                                     <div class="text">SOBRE NÓS</div>

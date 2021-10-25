@@ -33,8 +33,8 @@ export default class Ifs03En extends Component {
             <article>
 
                 <div class="main_container">
-                    IFS03 is the latest fully electric vehicle developed by ISEL Formula Student.<br/><br/>
-                    Designed with lightness and reliability in mind IFS03 strikes the perfect balance between performance and agility.
+                    O IFS03 é o último veículo elétrico desenvolvido pela equipa ISEL Formula Student.<br/><br/>
+                    Projetado a pensar na leveza e fiabilidade, o IFS03 atinge o balanço perfeito entre performance e agilidade.
                 </div>
                
                 <div class="product_center">

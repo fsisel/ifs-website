@@ -76,7 +76,7 @@ export default class Homepage extends Component {
                         <img src={ifs03Front} alt="IFS03" />
                         <div class="column">
                             <div class="wrapper">
-                                <div class="detail">THE NEW</div>
+                                <div class="detail">NEW</div>
                                 <div class="text">IFS03</div>
                             </div>
                             <a href="/en/ifs03" class="parallelogram">
