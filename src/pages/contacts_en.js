@@ -58,7 +58,7 @@ export default class ContactsEn extends Component {
                 <div class="container">
                     <div class="text_wrapper">
                         <h2>Where We Are</h2>
-                        <p>Rua Conselheiro Emídio Navarro Nº1, ADEM M0.32<br/>1959-007 Lisboa</p>
+                        <p>Rua Conselheiro Emídio Navarro Nº1, ADEM M0.32<br/>1959-007 Lisboa<br/>Portugal</p>
                     </div>
                     <div id='map' ref={this.mapContainer} className="map-container"></div>
                 </div>

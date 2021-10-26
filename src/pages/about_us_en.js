@@ -27,7 +27,7 @@ export default class AboutUsEn extends Component {
                     <div class="text_wrapper">
                         <div>
                             <h2>The Competition</h2>
-                            <p>Formula Student is a student engineering competition held annually in several countries. Student teams from around the world design, build, test, and race a small-scale formula style racing car. The cars are judged on a few criteria. It is run by the Institution of Mechanical Engineers and uses the same rules as the original Formula SAE with supplementary regulations. There are dynamics and statics events, each event measures one or more characteristics of the vehicle such as endurance, cost or engineering design, inter alia.</p>
+                            <p>Formula Student is an engineering competition held annually in several countries. Student teams from around the world design, build, test, and race a small-scale formula style racing car. The cars are judged on a few criteria. There are dynamics and statics events. Each one measures the characteristics of the vehicle such as endurance, cost or engineering design, inter alia.</p>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ export default class AboutUsEn extends Component {
                     <div class="text_wrapper">
                         <div>
                             <h2>The Project</h2>
-                            <p>This project, in addition to improving our engineering skills above the content learnt in the lectures, also helps us gain soft skills, such as time and resources management, public speaking and teamwork. Furthermore, it helps open professional doors due to having alumni from the team working for companies that sponsor us.</p>
+                            <p>This project, in addition to improving our engineering skills above the content learnt in the lectures, also helps us gain soft skills, such as time and resource management, public speaking and teamwork. Furthermore, it helps creating professional opportunities for the students.</p>
 
                             <p>This year the team is producing IFS03, an electric car which goal is to improve the performance achieved by IFS02.</p>
                         </div>
@@ -49,19 +49,19 @@ export default class AboutUsEn extends Component {
                 <div class="container">
                     <div class="text_wrapper">
                         <h2>History</h2>
-                        <p>ISEL Formula Student team was founded in 2013. Initially it was compound by 7 members, but it has been expanding. Currently, we have 44 members from all ISEL degrees.</p>
+                        <p>ISEL Formula Student team was founded in 2013. It started with just 7 members, but it has been expanding. There are currently over 50 students from every degree of the institute.</p>
 
-                        <p>In 2013-2014 the team started the design of IFS01. A combustion vehicle concept was developed that had lightness, reliability and simplicity as its main characteristics. The team participated in the 2014 Silverstone competition in class 2, project class, where it finished in third place.</p>
+                        <p>In 2013-2014 the team started the design of IFS01. A combustion vehicle concept developed with lightness, reliability and simplicity as its main characteristics. The team participated in the 2014 Silverstone competition in class 2, project class, where it finished in third place.</p>
 
-                        <p>In 2014-2015 the team begin the manufacturing process of IFS01 and competed in Barcelona with the prototype. In Barcelona it stood out as the best 1st year car in the competition.</p>
+                        <p>In 2014-2015 the team began the manufacturing process of IFS01 and competed in Barcelona with the prototype. In Barcelona it stood out as the best 1st year car in the competition.</p>
 
                         <p>2015-2016 was a year to improve IFS01 with a project called IFS01 EVO and the team competed in the Czech Republic 2017 with a better performance.</p>
 
-                        <p>In 2016-2017 the ambition continued with the new project IFS02, an electric vehicle with similar objectives as IFS01.</p>
+                        <p>In 2016-2017 the ambition continued with the new project IFS02, our first electric vehicle.</p>
 
-                        <p>2017-2018 the team competed in Barcelona with the IFS02’s prototype and in 2018-2019 once the vehicle was manufactured the team participated in Formula Student Germany.</p>
+                        <p>In 2017-2018 the team competed in Barcelona with the IFS02 prototype and in 2018-2019 once the vehicle was manufactured the team participated in Formula Student Germany.</p>
 
-                        <p>2019-2020 was an atypical year, the team participated in Formula Student UK class 2 ending in the 4th position on business due to the IFS03e prototype.</p>
+                        <p>2019-2020 was an atypical year, the team participated in Formula Student UK class 2 ending in 4th position on business with the IFS03 prototype.</p>
                     </div>
                 </div>
 

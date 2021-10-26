@@ -5,7 +5,9 @@ import Footer from '../components/footer_en'
 import logoDark from '../logos/ifs_logo_dark.svg'
 import ptIcon from '../icons/pt.svg'
 import ifs01_1 from '../images/ifs01_1.webp'
+import ifs01_2 from '../images/ifs01_2.webp'
 import ifs02_1 from '../images/ifs02_1.webp'
+import ifs02_2 from '../images/ifs02_2.webp'
 import ifs03Front from '../images/ifs03_front.png'
 
 export default class Homepage extends Component {
@@ -54,8 +56,6 @@ export default class Homepage extends Component {
                 <img class="cover tall" src={ ifs01_1 } alt="IFS01" />
 
                 <article>
-                    <h1>HIGH PERFORMANCE<br/>100% ELECTRIC</h1>
-
                     <div class="container dual left">
                         <div class="text_wrapper">
                             <div>
@@ -69,6 +69,30 @@ export default class Homepage extends Component {
                         </div>
                         <div class="image_wrapper">
                             <img src={ ifs02_1 } alt="IFS02" />
+                        </div>
+                    </div>
+
+                    <div class="container dual right">
+                        <div class="image_wrapper">
+                            <img src={ ifs02_2 } alt="IFS02" />
+                        </div>
+                        <div class="text_wrapper">
+                            <div>
+                                <h2>IFS02</h2>
+                                <p>The IFS02 vehicle was the very first <b>electric</b> car designed and made by the team. The final result was a vehicle with a 80 kW electric motor and with a combined weight of 230 kg. This project achieved an excellent performance with low cost and easy maintenance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container dual left">
+                        <div class="text_wrapper">
+                            <div>
+                                <h2>IFS01</h2>
+                                <p>Known by its durability and ease of improvement, the IFS01 vehicle was the first combustion car made but the team. It has a power of 40 kW and it weights 250 kg.</p>
+                            </div>
+                        </div>
+                        <div class="image_wrapper">
+                            <img src={ ifs01_2 } alt="IFS01" />
                         </div>
                     </div>
 
