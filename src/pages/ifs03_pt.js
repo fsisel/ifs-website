@@ -66,7 +66,7 @@ export default class Ifs03En extends Component {
                             </div>
                             <div class="wrapper">
                                 <img src={iconSuspension} alt="suspension" />
-                                <div>Air Suspension</div>
+                                <div>Pneumatic Suspension</div>
                             </div>
                         </div>
                     </div>
