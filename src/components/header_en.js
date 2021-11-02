@@ -37,7 +37,6 @@ export default class Header extends Component {
                 
                 <div id="navbar_menu">
                     <a href="/en/about_us">ABOUT US&nbsp;</a>
-                    <a href="/en/ifs03">IFS03&nbsp;</a>
                     <a href="/en/sponsors">SPONSORS&nbsp;</a>
                     <a href="/en/contacts">CONTACTS&nbsp;</a>
                 </div>

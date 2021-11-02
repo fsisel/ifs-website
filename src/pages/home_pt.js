@@ -41,7 +41,6 @@ export default class Homepage extends Component {
                     
                     <div id="header_menu">
                         <a href="/pt/about_us"><span>SOBRE NÓS</span></a>
-                        <a href="/pt/ifs03"><span>IFS03</span></a>
                         <a href="/pt/sponsors"><span>PATROCINADORES</span></a>
                         <a href="/pt/contacts"><span>CONTACTOS</span></a>
                     </div>
@@ -104,10 +103,7 @@ export default class Homepage extends Component {
                                 <div class="detail">NOVO</div>
                                 <div class="text">IFS03</div>
                             </div>
-                            <a href="/pt/ifs03" class="parallelogram">
-                                <div class="orange_detail"></div>
-                                <div class="text">SABER MAIS</div>
-                            </a>
+                            <div class="detail">BREVEMENTE</div>
                         </div>
                     </div>
 
