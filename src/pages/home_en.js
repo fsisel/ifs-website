@@ -87,7 +87,7 @@ export default class Homepage extends Component {
                         <div class="text_wrapper">
                             <div>
                                 <h2>IFS01</h2>
-                                <p>Known by its durability and ease of improvement, the IFS01 vehicle was the first combustion car made by the team. It has a power of 40 kW and it weights 250 kg.</p>
+                                <p>Known for its durability and ease of improvement, the IFS01 vehicle was the first combustion car made by the team. It has a power of 40 kW and it weights 250 kg.</p>
                             </div>
                         </div>
                         <div class="image_wrapper">
