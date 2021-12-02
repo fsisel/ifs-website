@@ -35,6 +35,10 @@ body, h1, h2, h3 {
   margin: 0;
 }
 
+p {
+  text-align: justify;
+}
+
 h1 {
   font-size: 3.5em;
 }
