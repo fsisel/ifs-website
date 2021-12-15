@@ -32,7 +32,6 @@ import sponsorCarpintariaLinoEFilhos from '../sponsor_logos/carpintaria_lino_e_f
 import sponsorSolidworks from '../sponsor_logos/solidworks.svg'
 import sponsorAltium from '../sponsor_logos/altium.svg'
 import sponsorAnsys from '../sponsor_logos/ansys.svg'
-import sponsorSkf from '../sponsor_logos/skf.svg'
 
 export default class SponsorsEn extends Component {
 
@@ -85,7 +84,6 @@ export default class SponsorsEn extends Component {
                         <img src={sponsorSolidworks} alt="Solidworks" />
                         <img src={sponsorAltium} alt="Altium" />
                         <img src={sponsorAnsys} alt="Ansys" />
-                        <img src={sponsorSkf} alt="SKF" />
                     </div>
                 </div>
                 
