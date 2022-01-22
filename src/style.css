@@ -537,6 +537,7 @@ a.parallelogram:hover .text {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 #sponsor_grid {
