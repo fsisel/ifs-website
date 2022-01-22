@@ -32,7 +32,7 @@ import sponsorCarpintariaLinoEFilhos from '../sponsor_logos/carpintaria_lino_e_f
 import sponsorSolidworks from '../sponsor_logos/solidworks.svg'
 import sponsorAltium from '../sponsor_logos/altium.svg'
 import sponsorAnsys from '../sponsor_logos/ansys.svg'
-import { Link } from "react-router-dom";
+
 
 export default class SponsorsEn extends Component {
 
@@ -55,7 +55,7 @@ export default class SponsorsEn extends Component {
                         <a href="https://www.logoplaste.com/"><img src={sponsorLogoplaste} alt="Logoplaste" /></a>
                         <a href="https://www.te.com/usa-en/home.html"><img src={sponsorTeConnectivity} alt="TE Connectivity" /></a>
                     </div>
-
+ 
                     <div class="separator"></div>
 
                     <div class="sponsors silver">
@@ -64,7 +64,7 @@ export default class SponsorsEn extends Component {
                         <a href="https://www.3d-iso.pt/index.php"><img src={sponsor3dIso} alt="3DISO" /></a>
                         <a href="https://www.thyssenkrupp.com/en/home"><img src={sponsorThyssenkrupp} alt="Thyssenkrupp" /></a>
                         <a href="https://www.bicimax.pt/"><img src={sponsorBicimax} alt="Bicimax" /></a>
-                        <a href=""><img src={sponsorFox} alt="Fox" /></a>
+                        <a href="https://www.ridefox.com/"><img src={sponsorFox} alt="Fox" /></a>
                         <a href="https://www.codi.pt/"><img src={sponsorCodi} alt="CODI" /></a>
                         <a href="https://deconorma.com/pt/"><img src={sponsorDeconorma} alt="Deconorma" /></a>
                         <a href="http://www.tsf-trofa.com/pt/"><img src={sponsorTsf} alt="TSF" /></a>
