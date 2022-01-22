@@ -32,10 +32,6 @@ import sponsorCarpintariaLinoEFilhos from '../sponsor_logos/carpintaria_lino_e_f
 import sponsorSolidworks from '../sponsor_logos/solidworks.svg'
 import sponsorAltium from '../sponsor_logos/altium.svg'
 import sponsorAnsys from '../sponsor_logos/ansys.svg'
-<<<<<<< HEAD
-
-=======
->>>>>>> b06336d93ff6f67355df4c8b14d6b78b1dbe4cad
 
 export default class SponsorsEn extends Component {
 
