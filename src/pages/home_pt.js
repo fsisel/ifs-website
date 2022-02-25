@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import Header from '../components/header_pt'
 import Footer from '../components/footer_pt'
 
@@ -40,16 +42,16 @@ export default class Homepage extends Component {
                     <img class="logo" src={logoDark} alt="ISEL Formula Student" />
 
                     <div id="header_menu">
-                        <a href="/pt/about_us"><span>SOBRE NÓS</span></a>
-                        <a href="/pt/ifs03"><span>IFS03</span></a>
-                        <a href="/pt/sponsors"><span>PATROCINADORES</span></a>
-                        <a href="/pt/contacts"><span>CONTACTOS</span></a>
+                        <Link to="/pt/about_us"><span>SOBRE NÓS</span></Link>
+                        <Link to="/pt/ifs03"><span>IFS03</span></Link>
+                        <Link to="/pt/sponsors"><span>PATROCINADORES</span></Link>
+                        <Link to="/pt/contacts"><span>CONTACTOS</span></Link>
                     </div>
 
                     <div id="header_language">
-                        <a href="/en" title="English">
+                        <Link to="/en" title="English">
                             <img src={enIcon} alt="English" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -62,10 +64,10 @@ export default class Homepage extends Component {
                             <div>
                                 <h2>Construímos Veículos de Competição.</h2>
                                 <p>A ISEL Formula Student é uma equipa constituída por alunos do Instituto Superior de Engenharia de Lisboa e tem a missão de projetar e manufaturar um veículo capaz de participar nas competições de Formula Student.</p>
-                                <a href="/pt/about_us" class="parallelogram center">
+                                <Link to="/pt/about_us" class="parallelogram center">
                                     <div class="orange_detail"></div>
                                     <div class="text">SOBRE NÓS</div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div class="image_wrapper">

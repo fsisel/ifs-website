@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import logo from '../logos/ifs_icon_dark.svg'
 import enIcon from '../icons/en.svg'
@@ -21,11 +22,11 @@ export default class Header extends Component {
         return (
             <div id="navbar">
                 <div id="navbar_header">
-                    <a class="logo" href="/pt"><img src={logo} alt="ISEL Formula Student" /></a>
+                    <Link class="logo" to="/pt"><img src={logo} alt="ISEL Formula Student" /></Link>
                     <span></span>
-                    <a id="responsive_navbar_language" href="/en" title="English">
+                    <Link id="responsive_navbar_language" to="/en" title="English">
                         <img class="flag_icon" src={enIcon} alt="English" />
-                    </a>
+                    </Link>
                     <button id="menu_button" onClick={this.toggleMenu}>
                         MENU
                         <img src={menuIcon} alt="Menu" />
@@ -36,15 +37,15 @@ export default class Header extends Component {
                 <span></span>
 
                 <div id="navbar_menu">
-                    <a href="/pt/about_us">SOBRE NÓS&nbsp;</a>
-                    <a href="/pt/ifs03"><span>IFS03</span></a>
-                    <a href="/pt/sponsors">PATROCINADORES&nbsp;</a>
-                    <a href="/pt/contacts">CONTACTOS&nbsp;</a>
+                    <Link to="/pt/about_us">SOBRE NÓS&nbsp;</Link>
+                    <Link to="/pt/ifs03"><span>IFS03</span></Link>
+                    <Link to="/pt/sponsors">PATROCINADORES&nbsp;</Link>
+                    <Link to="/pt/contacts">CONTACTOS&nbsp;</Link>
                 </div>
 
-                <a id="navbar_language" href="/en" title="English">
+                <Link id="navbar_language" to="/en" title="English">
                     <img class="flag_icon" src={enIcon} alt="English" />
-                </a>
+                </Link>
             </div>
         )
     }

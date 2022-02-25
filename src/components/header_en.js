@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import logo from '../logos/ifs_icon_dark.svg'
 import ptIcon from '../icons/pt.svg'
@@ -21,11 +22,11 @@ export default class Header extends Component {
         return (
             <div id="navbar">
                 <div id="navbar_header">
-                    <a class="logo" href="/en"><img src={logo} alt="ISEL Formula Student" /></a>
+                    <Link class="logo" to="/en"><img src={logo} alt="ISEL Formula Student" /></Link>
                     <span></span>
-                    <a id="responsive_navbar_language" href="/pt" title="Português">
+                    <Link id="responsive_navbar_language" to="/pt" title="Português">
                         <img class="flag_icon" src={ptIcon} alt="Portuguese" />
-                    </a>
+                    </Link>
                     <button id="menu_button" onClick={this.toggleMenu}>
                         MENU
                         <img src={menuIcon} alt="Menu" />
@@ -36,15 +37,15 @@ export default class Header extends Component {
                 <span></span>
 
                 <div id="navbar_menu">
-                    <a href="/en/about_us">ABOUT US&nbsp;</a>
-                    <a href="/en/ifs03"><span>IFS03</span></a>
-                    <a href="/en/sponsors">SPONSORS&nbsp;</a>
-                    <a href="/en/contacts">CONTACTS&nbsp;</a>
+                    <Link to="/en/about_us">ABOUT US&nbsp;</Link>
+                    <Link to="/en/ifs03"><span>IFS03</span></Link>
+                    <Link to="/en/sponsors">SPONSORS&nbsp;</Link>
+                    <Link to="/en/contacts">CONTACTS&nbsp;</Link>
                 </div>
 
-                <a id="navbar_language" href="/pt" title="Português">
+                <Link id="navbar_language" to="/pt" title="Português">
                     <img class="flag_icon" src={ptIcon} alt="Portuguese" />
-                </a>
+                </Link>
             </div>
         )
     }

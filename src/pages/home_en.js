@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import Header from '../components/header_en'
 import Footer from '../components/footer_en'
 
@@ -40,16 +42,16 @@ export default class Homepage extends Component {
                     <img class="logo" src={logoDark} alt="ISEL Formula Student" />
 
                     <div id="header_menu">
-                        <a href="/en/about_us"><span>ABOUT US</span></a>
-                        <a href="/en/ifs03"><span>IFS03</span></a>
-                        <a href="/en/sponsors"><span>SPONSORS</span></a>
-                        <a href="/en/contacts"><span>CONTACTS</span></a>
+                        <Link to="/en/about_us"><span>ABOUT US</span></Link>
+                        <Link to="/en/ifs03"><span>IFS03</span></Link>
+                        <Link to="/en/sponsors"><span>SPONSORS</span></Link>
+                        <Link to="/en/contacts"><span>CONTACTS</span></Link>
                     </div>
 
                     <div id="header_language">
-                        <a href="/pt" title="Português">
+                        <Link to="/pt" title="Português">
                             <img src={ptIcon} alt="Portuguese" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -61,10 +63,10 @@ export default class Homepage extends Component {
                             <div>
                                 <h2>We make high performance racing cars.</h2>
                                 <p>We are a team of engineering students from Lisbon School of Engineering. Passionate about cars and technology, we design and build a racing car for the formula student competition.</p>
-                                <a href="/en/about_us" class="parallelogram center">
+                                <Link to="/en/about_us" class="parallelogram center">
                                     <div class="orange_detail"></div>
                                     <div class="text">ABOUT US</div>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div class="image_wrapper">
