@@ -21,28 +21,29 @@ export default class Header extends Component {
         return (
             <div id="navbar">
                 <div id="navbar_header">
-                    <a class="logo" href="/pt"><img src={ logo } alt="ISEL Formula Student"/></a>
+                    <a class="logo" href="/pt"><img src={logo} alt="ISEL Formula Student" /></a>
                     <span></span>
                     <a id="responsive_navbar_language" href="/en" title="English">
-                        <img class="flag_icon" src={ enIcon } alt="English" />
+                        <img class="flag_icon" src={enIcon} alt="English" />
                     </a>
                     <button id="menu_button" onClick={this.toggleMenu}>
                         MENU
-                        <img src={ menuIcon } alt="Menu" />
+                        <img src={menuIcon} alt="Menu" />
                     </button>
                 </div>
 
 
                 <span></span>
-                
+
                 <div id="navbar_menu">
                     <a href="/pt/about_us">SOBRE NÓS&nbsp;</a>
+                    <a href="/pt/ifs03"><span>IFS03</span></a>
                     <a href="/pt/sponsors">PATROCINADORES&nbsp;</a>
                     <a href="/pt/contacts">CONTACTOS&nbsp;</a>
                 </div>
 
                 <a id="navbar_language" href="/en" title="English">
-                    <img class="flag_icon" src={ enIcon } alt="English" />
+                    <img class="flag_icon" src={enIcon} alt="English" />
                 </a>
             </div>
         )

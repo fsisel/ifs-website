@@ -11,16 +11,16 @@ import ifs02_2 from '../images/ifs02_2.webp'
 import ifs03Front from '../images/ifs03_front.png'
 
 export default class Homepage extends Component {
-    
+
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll, true);
         document.getElementById("navbar").style.top = "-4em"
     }
-    
+
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     }
-      
+
     handleScroll = () => {
         if (document.body.clientWidth > 750) {
             if (window.scrollY > 180) {
@@ -34,25 +34,26 @@ export default class Homepage extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header />
 
                 <div id="header">
-                    <img class="logo" src={ logoDark } alt="ISEL Formula Student" />
-                    
+                    <img class="logo" src={logoDark} alt="ISEL Formula Student" />
+
                     <div id="header_menu">
                         <a href="/pt/about_us"><span>SOBRE NÓS</span></a>
+                        <a href="/pt/ifs03"><span>IFS03</span></a>
                         <a href="/pt/sponsors"><span>PATROCINADORES</span></a>
                         <a href="/pt/contacts"><span>CONTACTOS</span></a>
                     </div>
 
                     <div id="header_language">
                         <a href="/en" title="English">
-                            <img src={ enIcon } alt="English" />
+                            <img src={enIcon} alt="English" />
                         </a>
                     </div>
                 </div>
 
-                <img class="cover tall" src={ ifs01_1 } alt="IFS01" />
+                <img class="cover tall" src={ifs01_1} alt="IFS01" />
 
                 <article>
 
@@ -68,13 +69,13 @@ export default class Homepage extends Component {
                             </div>
                         </div>
                         <div class="image_wrapper">
-                            <img src={ ifs02_1 } alt="IFS02" />
+                            <img src={ifs02_1} alt="IFS02" />
                         </div>
                     </div>
 
                     <div class="container dual right">
                         <div class="image_wrapper">
-                            <img src={ ifs02_2 } alt="IFS02" />
+                            <img src={ifs02_2} alt="IFS02" />
                         </div>
                         <div class="text_wrapper">
                             <div>
@@ -92,7 +93,7 @@ export default class Homepage extends Component {
                             </div>
                         </div>
                         <div class="image_wrapper">
-                            <img src={ ifs01_2 } alt="IFS01" />
+                            <img src={ifs01_2} alt="IFS01" />
                         </div>
                     </div>
 
@@ -109,10 +110,10 @@ export default class Homepage extends Component {
 
                 </article>
 
-                <Footer/>
+                <Footer />
 
             </div>
-            
+
         )
     }
 
