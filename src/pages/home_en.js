@@ -24,12 +24,17 @@ export default class Homepage extends Component {
     }
 
     handleScroll = () => {
-        if (document.body.clientWidth > 750) {
-            if (window.scrollY > 180) {
-                document.getElementById("navbar").style.top = "0"
-            } else {
-                document.getElementById("navbar").style.top = "-4em"
+        if (window.location.pathname === "/en") {
+            if (document.body.clientWidth > 750) {
+                if (window.scrollY > 180) {
+                    document.getElementById("navbar").style.top = "0"
+                } else {
+                    document.getElementById("navbar").style.top = "-4em"
+                }
             }
+        } else {
+            document.getElementById("navbar").style.top = "0"
+
         }
     };
 
