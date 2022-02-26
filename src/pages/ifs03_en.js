@@ -44,29 +44,29 @@ export default class Ifs03En extends Component {
                             <div class="column left">
                                 <div class="wrapper">
                                     <div>100% Electric</div>
-                                    <img class="icon"src={iconElectric} alt="electric" />
+                                    <img class="icon" src={iconElectric} alt="electric" />
                                 </div>
                                 <div class="wrapper">
                                     <div>High Performance</div>
-                                    <img class="icon"src={iconPerformance} alt="performance" />
+                                    <img class="icon" src={iconPerformance} alt="performance" />
                                 </div>
                                 <div class="wrapper">
                                     <div>Maximum Agility</div>
-                                    <img class="icon"src={iconAgility} alt="agility" />
+                                    <img class="icon" src={iconAgility} alt="agility" />
                                 </div>
                             </div>
                             <img class="large" src={imageIfs03Top} alt="IFS03" />
                             <div class="column">
                                 <div class="wrapper">
-                                    <img class="icon"src={iconChassis} alt="chassis" />
+                                    <img class="icon" src={iconChassis} alt="chassis" />
                                     <div>Tubular Space Frame Chassis</div>
                                 </div>
                                 <div class="wrapper">
-                                    <img class="icon"src={iconBody} alt="body" />
+                                    <img class="icon" src={iconBody} alt="body" />
                                     <div>Carbon Fiber Body</div>
                                 </div>
                                 <div class="wrapper">
-                                    <img class="icon"src={iconSuspension} alt="suspension" />
+                                    <img class="icon" src={iconSuspension} alt="suspension" />
                                     <div>Pneumatic Suspension</div>
                                 </div>
                             </div>
