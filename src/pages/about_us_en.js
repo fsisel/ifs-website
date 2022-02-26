@@ -15,17 +15,17 @@ export default class AboutUsEn extends Component {
 
                 <Header />
 
-                <img class="cover" src={imageIfsTeam} alt="ISEL Formula Student Team" />
+                <img className="cover" src={imageIfsTeam} alt="ISEL Formula Student Team" />
 
                 <article>
 
                     <h1>ABOUT US</h1>
 
-                    <div class="container dual right">
-                        <div class="image_wrapper">
+                    <div className="container dual right">
+                        <div className="image_wrapper">
                             <img src={imageFsg_teams} alt="Formula Student Competition" />
                         </div>
-                        <div class="text_wrapper">
+                        <div className="text_wrapper">
                             <div>
                                 <h2>The Competition</h2>
                                 <p>Formula Student is an engineering competition held annually in several countries. Student teams from around the world design, build, test, and race a small-scale formula style racing car. The cars are judged on a few criteria. There are dynamics and statics events. Each one measures the characteristics of the vehicle such as endurance, cost or engineering design, inter alia.</p>
@@ -33,8 +33,8 @@ export default class AboutUsEn extends Component {
                         </div>
                     </div>
 
-                    <div class="container dual left">
-                        <div class="text_wrapper">
+                    <div className="container dual left">
+                        <div className="text_wrapper">
                             <div>
                                 <h2>The Project</h2>
                                 <p>This project, in addition to improving our engineering skills above the content learnt in the lectures, also helps us gain soft skills, such as time and resource management, public speaking and teamwork. Furthermore, it helps creating professional opportunities for the students.</p>
@@ -42,13 +42,13 @@ export default class AboutUsEn extends Component {
                                 <p>This year the team is producing IFS03, an electric car which goal is to improve the performance achieved by IFS02.</p>
                             </div>
                         </div>
-                        <div class="image_wrapper">
+                        <div className="image_wrapper">
                             <img src={imageIfs02_1} alt="IFS02" />
                         </div>
                     </div>
 
-                    <div class="container">
-                        <div class="text_wrapper">
+                    <div className="container">
+                        <div className="text_wrapper">
                             <h2>History</h2>
                             <p>ISEL Formula Student team was founded in 2013. It started with just 7 members, but it has been expanding. There are currently over 50 students from every degree of the institute.</p>
 

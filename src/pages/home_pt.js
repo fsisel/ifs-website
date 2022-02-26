@@ -39,10 +39,9 @@ export default class Homepage extends Component {
                 <Header />
 
                 <div id="header">
-                    <img class="logo" src={logoDark} alt="ISEL Formula Student" />
-
+                    <img className="logo" src={logoDark} alt="ISEL Formula Student" />
                     <div id="header_menu">
-                        <Link to="/pt/about_us"><span>SOBRE NÓS</span></Link>
+                        <Link to="/pt/about_us" ><span>SOBRE NÓS</span></Link>
                         <Link to="/pt/ifs03"><span>IFS03</span></Link>
                         <Link to="/pt/sponsors"><span>PATROCINADORES</span></Link>
                         <Link to="/pt/contacts"><span>CONTACTOS</span></Link>
@@ -55,31 +54,31 @@ export default class Homepage extends Component {
                     </div>
                 </div>
 
-                <img class="cover tall" src={ifs01_1} alt="IFS01" />
+                <img className="cover tall" src={ifs01_1} alt="IFS01" />
 
                 <article>
 
-                    <div class="container dual left">
-                        <div class="text_wrapper">
+                    <div className="container dual left">
+                        <div className="text_wrapper">
                             <div>
                                 <h2>Construímos Veículos de Competição.</h2>
                                 <p>A ISEL Formula Student é uma equipa constituída por alunos do Instituto Superior de Engenharia de Lisboa e tem a missão de projetar e manufaturar um veículo capaz de participar nas competições de Formula Student.</p>
-                                <Link to="/pt/about_us" class="parallelogram center">
-                                    <div class="orange_detail"></div>
-                                    <div class="text">SOBRE NÓS</div>
+                                <Link to="/pt/about_us" className="parallelogram center">
+                                    <div className="orange_detail"></div>
+                                    <div className="text">SOBRE NÓS</div>
                                 </Link>
                             </div>
                         </div>
-                        <div class="image_wrapper">
+                        <div className="image_wrapper">
                             <img src={ifs02_1} alt="IFS02" />
                         </div>
                     </div>
 
-                    <div class="container dual right">
-                        <div class="image_wrapper">
+                    <div className="container dual right">
+                        <div className="image_wrapper">
                             <img src={ifs02_2} alt="IFS02" />
                         </div>
-                        <div class="text_wrapper">
+                        <div className="text_wrapper">
                             <div>
                                 <h2>IFS02</h2>
                                 <p>O  IFS02 foi o primeiro veículo <b>elétrico</b> pensado e manufaturado pela equipa. Como produto final obteve-se um veículo com uma potência de 80 kW e um peso de 230 kg, de baixo custo, excelente performance e de fácil manutenção.</p>
@@ -87,26 +86,26 @@ export default class Homepage extends Component {
                         </div>
                     </div>
 
-                    <div class="container dual left">
-                        <div class="text_wrapper">
+                    <div className="container dual left">
+                        <div className="text_wrapper">
                             <div>
                                 <h2>IFS01</h2>
                                 <p>Caracterizado pela sua durabilidade e capacidade de melhorias, o veículo IFS01, primeiro veículo a combustão projetado e manufaturado pela equipa, tem uma potência de 40 kW e um peso de 250 kg.</p>
                             </div>
                         </div>
-                        <div class="image_wrapper">
+                        <div className="image_wrapper">
                             <img src={ifs01_2} alt="IFS01" />
                         </div>
                     </div>
 
-                    <div class="product big">
+                    <div className="product big">
                         <img src={ifs03Front} alt="IFS03" />
-                        <div class="column">
-                            <div class="wrapper">
-                                <div class="detail">NOVO</div>
-                                <div class="text">IFS03</div>
+                        <div className="column">
+                            <div className="wrapper">
+                                <div className="detail">NOVO</div>
+                                <div className="text">IFS03</div>
                             </div>
-                            <div class="detail">BREVEMENTE</div>
+                            <div className="detail">BREVEMENTE</div>
                         </div>
                     </div>
 

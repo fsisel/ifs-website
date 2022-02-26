@@ -33,69 +33,69 @@ export default class Ifs03En extends Component {
 
                 <article>
 
-                    <div class="main_container">
+                    <div className="main_container">
                         O IFS03 é o último veículo elétrico desenvolvido pela equipa ISEL Formula Student.<br /><br />
                         Projetado a pensar no peso reduzido e fiabilidade, o IFS03 atinge o equilíbrio perfeito entre desempenho e agilidade.
                     </div>
 
-                    <div class="product_center">
-                        <img class="responsive" src={imageIfs03Top} alt="IFS03" />
+                    <div className="product_center">
+                        <img className="responsive" src={imageIfs03Top} alt="IFS03" />
                         <div>
-                            <div class="column left">
-                                <div class="wrapper">
+                            <div className="column left">
+                                <div className="wrapper">
                                     <div>100% Elétrico</div>
-                                    <img class="icon" src={iconElectric} alt="electric" />
+                                    <img className="icon" src={iconElectric} alt="electric" />
                                 </div>
-                                <div class="wrapper">
+                                <div className="wrapper">
                                     <div>Alto Desempenho</div>
-                                    <img class="icon" src={iconPerformance} alt="performance" />
+                                    <img className="icon" src={iconPerformance} alt="performance" />
                                 </div>
-                                <div class="wrapper">
+                                <div className="wrapper">
                                     <div>Máxima Agilidade</div>
-                                    <img class="icon" src={iconAgility} alt="agility" />
+                                    <img className="icon" src={iconAgility} alt="agility" />
                                 </div>
                             </div>
-                            <img class="large" src={imageIfs03Top} alt="IFS03" />
-                            <div class="column">
-                                <div class="wrapper">
-                                    <img class="icon" src={iconChassis} alt="chassis" />
+                            <img className="large" src={imageIfs03Top} alt="IFS03" />
+                            <div className="column">
+                                <div className="wrapper">
+                                    <img className="icon" src={iconChassis} alt="chassis" />
                                     <div>Chassis Tubular</div>
                                 </div>
-                                <div class="wrapper">
-                                    <img class="icon" src={iconBody} alt="body" />
+                                <div className="wrapper">
+                                    <img className="icon" src={iconBody} alt="body" />
                                     <div>Body em Fibra de Carbono</div>
                                 </div>
-                                <div class="wrapper">
-                                    <img class="icon" src={iconSuspension} alt="suspension" />
+                                <div className="wrapper">
+                                    <img className="icon" src={iconSuspension} alt="suspension" />
                                     <div>Suspensão Pneumática</div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="product">
+                    <div className="product">
                         <img src={imageDrivetrain} alt="IFS03 drivetrain" />
-                        <div class="column">
-                            <div class="wrapper">
-                                <div class="detail">POTÊNCIA</div>
-                                <div class="text">80 kW (107 cv)</div>
+                        <div className="column">
+                            <div className="wrapper">
+                                <div className="detail">POTÊNCIA</div>
+                                <div className="text">80 kW (107 cv)</div>
                             </div>
-                            <div class="wrapper">
-                                <div class="detail">TORQUE</div>
-                                <div class="text">240 Nm</div>
+                            <div className="wrapper">
+                                <div className="detail">TORQUE</div>
+                                <div className="text">240 Nm</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="product right">
-                        <div class="column">
-                            <div class="wrapper">
-                                <div class="detail">PESO</div>
-                                <div class="text">230 kg</div>
+                    <div className="product right">
+                        <div className="column">
+                            <div className="wrapper">
+                                <div className="detail">PESO</div>
+                                <div className="text">230 kg</div>
                             </div>
-                            <div class="wrapper">
-                                <div class="detail">0-100 KM/H</div>
-                                <div class="text">TBA</div>
+                            <div className="wrapper">
+                                <div className="detail">0-100 KM/H</div>
+                                <div className="text">TBA</div>
                             </div>
                         </div>
                         <img src={imageIfs03Back} alt="IFS03" />

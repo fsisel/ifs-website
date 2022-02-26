@@ -39,7 +39,7 @@ export default class Homepage extends Component {
                 <Header />
 
                 <div id="header">
-                    <img class="logo" src={logoDark} alt="ISEL Formula Student" />
+                    <img className="logo" src={logoDark} alt="ISEL Formula Student" />
 
                     <div id="header_menu">
                         <Link to="/en/about_us"><span>ABOUT US</span></Link>
@@ -55,30 +55,30 @@ export default class Homepage extends Component {
                     </div>
                 </div>
 
-                <img class="cover tall" src={ifs01_1} alt="IFS01" />
+                <img className="cover tall" src={ifs01_1} alt="IFS01" />
 
                 <article>
-                    <div class="container dual left">
-                        <div class="text_wrapper">
+                    <div className="container dual left">
+                        <div className="text_wrapper">
                             <div>
                                 <h2>We make high performance racing cars.</h2>
                                 <p>We are a team of engineering students from Lisbon School of Engineering. Passionate about cars and technology, we design and build a racing car for the formula student competition.</p>
-                                <Link to="/en/about_us" class="parallelogram center">
-                                    <div class="orange_detail"></div>
-                                    <div class="text">ABOUT US</div>
+                                <Link to="/en/about_us" className="parallelogram center">
+                                    <div className="orange_detail"></div>
+                                    <div className="text">ABOUT US</div>
                                 </Link>
                             </div>
                         </div>
-                        <div class="image_wrapper">
+                        <div className="image_wrapper">
                             <img src={ifs02_1} alt="IFS02" />
                         </div>
                     </div>
 
-                    <div class="container dual right">
-                        <div class="image_wrapper">
+                    <div className="container dual right">
+                        <div className="image_wrapper">
                             <img src={ifs02_2} alt="IFS02" />
                         </div>
-                        <div class="text_wrapper">
+                        <div className="text_wrapper">
                             <div>
                                 <h2>IFS02</h2>
                                 <p>The IFS02 vehicle was the very first <b>electric</b> car designed and made by the team. The final result was a vehicle with a 80 kW electric motor and with a combined weight of 230 kg. This project achieved an excellent performance with low cost and easy maintenance.</p>
@@ -86,26 +86,26 @@ export default class Homepage extends Component {
                         </div>
                     </div>
 
-                    <div class="container dual left">
-                        <div class="text_wrapper">
+                    <div className="container dual left">
+                        <div className="text_wrapper">
                             <div>
                                 <h2>IFS01</h2>
                                 <p>Known for its durability and ease of improvement, the IFS01 vehicle was the first combustion car made by the team. It has a power of 40 kW and it weighs 250 kg.</p>
                             </div>
                         </div>
-                        <div class="image_wrapper">
+                        <div className="image_wrapper">
                             <img src={ifs01_2} alt="IFS01" />
                         </div>
                     </div>
 
-                    <div class="product big">
+                    <div className="product big">
                         <img src={ifs03Front} alt="IFS03" />
-                        <div class="column">
-                            <div class="wrapper">
-                                <div class="detail">NEW</div>
-                                <div class="text">IFS03</div>
+                        <div className="column">
+                            <div className="wrapper">
+                                <div className="detail">NEW</div>
+                                <div className="text">IFS03</div>
                             </div>
-                            <div class="detail">COMING SOON</div>
+                            <div className="detail">COMING SOON</div>
                         </div>
                     </div>
 

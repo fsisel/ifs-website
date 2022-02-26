@@ -22,10 +22,10 @@ export default class Header extends Component {
         return (
             <div id="navbar">
                 <div id="navbar_header">
-                    <Link class="logo" to="/pt"><img src={logo} alt="ISEL Formula Student" /></Link>
+                    <Link className="logo" to="/pt"><img src={logo} alt="ISEL Formula Student" /></Link>
                     <span></span>
                     <Link id="responsive_navbar_language" to="/en" title="English">
-                        <img class="flag_icon" src={enIcon} alt="English" />
+                        <img className="flag_icon" src={enIcon} alt="English" />
                     </Link>
                     <button id="menu_button" onClick={this.toggleMenu}>
                         MENU
@@ -44,7 +44,7 @@ export default class Header extends Component {
                 </div>
 
                 <Link id="navbar_language" to="/en" title="English">
-                    <img class="flag_icon" src={enIcon} alt="English" />
+                    <img className="flag_icon" src={enIcon} alt="English" />
                 </Link>
             </div>
         )

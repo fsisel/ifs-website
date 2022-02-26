@@ -44,20 +44,20 @@ export default class ContactsEn extends Component {
 
                 <Header />
 
-                <img class="cover" src={imageFspt} alt="IFS and FST" />
+                <img className="cover" src={imageFspt} alt="IFS and FST" />
 
                 <article>
                     <h1>CONTACTS</h1>
 
-                    <div class="container">
-                        <div class="text_wrapper">
+                    <div className="container">
+                        <div className="text_wrapper">
                             <h2>Email</h2>
-                            <p><a class="link" href="mailto:formulastudent@isel.pt">formulastudent@isel.pt</a></p>
+                            <p><a className="link" href="mailto:formulastudent@isel.pt">formulastudent@isel.pt</a></p>
                         </div>
                     </div>
 
-                    <div class="container">
-                        <div class="text_wrapper">
+                    <div className="container">
+                        <div className="text_wrapper">
                             <h2>Where We Are</h2>
                             <p>Rua Conselheiro Emídio Navarro Nº1, ADEM M0.32<br />1959-007 Lisboa<br />Portugal</p>
                         </div>

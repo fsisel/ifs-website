@@ -41,11 +41,11 @@ export default class SponsorsEn extends Component {
 
                 <Header />
 
-                <article class="top_margin">
+                <article className="top_margin">
                     <h1>PATROCINADORES</h1>
 
                     <div id="sponsor_grid">
-                        <div class="sponsors gold">
+                        <div className="sponsors gold">
                             <a href="https://www.ipl.pt/home"><img src={sponsorIpl} alt="IPL" /></a>
                             <a href="https://www.isel.pt"><img src={sponsorIsel} alt="ISEL" /></a>
                             <a href="https://grupometal.com"><img src={sponsorGrupoMetal} alt="Grupo Metal" /></a>
@@ -55,9 +55,9 @@ export default class SponsorsEn extends Component {
                             <a href="https://www.te.com/usa-en/home.html"><img src={sponsorTeConnectivity} alt="TE Connectivity" /></a>
                         </div>
 
-                        <div class="separator"></div>
+                        <div className="separator"></div>
 
-                        <div class="sponsors silver">
+                        <div className="sponsors silver">
                             <a href="https://symetria.pt/"><img src={sponsorSymetria} alt="Symetria" /></a>
                             <a href="http://www.natrater.pt/"><img src={sponsorNatrater} alt="Natrater" /></a>
                             <a href="https://www.3d-iso.pt/index.php"><img src={sponsor3dIso} alt="3DISO" /></a>
@@ -72,9 +72,9 @@ export default class SponsorsEn extends Component {
                             <a href="http://www.mjbranco.pt/"><img src={sponsorMjbranco} alt="MJBranco" /></a>
                         </div>
 
-                        <div class="separator"></div>
+                        <div className="separator"></div>
 
-                        <div class="sponsors bronze">
+                        <div className="sponsors bronze">
                             <a href="https://www.ramada.pt/pt/"><img src={sponsorRamadaAcos} alt="Ramada Aços" /></a>
                             <a href="https://eurocorreias.pt/"><img src={sponsorEurocorreias} alt="Eurocorreias" /></a>
                             <a href="https://www.bender.de/en"><img src={sponsorBender} alt="Bender" /></a>

@@ -6,6 +6,9 @@ import ptIcon from '../icons/pt.svg'
 import menuIcon from '../icons/menu.svg'
 
 export default class Header extends Component {
+    handleScroll = () => {
+
+    }
 
     toggleMenu() {
         if (document.getElementById("navbar_menu").className === "") {
@@ -22,10 +25,10 @@ export default class Header extends Component {
         return (
             <div id="navbar">
                 <div id="navbar_header">
-                    <Link class="logo" to="/en"><img src={logo} alt="ISEL Formula Student" /></Link>
+                    <Link className="logo" to="/en"><img src={logo} alt="ISEL Formula Student" /></Link>
                     <span></span>
                     <Link id="responsive_navbar_language" to="/pt" title="Português">
-                        <img class="flag_icon" src={ptIcon} alt="Portuguese" />
+                        <img className="flag_icon" src={ptIcon} alt="Portuguese" />
                     </Link>
                     <button id="menu_button" onClick={this.toggleMenu}>
                         MENU
@@ -44,7 +47,7 @@ export default class Header extends Component {
                 </div>
 
                 <Link id="navbar_language" to="/pt" title="Português">
-                    <img class="flag_icon" src={ptIcon} alt="Portuguese" />
+                    <img className="flag_icon" src={ptIcon} alt="Portuguese" />
                 </Link>
             </div>
         )

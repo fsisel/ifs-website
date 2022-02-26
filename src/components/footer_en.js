@@ -17,8 +17,8 @@ export default class Footer extends Component {
             <footer>
                 <div id="footer_container">
                     <div>&copy; <span id="year"></span> ISEL FS - Associação de Estudantes de Engenharia</div>
-                    <span class="separator"></span>
-                    <Link id="footer_privacypolicy" class="link" to="/en/privacy_policy">Privacy Policy</Link>
+                    <span className="separator"></span>
+                    <Link id="footer_privacypolicy" className="link" to="/en/privacy_policy">Privacy Policy</Link>
                 </div>
 
                 <div id="social_buttons">

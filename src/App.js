@@ -21,7 +21,7 @@ import ScrollToTop from './tools/ScrollToTop';
 function App() {
   return (
     <Router>
-      <ScrollToTop/>
+      <ScrollToTop />
       <Switch>
         <Route exact path="/" component={homeEn} />
         <Route exact path="/en" component={homeEn} />
