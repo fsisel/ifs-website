@@ -16,10 +16,12 @@ import privacyPolicyPt from './pages/privacy_policy_pt';
 import Ifs03Pt from './pages/ifs03_pt';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import ScrollToTop from './tools/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Switch>
         <Route exact path="/" component={homeEn} />
         <Route exact path="/en" component={homeEn} />
