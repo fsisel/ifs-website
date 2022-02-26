@@ -48,25 +48,25 @@ export default class Ifs03En extends Component {
                                 </div>
                                 <div class="wrapper">
                                     <div>Alto Desempenho</div>
-                                    <img class="icon"src={iconPerformance} alt="performance" />
+                                    <img class="icon" src={iconPerformance} alt="performance" />
                                 </div>
                                 <div class="wrapper">
                                     <div>Máxima Agilidade</div>
-                                    <img class="icon"src={iconAgility} alt="agility" />
+                                    <img class="icon" src={iconAgility} alt="agility" />
                                 </div>
                             </div>
                             <img class="large" src={imageIfs03Top} alt="IFS03" />
                             <div class="column">
                                 <div class="wrapper">
-                                    <img class="icon"src={iconChassis} alt="chassis" />
+                                    <img class="icon" src={iconChassis} alt="chassis" />
                                     <div>Chassis Tubular</div>
                                 </div>
                                 <div class="wrapper">
-                                    <img class="icon"src={iconBody} alt="body" />
+                                    <img class="icon" src={iconBody} alt="body" />
                                     <div>Body em Fibra de Carbono</div>
                                 </div>
                                 <div class="wrapper">
-                                    <img class="icon"src={iconSuspension} alt="suspension" />
+                                    <img class="icon" src={iconSuspension} alt="suspension" />
                                     <div>Suspensão Pneumática</div>
                                 </div>
                             </div>
