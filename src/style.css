@@ -978,7 +978,6 @@ footer .separator {
 
 }
 
-
 /* ########## DARK MODE ########## */
 
 @media (prefers-color-scheme: dark) {
@@ -1009,4 +1008,7 @@ footer .separator {
     filter: brightness(100%);
   }
 
+  .icon {
+    filter: invert(100%);
+  }
 }

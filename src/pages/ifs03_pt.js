@@ -35,7 +35,7 @@ export default class Ifs03En extends Component {
 
                     <div class="main_container">
                         O IFS03 é o último veículo elétrico desenvolvido pela equipa ISEL Formula Student.<br /><br />
-                        Projetado a pensar na leveza e fiabilidade, o IFS03 atinge o equilíbrio perfeito entre performance e agilidade.
+                        Projetado a pensar no peso reduzido e fiabilidade, o IFS03 atinge o equilíbrio perfeito entre desempenho e agilidade.
                     </div>
 
                     <div class="product_center">
@@ -43,31 +43,31 @@ export default class Ifs03En extends Component {
                         <div>
                             <div class="column left">
                                 <div class="wrapper">
-                                    <div>100% Electric</div>
-                                    <img src={iconElectric} alt="electric" />
+                                    <div>100% Elétrico</div>
+                                    <img class="icon" src={iconElectric} alt="electric" />
                                 </div>
                                 <div class="wrapper">
-                                    <div>High Performance</div>
-                                    <img src={iconPerformance} alt="performance" />
+                                    <div>Alto Desempenho</div>
+                                    <img class="icon"src={iconPerformance} alt="performance" />
                                 </div>
                                 <div class="wrapper">
-                                    <div>Maximum Agility</div>
-                                    <img src={iconAgility} alt="agility" />
+                                    <div>Máxima Agilidade</div>
+                                    <img class="icon"src={iconAgility} alt="agility" />
                                 </div>
                             </div>
                             <img class="large" src={imageIfs03Top} alt="IFS03" />
                             <div class="column">
                                 <div class="wrapper">
-                                    <img src={iconChassis} alt="chassis" />
-                                    <div>Tubular Space Frame Chassis</div>
+                                    <img class="icon"src={iconChassis} alt="chassis" />
+                                    <div>Chassis Tubular</div>
                                 </div>
                                 <div class="wrapper">
-                                    <img src={iconBody} alt="body" />
-                                    <div>Carbon Fiber Body</div>
+                                    <img class="icon"src={iconBody} alt="body" />
+                                    <div>Body em Fibra de Carbono</div>
                                 </div>
                                 <div class="wrapper">
-                                    <img src={iconSuspension} alt="suspension" />
-                                    <div>Pneumatic Suspension</div>
+                                    <img class="icon"src={iconSuspension} alt="suspension" />
+                                    <div>Suspensão Pneumática</div>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@ export default class Ifs03En extends Component {
                         <img src={imageDrivetrain} alt="IFS03 drivetrain" />
                         <div class="column">
                             <div class="wrapper">
-                                <div class="detail">POWER</div>
+                                <div class="detail">POTÊNCIA</div>
                                 <div class="text">80 kW (107 cv)</div>
                             </div>
                             <div class="wrapper">
@@ -90,7 +90,7 @@ export default class Ifs03En extends Component {
                     <div class="product right">
                         <div class="column">
                             <div class="wrapper">
-                                <div class="detail">WEIGHT</div>
+                                <div class="detail">PESO</div>
                                 <div class="text">230 kg</div>
                             </div>
                             <div class="wrapper">
