@@ -6,9 +6,6 @@ import ptIcon from '../icons/pt.svg'
 import menuIcon from '../icons/menu.svg'
 
 export default class Header extends Component {
-    handleScroll = () => {
-
-    }
 
     toggleMenu() {
         if (document.getElementById("navbar_menu").className === "") {
@@ -41,7 +38,7 @@ export default class Header extends Component {
 
                 <div id="navbar_menu">
                     <Link to="/en/about_us">ABOUT US&nbsp;</Link>
-                    <Link to="/en/ifs03"><span>IFS03</span></Link>
+                    <Link to="/en/ifs03">IFS03</Link>
                     <Link to="/en/sponsors">SPONSORS&nbsp;</Link>
                     <Link to="/en/contacts">CONTACTS&nbsp;</Link>
                 </div>

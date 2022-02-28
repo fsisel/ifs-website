@@ -6,7 +6,7 @@ import enIcon from '../icons/en.svg'
 import menuIcon from '../icons/menu.svg'
 
 export default class Header extends Component {
-
+    
     toggleMenu() {
         if (document.getElementById("navbar_menu").className === "") {
             document.getElementById("navbar_menu").className = "open"

@@ -232,6 +232,7 @@ a.parallelogram:hover .text {
   display: block;
   margin-top: 0;
   flex-direction: row;
+  padding-right: 0.08em;
 }
 
 #navbar_menu a {
