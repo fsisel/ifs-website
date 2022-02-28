@@ -10,7 +10,7 @@ import ifs01_1 from '../images/ifs01_1.webp'
 import ifs01_2 from '../images/ifs01_2.webp'
 import ifs02_1 from '../images/ifs02_1.webp'
 import ifs02_2 from '../images/ifs02_2.webp'
-import ifs03Front from '../images/ifs03_front.png'
+import ifs03Front from '../images/ifs03_front_whitebg.png'
 
 export default class Homepage extends Component {
 
@@ -109,7 +109,10 @@ export default class Homepage extends Component {
                                 <div className="detail">NOVO</div>
                                 <div className="text">IFS03</div>
                             </div>
-                            <div className="detail">BREVEMENTE</div>
+                            <Link to="/pt/ifs03" className="parallelogram center">
+                                <div className="orange_detail"></div>
+                                <div className="text">SABE MAIS</div>
+                            </Link>
                         </div>
                     </div>
 
