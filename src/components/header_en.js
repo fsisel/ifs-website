@@ -18,11 +18,24 @@ export default class Header extends Component {
         }
     }
 
+    handleLanguageChange() {
+        let splitPath = window.location.pathname.split('/');
+        let string = "/pt";
+
+        for (let i = 2; i < splitPath.length; i++)
+            string += '/' + splitPath[i];
+
+        return string;
+    }
+
     render() {
+
         return (
             <div id="navbar">
                 <div id="navbar_header">
-                    <Link className="logo" to="/en"><img src={logo} alt="ISEL Formula Student" /></Link>
+                    <Link className="logo" to="/en">
+                        <img src={logo} alt="ISEL Formula Student" />
+                    </Link>
                     <span></span>
                     <Link id="responsive_navbar_language" to="/pt" title="Português">
                         <img className="flag_icon" src={ptIcon} alt="Portuguese" />
@@ -43,7 +56,7 @@ export default class Header extends Component {
                     <Link to="/en/contacts">CONTACTS&nbsp;</Link>
                 </div>
 
-                <Link id="navbar_language" to="/pt" title="Português">
+                <Link id="navbar_language" to={this.handleLanguageChange} title="Português">
                     <img className="flag_icon" src={ptIcon} alt="Portuguese" />
                 </Link>
             </div>

@@ -6,7 +6,7 @@ import enIcon from '../icons/en.svg'
 import menuIcon from '../icons/menu.svg'
 
 export default class Header extends Component {
-    
+
     toggleMenu() {
         if (document.getElementById("navbar_menu").className === "") {
             document.getElementById("navbar_menu").className = "open"
@@ -18,11 +18,24 @@ export default class Header extends Component {
         }
     }
 
+    handleLanguageChange() {
+        let splitPath = window.location.pathname.split('/');
+        let string = "/en";
+
+        for (let i = 2; i < splitPath.length; i++)
+            string += '/' + splitPath[i];
+
+        return string;
+    }
+
     render() {
+
         return (
             <div id="navbar">
                 <div id="navbar_header">
-                    <Link className="logo" to="/pt"><img src={logo} alt="ISEL Formula Student" /></Link>
+                    <Link className="logo" to="/pt">
+                        <img src={logo} alt="ISEL Formula Student" />
+                    </Link>
                     <span></span>
                     <Link id="responsive_navbar_language" to="/en" title="English">
                         <img className="flag_icon" src={enIcon} alt="English" />
@@ -43,7 +56,7 @@ export default class Header extends Component {
                     <Link to="/pt/contacts">CONTACTOS&nbsp;</Link>
                 </div>
 
-                <Link id="navbar_language" to="/en" title="English">
+                <Link id="navbar_language" to={this.handleLanguageChange} title="English">
                     <img className="flag_icon" src={enIcon} alt="English" />
                 </Link>
             </div>
