@@ -24,7 +24,7 @@ export default class Homepage extends Component {
     }
 
     handleScroll = () => {
-        if (window.location.pathname === "/en") {
+        if (window.location.pathname === "/en" || window.location.pathname === "/") {
             if (document.body.clientWidth > 750) {
                 if (window.scrollY > 180) {
                     document.getElementById("navbar").style.top = "0"
