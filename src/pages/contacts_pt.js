@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import Header from '../components/header_pt'
 import Footer from '../components/footer_pt'
 
@@ -13,9 +14,9 @@ export default class ContactsEn extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          lng: -9.117035,
-          lat: 38.755914,
-          zoom: 13.3
+            lng: -9.117035,
+            lat: 38.755914,
+            zoom: 13.3
         };
         this.mapContainer = React.createRef();
     }
@@ -23,52 +24,52 @@ export default class ContactsEn extends Component {
     componentDidMount() {
         const { lng, lat, zoom } = this.state;
         const map = new mapboxgl.Map({
-          container: this.mapContainer.current,
-          style: 'mapbox://styles/mapbox/streets-v11',
-          center: [lng, lat],
-          zoom: zoom
+            container: this.mapContainer.current,
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [lng, lat],
+            zoom: zoom
         });
 
         map.addControl(new mapboxgl.NavigationControl());
         map.scrollZoom.disable();
 
         new mapboxgl.Marker({ color: '#ff5500', rotation: 360 })
-        .setLngLat([-9.117035, 38.755914])
-        .addTo(map);
+            .setLngLat([-9.117035, 38.755914])
+            .addTo(map);
     }
 
     render() {
         return (
             <div>
 
-            <Header/>
+                <Header />
 
-            <img class="cover" src={imageFspt} alt="IFS and FST" />
+                <img className="cover" src={imageFspt} alt="IFS and FST" />
 
-            <article>
-                <h1>CONTACTOS</h1>
+                <article>
+                    <h1>CONTACTOS</h1>
 
-                <div class="container">
-                    <div class="text_wrapper">
-                        <h2>Email</h2>
-                        <p><a class="link" href="mailto:formulastudent@isel.pt">formulastudent@isel.pt</a></p>
+                    <div className="container">
+                        <div className="text_wrapper">
+                            <h2>Email</h2>
+                            <p><a className="link" href="mailto:formulastudent@isel.pt">formulastudent@isel.pt</a></p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="container">
-                    <div class="text_wrapper">
-                        <h2>Onde Estamos</h2>
-                        <p>Rua Conselheiro Emídio Navarro Nº1, ADEM M0.32<br/>1959-007 Lisboa</p>
+                    <div className="container">
+                        <div className="text_wrapper">
+                            <h2>Onde Estamos</h2>
+                            <p>Rua Conselheiro Emídio Navarro Nº1, ADEM M0.32<br />1959-007 Lisboa</p>
+                        </div>
+                        <div id='map' ref={this.mapContainer} className="map-container"></div>
                     </div>
-                    <div id='map' ref={this.mapContainer} className="map-container"></div>
-                </div>
 
-            </article>
+                </article>
 
-            <Footer/>
+                <Footer />
 
             </div>
         )
     }
-    
+
 }
