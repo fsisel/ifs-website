@@ -29,7 +29,7 @@ export default class Form extends Component {
         <div class="text_wrapper">
           <h2>Contact us</h2>
 
-          <form name="contact" onSubmit={this.handleSubmit}>
+          <form name="contact" method="post" netlify>
             <input
               placeholder="Name"
               class="input"
@@ -60,7 +60,7 @@ export default class Form extends Component {
               value={this.state.message}
               onChange={this.handleChange}
             />
-
+            <div data-netlify-recaptcha="true"></div>
             <button type="submit">
               <a href="javascript:void(0);" class="parallelogram center">
                 <div class="orange_detail"></div>
