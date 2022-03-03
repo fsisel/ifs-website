@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from '../components/header_en'
 import Footer from '../components/footer_en'
+import Form from '../components/form_en'
 
 import imageFspt from '../images/fspt.webp'
 
@@ -63,6 +64,8 @@ export default class ContactsEn extends Component {
                     <div id='map' ref={this.mapContainer} className="map-container"></div>
                 </div>
 
+                <Form/>
+            
             </article>
 
             <Footer/>

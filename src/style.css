@@ -591,8 +591,10 @@ form {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 30em;
   font-size: 0.9em;
   align-items: stretch;
+  margin-top: 1.5em;
 }
 
 .input, textarea {
@@ -612,7 +614,7 @@ form {
   box-sizing: border-box;
   padding: 0.5em;
   border-bottom: 0.2em solid #bbb;
-  font-size: inherit;
+  font: inherit;
   transition: 200ms;
 }
 
@@ -625,6 +627,7 @@ form {
 textarea {
   width: 100%;
   max-width: 30em;
+  height: 10em;
   margin: 1em 0;
   padding: 0.5em;
   border: 0.2em solid #bbb;
@@ -634,7 +637,7 @@ textarea {
   box-sizing: border-box;
   resize: none;
   transition: 200ms;
-  font-size: inherit;
+  font: inherit;
 }
 
 textarea:focus {
@@ -652,6 +655,11 @@ textarea:focus {
   font-size: 0.8em;
 }
 
+button[type=submit]{
+  all: initial;
+  display: flex;
+  font-family: inherit;
+}
 
 /* ########## MAP ########## */
 
