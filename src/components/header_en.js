@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import logo from '../logos/ifs_icon_dark.svg'
 import ptIcon from '../icons/pt.svg'
@@ -17,33 +18,47 @@ export default class Header extends Component {
         }
     }
 
+    handleLanguageChange() {
+        let splitPath = window.location.pathname.split('/');
+        let string = "/pt";
+
+        for (let i = 2; i < splitPath.length; i++)
+            string += '/' + splitPath[i];
+
+        return string;
+    }
+
     render() {
+
         return (
             <div id="navbar">
                 <div id="navbar_header">
-                    <a class="logo" href="/en"><img src={ logo } alt="ISEL Formula Student"/></a>
+                    <Link className="logo" to="/en">
+                        <img src={logo} alt="ISEL Formula Student" />
+                    </Link>
                     <span></span>
-                    <a id="responsive_navbar_language" href="/pt" title="Português">
-                        <img class="flag_icon" src={ ptIcon } alt="Portuguese" />
-                    </a>
+                    <Link id="responsive_navbar_language" to="/pt" title="Português">
+                        <img className="flag_icon" src={ptIcon} alt="Portuguese" />
+                    </Link>
                     <button id="menu_button" onClick={this.toggleMenu}>
                         MENU
-                        <img src={ menuIcon } alt="Menu" />
+                        <img src={menuIcon} alt="Menu" />
                     </button>
                 </div>
 
 
                 <span></span>
-                
+
                 <div id="navbar_menu">
-                    <a href="/en/about_us">ABOUT US&nbsp;</a>
-                    <a href="/en/sponsors">SPONSORS&nbsp;</a>
-                    <a href="/en/contacts">CONTACTS&nbsp;</a>
+                    <Link to="/en/about_us">ABOUT US&nbsp;</Link>
+                    <Link to="/en/ifs03">IFS03</Link>
+                    <Link to="/en/sponsors">SPONSORS&nbsp;</Link>
+                    <Link to="/en/contacts">CONTACTS&nbsp;</Link>
                 </div>
 
-                <a id="navbar_language" href="/pt" title="Português">
-                    <img class="flag_icon" src={ ptIcon } alt="Portuguese" />
-                </a>
+                <Link id="navbar_language" to={this.handleLanguageChange} title="Português">
+                    <img className="flag_icon" src={ptIcon} alt="Portuguese" />
+                </Link>
             </div>
         )
     }
