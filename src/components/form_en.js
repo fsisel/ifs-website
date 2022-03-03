@@ -8,13 +8,13 @@ export default class Form extends Component {
         <div class="text_wrapper">
           <h2>Contact us</h2>
 
-          <form name="contact" method="post"  data-netlify-recaptcha="true" data-netlify="true">
-            <input
-              placeholder="Name"
-              class="input"
-              name="name"
-              type="text"
-            />
+          <form
+            name="contact"
+            method="post"
+            data-netlify-recaptcha="true"
+            data-netlify="true"
+          >
+            <input placeholder="Name" class="input" name="name" type="text" />
             <input
               placeholder="Email"
               class="input"
@@ -27,13 +27,9 @@ export default class Form extends Component {
               name="subject"
               type="text"
             />
-            <textarea
-              placeholder="Message"
-              name="message"
-            >
-            </textarea>
+            <textarea placeholder="Message" name="message"></textarea>
             <div data-netlify-recaptcha="true"></div>
-            
+
             <button type="submit">
               <a href="javascript:void(0);" class="parallelogram center">
                 <div class="orange_detail"></div>
