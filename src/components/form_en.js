@@ -11,8 +11,6 @@ export default class Form extends Component {
           <form
             name="contact"
             method="post"
-            data-netlify-recaptcha="true"
-            data-netlify="true"
           >
             <input placeholder="Name" class="input" name="name" type="text" />
             <input
@@ -28,7 +26,6 @@ export default class Form extends Component {
               type="text"
             />
             <textarea placeholder="Message" name="message"></textarea>
-            <div data-netlify-recaptcha="true"></div>
 
             <button type="submit">
               <a href="javascript:void(0);" class="parallelogram center">
