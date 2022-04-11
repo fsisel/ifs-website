@@ -110,10 +110,12 @@ export default class Homepage extends Component {
                                 <div className="detail">NEW</div>
                                 <div className="text">IFS03</div>
                             </div>
-                            <Link to="/en/ifs03" className="parallelogram center">
-                                <div className="orange_detail"></div>
-                                <div className="text">CHECK IT OUT</div>
-                            </Link>
+                            <div>
+                                <Link to="/en/ifs03" className="parallelogram center">
+                                    <div className="orange_detail"></div>
+                                    <div className="text">CHECK IT OUT</div>
+                                </Link>
+                            </div>
                         </div>
                     </div>
 
