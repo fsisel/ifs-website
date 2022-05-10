@@ -72,7 +72,6 @@ export default class SponsorsEn extends Component {
                         </div>
 
                         <div className="separator"></div>
-                        <div className="separator"></div>
 
                         <div className="sponsors silver">
                             <a href="https://www.3d-iso.pt" target="_blank" rel="noreferrer"><img src={sponsor3dIso} alt="3DISO" /></a>
