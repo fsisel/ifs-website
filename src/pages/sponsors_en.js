@@ -50,18 +50,18 @@ export default class SponsorsEn extends Component {
 
                         <div className="sponsors platinum">
                             <a href="https://www.isel.pt" target="_blank" rel="noreferrer"><img src={sponsorIsel} alt="ISEL" /></a>
-                            <a href="https://www.ipl.pt" target="_blank" rel="noreferrer"><img src={sponsorIpl} alt="IPL" /></a>
+                            <a href="https://www.ipl.pt" target="_blank" rel="noreferrer"><img src={sponsorIpl} style={{ width: 400 }} alt="IPL" /></a>
                         </div>
                         <div className="sponsors platinum">
                             <a href="https://grupometal.com" target="_blank" rel="noreferrer"><img src={sponsorGrupoMetal} alt="Grupo Metal" /></a>
-                            <a href="https://www.infusao.pt" target="_blank" rel="noreferrer"><img src={sponsorInfusao} alt="Infusão" style={{width: 450}}/></a>
-                            <a href="https://www.logoplaste.com" target="_blank" rel="noreferrer" ><img src={sponsorLogoplaste} alt="Logoplaste" style={{width: 450}}/></a>
+                            <a href="https://www.infusao.pt" target="_blank" rel="noreferrer"><img src={sponsorInfusao} alt="Infusão" style={{ width: 450 }} /></a>
+                            <a href="https://www.logoplaste.com" target="_blank" rel="noreferrer" ><img src={sponsorLogoplaste} alt="Logoplaste" style={{ width: 450 }} /></a>
                         </div>
 
                         <div className="separator"></div>
 
                         <div className="sponsors gold">
-                            <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{width: 320}}/></a>
+                            <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{ width: 320 }} /></a>
                             <a href="https://shop.berner.eu" target="_blank" rel="noreferrer"><img src={sponsorBerner} alt="Berner" /></a>
                             <a href="http://www.tsf-trofa.com" target="_blank" rel="noreferrer"><img src={sponsorTsf} alt="TSF" /></a>
                             <a href="https://www.codi.pt" target="_blank" rel="noreferrer"><img src={sponsorCodi} alt="CODI" /></a>
@@ -75,16 +75,16 @@ export default class SponsorsEn extends Component {
 
                         <div className="sponsors silver">
                             <a href="https://www.3d-iso.pt" target="_blank" rel="noreferrer"><img src={sponsor3dIso} alt="3DISO" /></a>
-                            <a href="" target="_blank" rel="noreferrer"><img src={sponsorMaquitorno} alt="Maquitorno" /></a>
+                            <a href="/en/sponsors"><img src={sponsorMaquitorno} alt="Maquitorno" /></a>
                             <a href="http://www.arsenal-alfeite.pt" target="_blank" rel="noreferrer"><img src={sponsorArsenalDoAlfeite} alt="Arsenal do Alfeite" /></a>
                             <a href="http://www.mjbranco.pt" target="_blank" rel="noreferrer"><img src={sponsorMjbranco} alt="MJBranco" /></a>
                             <a href="https://www.farmi.pt" target="_blank" rel="noreferrer"><img src={sponsorFarmi} alt="Farmi" /></a>
-                            <a href="https://norelem.es" target="_blank"    rel="noreferrer"><img src={sponsorNorelem} alt="Norelem" /></a>
+                            <a href="https://norelem.es" target="_blank" rel="noreferrer"><img src={sponsorNorelem} alt="Norelem" /></a>
                             <a href="http://www.natrater.pt" target="_blank" rel="noreferrer"><img src={sponsorNatrater} alt="Natrater" /></a>
                             <a href="https://deconorma.com" target="_blank" rel="noreferrer"><img src={sponsorDeconorma} alt="Deconorma" /></a>
                             <a href="https://www.eurocircuits.com" target="_blank" rel="noreferrer"><img src={sponsorEuroCircuits} alt="Eurocircuits" /></a>
-                            <a href="https://www.ramada.pt" target="_blank" rel="noreferrer"><img src={sponsorRamadaAcos} alt="Ramada Aços" style={{width: 250}}/></a>
-                            <a href="https://eurocorreias.pt" target="_blank" rel="noreferrer"><img src={sponsorEurocorreias} alt="Eurocorreias" style={{width: 250}}/></a>
+                            <a href="https://www.ramada.pt" target="_blank" rel="noreferrer"><img src={sponsorRamadaAcos} alt="Ramada Aços" style={{ width: 250 }} /></a>
+                            <a href="https://eurocorreias.pt" target="_blank" rel="noreferrer"><img src={sponsorEurocorreias} alt="Eurocorreias" style={{ width: 250 }} /></a>
                         </div>
 
                         <div className="separator"></div>
