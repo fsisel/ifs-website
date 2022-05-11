@@ -5,7 +5,7 @@ import logo from '../logos/ifs_icon_dark.svg'
 import ptIcon from '../icons/pt.svg'
 import menuIcon from '../icons/menu.svg'
 
-export default class Header extends Component {
+export default class HeaderEn extends Component {
 
     toggleMenu() {
         if (document.getElementById("navbar_menu").className === "") {
@@ -20,12 +20,7 @@ export default class Header extends Component {
 
     handleLanguageChange() {
         let splitPath = window.location.pathname.split('/');
-        let string = "/pt";
-
-        for (let i = 2; i < splitPath.length; i++)
-            string += '/' + splitPath[i];
-
-        return string;
+        return "/pt/" + splitPath.slice(2, splitPath.length).join("/");
     }
 
     render() {

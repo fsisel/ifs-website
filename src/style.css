@@ -563,26 +563,31 @@ a.parallelogram:hover .text {
   height: auto;
 }
 
-.sponsors.gold img {
+.sponsors.platinum img {
   width: 15em;
   margin: 3em;
 }
 
-.sponsors.silver img {
+.sponsors.gold img {
   width: 10em;
   margin: 2em;
 }
 
-.sponsors.bronze img {
+.sponsors.silver img {
   width: 9em;
   margin: 1.7em;
 }
 
+.sponsors.bronze img {
+  width: 8em;
+  margin: 1.5em;
+}
+
 #sponsor_grid .separator {
-  height: 0.05em;
+  height: 0.06em;
   width: 100%;
   background-color: #f50;
-  margin: 1em 0;
+  margin: 1.5em 0;
 }
 
 

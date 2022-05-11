@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from '../components/header_pt'
 import Footer from '../components/footer_pt'
 
-export default class PrivacyPolicyEn extends Component {
+export default class PrivacyPolicyPt extends Component {
 
     render() {
         return (
