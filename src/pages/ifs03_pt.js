@@ -18,7 +18,7 @@ import iconSuspension from '../icons/suspension.svg'
 import imageDrivetrain from '../images/drivetrain.png'
 import imageIfs03Back from '../images/ifs03_back.png'
 
-export default class Ifs03Pt extends Component {
+export default class Ifs03En extends Component {
 
     render() {
         return (

@@ -9,7 +9,7 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaXNlbGZzIiwiYSI6ImNrcTJ1aHdhcjBmYWEydWthNTBjOG1ob3AifQ.zVNe8iCDYzIyxv-dH3lGTQ';
 
-export default class ContactsPt extends Component {
+export default class ContactsEn extends Component {
 
     constructor(props) {
         super(props);

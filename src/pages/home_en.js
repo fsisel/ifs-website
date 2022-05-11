@@ -12,7 +12,7 @@ import ifs02_1 from '../images/ifs02_1.webp'
 import ifs02_2 from '../images/ifs02_2.webp'
 import ifs03Front from '../images/ifs03_front_whitebg.png'
 
-export default class HomepageEn extends Component {
+export default class Homepage extends Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll, true);
