@@ -26,7 +26,7 @@ import sponsorSymetria from '../sponsor_logos/symetria.png';
 import sponsorTeConnectivity from '../sponsor_logos/te_connectivity.svg';
 import sponsorTsf from '../sponsor_logos/tsf.svg';
 import sponsorCubotonic from '../sponsor_logos/cubotonic.png';
-import sponsorInfusao from '../sponsor_logos/infusao.png';
+import sponsorInfusao from '../sponsor_logos/infusao.svg';
 import sponsorLeomavel from '../sponsor_logos/leomavel.png';
 import sponsorReiman from '../sponsor_logos/reiman.jpg';
 import sponsorMaquitorno from '../sponsor_logos/maquitorno.png';
@@ -50,18 +50,18 @@ export default class SponsorsPt extends Component {
 
                         <div className="sponsors platinum">
                             <a href="https://www.isel.pt" target="_blank" rel="noreferrer"><img src={sponsorIsel} alt="ISEL" /></a>
-                            <a href="https://www.ipl.pt" target="_blank" rel="noreferrer"><img src={sponsorIpl} style={{ width: 400 }} alt="IPL" /></a>
+                            <a href="https://www.ipl.pt" target="_blank" rel="noreferrer"><img src={sponsorIpl} alt="IPL" style={{width:300}}/></a>
                         </div>
                         <div className="sponsors platinum">
                             <a href="https://grupometal.com" target="_blank" rel="noreferrer"><img src={sponsorGrupoMetal} alt="Grupo Metal" /></a>
-                            <a href="https://www.infusao.pt" target="_blank" rel="noreferrer"><img src={sponsorInfusao} alt="Infusão" style={{ width: 450 }} /></a>
-                            <a href="https://www.logoplaste.com" target="_blank" rel="noreferrer" ><img src={sponsorLogoplaste} alt="Logoplaste" style={{ width: 450 }} /></a>
+                            <a href="https://www.infusao.pt" target="_blank" rel="noreferrer"><img src={sponsorInfusao} alt="Infusão" style={{width:300}}/></a>
+                            <a href="https://www.logoplaste.com" target="_blank" rel="noreferrer" ><img src={sponsorLogoplaste} alt="Logoplaste" style={{width:300}}/></a>
                         </div>
 
                         <div className="separator"></div>
 
                         <div className="sponsors gold">
-                            <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{ width: 320 }} /></a>
+                            <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{width:200}}/></a>
                             <a href="https://shop.berner.eu" target="_blank" rel="noreferrer"><img src={sponsorBerner} alt="Berner" /></a>
                             <a href="http://www.tsf-trofa.com" target="_blank" rel="noreferrer"><img src={sponsorTsf} alt="TSF" /></a>
                             <a href="https://www.codi.pt" target="_blank" rel="noreferrer"><img src={sponsorCodi} alt="CODI" /></a>
@@ -83,8 +83,8 @@ export default class SponsorsPt extends Component {
                             <a href="http://www.natrater.pt" target="_blank" rel="noreferrer"><img src={sponsorNatrater} alt="Natrater" /></a>
                             <a href="https://deconorma.com" target="_blank" rel="noreferrer"><img src={sponsorDeconorma} alt="Deconorma" /></a>
                             <a href="https://www.eurocircuits.com" target="_blank" rel="noreferrer"><img src={sponsorEuroCircuits} alt="Eurocircuits" /></a>
-                            <a href="https://www.ramada.pt" target="_blank" rel="noreferrer"><img src={sponsorRamadaAcos} alt="Ramada Aços" style={{ width: 250 }} /></a>
-                            <a href="https://eurocorreias.pt" target="_blank" rel="noreferrer"><img src={sponsorEurocorreias} alt="Eurocorreias" style={{ width: 250 }} /></a>
+                            <a href="https://www.ramada.pt" target="_blank" rel="noreferrer"><img src={sponsorRamadaAcos} alt="Ramada Aços" style={{width:200}}/></a>
+                            <a href="https://eurocorreias.pt" target="_blank" rel="noreferrer"><img src={sponsorEurocorreias} alt="Eurocorreias" style={{width:200}}/></a>
                         </div>
 
                         <div className="separator"></div>
