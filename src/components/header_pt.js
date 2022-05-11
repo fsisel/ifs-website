@@ -20,7 +20,12 @@ export default class Header extends Component {
 
     handleLanguageChange() {
         let splitPath = window.location.pathname.split('/');
-        return "/en/" + splitPath.slice(2, splitPath.length).join("/");
+        let string = "/en";
+
+        for (let i = 2; i < splitPath.length; i++)
+            string += '/' + splitPath[i];
+
+        return string;
     }
 
     render() {
