@@ -33,7 +33,7 @@ import sponsorMaquitorno from '../sponsor_logos/maquitorno.png';
 import sponsorNorelem from '../sponsor_logos/norelem.png';
 import sponsorAeisel from '../sponsor_logos/aeisel.png';
 
-export default class SponsorsEn extends Component {
+export default class SponsorsPt extends Component {
 
     render() {
         return (

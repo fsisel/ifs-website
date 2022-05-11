@@ -7,7 +7,7 @@ import imageIfsTeam from '../images/ifs_team.webp'
 import imageIfs02_1 from '../images/ifs02_1.webp'
 import imageFsg_teams from '../images/fsg_teams.webp'
 
-export default class AboutUsEn extends Component {
+export default class AboutUsPt extends Component {
 
     render() {
         return (
