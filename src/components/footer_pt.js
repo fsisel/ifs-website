@@ -5,7 +5,7 @@ import linkedinIcon from '../icons/linkedin.svg'
 import instagramIcon from '../icons/instagram.svg'
 import facebookIcon from '../icons/facebook.svg'
 
-export default class Footer extends Component {
+export default class FooterPt extends Component {
 
     componentDidMount() {
         new Date().getFullYear()
