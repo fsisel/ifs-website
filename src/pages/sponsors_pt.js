@@ -32,6 +32,8 @@ import sponsorReiman from '../sponsor_logos/reiman.jpg';
 import sponsorMaquitorno from '../sponsor_logos/maquitorno.png';
 import sponsorNorelem from '../sponsor_logos/norelem.png';
 import sponsorAeisel from '../sponsor_logos/aeisel.png';
+import sponsorJuncor from '../sponsor_logos/juncor.svg';
+import sponsorEsferovite from '../sponsor_logos/esferovite.jpg';
 
 export default class SponsorsPt extends Component {
 
@@ -59,23 +61,25 @@ export default class SponsorsPt extends Component {
                         <div className="separator"></div>
 
                         <div className="sponsors gold">
-                            <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{ width: 200 }} /></a>
+                            <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{ width: 225 }} /></a>
                             <a href="https://shop.berner.eu" target="_blank" rel="noreferrer"><img src={sponsorBerner} alt="Berner" /></a>
                             <a href="http://www.tsf-trofa.com" target="_blank" rel="noreferrer"><img src={sponsorTsf} alt="TSF" /></a>
                             <a href="https://www.codi.pt" target="_blank" rel="noreferrer"><img src={sponsorCodi} alt="CODI" /></a>
                             <a href="http://leomavel.pt" target="_blank" rel="noreferrer"><img src={sponsorLeomavel} alt="Leomavel Moldes" /></a>
                             <a href="https://reiman.pt" target="_blank" rel="noreferrer"><img src={sponsorReiman} alt="Reiman" /></a>
                             <a href="https://www.te.com" target="_blank" rel="noreferrer"><img src={sponsorTeConnectivity} alt="TE Connectivity" /></a>
-                            <a href="https://symetria.pt" target="_blank" rel="noreferrer"><img src={sponsorSymetria} alt="Symetria" /></a>
                         </div>
 
                         <div className="separator"></div>
 
                         <div className="sponsors silver">
-                            <a href="https://www.3d-iso.pt" target="_blank" rel="noreferrer"><img src={sponsor3dIso} alt="3DISO" /></a>
+                            <a href="https://www.juncor.pt" target="_blank" rel="noreferrer"><img src={sponsorJuncor} alt="Juncor" /></a>
+                            <a href="https://symetria.pt" target="_blank" rel="noreferrer"><img src={sponsorSymetria} alt="Symetria" /></a>
                             <a href="/en/sponsors"><img src={sponsorMaquitorno} alt="Maquitorno" /></a>
+                            <a href="https://www.3d-iso.pt" target="_blank" rel="noreferrer"><img src={sponsor3dIso} alt="3DISO" /></a>
                             <a href="http://www.arsenal-alfeite.pt" target="_blank" rel="noreferrer"><img src={sponsorArsenalDoAlfeite} alt="Arsenal do Alfeite" /></a>
                             <a href="http://www.mjbranco.pt" target="_blank" rel="noreferrer"><img src={sponsorMjbranco} alt="MJBranco" /></a>
+                            <a href="https://www.esferovite.pt" target="_blank" rel="noreferrer"><img src={sponsorEsferovite} alt="Esferovite" style={{ width: 200 }} /></a>
                             <a href="https://www.farmi.pt" target="_blank" rel="noreferrer"><img src={sponsorFarmi} alt="Farmi" /></a>
                             <a href="https://norelem.es" target="_blank" rel="noreferrer"><img src={sponsorNorelem} alt="Norelem" /></a>
                             <a href="http://www.natrater.pt" target="_blank" rel="noreferrer"><img src={sponsorNatrater} alt="Natrater" /></a>
