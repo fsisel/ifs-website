@@ -61,7 +61,7 @@ export default class SponsorsPt extends Component {
                         <div className="separator"></div>
 
                         <div className="sponsors gold">
-                            <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{ width: 200 }} /></a>
+                            <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{ width: 225 }} /></a>
                             <a href="https://shop.berner.eu" target="_blank" rel="noreferrer"><img src={sponsorBerner} alt="Berner" /></a>
                             <a href="http://www.tsf-trofa.com" target="_blank" rel="noreferrer"><img src={sponsorTsf} alt="TSF" /></a>
                             <a href="https://www.codi.pt" target="_blank" rel="noreferrer"><img src={sponsorCodi} alt="CODI" /></a>
@@ -79,7 +79,7 @@ export default class SponsorsPt extends Component {
                             <a href="https://www.3d-iso.pt" target="_blank" rel="noreferrer"><img src={sponsor3dIso} alt="3DISO" /></a>
                             <a href="http://www.arsenal-alfeite.pt" target="_blank" rel="noreferrer"><img src={sponsorArsenalDoAlfeite} alt="Arsenal do Alfeite" /></a>
                             <a href="http://www.mjbranco.pt" target="_blank" rel="noreferrer"><img src={sponsorMjbranco} alt="MJBranco" /></a>
-                            <a href="https://www.esferovite.pt" target="_blank" rel="noreferrer"><img src={sponsorEsferovite} alt="Esferovite" style={{ width: 200 }}/></a>
+                            <a href="https://www.esferovite.pt" target="_blank" rel="noreferrer"><img src={sponsorEsferovite} alt="Esferovite" style={{ width: 200 }} /></a>
                             <a href="https://www.farmi.pt" target="_blank" rel="noreferrer"><img src={sponsorFarmi} alt="Farmi" /></a>
                             <a href="https://norelem.es" target="_blank" rel="noreferrer"><img src={sponsorNorelem} alt="Norelem" /></a>
                             <a href="http://www.natrater.pt" target="_blank" rel="noreferrer"><img src={sponsorNatrater} alt="Natrater" /></a>
