@@ -34,6 +34,7 @@ import sponsorNorelem from '../sponsor_logos/norelem.png';
 import sponsorAeisel from '../sponsor_logos/aeisel.png';
 import sponsorJuncor from '../sponsor_logos/juncor.svg';
 import sponsorEsferovite from '../sponsor_logos/esferovite.jpg';
+import sponsorEasyComposites from '../sponsor_logos/easy_composites.jpg';
 
 export default class SponsorsEn extends Component {
 
@@ -92,10 +93,11 @@ export default class SponsorsEn extends Component {
                         <div className="separator"></div>
 
                         <div className="sponsors bronze">
+                            <a href="http://linoefilhos.pt" target="_blank" rel="noreferrer"><img src={sponsorCarpintariaLinoEFilhos} alt="Carpintaria Lino e Filhos" /></a>
                             <a href="https://www.bender.de" target="_blank" rel="noreferrer"><img src={sponsorBender} alt="Bender" /></a>
                             <a href="https://www.copisel.pt" target="_blank" rel="noreferrer"><img src={sponsorCopisel} alt="Copisel" /></a>
-                            <a href="http://linoefilhos.pt" target="_blank" rel="noreferrer"><img src={sponsorCarpintariaLinoEFilhos} alt="Carpintaria Lino e Filhos" /></a>
                             <a href="https://www.facebook.com/AEISEL.1984" target="_blank" rel="noreferrer"><img src={sponsorAeisel} alt="AEISEL" /></a>
+                            <a href="https://www.easycomposites.eu/" target="_blank" rel="noreferrer"><img src={sponsorEasyComposites} alt="EasyComposites" /></a>
                             <a href="https://www.solidworks.com" target="_blank" rel="noreferrer"><img src={sponsorSolidworks} alt="Solidworks" /></a>
                             <a href="https://www.altium.com" target="_blank" rel="noreferrer"><img src={sponsorAltium} alt="Altium" /></a>
                             <a href="https://www.ansys.com" target="_blank" rel="noreferrer"><img src={sponsorAnsys} alt="Ansys" /></a>
