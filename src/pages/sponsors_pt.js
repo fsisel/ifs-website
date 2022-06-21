@@ -35,6 +35,8 @@ import sponsorAeisel from '../sponsor_logos/aeisel.png';
 import sponsorJuncor from '../sponsor_logos/juncor.svg';
 import sponsorEsferovite from '../sponsor_logos/esferovite.jpg';
 import sponsorEasyComposites from '../sponsor_logos/easy_composites.jpg';
+import sponsorMilwaukee from '../sponsor_logos/milwaukee.svg';
+
 
 export default class SponsorsPt extends Component {
 
@@ -63,6 +65,7 @@ export default class SponsorsPt extends Component {
 
                         <div className="sponsors gold">
                             <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{ width: 225 }} /></a>
+                            <a href="https://www.milwaukeetool.eu" target="_blank" rel="noreferrer"><img src={sponsorMilwaukee} alt="Milwaukee" /></a>
                             <a href="https://shop.berner.eu" target="_blank" rel="noreferrer"><img src={sponsorBerner} alt="Berner" /></a>
                             <a href="http://www.tsf-trofa.com" target="_blank" rel="noreferrer"><img src={sponsorTsf} alt="TSF" /></a>
                             <a href="https://www.codi.pt" target="_blank" rel="noreferrer"><img src={sponsorCodi} alt="CODI" /></a>
