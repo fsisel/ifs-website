@@ -36,6 +36,7 @@ import sponsorJuncor from '../sponsor_logos/juncor.svg';
 import sponsorEsferovite from '../sponsor_logos/esferovite.jpg';
 import sponsorEasyComposites from '../sponsor_logos/easy_composites.jpg';
 import sponsorMilwaukee from '../sponsor_logos/milwaukee.svg';
+import sponsorVlMoldes from '../sponsor_logos/vl_moldes.png';
 
 
 export default class SponsorsPt extends Component {
@@ -70,6 +71,7 @@ export default class SponsorsPt extends Component {
                             <a href="http://www.tsf-trofa.com" target="_blank" rel="noreferrer"><img src={sponsorTsf} alt="TSF" /></a>
                             <a href="https://www.codi.pt" target="_blank" rel="noreferrer"><img src={sponsorCodi} alt="CODI" /></a>
                             <a href="http://leomavel.pt" target="_blank" rel="noreferrer"><img src={sponsorLeomavel} alt="Leomavel Moldes" /></a>
+                            <a href="https://www.vlmoldes.pt" target="_blank" rel="noreferrer"><img src={sponsorVlMoldes} alt="VL Moldes" style={{ width: 250 }} /></a>
                             <a href="https://reiman.pt" target="_blank" rel="noreferrer"><img src={sponsorReiman} alt="Reiman" /></a>
                             <a href="https://www.te.com" target="_blank" rel="noreferrer"><img src={sponsorTeConnectivity} alt="TE Connectivity" /></a>
                         </div>
