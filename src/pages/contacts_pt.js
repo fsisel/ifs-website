@@ -7,7 +7,7 @@ import imageFspt from '../images/fspt.webp'
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiaXNlbGZzIiwiYSI6ImNrcTJ1aHdhcjBmYWEydWthNTBjOG1ob3AifQ.zVNe8iCDYzIyxv-dH3lGTQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoiaXNlbGZzIiwiYSI6ImNsNTJzaDF6bjBpbXIzZHBwejR3dzMwM2UifQ.hv7AIVmJRq5o22Nm_pZIAw';
 
 export default class ContactsPt extends Component {
 
