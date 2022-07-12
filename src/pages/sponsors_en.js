@@ -32,7 +32,7 @@ import sponsorReiman from '../sponsor_logos/reiman.jpg';
 import sponsorMaquitorno from '../sponsor_logos/maquitorno.png';
 import sponsorNorelem from '../sponsor_logos/norelem.png';
 import sponsorAeisel from '../sponsor_logos/aeisel.png';
-import sponsorJuncor from '../sponsor_logos/juncor.svg';
+import sponsorTeclenaJuncor from '../sponsor_logos/teclenajuncor.png';
 import sponsorEsferovite from '../sponsor_logos/esferovite.jpg';
 import sponsorEasyComposites from '../sponsor_logos/easy_composites.jpg';
 import sponsorMilwaukee from '../sponsor_logos/milwaukee.svg';
@@ -79,7 +79,7 @@ export default class SponsorsEn extends Component {
                         <div className="separator"></div>
 
                         <div className="sponsors silver">
-                            <a href="https://www.juncor.pt" target="_blank" rel="noreferrer"><img src={sponsorJuncor} alt="Juncor" /></a>
+                            <a href="https://www.juncor.pt" target="_blank" rel="noreferrer"><img src={sponsorTeclenaJuncor} alt="Juncor" style={{ width: 200 }}/></a>
                             <a href="https://symetria.pt" target="_blank" rel="noreferrer"><img src={sponsorSymetria} alt="Symetria" /></a>
                             <a href="/en/sponsors"><img src={sponsorMaquitorno} alt="Maquitorno" /></a>
                             <a href="https://www.3d-iso.pt" target="_blank" rel="noreferrer"><img src={sponsor3dIso} alt="3DISO" /></a>
