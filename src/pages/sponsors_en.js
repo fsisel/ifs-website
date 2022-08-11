@@ -37,6 +37,8 @@ import sponsorEsferovite from '../sponsor_logos/esferovite.jpg';
 import sponsorEasyComposites from '../sponsor_logos/easy_composites.jpg';
 import sponsorMilwaukee from '../sponsor_logos/milwaukee.svg';
 import sponsorVlMoldes from '../sponsor_logos/vl_moldes.png';
+import sponsorAtomicShop from '../sponsor_logos/atomic_shop.svg';
+import sponsorPPC3D from '../sponsor_logos/ppc3d.png';
 
 
 export default class SponsorsEn extends Component {
@@ -71,6 +73,7 @@ export default class SponsorsEn extends Component {
                             <a href="http://www.tsf-trofa.com" target="_blank" rel="noreferrer"><img src={sponsorTsf} alt="TSF" /></a>
                             <a href="https://www.codi.pt" target="_blank" rel="noreferrer"><img src={sponsorCodi} alt="CODI" /></a>
                             <a href="http://leomavel.pt" target="_blank" rel="noreferrer"><img src={sponsorLeomavel} alt="Leomavel Moldes" /></a>
+                            <a href="https://www.ppc3d.com/" target="_blank" rel="noreferrer"><img src={sponsorPPC3D} alt="PPC3D" /></a>
                             <a href="https://www.vlmoldes.pt" target="_blank" rel="noreferrer"><img src={sponsorVlMoldes} alt="VL Moldes" style={{ width: 250 }} /></a>
                             <a href="https://reiman.pt" target="_blank" rel="noreferrer"><img src={sponsorReiman} alt="Reiman" /></a>
                             <a href="https://www.te.com" target="_blank" rel="noreferrer"><img src={sponsorTeConnectivity} alt="TE Connectivity" /></a>
@@ -102,6 +105,7 @@ export default class SponsorsEn extends Component {
                             <a href="https://www.bender.de" target="_blank" rel="noreferrer"><img src={sponsorBender} alt="Bender" /></a>
                             <a href="https://www.copisel.pt" target="_blank" rel="noreferrer"><img src={sponsorCopisel} alt="Copisel" /></a>
                             <a href="https://www.facebook.com/AEISEL.1984" target="_blank" rel="noreferrer"><img src={sponsorAeisel} alt="AEISEL" /></a>
+                            <a href="https://www.atomic-shop.pt/" target="_blank" rel="noreferrer"><img src={sponsorAtomicShop} alt="Atomic Shop" /></a>
                             <a href="https://www.easycomposites.eu/" target="_blank" rel="noreferrer"><img src={sponsorEasyComposites} alt="EasyComposites" /></a>
                             <a href="https://www.solidworks.com" target="_blank" rel="noreferrer"><img src={sponsorSolidworks} alt="Solidworks" /></a>
                             <a href="https://www.altium.com" target="_blank" rel="noreferrer"><img src={sponsorAltium} alt="Altium" /></a>
