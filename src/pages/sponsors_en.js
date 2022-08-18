@@ -28,7 +28,7 @@ import sponsorTsf from '../sponsor_logos/tsf.svg';
 import sponsorCubotonic from '../sponsor_logos/cubotonic.png';
 import sponsorInfusao from '../sponsor_logos/infusao.svg';
 import sponsorLeomavel from '../sponsor_logos/leomavel.png';
-import sponsorReiman from '../sponsor_logos/reiman.jpg';
+import sponsorReiman from '../sponsor_logos/reiman.svg';
 import sponsorMaquitorno from '../sponsor_logos/maquitorno.png';
 import sponsorNorelem from '../sponsor_logos/norelem.png';
 import sponsorAeisel from '../sponsor_logos/aeisel.png';
@@ -36,9 +36,10 @@ import sponsorTeclenaJuncor from '../sponsor_logos/teclenajuncor.png';
 import sponsorEsferovite from '../sponsor_logos/esferovite.jpg';
 import sponsorEasyComposites from '../sponsor_logos/easy_composites.jpg';
 import sponsorMilwaukee from '../sponsor_logos/milwaukee.svg';
-import sponsorVlMoldes from '../sponsor_logos/vl_moldes.png';
+import sponsorVlMoldes from '../sponsor_logos/vl_moldes.svg';
 import sponsorAtomicShop from '../sponsor_logos/atomic_shop.svg';
 import sponsorPPC3D from '../sponsor_logos/ppc3d.png';
+import sponsorHertz from '../sponsor_logos/hertz.svg';
 
 
 export default class SponsorsEn extends Component {
@@ -66,7 +67,7 @@ export default class SponsorsEn extends Component {
 
                         <div className="separator"></div>
 
-                        <div className="sponsors gold">
+                        <div className=  "sponsors gold">
                             <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{ width: 225 }} /></a>
                             <a href="https://www.milwaukeetool.eu" target="_blank" rel="noreferrer"><img src={sponsorMilwaukee} alt="Milwaukee" /></a>
                             <a href="https://shop.berner.eu" target="_blank" rel="noreferrer"><img src={sponsorBerner} alt="Berner" /></a>
@@ -74,7 +75,7 @@ export default class SponsorsEn extends Component {
                             <a href="https://www.codi.pt" target="_blank" rel="noreferrer"><img src={sponsorCodi} alt="CODI" /></a>
                             <a href="http://leomavel.pt" target="_blank" rel="noreferrer"><img src={sponsorLeomavel} alt="Leomavel Moldes" /></a>
                             <a href="https://www.ppc3d.com/" target="_blank" rel="noreferrer"><img src={sponsorPPC3D} alt="PPC3D" /></a>
-                            <a href="https://www.vlmoldes.pt" target="_blank" rel="noreferrer"><img src={sponsorVlMoldes} alt="VL Moldes" style={{ width: 250 }} /></a>
+                            <a href="https://www.vlmoldes.pt" target="_blank" rel="noreferrer"><img src={sponsorVlMoldes} alt="VL Moldes" /></a>
                             <a href="https://reiman.pt" target="_blank" rel="noreferrer"><img src={sponsorReiman} alt="Reiman" /></a>
                             <a href="https://www.te.com" target="_blank" rel="noreferrer"><img src={sponsorTeConnectivity} alt="TE Connectivity" /></a>
                         </div>
@@ -86,6 +87,7 @@ export default class SponsorsEn extends Component {
                             <a href="https://symetria.pt" target="_blank" rel="noreferrer"><img src={sponsorSymetria} alt="Symetria" /></a>
                             <a href="/en/sponsors"><img src={sponsorMaquitorno} alt="Maquitorno" /></a>
                             <a href="https://www.3d-iso.pt" target="_blank" rel="noreferrer"><img src={sponsor3dIso} alt="3DISO" /></a>
+                            <a href="https://www.hertz.com" target="_blank" rel="noreferrer"><img src={sponsorHertz} alt="Hertz" /></a>
                             <a href="http://www.arsenal-alfeite.pt" target="_blank" rel="noreferrer"><img src={sponsorArsenalDoAlfeite} alt="Arsenal do Alfeite" /></a>
                             <a href="http://www.mjbranco.pt" target="_blank" rel="noreferrer"><img src={sponsorMjbranco} alt="MJBranco" /></a>
                             <a href="https://www.esferovite.pt" target="_blank" rel="noreferrer"><img src={sponsorEsferovite} alt="Esferovite" style={{ width: 200 }} /></a>
