@@ -56,62 +56,62 @@ export default class SponsorsEn extends Component {
                     <div id="sponsor_grid">
 
                         <div className="sponsors platinum">
-                            <a href="https://www.isel.pt" target="_blank" rel="noreferrer"><img src={sponsorIsel} alt="ISEL" /></a>
-                            <a href="https://www.ipl.pt" target="_blank" rel="noreferrer"><img src={sponsorIpl} alt="IPL" style={{ width: 300 }} /></a>
+                            <a href="https://www.isel.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorIsel} alt="ISEL" /></a>
+                            <a href="https://www.ipl.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorIpl} alt="IPL" style={{ width: 300 }} /></a>
                         </div>
                         <div className="sponsors platinum">
-                            <a href="https://grupometal.com" target="_blank" rel="noreferrer"><img src={sponsorGrupoMetal} alt="Grupo Metal" /></a>
-                            <a href="https://www.infusao.pt" target="_blank" rel="noreferrer"><img src={sponsorInfusao} alt="Infusão" style={{ width: 300 }} /></a>
-                            <a href="https://www.logoplaste.com" target="_blank" rel="noreferrer" ><img src={sponsorLogoplaste} alt="Logoplaste" style={{ width: 300 }} /></a>
+                            <a href="https://grupometal.com" target="_blank" rel="noopener noreferrer"><img src={sponsorGrupoMetal} alt="Grupo Metal" /></a>
+                            <a href="https://www.infusao.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorInfusao} alt="Infusão" style={{ width: 300 }} /></a>
+                            <a href="https://www.logoplaste.com" target="_blank" rel="noopener noreferrer" ><img src={sponsorLogoplaste} alt="Logoplaste" style={{ width: 300 }} /></a>
                         </div>
 
                         <div className="separator"></div>
 
                         <div className="sponsors gold">
-                            <a href="https://www.cubotonic.pt" target="_blank" rel="noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{ width: 225 }} /></a>
-                            <a href="https://www.milwaukeetool.eu" target="_blank" rel="noreferrer"><img src={sponsorMilwaukee} alt="Milwaukee" /></a>
-                            <a href="https://shop.berner.eu" target="_blank" rel="noreferrer"><img src={sponsorBerner} alt="Berner" /></a>
-                            <a href="http://www.tsf-trofa.com" target="_blank" rel="noreferrer"><img src={sponsorTsf} alt="TSF" /></a>
-                            <a href="https://www.codi.pt" target="_blank" rel="noreferrer"><img src={sponsorCodi} alt="CODI" /></a>
-                            <a href="http://leomavel.pt" target="_blank" rel="noreferrer"><img src={sponsorLeomavel} alt="Leomavel Moldes" /></a>
-                            <a href="https://www.ppc3d.com/" target="_blank" rel="noreferrer"><img src={sponsorPPC3D} alt="PPC3D" /></a>
-                            <a href="https://www.vlmoldes.pt" target="_blank" rel="noreferrer"><img src={sponsorVlMoldes} alt="VL Moldes" style={{ width: 250 }} /></a>
-                            <a href="https://reiman.pt" target="_blank" rel="noreferrer"><img src={sponsorReiman} alt="Reiman" /></a>
-                            <a href="https://www.te.com" target="_blank" rel="noreferrer"><img src={sponsorTeConnectivity} alt="TE Connectivity" /></a>
+                            <a href="https://www.cubotonic.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorCubotonic} alt="Cubotónic" style={{ width: 225 }} /></a>
+                            <a href="https://www.milwaukeetool.eu" target="_blank" rel="noopener noreferrer"><img src={sponsorMilwaukee} alt="Milwaukee" /></a>
+                            <a href="https://shop.berner.eu" target="_blank" rel="noopener noreferrer"><img src={sponsorBerner} alt="Berner" /></a>
+                            <a href="http://www.tsf-trofa.com" target="_blank" rel="noopener noreferrer"><img src={sponsorTsf} alt="TSF" /></a>
+                            <a href="https://www.codi.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorCodi} alt="CODI" /></a>
+                            <a href="http://leomavel.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorLeomavel} alt="Leomavel Moldes" /></a>
+                            <a href="https://www.ppc3d.com/" target="_blank" rel="noopener noreferrer"><img src={sponsorPPC3D} alt="PPC3D" /></a>
+                            <a href="https://www.vlmoldes.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorVlMoldes} alt="VL Moldes" style={{ width: 250 }} /></a>
+                            <a href="https://reiman.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorReiman} alt="Reiman" /></a>
+                            <a href="https://www.te.com" target="_blank" rel="noopener noreferrer"><img src={sponsorTeConnectivity} alt="TE Connectivity" /></a>
                         </div>
 
                         <div className="separator"></div>
 
                         <div className="sponsors silver">
-                            <a href="https://www.juncor.pt" target="_blank" rel="noreferrer"><img src={sponsorTeclenaJuncor} alt="Juncor" style={{ width: 200 }}/></a>
-                            <a href="https://symetria.pt" target="_blank" rel="noreferrer"><img src={sponsorSymetria} alt="Symetria" /></a>
+                            <a href="https://www.juncor.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorTeclenaJuncor} alt="Juncor" style={{ width: 200 }}/></a>
+                            <a href="https://symetria.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorSymetria} alt="Symetria" /></a>
                             <a href="/en/sponsors"><img src={sponsorMaquitorno} alt="Maquitorno" /></a>
-                            <a href="https://www.3d-iso.pt" target="_blank" rel="noreferrer"><img src={sponsor3dIso} alt="3DISO" /></a>
-                            <a href="http://www.hertz.pt" target="_blank" rel="noreferrer"><img src={sponsorHertz} alt="Hertz" /></a>
-                            <a href="http://www.arsenal-alfeite.pt" target="_blank" rel="noreferrer"><img src={sponsorArsenalDoAlfeite} alt="Arsenal do Alfeite" /></a>
-                            <a href="http://www.mjbranco.pt" target="_blank" rel="noreferrer"><img src={sponsorMjbranco} alt="MJBranco" /></a>
-                            <a href="https://www.esferovite.pt" target="_blank" rel="noreferrer"><img src={sponsorEsferovite} alt="Esferovite" style={{ width: 200 }} /></a>
-                            <a href="https://www.farmi.pt" target="_blank" rel="noreferrer"><img src={sponsorFarmi} alt="Farmi" /></a>
-                            <a href="https://norelem.es" target="_blank" rel="noreferrer"><img src={sponsorNorelem} alt="Norelem" /></a>
-                            <a href="http://www.natrater.pt" target="_blank" rel="noreferrer"><img src={sponsorNatrater} alt="Natrater" /></a>
-                            <a href="https://deconorma.com" target="_blank" rel="noreferrer"><img src={sponsorDeconorma} alt="Deconorma" /></a>
-                            <a href="https://www.eurocircuits.com" target="_blank" rel="noreferrer"><img src={sponsorEuroCircuits} alt="Eurocircuits" /></a>
-                            <a href="https://www.ramada.pt" target="_blank" rel="noreferrer"><img src={sponsorRamadaAcos} alt="Ramada Aços" style={{ width: 200 }} /></a>
-                            <a href="https://eurocorreias.pt" target="_blank" rel="noreferrer"><img src={sponsorEurocorreias} alt="Eurocorreias" style={{ width: 200 }} /></a>
+                            <a href="https://www.3d-iso.pt" target="_blank" rel="noopener noreferrer"><img src={sponsor3dIso} alt="3DISO" /></a>
+                            <a href="http://www.hertz.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorHertz} alt="Hertz" /></a>
+                            <a href="http://www.arsenal-alfeite.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorArsenalDoAlfeite} alt="Arsenal do Alfeite" /></a>
+                            <a href="http://www.mjbranco.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorMjbranco} alt="MJBranco" /></a>
+                            <a href="https://www.esferovite.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorEsferovite} alt="Esferovite" style={{ width: 200 }} /></a>
+                            <a href="https://www.farmi.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorFarmi} alt="Farmi" /></a>
+                            <a href="https://norelem.es" target="_blank" rel="noopener noreferrer"><img src={sponsorNorelem} alt="Norelem" /></a>
+                            <a href="http://www.natrater.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorNatrater} alt="Natrater" /></a>
+                            <a href="https://deconorma.com" target="_blank" rel="noopener noreferrer"><img src={sponsorDeconorma} alt="Deconorma" /></a>
+                            <a href="https://www.eurocircuits.com" target="_blank" rel="noopener noreferrer"><img src={sponsorEuroCircuits} alt="Eurocircuits" /></a>
+                            <a href="https://www.ramada.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorRamadaAcos} alt="Ramada Aços" style={{ width: 200 }} /></a>
+                            <a href="https://eurocorreias.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorEurocorreias} alt="Eurocorreias" style={{ width: 200 }} /></a>
                         </div>
 
                         <div className="separator"></div>
 
                         <div className="sponsors bronze">
-                            <a href="http://linoefilhos.pt" target="_blank" rel="noreferrer"><img src={sponsorCarpintariaLinoEFilhos} alt="Carpintaria Lino e Filhos" /></a>
-                            <a href="https://www.bender.de" target="_blank" rel="noreferrer"><img src={sponsorBender} alt="Bender" /></a>
-                            <a href="https://www.copisel.pt" target="_blank" rel="noreferrer"><img src={sponsorCopisel} alt="Copisel" /></a>
-                            <a href="https://www.facebook.com/AEISEL.1984" target="_blank" rel="noreferrer"><img src={sponsorAeisel} alt="AEISEL" /></a>
-                            <a href="https://www.atomic-shop.pt/" target="_blank" rel="noreferrer"><img src={sponsorAtomicShop} alt="Atomic Shop" /></a>
-                            <a href="https://www.easycomposites.eu/" target="_blank" rel="noreferrer"><img src={sponsorEasyComposites} alt="EasyComposites" /></a>
-                            <a href="https://www.solidworks.com" target="_blank" rel="noreferrer"><img src={sponsorSolidworks} alt="Solidworks" /></a>
-                            <a href="https://www.altium.com" target="_blank" rel="noreferrer"><img src={sponsorAltium} alt="Altium" /></a>
-                            <a href="https://www.ansys.com" target="_blank" rel="noreferrer"><img src={sponsorAnsys} alt="Ansys" /></a>
+                            <a href="http://linoefilhos.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorCarpintariaLinoEFilhos} alt="Carpintaria Lino e Filhos" /></a>
+                            <a href="https://www.bender.de" target="_blank" rel="noopener noreferrer"><img src={sponsorBender} alt="Bender" /></a>
+                            <a href="https://www.copisel.pt" target="_blank" rel="noopener noreferrer"><img src={sponsorCopisel} alt="Copisel" /></a>
+                            <a href="https://www.facebook.com/AEISEL.1984" target="_blank" rel="noopener noreferrer"><img src={sponsorAeisel} alt="AEISEL" /></a>
+                            <a href="https://www.atomic-shop.pt/" target="_blank" rel="noopener noreferrer"><img src={sponsorAtomicShop} alt="Atomic Shop" /></a>
+                            <a href="https://www.easycomposites.eu/" target="_blank" rel="noopener noreferrer"><img src={sponsorEasyComposites} alt="EasyComposites" /></a>
+                            <a href="https://www.solidworks.com" target="_blank" rel="noopener noreferrer"><img src={sponsorSolidworks} alt="Solidworks" /></a>
+                            <a href="https://www.altium.com" target="_blank" rel="noopener noreferrer"><img src={sponsorAltium} alt="Altium" /></a>
+                            <a href="https://www.ansys.com" target="_blank" rel="noopener noreferrer"><img src={sponsorAnsys} alt="Ansys" /></a>
                         </div>
 
                     </div>
