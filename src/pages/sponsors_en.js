@@ -36,9 +36,10 @@ import sponsorTeclenaJuncor from '../sponsor_logos/teclenajuncor.png';
 import sponsorEsferovite from '../sponsor_logos/esferovite.jpg';
 import sponsorEasyComposites from '../sponsor_logos/easy_composites.jpg';
 import sponsorMilwaukee from '../sponsor_logos/milwaukee.svg';
-import sponsorVlMoldes from '../sponsor_logos/vl_moldes.png';
 import sponsorAtomicShop from '../sponsor_logos/atomic_shop.svg';
 import sponsorPPC3D from '../sponsor_logos/ppc3d.png';
+import sponsorHertz from '../sponsor_logos/hertz.svg';
+import sponsorVlMoldes from '../sponsor_logos/VLMoldes.svg';
 
 
 export default class SponsorsEn extends Component {
@@ -86,6 +87,7 @@ export default class SponsorsEn extends Component {
                             <a href="https://symetria.pt" target="_blank" rel="noreferrer"><img src={sponsorSymetria} alt="Symetria" /></a>
                             <a href="/en/sponsors"><img src={sponsorMaquitorno} alt="Maquitorno" /></a>
                             <a href="https://www.3d-iso.pt" target="_blank" rel="noreferrer"><img src={sponsor3dIso} alt="3DISO" /></a>
+                            <a href="http://www.hertz.pt" target="_blank" rel="noreferrer"><img src={sponsorHertz} alt="Hertz" /></a>
                             <a href="http://www.arsenal-alfeite.pt" target="_blank" rel="noreferrer"><img src={sponsorArsenalDoAlfeite} alt="Arsenal do Alfeite" /></a>
                             <a href="http://www.mjbranco.pt" target="_blank" rel="noreferrer"><img src={sponsorMjbranco} alt="MJBranco" /></a>
                             <a href="https://www.esferovite.pt" target="_blank" rel="noreferrer"><img src={sponsorEsferovite} alt="Esferovite" style={{ width: 200 }} /></a>
