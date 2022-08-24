@@ -40,6 +40,7 @@ import sponsorVlMoldes from '../sponsor_logos/vl_moldes.svg';
 import sponsorAtomicShop from '../sponsor_logos/atomic_shop.svg';
 import sponsorPPC3D from '../sponsor_logos/ppc3d.png';
 import sponsorHertz from '../sponsor_logos/hertz.svg';
+import sponsorCarlis from '../sponsor_logos/carlis.png';
 
 
 export default class SponsorsEn extends Component {
@@ -90,6 +91,7 @@ export default class SponsorsEn extends Component {
                             <a href="https://www.hertz.com" target="_blank" rel="noreferrer"><img src={sponsorHertz} alt="Hertz" /></a>
                             <a href="http://www.arsenal-alfeite.pt" target="_blank" rel="noreferrer"><img src={sponsorArsenalDoAlfeite} alt="Arsenal do Alfeite" /></a>
                             <a href="http://www.mjbranco.pt" target="_blank" rel="noreferrer"><img src={sponsorMjbranco} alt="MJBranco" /></a>
+                            <a href="http://www.carlis.pt" target="_blank" rel="noreferrer"><img src={sponsorCarlis} alt="Carlis" /></a>
                             <a href="https://www.esferovite.pt" target="_blank" rel="noreferrer"><img src={sponsorEsferovite} alt="Esferovite" style={{ width: 200 }} /></a>
                             <a href="https://www.farmi.pt" target="_blank" rel="noreferrer"><img src={sponsorFarmi} alt="Farmi" /></a>
                             <a href="https://norelem.es" target="_blank" rel="noreferrer"><img src={sponsorNorelem} alt="Norelem" /></a>
