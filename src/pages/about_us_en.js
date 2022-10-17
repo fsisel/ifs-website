@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Header from '../components/header_en'
 import Footer from '../components/footer_en'
@@ -6,16 +6,16 @@ import Footer from '../components/footer_en'
 import imageIfsTeam from '../images/ifs_team.webp'
 import imageIfs02_1 from '../images/ifs02_1.webp'
 import imageFsg_teams from '../images/fsg_teams.webp'
+import equipa_ifs from '../images/equipa2_fss2022.jpg'
 
-export default class AboutUsEn extends Component {
+function AboutUsEn() {
 
-    render() {
-        return (
+            return (
             <div>
 
                 <Header />
 
-                <img className="cover" src={imageIfsTeam} alt="ISEL Formula Student Team" />
+                <img className="cover" src={equipa_ifs} alt="ISEL Formula Student Team" />
 
                 <article>
 
@@ -71,7 +71,7 @@ export default class AboutUsEn extends Component {
                 <Footer />
 
             </div>
-        )
-    }
-
+        );
 }
+
+export default AboutUsEn;
