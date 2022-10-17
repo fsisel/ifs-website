@@ -6,6 +6,9 @@ import Footer from '../components/footer_pt'
 
 import logoDark from '../logos/ifs_logo_dark.svg'
 import enIcon from '../icons/en.svg'
+
+import equipa_fss2022 from '../images/equipa_fss2022.jpg'
+
 import ifs01_1 from '../images/ifs01_1.webp'
 import ifs01_2 from '../images/ifs01_2.webp'
 import ifs02_1 from '../images/ifs02_1.webp'
@@ -58,7 +61,7 @@ export default class HomepagePt extends Component {
                     </div>
                 </div>
 
-                <img className="cover tall" src={ifs01_1} alt="IFS01" />
+                <img className="cover tall" src={equipa_fss2022} alt="Equipa Formula Student Spain 2022" />
 
                 <article>
 
