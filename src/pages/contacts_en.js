@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Header from '../components/header_en'
 import Footer from '../components/footer_en'
 
-import equipa_ifs from '../images/equipa2_fss2022.jpg'
+import imageIfsTeam from '../images/ifs_team.webp'
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
@@ -44,7 +44,7 @@ export default class ContactsEn extends Component {
 
                 <Header />
 
-                <img className="cover" src={equipa_ifs} alt="IFS and FST" />
+                <img className="cover" src={imageIfsTeam} alt="ISEL Formula Student Team" />
 
                 <article>
                     <h1>CONTACTS</h1>

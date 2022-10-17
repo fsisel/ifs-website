@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Header from '../components/header_en'
 import Footer from '../components/footer_en'
 
-import imageIfsTeam from '../images/ifs_team.webp'
+import equipa_ifs from '../images/equipa2_fss2022.jpg'
 import imageIfs02_1 from '../images/ifs02_1.webp'
 import imageFsg_teams from '../images/fsg_teams.webp'
 
@@ -15,7 +15,7 @@ export default class AboutUsEn extends Component {
 
                 <Header />
 
-                <img className="cover" src={imageIfsTeam} alt="ISEL Formula Student Team" />
+                <img className="cover" src={equipa_ifs} alt="ISEL Formula Student Team" />
 
                 <article>
 
