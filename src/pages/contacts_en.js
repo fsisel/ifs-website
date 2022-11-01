@@ -7,10 +7,9 @@ import imageIfsTeam from '../images/ifs_team.webp'
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
 
 export default class ContactsEn extends Component {
-
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -18,6 +17,7 @@ export default class ContactsEn extends Component {
             lat: 38.755914,
             zoom: 13.3
         };
+        mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
         this.mapContainer = React.createRef();
     }
 
