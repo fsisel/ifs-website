@@ -7,7 +7,7 @@ import imageIfsTeam from '../images/ifs_team.webp'
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
-mapboxgl.accessToken = "pk.eyJ1IjoiaXNlbGZzIiwiYSI6ImNsNTJ0OHN1ajBqMXczZXBwcGNjNDJrNXQifQ.pWRCcF65D1vdyRb53201GA";
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
 export default class ContactsPt extends Component {
 
