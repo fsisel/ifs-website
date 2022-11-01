@@ -8,10 +8,6 @@ import imageIfsTeam from '../images/ifs_team.webp'
 
 export default class ContactsPt extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
 
     }
