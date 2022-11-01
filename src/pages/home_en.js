@@ -9,7 +9,6 @@ import ptIcon from '../icons/pt.svg'
 
 import equipa_fss2022 from '../images/equipa_fss2022.jpg'
 
-import ifs01_1 from '../images/ifs01_1.webp'
 import ifs01_2 from '../images/ifs01_2.webp'
 import ifs02_1 from '../images/ifs02_1.webp'
 import ifs02_2 from '../images/ifs02_2.webp'
