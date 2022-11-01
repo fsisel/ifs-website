@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Header from '../components/header_en'
 import Footer from '../components/footer_en'
 
-import imageIfsTeam from '../images/ifs_team.webp
+import imageIfsTeam from '../images/ifs_team.webp'
 
 
 export default class ContactsEn extends Component {
