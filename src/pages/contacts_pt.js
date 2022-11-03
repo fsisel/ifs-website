@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Header from '../components/header_pt'
 import Footer from '../components/footer_pt'
@@ -6,36 +6,32 @@ import Footer from '../components/footer_pt'
 import imageIfsTeam from '../images/ifs_team.webp'
 
 
-export default class ContactsPt extends Component {
+function ContactsPt() {
 
-    componentDidMount() {
+    return (
+        <div>
 
-    }
+            <Header />
 
-    render() {
-        return (
-            <div>
+            <img className="cover" src={imageIfsTeam} alt="Equipa ISEL Formula Student" />
 
-                <Header />
+            <article>
+                <h1>CONTACTOS</h1>
 
-                <img className="cover" src={imageIfsTeam} alt="Equipa ISEL Formula Student" />
-
-                <article>
-                    <h1>CONTACTOS</h1>
-
-                    <div className="container">
-                        <div className="text_wrapper">
-                            <h2>Email</h2>
-                            <p><a className="link" href="mailto:formulastudent@isel.pt">formulastudent@isel.pt</a></p>
-                        </div>
+                <div className="container">
+                    <div className="text_wrapper">
+                        <h2>Email</h2>
+                        <p><a className="link" href="mailto:formulastudent@isel.pt">formulastudent@isel.pt</a></p>
                     </div>
+                </div>
 
-                </article>
+            </article>
 
-                <Footer />
+            <Footer />
 
-            </div>
-        )
-    }
+        </div>
+    )
 
 }
+
+export default ContactsPt;

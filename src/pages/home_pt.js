@@ -16,15 +16,6 @@ import ifs03Front from '../images/ifs03_front_whitebg.png'
 
 function HomepagePt() {
 
-    // componentDidMount() {
-    //     window.addEventListener('scroll', this.handleScroll, true);
-    //     document.getElementById("navbar").style.top = "-4em"
-    // }
-
-    // componentWillUnmount() {
-    //     window.removeEventListener('scroll', this.handleScroll);
-    // }
-
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, true);
         document.getElementById("navbar").style.top = "-4em"

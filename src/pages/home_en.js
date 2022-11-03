@@ -17,10 +17,10 @@ import ifs03Front from '../images/ifs03_front_whitebg.png'
 function HomepageEn() {
 
     useEffect(() => {
-        // document.getElementById("navbar").style.top = "-4em";   
-        // window.addEventListener('scroll', handleScroll, true);
+        document.getElementById("navbar").style.top = "-4em";
+        window.addEventListener('scroll', handleScroll, true);
     }, [])
-    
+
     let handleScroll = () => {
         if (window.location.pathname === "/en" || window.location.pathname === "/") {
             if (document.body.clientWidth > 750) {
@@ -32,7 +32,7 @@ function HomepageEn() {
             }
         } else {
             document.getElementById("navbar").style.top = "0"
-            
+
         }
     };
 
