@@ -43,6 +43,7 @@ import sponsorAtomicShop from '../sponsor_logos/atomic_shop.svg';
 import sponsorPPC3D from '../sponsor_logos/ppc3d.png';
 import sponsorHertz from '../sponsor_logos/hertz.svg';
 import sponsorCarlis from '../sponsor_logos/carlis.png';
+import sponsorRohdeSchwarz from '../sponsor_logos/Rohde_&_Schwarz.svg';
 
 
 function SponsorsPt() {
@@ -108,6 +109,7 @@ function SponsorsPt() {
                     <div className="sponsors bronze">
                         <a href="http://linoefilhos.pt" target="_blank" rel="noreferrer"><img src={sponsorCarpintariaLinoEFilhos} alt="Carpintaria Lino e Filhos" /></a>
                         <a href="https://www.bender.de" target="_blank" rel="noreferrer"><img src={sponsorBender} alt="Bender" /></a>
+                        <a href="https://www.rohde-schwarz.com" target="_blank" rel="noreferrer"><img src={sponsorRohdeSchwarz} alt="Rohde & Schwarz" /></a>
                         <a href="https://www.copisel.pt" target="_blank" rel="noreferrer"><img src={sponsorCopisel} alt="Copisel" /></a>
                         <a href="https://www.facebook.com/AEISEL.1984" target="_blank" rel="noreferrer"><img src={sponsorAeisel} alt="AEISEL" /></a>
                         <a href="https://www.atomic-shop.pt/" target="_blank" rel="noreferrer"><img src={sponsorAtomicShop} alt="Atomic Shop" /></a>
