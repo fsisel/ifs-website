@@ -7,12 +7,12 @@ import Footer from '../components/footer_en'
 import logoDark from '../logos/ifs_logo_dark.svg'
 import ptIcon from '../icons/pt.svg'
 
-import equipa_fss2022 from '../images/equipa_fss2022.jpg'
+import equipa_fss2022 from '../images/equipa_fss2022.webp'
 
 import ifs01_2 from '../images/ifs01_2.webp'
 import ifs02_1 from '../images/ifs02_1.webp'
 import ifs02_2 from '../images/ifs02_2.webp'
-import ifs03Front from '../images/ifs03_front_whitebg.png'
+import ifs03Front from '../images/ifs03_front_whitebg.webp'
 
 export default class HomepageEn extends Component {
 

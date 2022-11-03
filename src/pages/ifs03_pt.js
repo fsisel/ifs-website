@@ -3,10 +3,10 @@ import React from "react";
 import Header from '../components/header_pt'
 import Footer from '../components/footer_pt'
 
-import imageIfs03 from '../images/ifs03_1.png'
+import imageIfs03 from '../images/ifs03_1.webp'
 import logoIfs03 from '../logos/ifs03_dark.svg'
 
-import imageIfs03Top from '../images/ifs03_top.png'
+import imageIfs03Top from '../images/ifs03_top.webp'
 
 import iconElectric from '../icons/electric.svg'
 import iconPerformance from '../icons/performance.svg'
@@ -15,8 +15,8 @@ import iconChassis from '../icons/chassis.svg'
 import iconBody from '../icons/body.svg'
 import iconSuspension from '../icons/suspension.svg'
 
-import imageDrivetrain from '../images/drivetrain.png'
-import imageIfs03Back from '../images/ifs03_back.png'
+import imageDrivetrain from '../images/drivetrain.webp'
+import imageIfs03Back from '../images/ifs03_back.webp'
 
 function Ifs03Pt() {
 
