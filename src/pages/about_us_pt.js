@@ -3,7 +3,7 @@ import React from "react";
 import Header from '../components/header_pt'
 import Footer from '../components/footer_pt'
 
-import equipa_ifs from '../images/equipa2_fss2022.webp'
+import equipa_ifs from "../images/equipa3_fsa2023.webp";
 import imageIfs02_1 from '../images/ifs02_1.webp'
 import imageFsg_teams from '../images/fsg_teams.webp'
 
@@ -52,12 +52,14 @@ function AboutUsPt() {
                   engenharia adquiridas ao longo do percurso dos estudantes,
                   permite aprimorar as soft skills, tais como a gestão de tempo
                   e de recursos, comunicação e trabalho em equipa. Além de mais,
-                  ajuda a abrir portas no mercado de trabalho
+                  ajuda a abrir portas no mercado de trabalho.
                 </p>
                 <p>
-                  Este ano a equipa está a produzir o veículo IFS03, um carro
-                  elétrico, cujo objetivo é melhorar a performance obtida pelo
-                  nosso segundo carro o IFS02.
+                  A equipa conta atualmente com 3
+                  carros: IFS01 (combustão), IFS02 e IFS03 (elétricos). Estamos
+                  agora progredir no desenvolvimento de carros elétricos com o
+                  novo modelo, o IFS04, cujo objetivo é melhorar a performance
+                  obtida pelo nosso anterior carro.
                 </p>
               </div>
             </div>

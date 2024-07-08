@@ -3,7 +3,7 @@ import React from "react";
 import Header from '../components/header_en'
 import Footer from '../components/footer_en'
 
-import equipa_ifs from '../images/equipa2_fss2022.webp'
+import equipa_ifs from "../images/equipa3_fsa2023.webp";
 import imageIfs02_1 from '../images/ifs02_1.webp'
 import imageFsg_teams from '../images/fsg_teams.webp'
 
@@ -55,8 +55,11 @@ function AboutUsEn() {
                 </p>
 
                 <p>
-                  This year the team is producing IFS03, an electric car which
-                  goal is to improve the performance achieved by IFS02.
+                  The team currently has three cars: IFS01 (combustion), IFS02
+                  and IFS03 (electric). We are now progressing in the
+                  development of electric cars with the new model, the IFS04,
+                  whose aim is to improve on the performance achieved by our
+                  previous car.
                 </p>
               </div>
             </div>
