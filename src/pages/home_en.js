@@ -7,7 +7,7 @@ import Footer from '../components/footer_en'
 import logoDark from '../logos/ifs_logo_dark.svg'
 import ptIcon from '../icons/pt.svg'
 
-import equipa_fss2022 from '../images/equipa_fss2022.webp'
+import equipa3_fsa2023 from "../images/equipa3_fsa2023.webp";
 
 import ifs01_2 from '../images/ifs01_2.webp'
 import ifs02_1 from '../images/ifs02_1.webp'
@@ -62,7 +62,7 @@ export default class HomepageEn extends Component {
                     </div>
                 </div>
 
-                <img className="cover tall" src={equipa_fss2022} alt="Team Formula Student Spain 2022" />
+                <img className="cover tall" src={equipa3_fsa2023} alt="Team Formula Student Austria 2023" />
 
                 <article>
                     <div className="container dual left">
