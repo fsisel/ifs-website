@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 481 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="100%" height="100%" viewBox="0 0 481 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g transform="matrix(1,0,0,1,-15.999,-15.9997)">
         <g id="Electric_Plug-2">
             <path d="M358.8,219.76C357.337,217.419 354.761,215.994 352,216L264,216L264,96C263.974,91.629 260.371,88.047 256,88.047C253.003,88.047 250.247,89.732 248.88,92.4L152.88,284.4C152.317,285.517 152.024,286.75 152.024,288C152.024,292.38 155.62,295.987 160,296L248,296L248,416C248.012,419.687 250.571,422.912 254.16,423.76C254.761,423.918 255.379,423.999 256,424C259.008,423.991 261.766,422.286 263.12,419.6L359.12,227.6C360.378,225.111 360.257,222.139 358.8,219.76ZM264,382.08L264,288C264,283.611 260.389,280 256,280L172.96,280L248,129.92L248,224C248,228.389 251.611,232 256,232L339.04,232L264,382.08Z" style="fill-rule:nonzero;"/>
