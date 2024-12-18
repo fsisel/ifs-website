@@ -16,49 +16,12 @@ import ifs03Front from '../images/ifs03_front_whitebg.webp'
 
 export default class HomepagePt extends Component {
 
-    componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll, true);
-        document.getElementById("navbar").style.top = "-4em"
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll = () => {
-        if (window.location.pathname === "/pt" || window.location.pathname === "/") {
-            if (document.body.clientWidth > 750) {
-                if (window.scrollY > 180) {
-                    document.getElementById("navbar").style.top = "0"
-                } else {
-                    document.getElementById("navbar").style.top = "-4em"
-                }
-            }
-        } else {
-            document.getElementById("navbar").style.top = "0"
-        }
-    };
+    
 
     render() {
         return (
             <div>
                 <Header />
-
-                <div id="header">
-                    <img className="logo" src={logoDark} alt="ISEL Formula Student" />
-                    <div id="header_menu">
-                        <Link to="/pt/about_us" ><span>SOBRE NÓS</span></Link>
-                        <Link to="/pt/ifs03"><span>IFS03</span></Link>
-                        <Link to="/pt/sponsors"><span>PATROCINADORES</span></Link>
-                        <Link to="/pt/contacts"><span>CONTACTOS</span></Link>
-                    </div>
-
-                    <div id="header_language">
-                        <Link to="/en" title="English">
-                            <img src={enIcon} alt="English" />
-                        </Link>
-                    </div>
-                </div>
 
                 <img className="cover tall" src={equipa3_fsa2023} alt="Equipa Formula Student Austria 2023" />
 

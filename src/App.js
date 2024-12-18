@@ -1,5 +1,7 @@
 import React from 'react';
+
 import './style.css';
+
 
 import homeEn from './pages/home_en';
 import aboutUsEn from './pages/about_us_en';
