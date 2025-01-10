@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import linkedinIcon from "../icons/linkedin.svg";
 import instagramIcon from "../icons/instagram.svg";
 import facebookIcon from "../icons/facebook.svg";
+import tiktokIcon from "../icons/tiktok.svg";
 import isfIcon from "../logos/ifs_icon_dark.svg";
 
 function FooterEn() {
@@ -17,7 +18,8 @@ function FooterEn() {
       <div>
         <img src={isfIcon} alt="Logo" width={120} />
       </div>
-      <div>
+      <div id="newsletter">
+        <h4>Newsletter</h4>
         <div class="input-group mb-3">
           <input
             type="text"
@@ -35,7 +37,8 @@ function FooterEn() {
           </button>
         </div>
       </div>
-      <div>
+
+      <div id="adress">
         <div id="social_buttons">
           <a
             href="https://www.linkedin.com/company/isel-formula-student/"
@@ -58,9 +61,19 @@ function FooterEn() {
           >
             <img src={facebookIcon} alt="Facebook" />
           </a>
+          <a
+            href="https://www.tiktok.com/@iselformulastudent"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={tiktokIcon} alt="Tiktok" />
+          </a>
         </div>
       </div>
       <div>
+        <div>
+          <h4>Location</h4>
+        </div>
         <Link
           className="link"
           to={{
@@ -69,16 +82,25 @@ function FooterEn() {
           }}
           target="_blank"
         >
-          <p>Rua Conselheiro Emídio Navarro, 1 </p>
-          <p>1959-007 Lisboa</p>
+          <p>Rua Conselheiro Emídio Navarro, 1 1959-007 Lisboa</p>
         </Link>
       </div>
       <div id="footer_pages">
-        <h5>Home Page</h5>
-        <h5>About us</h5>
-        <h5>Cars</h5>
-        <h5>Sponsors</h5>
-        <h5>Contacts</h5>
+        <Link className="link" to="/en">
+          <h5>Home Page</h5>
+        </Link>
+        <Link className="link" to="/en/about_us">
+          <h5>About us</h5>
+        </Link>
+        <Link  className="link" to="/en/ifs03">
+          <h5>Cars</h5>
+        </Link>
+        <Link  className="link" to="/en/sponsors">
+          <h5>Sponsors</h5>
+        </Link>
+        <Link className="link" to="/en/contacts">
+          <h5>Contacts</h5>
+        </Link>
       </div>
 
       <div id="footer_container">

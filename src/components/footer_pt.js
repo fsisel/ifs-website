@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import linkedinIcon from "../icons/linkedin.svg";
 import instagramIcon from "../icons/instagram.svg";
 import facebookIcon from "../icons/facebook.svg";
+import tiktokIcon from "../icons/tiktok.svg";
 import isfIcon from "../logos/ifs_icon_dark.svg";
 
 function FooterPt() {
@@ -17,7 +18,8 @@ function FooterPt() {
       <div>
         <img src={isfIcon} alt="Logo" width={120} />
       </div>
-      <div>
+      <div id="newsletter">
+        <h4>Newsletter</h4>
         <div class="input-group mb-3">
           <input
             type="text"
@@ -31,11 +33,12 @@ function FooterPt() {
             type="button"
             id="button-addon2"
           >
-            Subscreve
+            Subscribe
           </button>
         </div>
       </div>
-      <div>
+
+      <div id="adress">
         <div id="social_buttons">
           <a
             href="https://www.linkedin.com/company/isel-formula-student/"
@@ -58,9 +61,19 @@ function FooterPt() {
           >
             <img src={facebookIcon} alt="Facebook" />
           </a>
+          <a
+            href="https://www.tiktok.com/@iselformulastudent"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={tiktokIcon} alt="Tiktok" />
+          </a>
         </div>
       </div>
       <div>
+        <div>
+          <h4>Localização</h4>
+        </div>
         <Link
           className="link"
           to={{
@@ -69,16 +82,25 @@ function FooterPt() {
           }}
           target="_blank"
         >
-          <p>Rua Conselheiro Emídio Navarro, 1 </p>
-          <p>1959-007 Lisboa</p>
+          <p>Rua Conselheiro Emídio Navarro, 1 1959-007 Lisboa</p>
         </Link>
       </div>
       <div id="footer_pages">
-        <h5>Página Inicial</h5>
-        <h5>Sobre Nós</h5>
-        <h5>Carros</h5>
-        <h5>Patrocinadores</h5>
-        <h5>Contactos</h5>
+        <Link id="footer_privacypolicy" className="link" to="/pt">
+          <h5>Página Principal</h5>
+        </Link>
+        <Link id="footer_privacypolicy" className="link" to="/pt/about_us">
+          <h5>Sobre nós</h5>
+        </Link>
+        <Link id="footer_privacypolicy" className="link" to="/pt/ifs03">
+          <h5>Carros</h5>
+        </Link>
+        <Link id="footer_privacypolicy" className="link" to="/pt/sponsors">
+          <h5>Patrocinadores</h5>
+        </Link>
+        <Link id="footer_privacypolicy" className="link" to="/pt/contacts">
+          <h5>Contactos</h5>
+        </Link>
       </div>
 
       <div id="footer_container">

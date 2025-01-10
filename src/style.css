@@ -534,6 +534,111 @@ a.parallelogram:hover .text {
 }
 
 /* ########## SPONSORS ########## */
+/* Estilo geral para todas as categorias */
+.sponsors-category {
+  position: relative; /* Necessário para a barra */
+  padding-left: 2rem; /* Espaço suficiente para a barra lateral */
+  /*margin-bottom: 2rem; /* Separação entre categorias */
+  overflow: hidden; /* Evita problemas de layout */
+}
+
+/* Barra vertical da categoria Platinum */
+.platinum-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px; /* Largura da barra */
+  height: 100%; /* Barra cobre toda a altura da seção */
+  background-color: #007fff; /* Azul para Platinum */
+}
+
+/* Barra vertical da categoria Gold */
+.gold-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: #856a00; /* Dourado para Gold */
+}
+
+/* Barra vertical da categoria Silver */
+.silver-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: #c0c0c0; /* Prata para Silver */
+}
+
+/* Barra vertical da categoria Bronze */
+.bronze-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: #cd7f32; /* Bronze para Bronze */
+}
+
+/* Barra vertical da categoria Bronze */
+.partners-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: gray;
+}
+
+.sponsors-category h2 {
+  margin: 0;
+  padding-left: 1rem;
+  color: black;
+}
+
+.sponsor-image {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.contact-button {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #322d2d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 28px;
+  font-size: x-large;
+  height: 65px;
+  justify-content: center;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 10px 40px;
+  width: auto;
+}
+
+.contact-button:hover{
+  background-color: #cd7f32;
+}
+
+.sponsors-tittles {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
 
 .sponsors {
   display: flex;
@@ -588,7 +693,6 @@ a.parallelogram:hover .text {
   height: 0.06em;
   width: 100%;
   background-color: #f50;
-  margin: 1.5em 0;
 }
 
 /* ########## FORM ########## */
@@ -669,19 +773,30 @@ textarea:focus {
 }
 
 /* ########## FOOTER ########## */
+#address {
+  flex: 1; /* Faz o item ocupar o mesmo espaço */
+  flex: unset; /* Remove o espaço igual */
+  margin: 1em 0;
+  text-align: center;
+}
 
+#newsletter {
+  flex: 1; /* Faz o item ocupar o mesmo espaço */
+  flex: unset; /* Remove o espaço igual */
+  margin: 1em 0;
+  text-align: center;
+}
 footer {
-  
   width: 100%;
   background-color: #111; /* Cor de fundo */
   color: #fff; /* Cor do texto */
-  font-family: 'Open Sans';
-  padding: 2em 7vw;
+  font-family: "Open Sans";
+  padding: 4em 2vw;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 colunas */
   grid-template-rows: auto auto; /* 2 linhas */
-  gap: 1.5em 1em; /* Espaçamento entre colunas e linhas */
+  gap: 1em 1em; /* Espaçamento entre colunas e linhas */
   justify-items: center;
   align-items: center;
   font-size: 0.85em;
@@ -691,10 +806,10 @@ footer > div {
   text-align: center; /* Alinhamento centralizado */
 }
 
-#footer_pages{
- justify-content: space-between;
+#footer_pages {
+  justify-content: space-between;
 
- text-align: left;
+  text-align: left;
 }
 
 #footer_container {
@@ -702,7 +817,7 @@ footer > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.90em;
+  font-size: 0.9em;
   gap: 1em;
 }
 
@@ -719,7 +834,7 @@ footer > div {
 }
 
 #social_buttons a {
-  height: 1.8em;
+  height: 2em;
 }
 
 #social_buttons img {
