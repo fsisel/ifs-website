@@ -70,10 +70,10 @@ function FooterEn() {
           </a>
         </div>
       </div>
-      <div>
-        <div>
+      <div id="location">
+        
           <h4>Location</h4>
-        </div>
+        
         <Link
           className="link"
           to={{

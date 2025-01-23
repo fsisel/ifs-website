@@ -18,6 +18,14 @@
   font-weight: 900;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("https://fonts.gstatic.com/s/montserrat/v26/JTURjIg1_i6t8kCHKm45_bZF3gnD-w.ttf");
+  font-display: swap;
+  font-weight: 900;
+}
+
+
 /* ########## GLOBAL ########## */
 
 #root > div {
@@ -47,6 +55,10 @@ h1 {
 
 h2 {
   font-size: 2.2em;
+}
+
+:is(h1, h2, h3, h4, h5, h6, p) {
+  font-family: "Montserrat", sans-serif;
 }
 
 img,
@@ -601,6 +613,7 @@ a.parallelogram:hover .text {
   margin: 0;
   padding-left: 1rem;
   color: black;
+  font-family: "Montserrat", sans-serif;
 }
 
 .sponsor-image {
@@ -784,8 +797,16 @@ textarea:focus {
   flex: 1; /* Faz o item ocupar o mesmo espaço */
   flex: unset; /* Remove o espaço igual */
   margin: 1em 0;
-  text-align: center;
+  text-align: left;
 }
+
+#location {
+  flex: 1; /* Faz o item ocupar o mesmo espaço */
+  flex: unset; /* Remove o espaço igual */
+  margin: 1em 0;
+  text-align: left;
+}
+
 footer {
   width: 100%;
   background-color: #111; /* Cor de fundo */

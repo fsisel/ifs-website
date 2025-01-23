@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import FooterEn from "../components/footer_en";
 import HeaderEn from "../components/header_en";
 
-import equipa3_fsa2023 from "../images/equipa3_fsa2023.webp";
 import sponsorcarClasse from "../sponsor_logos/carclasse.svg";
 import sponsorAltium from "../sponsor_logos/altium.svg";
 import sponsorAnsys from "../sponsor_logos/ansys.svg";
@@ -51,6 +50,7 @@ import sponsorCrm from "../sponsor_logos/CRM.webp";
 import sponsorRapid from "../sponsor_logos/rapidharness.webp";
 import sponsorSchroth from "../sponsor_logos/Schroth.webp";
 import sponsorMathWorks from "../sponsor_logos/mathworks.svg";
+import sponsorViGrade from "../sponsor_logos/vi-grade_red.svg";
 
 function SponsorsEn() {
   return (
@@ -61,7 +61,7 @@ function SponsorsEn() {
         <h1 className="sponsors-tittles">SPONSORS</h1>
 
         <div id="sponsor_grid">
-          <section className="sponsors-category platinum-category">
+          <section className="sponsors-category">
             <br></br>
             <h2>PLATINUM</h2>
             <div className="sponsors platinum">
@@ -114,7 +114,7 @@ function SponsorsEn() {
 
           <div className="separator"></div>
 
-          <section className="sponsors-category gold-category">
+          <section className="sponsors-category">
             <br></br>
             <h2>GOLD</h2>
 
@@ -159,7 +159,7 @@ function SponsorsEn() {
           </section>
           <div className="separator"></div>
 
-          <section className="sponsors-category silver-category">
+          <section className="sponsors-category">
             <br></br>
             <h2>SILVER</h2>
             <div className="sponsors silver">
@@ -227,7 +227,7 @@ function SponsorsEn() {
 
           <div className="separator"></div>
 
-          <section className="sponsors-category bronze-category">
+          <section className="sponsors-category">
             <br></br>
             <h2>BRONZE</h2>
             <div className="sponsors bronze">
@@ -257,12 +257,20 @@ function SponsorsEn() {
               <a href="https://symetria.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorSymetria} alt="Symetria" />
               </a>
+              <a
+              href="https://www2.news.vi-grade.com/e/832623/2025-01-13/2cdft7/894804871/h/GJKopkmegudU6l7fOWnryJc5KiKF2YJa8B3CDOn6X0s"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={sponsorViGrade} alt="Vigrade" />
+            </a>
+
             </div>
           </section>
 
           <div className="separator"></div>
 
-          <section className="sponsors-category partners-category">
+          <section className="sponsors-category">
             <br></br>
             <h2>PARTNERS</h2>
             <div id="partners" className="sponsors bronze">
@@ -367,18 +375,11 @@ function SponsorsEn() {
         </div>
       </article>
       <h1 className="sponsors-tittles">Interested in helping our project ?</h1>
-      <div className="sponsor-image">
-        <img
-          className="cover tall"
-          src={equipa3_fsa2023}
-          alt="Team Formula Student Austria 2023"
-        />
-        <Link to="/en/contacts">
-          <button type="button" class="btn btn-secondary btn-lg contact-button">
-            Contact Us
-          </button>
-        </Link>
-      </div>
+
+      <Link to="/en/contacts" className="parallelogram center">
+        <div className="orange_detail"></div>
+        <div className="text">Contact Us</div>
+      </Link>
 
       <FooterEn />
     </div>
