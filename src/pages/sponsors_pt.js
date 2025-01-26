@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import FooterPt from "../components/footer_pt";
 import HeaderPt from "../components/header_pt";
 
-import sponsorcarClasse from "../sponsor_logos/carclasse.svg";
+import sponsorcarClasse from "../sponsor_logos/carclasse_with_margin.svg";
 import sponsorAltium from "../sponsor_logos/altium.svg";
 import sponsorAnsys from "../sponsor_logos/ansys.svg";
 import sponsorBender from "../sponsor_logos/bender.svg";
@@ -58,7 +58,7 @@ function SponsorsPt() {
       <HeaderPt />
 
       <article className="top_margin">
-        <h1 className="sponsors-tittles">Patrocinadores</h1>
+        <h1 className="sponsors-titles">Patrocinadores</h1>
 
         <div id="sponsor_grid">
           <section className="sponsors-category">
@@ -374,9 +374,9 @@ function SponsorsPt() {
           </section>
         </div>
       </article>
-      <h1 className="sponsors-tittles">Interessado em apoiar o projeto ?</h1>
+      <h1 className="sponsors-titles">Interessado em apoiar o projeto ?</h1>
 
-      <Link to="/en/contacts" className="parallelogram center">
+      <Link to="/pt/contacts" className="parallelogram center">
         <div className="orange_detail"></div>
         <div className="text">Contacte-nos</div>
       </Link>

@@ -13,16 +13,12 @@ function AboutUsEn() {
       <div>
         <Header />
 
-        <img
-          className="cover"
-          src={equipa_ifs}
-          alt="ISEL Formula Student Team"
-        />
+        
 
         <article>
           <h1>ABOUT US</h1>
 
-          <div className="container dual right">
+          <div className="container-fluid dual right">
             <div className="image_wrapper">
               <img src={imageFsg_teams} alt="Formula Student Competition" />
             </div>
@@ -42,7 +38,7 @@ function AboutUsEn() {
             </div>
           </div>
 
-          <div className="container dual left">
+          <div className="container-fluid dual left">
             <div className="text_wrapper">
               <div>
                 <h2>The Project</h2>
@@ -68,7 +64,7 @@ function AboutUsEn() {
             </div>
           </div>
 
-          <div className="container">
+          <div className="container-fluid">
             <div className="text_wrapper">
               <h2>History</h2>
               <p>

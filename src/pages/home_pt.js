@@ -27,7 +27,7 @@ export default class HomepagePt extends Component {
 
                 <article>
 
-                    <div className="container dual left">
+                    <div className="container-fluid dual left">
                         <div className="text_wrapper">
                             <div>
                                 <h2>Construímos Veículos de Competição.</h2>
@@ -43,7 +43,7 @@ export default class HomepagePt extends Component {
                         </div>
                     </div>
 
-                    <div className="container dual right">
+                    <div className="container-fluid dual right">
                         <div className="image_wrapper">
                             <img src={ifs02_2} alt="IFS02" />
                         </div>
@@ -55,7 +55,7 @@ export default class HomepagePt extends Component {
                         </div>
                     </div>
 
-                    <div className="container dual left">
+                    <div className="container-fluid dual left">
                         <div className="text_wrapper">
                             <div>
                                 <h2>IFS01</h2>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import linkedinIcon from "../icons/linkedin.svg";
 import instagramIcon from "../icons/instagram.svg";
 import facebookIcon from "../icons/facebook.svg";
-import tiktokIcon from "../icons/tiktok.svg";
+import tiktokIcon from "../icons/tiktok_s.svg";
 import isfIcon from "../logos/ifs_icon_dark.svg";
 
 function FooterPt() {
@@ -24,16 +24,18 @@ function FooterPt() {
           <input
             type="text"
             class="form-control"
-            placeholder="Your email here"
+            placeholder="Em breve..."
             aria-label="Your email here"
             aria-describedby="button-addon2"
+            disabled="true"
           />
           <button
             class="btn btn-outline-secondary"
             type="button"
             id="button-addon2"
+            disabled="true"
           >
-            Subscribe
+            Subscreva
           </button>
         </div>
       </div>

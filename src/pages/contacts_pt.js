@@ -10,16 +10,12 @@ function ContactsPt() {
     <div>
       <Header />
 
-      <img
-        className="cover"
-        src={imageIfsTeam}
-        alt="Equipa ISEL Formula Student"
-      />
+      
 
       <article>
         <h1>CONTACTOS</h1>
 
-        <div className="container">
+        <div className="container-fluid">
           <div className="text_wrapper">
             <h2>Email</h2>
             <p>
@@ -28,55 +24,50 @@ function ContactsPt() {
               </a>
             </p>
           </div>
+
           <form
-            class="row g-3 text_wrapper"
+            className="row g-3"
             target="_blank"
             method="POST"
             action="https://formsubmit.co/formulastudent@isel.pt"
           >
-            <div class="col-12">
-              <label for="inputEmail4" class="form-label">
+            <div className="col-9">
+              <label for="email" className="form-label">
                 Email
               </label>
               <input
                 type="email"
-                class="form-control"
-                id="inputEmail4"
+                className="form-control"
+                id="email"
                 name="email"
                 placeholder="Insira o seu email"
                 required
               />
-            </div>
 
-            <div class="col-12">
-              <label for="inputPassword4" class="form-label">
-                Nome
+              <label for="name" className="form-label">
+                Nome da entidade
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="name"
                 name="name"
-                placeholder="Insira a sua password"
+                placeholder="Insira o nome da sua entidade"
                 required
               />
-            </div>
 
-            <div class="col-12">
-              <label for="exampleFormControlTextarea1" class="form-label">
+              <label for="message" className="form-label">
                 A sua mensagem
               </label>
               <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                name="exampleTextarea"
+                className="form-control"
+                id="message"
+                name="message"
                 rows="3"
-                placeholder="Escreva algo"
+                placeholder="Escreva algo..."
+                style={{ width: "full" }}
               ></textarea>
-            </div>
-
-            <div class="col-12">
-              <button type="submit" class="btn btn-secondary w-100">
+              <button type="submit" className="btn btn-secondary w-100">
                 Enviar
               </button>
             </div>

@@ -13,16 +13,12 @@ function AboutUsPt() {
       <div>
         <Header />
 
-        <img
-          className="cover"
-          src={equipa_ifs}
-          alt="Equipa ISEL Formula Student"
-        />
+        
 
         <article>
           <h1>SOBRE NÓS</h1>
 
-          <div className="container dual right">
+          <div className="container-fluid dual right">
             <div className="image_wrapper">
               <img src={imageFsg_teams} alt="Formula Student Competition" />
             </div>
@@ -43,7 +39,7 @@ function AboutUsPt() {
             </div>
           </div>
 
-          <div className="container dual left">
+          <div className="container-fluid dual left">
             <div className="text_wrapper">
               <div>
                 <h2>O Projeto</h2>
@@ -68,7 +64,7 @@ function AboutUsPt() {
             </div>
           </div>
 
-          <div className="container">
+          <div className="container-fluid">
             <div className="text_wrapper">
               <h2>História</h2>
               <p>

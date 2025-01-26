@@ -10,16 +10,12 @@ function ContactsEn() {
     <div>
       <Header />
 
-      <img
-        className="cover"
-        src={imageIfsTeam}
-        alt="ISEL Formula Student Team"
-      />
+      
 
       <article>
         <h1>CONTACTS</h1>
 
-        <div className="container">
+        <div className="container-fluid">
           <div className="text_wrapper">
             <h2>Email</h2>
             <p>
@@ -29,54 +25,48 @@ function ContactsEn() {
             </p>
           </div>
           <form
-            class="row g-3 text_wrapper"
+            className="row g-3"
             target="_blank"
             method="POST"
             action="https://formsubmit.co/formulastudent@isel.pt"
           >
-            <div class="col-12">
-              <label for="inputEmail4" class="form-label">
+            <div className="col-9">
+              <label for="inputEmail4" className="form-label">
                 Email
               </label>
               <input
                 type="email"
-                class="form-control"
+                className="form-control"
                 id="inputEmail4"
                 name="email"
                 placeholder="Enter your email"
                 required
               />
-            </div>
 
-            <div class="col-12">
-              <label for="inputPassword4" class="form-label">
-                Name
+              <label for="inputPassword4" className="form-label">
+                Entity Name
               </label>
               <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 id="name"
                 name="name"
-                placeholder="Enter your password"
+                placeholder="Enter your entity name"
                 required
               />
-            </div>
 
-            <div class="col-12">
-              <label for="exampleFormControlTextarea1" class="form-label">
+              <label for="message" className="form-label">
                 Write your message
               </label>
               <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                name="exampleTextarea"
+                className="form-control"
+                id="message"
+                name="message"
                 rows="3"
                 placeholder="Write something here..."
               ></textarea>
-            </div>
 
-            <div class="col-12">
-              <button type="submit" class="btn btn-secondary w-100">
+              <button type="submit" className="btn btn-secondary w-100">
                 Submit
               </button>
             </div>

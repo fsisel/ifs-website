@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import FooterEn from "../components/footer_en";
 import HeaderEn from "../components/header_en";
 
-import sponsorcarClasse from "../sponsor_logos/carclasse.svg";
+import sponsorcarClasse from "../sponsor_logos/carclasse_with_margin.svg";
 import sponsorAltium from "../sponsor_logos/altium.svg";
 import sponsorAnsys from "../sponsor_logos/ansys.svg";
 import sponsorBender from "../sponsor_logos/bender.svg";
@@ -58,7 +58,7 @@ function SponsorsEn() {
       <HeaderEn />
 
       <article className="top_margin">
-        <h1 className="sponsors-tittles">SPONSORS</h1>
+        <h1 className="sponsors-titles">SPONSORS</h1>
 
         <div id="sponsor_grid">
           <section className="sponsors-category">
@@ -95,6 +95,7 @@ function SponsorsEn() {
               >
                 <img src={sponsorcarClasse} alt="Car Classe" />
               </a>
+
               <a
                 href="https://www.vlmoldes.pt"
                 target="_blank"
@@ -258,13 +259,12 @@ function SponsorsEn() {
                 <img src={sponsorSymetria} alt="Symetria" />
               </a>
               <a
-              href="https://www2.news.vi-grade.com/e/832623/2025-01-13/2cdft7/894804871/h/GJKopkmegudU6l7fOWnryJc5KiKF2YJa8B3CDOn6X0s"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={sponsorViGrade} alt="Vigrade" />
-            </a>
-
+                href="https://www2.news.vi-grade.com/e/832623/2025-01-13/2cdft7/894804871/h/GJKopkmegudU6l7fOWnryJc5KiKF2YJa8B3CDOn6X0s"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={sponsorViGrade} alt="Vigrade" />
+              </a>
             </div>
           </section>
 
@@ -374,7 +374,7 @@ function SponsorsEn() {
           </section>
         </div>
       </article>
-      <h1 className="sponsors-tittles">Interested in helping our project ?</h1>
+      <h1 className="sponsors-titles">Interested in helping our project ?</h1>
 
       <Link to="/en/contacts" className="parallelogram center">
         <div className="orange_detail"></div>

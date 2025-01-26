@@ -18,13 +18,26 @@
   font-weight: 900;
 }
 
+/* Montserrat font */
 @font-face {
   font-family: "Montserrat";
-  src: url("https://fonts.gstatic.com/s/montserrat/v26/JTURjIg1_i6t8kCHKm45_bZF3gnD-w.ttf");
+  src: url(./fonts/montserrat/Montserrat-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./fonts/montserrat/Montserrat-Bold.ttf);
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(./fonts/montserrat/Montserrat-ExtraBold.ttf);
   font-display: swap;
   font-weight: 900;
 }
-
 
 /* ########## GLOBAL ########## */
 
@@ -34,7 +47,7 @@
   padding: 0;
   flex-direction: column;
   align-items: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -57,7 +70,7 @@ h2 {
   font-size: 2.2em;
 }
 
-:is(h1, h2, h3, h4, h5, h6, p) {
+:is(h1, h2, h3, h4, h5, h6, p, label) {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -67,6 +80,10 @@ img,
 #social_buttons {
   user-select: none;
   -webkit-user-select: none;
+}
+
+#navbar {
+  font-family: "Open Sans", sans-serif;
 }
 
 button {
@@ -364,24 +381,29 @@ a.parallelogram:hover .text {
   margin: 0 auto;
 }
 
-.container {
+.container-fluid {
   display: flex;
   flex-direction: column;
-  margin: 5em 0;
+  margin-top: 2em;
+  margin-bottom: 4em;
   background-color: #f5f5f5;
+  width: 100%;
+  padding-right:0;
+  padding-left:0;
+  
 }
 
-.container.dual {
+.container-fluid.dual {
   flex-direction: row;
 }
 
-.container .text_wrapper {
+.container-fluid .text_wrapper {
   padding: 2.6em;
   box-sizing: border-box;
   width: 100%;
 }
 
-.container.dual .text_wrapper {
+.container-fluid.dual .text_wrapper {
   width: 50%;
 }
 
@@ -396,7 +418,7 @@ a.parallelogram:hover .text {
   font-size: 1.4em;
 }
 
-.container.dual .image_wrapper {
+.container-fluid.dual .image_wrapper {
   width: 50%;
   min-height: 20em;
 }
@@ -546,67 +568,10 @@ a.parallelogram:hover .text {
 }
 
 /* ########## SPONSORS ########## */
-/* Estilo geral para todas as categorias */
+
 .sponsors-category {
-  position: relative; /* Necessário para a barra */
-  padding-left: 2rem; /* Espaço suficiente para a barra lateral */
-  /*margin-bottom: 2rem; /* Separação entre categorias */
-  overflow: hidden; /* Evita problemas de layout */
-}
-
-/* Barra vertical da categoria Platinum */
-.platinum-category::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px; /* Largura da barra */
-  height: 100%; /* Barra cobre toda a altura da seção */
-  background-color: #007fff; /* Azul para Platinum */
-}
-
-/* Barra vertical da categoria Gold */
-.gold-category::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 100%;
-  background-color: #856a00; /* Dourado para Gold */
-}
-
-/* Barra vertical da categoria Silver */
-.silver-category::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 100%;
-  background-color: #c0c0c0; /* Prata para Silver */
-}
-
-/* Barra vertical da categoria Bronze */
-.bronze-category::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 100%;
-  background-color: #cd7f32; /* Bronze para Bronze */
-}
-
-/* Barra vertical da categoria Bronze */
-.partners-category::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 8px;
-  height: 100%;
-  background-color: gray;
+  padding-left: 2rem;
+  overflow: hidden;
 }
 
 .sponsors-category h2 {
@@ -643,13 +608,12 @@ a.parallelogram:hover .text {
   width: auto;
 }
 
-.contact-button:hover{
+.contact-button:hover {
   background-color: #cd7f32;
 }
 
-.sponsors-tittles {
-  text-align: center;
-  font-weight: bold;
+.sponsors-titles {
+  /*text-align: center;*/
   margin-bottom: 2%;
 }
 
@@ -710,12 +674,17 @@ a.parallelogram:hover .text {
 
 /* ########## FORM ########## */
 
+.form-label {
+  margin-top: 1em;
+  font-size: large;
+}
 form {
   display: flex;
   flex-direction: column;
   width: 100%;
   font-size: 0.9em;
-  align-items: stretch;
+  align-items: center;
+  margin-bottom: 4em;
 }
 
 .input,
@@ -748,8 +717,7 @@ textarea {
 
 textarea {
   width: 100%;
-  max-width: 30em;
-  margin: 1em 0;
+  margin-bottom: 2em;
   padding: 0.5em;
   border: 0.2em solid #bbb;
   border-radius: 0;
@@ -811,7 +779,7 @@ footer {
   width: 100%;
   background-color: #111; /* Cor de fundo */
   color: #fff; /* Cor do texto */
-  font-family: "Open Sans";
+  font-family: "Montserrat";
   padding: 4em 2vw;
   box-sizing: border-box;
   display: grid;
@@ -983,23 +951,23 @@ footer > div {
     height: 60vh;
   }
 
-  .container .text_wrapper {
+  .container-fluid .text_wrapper {
     padding: 1.5em 1.2em;
   }
 
-  .container.dual.left {
+  .container-fluid.dual.left {
     flex-direction: column-reverse;
   }
 
-  .container.dual.right {
+  .container-fluid.dual.right {
     flex-direction: column;
   }
 
-  .container.dual .text_wrapper {
+  .container-fluid.dual .text_wrapper {
     width: 100%;
   }
 
-  .container.dual .image_wrapper {
+  .container-fluid.dual .image_wrapper {
     width: 100%;
     min-height: 0;
   }
@@ -1149,7 +1117,7 @@ footer > div {
     background-color: #000;
   }
 
-  .container {
+  .container-fluid {
     background-color: #181818;
   }
 
