@@ -13,7 +13,7 @@ function PrivacyPolicyPt() {
 
                 <h1>POLÍTICA DE PRIVACIDADE</h1>
 
-                <div className="container">
+                <div className="container-fluid">
                     <div className="text_wrapper">
                         <p>Na ISEL Formula Student uma das nossas prioridades é a privacidade dos nossos utilizadores. Esta política de privacidade contém uma descrição da informação recolhida pelo website da ISEL Formula Student e como nós a utilizamos.</p>
 

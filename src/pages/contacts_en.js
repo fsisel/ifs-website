@@ -3,14 +3,10 @@ import React from "react";
 import Header from "../components/header_en";
 import Footer from "../components/footer_en";
 
-import imageIfsTeam from "../images/ifs_team.webp";
-
 function ContactsEn() {
   return (
     <div>
       <Header />
-
-      
 
       <article>
         <h1>CONTACTS</h1>
@@ -64,6 +60,7 @@ function ContactsEn() {
                 name="message"
                 rows="3"
                 placeholder="Write something here..."
+                required
               ></textarea>
 
               <button type="submit" className="btn btn-secondary w-100">

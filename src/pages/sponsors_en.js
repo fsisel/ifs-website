@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import FooterEn from "../components/footer_en";
 import HeaderEn from "../components/header_en";
 
-import sponsorcarClasse from "../sponsor_logos/carclasse_with_margin.svg";
 import sponsorAltium from "../sponsor_logos/altium.svg";
 import sponsorAnsys from "../sponsor_logos/ansys.svg";
 import sponsorBender from "../sponsor_logos/bender.svg";
@@ -26,7 +25,7 @@ import sponsorSolidworks from "../sponsor_logos/solidworks.svg";
 import sponsorSymetria from "../sponsor_logos/symetria.webp";
 import sponsorTeConnectivity from "../sponsor_logos/te_connectivity.svg";
 import sponsorTsf from "../sponsor_logos/tsf.svg";
-import sponsorCubotonic from "../sponsor_logos/cubotonic.webp";
+import sponsorCubotonic from "../sponsor_logos/Cubotonic.svg";
 import sponsorInfusao from "../sponsor_logos/infusao.svg";
 import sponsorLeomavel from "../sponsor_logos/leomavel.webp";
 import sponsorReiman from "../sponsor_logos/reiman.svg";
@@ -51,6 +50,15 @@ import sponsorRapid from "../sponsor_logos/rapidharness.webp";
 import sponsorSchroth from "../sponsor_logos/Schroth.webp";
 import sponsorMathWorks from "../sponsor_logos/mathworks.svg";
 import sponsorViGrade from "../sponsor_logos/vi-grade_red.svg";
+import sponsorCtw from "../sponsor_logos/ctw.svg";
+import sponsorAlmeidaLamas from "../sponsor_logos/Almeida_Lamas.svg";
+import sponsorS4 from "../sponsor_logos/s4metro.svg";
+import sponsorRus from "../sponsor_logos/rus-logo.svg";
+import sponsorEnepaq from "../sponsor_logos/enepaq.svg";
+import sponsorFrade from "../sponsor_logos/frade.svg";
+import sponsorMvieira from "../sponsor_logos/mvieira.svg";
+import sponsorFocoCriativo from "../sponsor_logos/focoCriativo.svg";
+import sponsorAutoSock from "../sponsor_logos/auto_sock.svg";
 
 function SponsorsEn() {
   return (
@@ -69,10 +77,16 @@ function SponsorsEn() {
                 <img src={sponsorIsel} alt="ISEL" />
               </a>
               <a href="https://www.ipl.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorIpl} alt="IPL" style={{ width: 300 }} />
+                <img src={sponsorIpl} alt="IPL" style={{ width: 360 }} />
               </a>
             </div>
             <div className="sponsors platinum">
+              <a href="https://www.codi.pt" target="_blank" rel="noreferrer">
+                <img src={sponsorCodi} alt="CODI" />
+              </a>
+              <a href="https://grupometal.com" target="_blank" rel="noreferrer">
+                <img src={sponsorGrupoMetal} alt="Grupo Metal" />
+              </a>
               <a href="https://www.infusao.pt" target="_blank" rel="noreferrer">
                 <img
                   src={sponsorInfusao}
@@ -80,35 +94,21 @@ function SponsorsEn() {
                   style={{ width: 300 }}
                 />
               </a>
-              <a href="https://grupometal.com" target="_blank" rel="noreferrer">
-                <img src={sponsorGrupoMetal} alt="Grupo Metal" />
-              </a>
-              <a href="https://www.codi.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorCodi} alt="CODI" />
-              </a>
             </div>
             <div className="sponsors platinum">
-              <a
-                href="https://www.carclasse.pt"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={sponsorcarClasse} alt="Car Classe" />
-              </a>
-
-              <a
-                href="https://www.vlmoldes.pt"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={sponsorVlMoldes} alt="VL Moldes" />
-              </a>
               <a
                 href="https://www.milwaukeetool.eu"
                 target="_blank"
                 rel="noreferrer"
               >
                 <img src={sponsorMilwaukee} alt="Milwaukee" />
+              </a>
+              <a
+                href="https://www.vlmoldes.pt"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={sponsorVlMoldes} alt="VL Moldes" />
               </a>
             </div>
           </section>
@@ -158,6 +158,7 @@ function SponsorsEn() {
               </a>
             </div>
           </section>
+
           <div className="separator"></div>
 
           <section className="sponsors-category">
@@ -175,54 +176,88 @@ function SponsorsEn() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={sponsorEuroCircuits} alt="Eurocircuits" />
+                <img
+                  src={sponsorEuroCircuits}
+                  alt="Eurocircuits"
+                  style={{ width: 120 }}
+                />
               </a>
 
               <a href="https://deconorma.com" target="_blank" rel="noreferrer">
                 <img src={sponsorDeconorma} alt="Deconorma" />
               </a>
-              <a href="http://www.natrater.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorNatrater} alt="Natrater" />
-              </a>
-              <a href="https://www.jdeus.com/" target="_blank" rel="noreferrer">
-                <img src={sponsorJdeus} alt="Jdeus" />
-              </a>
-              <a
-                href="https://www.cubotonic.pt"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={sponsorCubotonic}
-                  alt="Cubotónic"
-                  style={{ width: 225 }}
-                />
-              </a>
-              <a href="http://www.carlis.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorCarlis} alt="Carlis" />
-              </a>
-              <a
-                href="https://casauto.lojasonlinectt.pt/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={sponsorCasauto}
-                  alt="Casauto"
-                  style={{ width: 200 }}
-                />
-              </a>
-              <a
-                href="https://www.logoplaste.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={sponsorLogoplaste}
-                  alt="Logoplaste"
-                  style={{ width: 300 }}
-                />
-              </a>
+              <div className="sponsors silver">
+                <a
+                  href="http://www.natrater.pt"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={sponsorNatrater} alt="Natrater" />
+                </a>
+                <a
+                  href="https://fococriativo.pt/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={sponsorFocoCriativo} alt="Foco Criativo" />
+                </a>
+                <a
+                  href="https://www.jdeus.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={sponsorJdeus} alt="Jdeus" />
+                </a>
+                <a
+                  href="https://www.cubotonic.pt"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={sponsorCubotonic}
+                    alt="Cubotónic"
+                    style={{ width: 225 }}
+                  />
+                </a>
+              </div>
+              <div className="sponsors silver">
+                <a href="http://www.carlis.pt" target="_blank" rel="noreferrer">
+                  <img src={sponsorCarlis} alt="Carlis" />
+                </a>
+                <a
+                  href="https://casauto.lojasonlinectt.pt/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={sponsorCasauto}
+                    alt="Casauto"
+                    style={{ width: 200 }}
+                  />
+                </a>
+                <a
+                  href="https://www.criticaltechworks.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={sponsorCtw}
+                    alt="Critical Techworks"
+                    style={{ width: 180 }}
+                  />
+                </a>
+                <a
+                  href="https://www.logoplaste.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={sponsorLogoplaste}
+                    alt="Logoplaste"
+                    style={{ width: 300 }}
+                  />
+                </a>
+              </div>
             </div>
           </section>
 
@@ -233,6 +268,24 @@ function SponsorsEn() {
             <h2>BRONZE</h2>
             <div className="sponsors bronze">
               <a
+                href="https://almeida-lamas.pt/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={sponsorAlmeidaLamas}
+                  alt="Almeida & Lamas"
+                  style={{ width: 180 }}
+                />
+              </a>
+              <a
+                href="https://www.solutions4metrology.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={sponsorS4} alt="S4 Metro" />
+              </a>
+              <a
                 href="https://www.gleal.pt/pt/home/index"
                 target="_blank"
                 rel="noreferrer"
@@ -242,29 +295,36 @@ function SponsorsEn() {
               <a href="https://sabino.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorSabino} alt="Sabino" />
               </a>
-              <a href="https://rebelco.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorRebelCo} alt="RebelCo" />
-              </a>
-              <a href="https://www.copisel.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorCopisel} alt="Copisel" />
-              </a>
-              <a href="https://protomill.pt" target="_blank" rel="noreferrer">
-                <img
-                  src={sponsorProtomill}
-                  alt="Protomill"
-                  style={{ width: 200 }}
-                />
-              </a>
-              <a href="https://symetria.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorSymetria} alt="Symetria" />
-              </a>
-              <a
-                href="https://www2.news.vi-grade.com/e/832623/2025-01-13/2cdft7/894804871/h/GJKopkmegudU6l7fOWnryJc5KiKF2YJa8B3CDOn6X0s"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={sponsorViGrade} alt="Vigrade" />
-              </a>
+
+              <div className="sponsors bronze">
+                <a href="https://rebelco.pt" target="_blank" rel="noreferrer">
+                  <img src={sponsorRebelCo} alt="RebelCo" />
+                </a>
+                <a
+                  href="https://www.copisel.pt"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={sponsorCopisel} alt="Copisel" />
+                </a>
+                <a href="https://protomill.pt" target="_blank" rel="noreferrer">
+                  <img
+                    src={sponsorProtomill}
+                    alt="Protomill"
+                    style={{ width: 200 }}
+                  />
+                </a>
+                <a href="https://symetria.pt" target="_blank" rel="noreferrer">
+                  <img src={sponsorSymetria} alt="Symetria" />
+                </a>
+                <a
+                  href="https://www2.news.vi-grade.com/e/832623/2025-01-13/2cdft7/894804871/h/GJKopkmegudU6l7fOWnryJc5KiKF2YJa8B3CDOn6X0s"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img src={sponsorViGrade} alt="Vigrade" />
+                </a>
+              </div>
             </div>
           </section>
 
@@ -281,6 +341,13 @@ function SponsorsEn() {
               >
                 <img src={sponsorSimscale} alt="Simscale" />
               </a>
+              <a
+                href="https://www.rohde-schwarz.com/pt/home_48230.html"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={sponsorRus} alt="Rus" style={{ width: 180 }} />
+              </a>
               <a href="https://www.ansys.com" target="_blank" rel="noreferrer">
                 <img src={sponsorAnsys} alt="Ansys" />
               </a>
@@ -294,6 +361,9 @@ function SponsorsEn() {
               >
                 <img src={sponsorEasyComposites} alt="EasyComposites" />
               </a>
+            </div>
+
+            <div id="partners" className="sponsors bronze">
               <a href="https://www.ramada.pt" target="_blank" rel="noreferrer">
                 <img
                   src={sponsorRamadaAcos}
@@ -328,6 +398,8 @@ function SponsorsEn() {
               >
                 <img src={sponsorCrm} alt="CRM" />
               </a>
+            </div>
+            <div id="partners" className="sponsors bronze">
               <a
                 href="https://rapidharness.com/"
                 target="_blank"
@@ -342,6 +414,9 @@ function SponsorsEn() {
               >
                 <img src={sponsorSolidworks} alt="Solidworks" />
               </a>
+              <a href="https://enepaq.com/" target="_blank" rel="noreferrer">
+                <img src={sponsorEnepaq} alt="Enepaq" />
+              </a>
               <a
                 href="https://www.schrothracing.com/"
                 target="_blank"
@@ -349,6 +424,15 @@ function SponsorsEn() {
               >
                 <img src={sponsorSchroth} alt="Schroth" />
               </a>
+              <a
+                href="https://frademetalurgica.pt/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={sponsorFrade} alt="Frade Metarlúgica" />
+              </a>
+            </div>
+            <div id="partners" className="sponsors bronze">
               <a href="https://www.bender.de" target="_blank" rel="noreferrer">
                 <img src={sponsorBender} alt="Bender" />
               </a>
@@ -363,12 +447,22 @@ function SponsorsEn() {
                   style={{ width: 200 }}
                 />
               </a>
+              <a href="https://mvieira.pt/" target="_blank" rel="noreferrer">
+                <img
+                  src={sponsorMvieira}
+                  alt="MViera"
+                  style={{ height: 130, paddingBottom: "2em" }}
+                />
+              </a>
               <a
                 href="https://www.mathworks.com/"
                 target="_blank"
                 rel="noreferrer"
               >
                 <img src={sponsorMathWorks} alt="MathWorks" />
+              </a>
+              <a href="https://autosock.com/" target="_blank" rel="noreferrer">
+                <img src={sponsorAutoSock} alt="Auto Sock" />
               </a>
             </div>
           </section>

@@ -3,14 +3,10 @@ import React from "react";
 import Header from "../components/header_pt";
 import Footer from "../components/footer_pt";
 
-import imageIfsTeam from "../images/ifs_team.webp";
-
 function ContactsPt() {
   return (
     <div>
       <Header />
-
-      
 
       <article>
         <h1>CONTACTOS</h1>
@@ -65,7 +61,7 @@ function ContactsPt() {
                 name="message"
                 rows="3"
                 placeholder="Escreva algo..."
-                style={{ width: "full" }}
+                required
               ></textarea>
               <button type="submit" className="btn btn-secondary w-100">
                 Enviar

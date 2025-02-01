@@ -47,11 +47,23 @@ export default class HomepageEn extends Component {
             </div>
           </div>
 
+          <div className="container-fluid dual right">
+            <div className="image_wrapper">
+              <img src={ifs02_2} alt="IFS02" />
+            </div>
+            <div className="text_wrapper">
+              <div>
+                <h2>IFS05</h2>
+                <p>Coming soon...</p>
+              </div>
+            </div>
+          </div>
+
           <div className="product big">
             <img src={ifs03Front} alt="IFS03" />
             <div className="column">
               <div className="wrapper">
-                <div className="detail">NEW</div>
+                <div className="detail">OUR LATEST</div>
                 <div className="text">IFS04</div>
               </div>
               <div>
@@ -67,7 +79,12 @@ export default class HomepageEn extends Component {
             <div className="text_wrapper">
               <div>
                 <h2>IFS03</h2>
-                <p>...</p>
+
+                <p>
+                  The IFS03 vehicle was the successor to the IFS02, showcasing
+                  the team’s advancements in electric car technology. It
+                  delivered improved efficiency and performance.
+                </p>
               </div>
             </div>
             <div className="image_wrapper">

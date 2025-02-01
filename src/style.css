@@ -59,7 +59,7 @@ h3 {
 }
 
 p {
-  text-align: justify;
+  text-align: left;
 }
 
 h1 {
@@ -388,9 +388,8 @@ a.parallelogram:hover .text {
   margin-bottom: 4em;
   background-color: #f5f5f5;
   width: 100%;
-  padding-right:0;
-  padding-left:0;
-  
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .container-fluid.dual {
@@ -412,6 +411,14 @@ a.parallelogram:hover .text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.text_wrapper > div > h2 {
+  margin-bottom: 0.5em;
+}
+
+.text_wrapper > h2 {
+  margin-bottom: 0.5em;
 }
 
 .text_wrapper p {
@@ -664,6 +671,7 @@ a.parallelogram:hover .text {
 .sponsors.bronze img {
   width: 8em;
   margin: 1.5em;
+  height: 7em;
 }
 
 #sponsor_grid .separator {
