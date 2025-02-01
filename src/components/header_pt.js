@@ -44,7 +44,7 @@ function HeaderPt() {
 
             <div id="navbar_menu">
                 <Link to="/pt/about_us">SOBRE NÓS&nbsp;</Link>
-                <Link to="/pt/ifs03">CARROS&nbsp;</Link>
+                <Link to="/pt/ifs04">IFS04&nbsp;</Link>
                 <Link to="/pt/sponsors">PATROCINADORES&nbsp;</Link>
                 <Link to="/pt/contacts">CONTACTOS&nbsp;</Link>
             </div>
