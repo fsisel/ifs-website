@@ -20,20 +20,20 @@ function FooterEn() {
       </div>
       <div id="newsletter">
         <h4>Newsletter</h4>
-        <div class="input-group mb-3">
+        <div className="input-group mb-3">
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             placeholder="Soon..."
             aria-label="Your email here"
             aria-describedby="button-addon2"
-            disabled="true"
+            disabled={true}
           />
           <button
-            class="btn btn-outline-secondary"
+            className="btn btn-outline-secondary"
             type="button"
             id="button-addon2"
-            disabled="true"
+            disabled={true}
           >
             Subscribe
           </button>

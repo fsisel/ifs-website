@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 import Header from "../components/header_en";
 import Footer from "../components/footer_en";
 
-import logoDark from "../logos/ifs_logo_dark.svg";
-import ptIcon from "../icons/pt.svg";
-
-import equipa3_fsa2023 from "../images/equipa3_fsa2023.webp";
+import equipa3_fspt2024 from "../images/Team04_fspt_1-1.webp";
 
 import ifs01_2 from "../images/ifs01_2.webp";
 import ifs02_1 from "../images/ifs02_1.webp";
 import ifs02_2 from "../images/ifs02_2.webp";
 import ifs03Front from "../images/ifs03_front_whitebg.webp";
+import ifs05 from "../images/ifs05_1.webp";
 
 export default class HomepageEn extends Component {
   render() {
@@ -22,7 +20,7 @@ export default class HomepageEn extends Component {
 
         <img
           className="cover tall"
-          src={equipa3_fsa2023}
+          src={equipa3_fspt2024}
           alt="Team Formula Student Austria 2023"
         />
 
@@ -49,7 +47,7 @@ export default class HomepageEn extends Component {
 
           <div className="container-fluid dual right">
             <div className="image_wrapper">
-              <img src={ifs02_2} alt="IFS02" />
+              <img src={ifs05} alt="IFS05" />
             </div>
             <div className="text_wrapper">
               <div>

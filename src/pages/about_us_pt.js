@@ -3,7 +3,6 @@ import React from "react";
 import Header from "../components/header_pt";
 import Footer from "../components/footer_pt";
 
-import equipa_ifs from "../images/equipa3_fsa2023.webp";
 import imageIfs02_1 from "../images/ifs02_1.webp";
 import imageFsg_teams from "../images/fsg_teams.webp";
 

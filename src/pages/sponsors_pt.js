@@ -18,15 +18,15 @@ import sponsorGrupoMetal from "../sponsor_logos/grupo_metal.svg";
 import sponsorIpl from "../sponsor_logos/ipl.svg";
 import sponsorIsel from "../sponsor_logos/isel.svg";
 import sponsorLogoplaste from "../sponsor_logos/logoplaste.svg";
-import sponsorMjbranco from "../sponsor_logos/mjbranco.svg";
+import sponsorMjbranco from "../sponsor_logos/mjbranco.webp";
 import sponsorNatrater from "../sponsor_logos/natrater.webp";
 import sponsorRamadaAcos from "../sponsor_logos/ramada_acos.svg";
 import sponsorSolidworks from "../sponsor_logos/solidworks.svg";
 import sponsorSymetria from "../sponsor_logos/symetria.webp";
 import sponsorTeConnectivity from "../sponsor_logos/te_connectivity.svg";
-import sponsorTsf from "../sponsor_logos/tsf.svg";
-import sponsorCubotonic from "../sponsor_logos/Cubotonic.svg";
-import sponsorInfusao from "../sponsor_logos/infusao.svg";
+import sponsorTsf from "../sponsor_logos/tsf.webp";
+import sponsorCubotonic from "../sponsor_logos/Cubotonic.webp";
+import sponsorInfusao from "../sponsor_logos/infusao.webp";
 import sponsorLeomavel from "../sponsor_logos/leomavel.webp";
 import sponsorReiman from "../sponsor_logos/reiman.svg";
 import sponsorMaquitorno from "../sponsor_logos/maquitorno.webp";
@@ -54,11 +54,11 @@ import sponsorCtw from "../sponsor_logos/ctw.svg";
 import sponsorAlmeidaLamas from "../sponsor_logos/Almeida_Lamas.svg";
 import sponsorS4 from "../sponsor_logos/s4metro.svg";
 import sponsorRus from "../sponsor_logos/rus-logo.svg";
-import sponsorEnepaq from "../sponsor_logos/enepaq.svg";
-import sponsorFrade from "../sponsor_logos/frade.svg";
-import sponsorMvieira from "../sponsor_logos/mvieira.svg";
-import sponsorFocoCriativo from "../sponsor_logos/focoCriativo.svg";
-import sponsorAutoSock from "../sponsor_logos/auto_sock.svg";
+import sponsorEnepaq from "../sponsor_logos/enepaq.webp";
+import sponsorFrade from "../sponsor_logos/frade.webp";
+import sponsorMvieira from "../sponsor_logos/mvieira.webp";
+import sponsorFocoCriativo from "../sponsor_logos/focoCriativo.webp";
+import sponsorAutoSock from "../sponsor_logos/auto_sock.webp";
 
 function SponsorsPt() {
   return (
