@@ -25,7 +25,7 @@ import sponsorSolidworks from "../sponsor_logos/solidworks.svg";
 import sponsorSymetria from "../sponsor_logos/symetria.webp";
 import sponsorTeConnectivity from "../sponsor_logos/te_connectivity.svg";
 import sponsorTsf from "../sponsor_logos/tsf.webp";
-import sponsorCubotonic from "../sponsor_logos/Cubotonic.webp";
+import sponsorCubotonic from "../sponsor_logos/cubotonic.webp";
 import sponsorInfusao from "../sponsor_logos/infusao.webp";
 import sponsorLeomavel from "../sponsor_logos/leomavel.webp";
 import sponsorReiman from "../sponsor_logos/reiman.svg";
