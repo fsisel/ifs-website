@@ -91,7 +91,7 @@ function SponsorsEn() {
                 <img
                   src={sponsorInfusao}
                   alt="Infusão"
-                  style={{ width: 300 }}
+                  style={{ width: 270 }}
                 />
               </a>
             </div>
@@ -220,7 +220,7 @@ function SponsorsEn() {
                   <img
                     src={sponsorCubotonic}
                     alt="Cubotónic"
-                    style={{ width: 225 }}
+                   
                   />
                 </a>
               </div>
@@ -237,7 +237,7 @@ function SponsorsEn() {
                   <img
                     src={sponsorCasauto}
                     alt="Casauto"
-                    style={{ width: 200 }}
+                   
                   />
                 </a>
                 <a
@@ -248,7 +248,7 @@ function SponsorsEn() {
                   <img
                     src={sponsorCtw}
                     alt="Critical Techworks"
-                    style={{ width: 180 }}
+                   
                   />
                 </a>
                 <a
@@ -259,7 +259,7 @@ function SponsorsEn() {
                   <img
                     src={sponsorLogoplaste}
                     alt="Logoplaste"
-                    style={{ width: 300 }}
+                    style={{ width: 200 }}
                   />
                 </a>
               </div>
@@ -279,7 +279,7 @@ function SponsorsEn() {
                 <img
                   src={sponsorAlmeidaLamas}
                   alt="Almeida & Lamas"
-                  style={{ width: 180 }}
+                  style={{ width: 160 }}
                 />
               </a>
               <a
