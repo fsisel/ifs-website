@@ -300,6 +300,7 @@ a.parallelogram:hover .text {
 
 .flag_icon {
   height: inherit;
+  margin-bottom: 50%;
 }
 
 /* ########## HOMEPAGE HEADER ########## */
@@ -443,21 +444,22 @@ a.parallelogram:hover .text {
 
 #black_container img {
   display: block;
-  margin: 8em auto 6em auto;
+  margin: 2em auto 2em auto;
   margin-left: auto;
   margin-right: auto;
 }
 
 #black_container #cover {
-  width: 75%;
+  width: 50%;
   max-width: 75em;
+ 
 }
 
 #black_container #title {
   width: 40%;
   max-width: 40em;
-  margin-top: 4em;
-  margin-bottom: 8em;
+  margin-top: 2em;
+  margin-bottom: 5em;
 }
 
 /* ########## PRODUCTS ########## */
@@ -510,7 +512,7 @@ a.parallelogram:hover .text {
 }
 
 .product_center img.large {
-  width: 50%;
+  width: 70%;
   max-width: 40em;
   object-fit: contain;
   display: block;
@@ -524,11 +526,11 @@ a.parallelogram:hover .text {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5em 0 5em 0;
+  margin: 8em 0 8em 0;
 }
 
 .product img {
-  width: 50%;
+  width: 35%;
   object-fit: contain;
 }
 
@@ -574,15 +576,39 @@ a.parallelogram:hover .text {
   text-align: right;
 }
 
+.btn-sub{
+  height: 3em;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f50;
+  font-weight: 700;
+  border: 0.3em solid #f50;
+  box-sizing: border-box;
+  transform: skew(-18deg);
+  -webkit-transform: skew(-18deg);
+  -moz-transform: skew(-18deg);
+  -o-transform: skew(-18deg);
+  transition: 180ms;
+}
+
+.btn-sub:hover {
+  transition: 180ms;
+  background-color: #f50;
+  color: #fff;
+}
+
 /* ########## SPONSORS ########## */
 
 .sponsors-category {
+ 
   padding-left: 2rem;
   overflow: hidden;
 }
 
 .sponsors-category h2 {
-  margin: 0;
+  margin-top: 1em;
   padding-left: 1rem;
   color: black;
   font-family: "Montserrat", sans-serif;
@@ -880,6 +906,7 @@ footer > div {
 
   .product_center img.large {
     display: none;
+    
   }
 
   .product_center img.responsive {
@@ -1118,6 +1145,10 @@ footer > div {
 @media (prefers-color-scheme: dark) {
   body {
     color: #fff;
+    background-color: #000;
+  }
+
+  .btn-sub{
     background-color: #000;
   }
 

@@ -3,10 +3,10 @@ import React from "react";
 import Header from "../components/header_pt";
 import Footer from "../components/footer_pt";
 
-import imageIfs03 from "../images/ifs03_1.webp";
+import imageIfs04 from "../images/ifs04-lateral.webp";
 import logoIfs04 from "../logos/Logo_IFS04_W.svg";
 
-import imageIfs03Top from "../images/ifs03_top.webp";
+import imageIfs04Top from "../images/ifs04-up.webp";
 
 import iconElectric from "../icons/electric.svg";
 import iconPerformance from "../icons/performance.svg";
@@ -16,7 +16,7 @@ import iconBody from "../icons/body.svg";
 import iconSuspension from "../icons/suspension.svg";
 
 import imageDrivetrain from "../images/drivetrain.webp";
-import imageIfs03Back from "../images/ifs03_back.webp";
+import imageIfs04Back from "../images/ifs04-rear.webp";
 
 function Ifs04Pt() {
   return (
@@ -24,7 +24,7 @@ function Ifs04Pt() {
       <Header />
 
       <div id="black_container">
-        <img id="cover" src={imageIfs03} alt="IFS04" />
+        <img id="cover" src={imageIfs04} alt="IFS04" />
         <img id="title" src={logoIfs04} alt="IFS04" />
       </div>
 
@@ -39,7 +39,7 @@ function Ifs04Pt() {
         </div>
 
         <div className="product_center">
-          <img className="responsive" src={imageIfs03Top} alt="IFS04" />
+          <img className="responsive" src={imageIfs04Top} alt="IFS04" />
           <div>
             <div className="column left">
               <div className="wrapper">
@@ -55,7 +55,7 @@ function Ifs04Pt() {
                 <img className="icon" src={iconAgility} alt="agility" />
               </div>
             </div>
-            <img className="large" src={imageIfs03Top} alt="IFS03" />
+            <img className="large" src={imageIfs04Top} alt="IFS04" />
             <div className="column">
               <div className="wrapper">
                 <img className="icon" src={iconChassis} alt="chassis" />
@@ -98,7 +98,7 @@ function Ifs04Pt() {
               <div className="text">TBA</div>
             </div>
           </div>
-          <img src={imageIfs03Back} alt="IFS04" />
+          <img src={imageIfs04Back} alt="IFS04" />
         </div>
       </article>
 

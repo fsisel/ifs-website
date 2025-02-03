@@ -10,6 +10,7 @@ import ifs01_2 from "../images/ifs01_2.webp";
 import ifs02_1 from "../images/ifs02_1.webp";
 import ifs02_2 from "../images/ifs02_2.webp";
 import ifs03Front from "../images/ifs03_front_whitebg.webp";
+import ifs04 from "../images/ifs04-main.webp";
 import ifs05 from "../images/ifs05_1.webp";
 
 export default class HomepagePt extends Component {
@@ -21,14 +22,14 @@ export default class HomepagePt extends Component {
         <img
           className="cover tall"
           src={equipa3_fspt2024}
-          alt="Equipa Formula Student Austria 2023"
+          alt="Equipa FSPT 2024"
         />
 
         <article>
           <div className="container-fluid dual left">
             <div className="text_wrapper">
               <div>
-                <h2>Construímos Veículos de Competição.</h2>
+                <h2><b>Construímos Veículos de Competição.</b></h2>
                 <p>
                   A ISEL Formula Student é uma equipa constituída por alunos do
                   Instituto Superior de Engenharia de Lisboa e tem a missão de
@@ -52,14 +53,14 @@ export default class HomepagePt extends Component {
             </div>
             <div className="text_wrapper">
               <div>
-                <h2>IFS05</h2>
+                <h2><b>IFS05</b></h2>
                 <p>Em breve...</p>
               </div>
             </div>
           </div>
 
           <div className="product big">
-            <img src={ifs03Front} alt="IFS03" />
+            <img src={ifs04} alt="IFS04" />
             <div className="column">
               <div className="wrapper">
                 <div className="detail">O ÚLTIMO</div>
@@ -75,7 +76,7 @@ export default class HomepagePt extends Component {
           <div className="container-fluid dual left">
             <div className="text_wrapper">
               <div>
-                <h2>IFS03</h2>
+                <h2><b>IFS03</b></h2>
                 <p>
                   O veículo IFS03 foi o sucessor do IFS02, apresentando os
                   avanços da equipa na tecnologia de automóveis eléctricos.
@@ -94,7 +95,7 @@ export default class HomepagePt extends Component {
             </div>
             <div className="text_wrapper">
               <div>
-                <h2>IFS02</h2>
+                <h2><b>IFS02</b></h2>
                 <p>
                   O IFS02 foi o primeiro veículo <b>elétrico</b> pensado e
                   manufaturado pela equipa. Como produto final obteve-se um
@@ -108,7 +109,7 @@ export default class HomepagePt extends Component {
           <div className="container-fluid dual left">
             <div className="text_wrapper">
               <div>
-                <h2>IFS01</h2>
+                <h2><b>IFS01</b></h2>
                 <p>
                   Caracterizado pela sua durabilidade e capacidade de melhorias,
                   o veículo IFS01, primeiro veículo a combustão projetado e

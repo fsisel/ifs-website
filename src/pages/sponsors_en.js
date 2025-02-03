@@ -69,9 +69,9 @@ function SponsorsEn() {
         <h1 className="sponsors-titles">SPONSORS</h1>
 
         <div id="sponsor_grid">
-          <section className="sponsors-category">
-            <br></br>
+          <div className="sponsors-category">
             <h2>PLATINUM</h2>
+            </div>
             <div className="sponsors platinum">
               <a href="https://www.isel.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorIsel} alt="ISEL" />
@@ -111,13 +111,13 @@ function SponsorsEn() {
                 <img src={sponsorVlMoldes} alt="VL Moldes" />
               </a>
             </div>
-          </section>
+          
 
           <div className="separator"></div>
 
-          <section className="sponsors-category">
-            <br></br>
+          <div className="sponsors-category">
             <h2>GOLD</h2>
+          </div>
 
             <div className="sponsors gold">
               <a
@@ -157,13 +157,14 @@ function SponsorsEn() {
                 <img src={sponsorReiman} alt="Reiman" />
               </a>
             </div>
-          </section>
+         
 
           <div className="separator"></div>
 
-          <section className="sponsors-category">
-            <br></br>
+          <div className="sponsors-category">
             <h2>SILVER</h2>
+            </div>
+
             <div className="sponsors silver">
               <a href="/en/sponsors">
                 <img src={sponsorMaquitorno} alt="Maquitorno" />
@@ -186,6 +187,9 @@ function SponsorsEn() {
               <a href="https://deconorma.com" target="_blank" rel="noreferrer">
                 <img src={sponsorDeconorma} alt="Deconorma" />
               </a>
+
+            </div> 
+
               <div className="sponsors silver">
                 <a
                   href="http://www.natrater.pt"
@@ -220,6 +224,7 @@ function SponsorsEn() {
                   />
                 </a>
               </div>
+
               <div className="sponsors silver">
                 <a href="http://www.carlis.pt" target="_blank" rel="noreferrer">
                   <img src={sponsorCarlis} alt="Carlis" />
@@ -258,14 +263,13 @@ function SponsorsEn() {
                   />
                 </a>
               </div>
-            </div>
-          </section>
-
+          
           <div className="separator"></div>
 
-          <section className="sponsors-category">
-            <br></br>
-            <h2>BRONZE</h2>
+            <div className="sponsors-category">
+              <h2>BRONZE</h2>
+            </div>
+
             <div className="sponsors bronze">
               <a
                 href="https://almeida-lamas.pt/"
@@ -326,13 +330,13 @@ function SponsorsEn() {
                 </a>
               </div>
             </div>
-          </section>
+         
 
           <div className="separator"></div>
 
-          <section className="sponsors-category">
-            <br></br>
+          <div className="sponsors-category">
             <h2>PARTNERS</h2>
+            </div>
             <div id="partners" className="sponsors bronze">
               <a
                 href="https://www.simscale.com/"
@@ -422,7 +426,8 @@ function SponsorsEn() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={sponsorSchroth} alt="Schroth" />
+                <img src={sponsorSchroth} alt="Schroth Racing" />
+                
               </a>
               <a
                 href="https://frademetalurgica.pt/"
@@ -465,7 +470,7 @@ function SponsorsEn() {
                 <img src={sponsorAutoSock} alt="Auto Sock" />
               </a>
             </div>
-          </section>
+          
         </div>
       </article>
       <h1 className="sponsors-titles">Interested in helping our project ?</h1>

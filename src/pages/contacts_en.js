@@ -63,7 +63,7 @@ function ContactsEn() {
                 required
               ></textarea>
 
-              <button type="submit" className="btn btn-secondary w-100">
+              <button type="submit" className="btn-sub w-100 ">
                 Submit
               </button>
             </div>
