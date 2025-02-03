@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from '../logos/ifs_icon_dark.svg'
+import logo from '../logos/ifs_logo_dark.svg'
 import enIcon from '../icons/en.svg'
 import menuIcon from '../icons/menu.svg'
 

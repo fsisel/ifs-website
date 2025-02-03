@@ -190,7 +190,7 @@ a.parallelogram:hover .text {
   top: 0;
   display: flex;
   position: fixed;
-  padding: 0 7vw;
+  padding: 0 2vw;
   /* border-bottom: solid 0.05em #333; */
   box-sizing: border-box;
   background-color: rgb(0, 0, 0);
@@ -207,14 +207,14 @@ a.parallelogram:hover .text {
 
 #navbar_header {
   width: auto;
-  height: 3.5em;
+  height: 6em;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
 #navbar .logo {
-  height: 1.6em;
+  height: 4em;
   margin: auto 0;
 }
 
@@ -602,8 +602,6 @@ a.parallelogram:hover .text {
 /* ########## SPONSORS ########## */
 
 .sponsors-category {
- text-align: center;
- 
   overflow: hidden;
 }
 
@@ -1121,6 +1119,10 @@ footer > div {
     margin: 1.5em;
     
   }
+
+  .sponsors-category{
+    text-align: center;
+  }
   
 }
 
@@ -1189,6 +1191,47 @@ footer > div {
     align-items: center;
   }
 
+  .sponsors-category {
+    overflow: hidden;
+  }
+  .sponsors-category h2{
+    padding-left: 0;
+  }
+
+  .sponsors-titles{
+    text-align: center;
+  }
+
+  /* Sponsors adjust */
+  .sponsors img {
+    object-fit: contain;
+    height: auto;
+  }
+  
+  .sponsors.platinum img {
+    width: 10em;
+    margin: 3em;
+  }
+  
+  .sponsors.gold img {
+    width: 8em;
+    margin: 2em;
+  }
+  
+  .sponsors.silver img {
+    width: 6em;
+    margin: 1.7em;
+  }
+  
+  .sponsors.bronze img {
+    width: 5em;
+    margin: 1.5em;
+    
+  }
+
+  .sponsors-category{
+    text-align: center;
+  }
 }
 
 /* ########## DARK MODE ########## */
