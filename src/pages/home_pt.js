@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Header from "../components/header_pt";
 import Footer from "../components/footer_pt";
 
+import logoDark from '../logos/ifs_logo_dark.svg'
+import enIcon from '../icons/en.svg'
 import equipa3_fspt2024 from "../images/Team04_fspt_1-1.webp";
 
 import ifs01_2 from "../images/ifs01_2.webp";
@@ -14,10 +16,49 @@ import ifs04 from "../images/ifs04-main.webp";
 import ifs05 from "../images/ifs05_1.webp";
 
 export default class HomepagePt extends Component {
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll, true);
+    document.getElementById("navbar").style.top = "-4em"
+}
+
+componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+}
+
+handleScroll = () => {
+    if (window.location.pathname === "/pt" || window.location.pathname === "/") {
+        if (document.body.clientWidth > 750) {
+            if (window.scrollY > 180) {
+                document.getElementById("navbar").style.top = "0"
+            } else {
+                document.getElementById("navbar").style.top = "-4em"
+            }
+        }
+    } else {
+        document.getElementById("navbar").style.top = "0"
+    }
+};
+
   render() {
     return (
       <div>
         <Header />
+
+        <div id="header">
+                    <img className="logo" src={logoDark} alt="ISEL Formula Student" />
+                    <div id="header_menu">
+                        <Link to="/pt/about_us" ><span>SOBRE NÓS</span></Link>
+                        <Link to="/pt/ifs04"><span>IFS04</span></Link>
+                        <Link to="/pt/sponsors"><span>PATROCINADORES</span></Link>
+                        <Link to="/pt/contacts"><span>CONTACTOS</span></Link>
+                    </div>
+
+                    <div id="header_language">
+                        <Link to="/en" title="English">
+                            <img src={enIcon} alt="English" />
+                        </Link>
+                    </div>
+                </div>
 
         <img
           className="cover tall"
