@@ -107,7 +107,7 @@ handleScroll = () => {
                 <div className="detail">O ÚLTIMO</div>
                 <div className="text">IFS04</div>
               </div>
-              <Link to="/pt/ifs03" className="parallelogram center">
+              <Link to="/pt/ifs04" className="parallelogram center">
                 <div className="orange_detail"></div>
                 <div className="text">SABE MAIS</div>
               </Link>

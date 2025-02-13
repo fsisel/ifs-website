@@ -77,7 +77,7 @@ function SponsorsPt() {
                 <img src={sponsorIsel} alt="ISEL" />
               </a>
               <a href="https://www.ipl.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorIpl} alt="IPL" style={{ width: 360 }} />
+                <img src={sponsorIpl} alt="IPL" style={{ width: 400 }} />
               </a>
             </div>
             <div className="sponsors platinum">

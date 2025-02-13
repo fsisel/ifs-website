@@ -110,7 +110,7 @@ handleScroll = () => {
                 <div className="text">IFS04</div>
               </div>
               <div>
-                <Link to="/en/ifs03" className="parallelogram center">
+                <Link to="/en/ifs04" className="parallelogram center">
                   <div className="orange_detail"></div>
                   <div className="text">CHECK IT OUT</div>
                 </Link>
