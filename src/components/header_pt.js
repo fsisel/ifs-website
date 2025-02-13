@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logo from '../logos/ifs_icon_dark.svg'
+import logo from "../logos/ifs_icon_dark.svg";
 import enIcon from '../icons/en.svg'
 import menuIcon from '../icons/menu.svg'
 
@@ -44,7 +44,7 @@ function HeaderPt() {
 
             <div id="navbar_menu">
                 <Link to="/pt/about_us">SOBRE NÓS&nbsp;</Link>
-                <Link to="/pt/ifs03">IFS03&nbsp;</Link>
+                <Link to="/pt/ifs04">IFS04&nbsp;</Link>
                 <Link to="/pt/sponsors">PATROCINADORES&nbsp;</Link>
                 <Link to="/pt/contacts">CONTACTOS&nbsp;</Link>
             </div>
