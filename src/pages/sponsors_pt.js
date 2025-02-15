@@ -59,6 +59,7 @@ import sponsorFrade from "../sponsor_logos/frade.webp";
 import sponsorMvieira from "../sponsor_logos/mvieira.webp";
 import sponsorFocoCriativo from "../sponsor_logos/focoCriativo.webp";
 import sponsorAutoSock from "../sponsor_logos/auto_sock.webp";
+import sponsorLoctite from "../sponsor_logos/loctite.webp";
 
 function SponsorsPt() {
   return (
@@ -70,14 +71,13 @@ function SponsorsPt() {
 
         <div id="sponsor_grid">
           <section className="sponsors-category">
-            <br></br>
             <h2>PLATINA</h2>
             <div className="sponsors platinum">
               <a href="https://www.isel.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorIsel} alt="ISEL" />
               </a>
               <a href="https://www.ipl.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorIpl} alt="IPL" style={{ width: 400 }} />
+                <img src={sponsorIpl} alt="IPL" style={{ width: 300 }} />
               </a>
             </div>
             <div className="sponsors platinum">
@@ -91,7 +91,7 @@ function SponsorsPt() {
                 <img
                   src={sponsorInfusao}
                   alt="Infusão"
-                  style={{ width: 300 }}
+                  style={{ width: 270 }}
                 />
               </a>
             </div>
@@ -255,6 +255,16 @@ function SponsorsPt() {
                     src={sponsorLogoplaste}
                     alt="Logoplaste"
                     style={{ width: 300 }}
+                  />
+                </a>
+                <a
+                  href="https://www.henkel-adhesives.com/br/pt/sobre/nossas-marcas/loctite-new.html"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={sponsorLoctite}
+                    alt="Loctite"
                   />
                 </a>
               </div>
@@ -472,7 +482,7 @@ function SponsorsPt() {
 
       <Link to="/pt/contacts" className="parallelogram center">
         <div className="orange_detail"></div>
-        <div className="text">Contacte-nos</div>
+        <div className="text">CONTACTE-NOS</div>
       </Link>
 
       <FooterPt />

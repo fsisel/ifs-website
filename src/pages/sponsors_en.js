@@ -59,6 +59,7 @@ import sponsorFrade from "../sponsor_logos/frade.webp";
 import sponsorMvieira from "../sponsor_logos/mvieira.webp";
 import sponsorFocoCriativo from "../sponsor_logos/focoCriativo.webp";
 import sponsorAutoSock from "../sponsor_logos/auto_sock.webp";
+import sponsorLoctite from "../sponsor_logos/loctite.webp";
 
 function SponsorsEn() {
   return (
@@ -77,7 +78,7 @@ function SponsorsEn() {
                 <img src={sponsorIsel} alt="ISEL" />
               </a>
               <a href="https://www.ipl.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorIpl} alt="IPL" style={{ width: 400 }} />
+                <img src={sponsorIpl} alt="IPL"  style={{ width: 300 }}/>
               </a>
             </div>
             <div className="sponsors platinum">
@@ -259,7 +260,17 @@ function SponsorsEn() {
                   <img
                     src={sponsorLogoplaste}
                     alt="Logoplaste"
-                    style={{ width: 200 }}
+                    style={{ width: 300 }}
+                  />
+                </a>
+                <a
+                  href="https://www.henkel-adhesives.com/br/pt/sobre/nossas-marcas/loctite-new.html"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={sponsorLoctite}
+                    alt="Loctite"
                   />
                 </a>
               </div>
@@ -477,7 +488,7 @@ function SponsorsEn() {
 
       <Link to="/en/contacts" className="parallelogram center">
         <div className="orange_detail"></div>
-        <div className="text">Contact Us</div>
+        <div className="text">CONTACT US</div>
       </Link>
 
       <FooterEn />

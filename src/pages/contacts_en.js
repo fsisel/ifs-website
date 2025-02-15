@@ -62,10 +62,11 @@ function ContactsEn() {
                 placeholder="Write something here..."
                 required
               ></textarea>
-
-              <button type="submit" className="btn-sub w-100 ">
-                Submit
-              </button>
+              <div class="col-md-6 offset-md-3">
+                <button type="submit" className="btn-sub w-100 ">
+                  SUBMIT
+                </button>
+              </div>
             </div>
           </form>
         </div>
