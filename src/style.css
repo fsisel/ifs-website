@@ -462,6 +462,10 @@ a.parallelogram:hover .text {
   margin-bottom: 5em;
 }
 
+.align-but{
+ align-self: center;
+}
+
 /* ########## PRODUCTS ########## */
 
 .product_center {
@@ -702,6 +706,10 @@ a.parallelogram:hover .text {
   height: 0.06em;
   width: 100%;
   background-color: #f50;
+}
+
+.plat-img{
+  width: 400px;
 }
 
 /* ########## FORM ########## */
@@ -1047,6 +1055,21 @@ footer > div {
 
   .product .text {
     font-size: 2.5em;
+  }
+
+  img.cover {
+    width: 100%;
+    object-fit: cover;
+    max-height: 40em;
+  }
+  
+  img.cover.tall {
+    height: 35vh;
+    object-fit: cover;
+  }
+
+  .plat-img{
+    width: 350px;
   }
 
   .sponsors.platinum span {

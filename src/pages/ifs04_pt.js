@@ -91,7 +91,7 @@ function Ifs04Pt() {
           <div className="column">
             <div className="wrapper">
               <div className="detail">PESO</div>
-              <div className="text">230 kg</div>
+              <div className="text">215 kg</div>
             </div>
             <div className="wrapper">
               <div className="detail">0-100 KM/H</div>
