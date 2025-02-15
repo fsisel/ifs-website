@@ -883,6 +883,14 @@ footer > div {
   }
 }
 
+@media (max-width: 400px) {
+  footer {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr); /* 1 colunas em telas menores */
+    grid-template-rows: auto auto auto auto;
+  }
+}
+
 /* ########## RESPONSIVE ########## */
 
 @media screen and (max-width: 900px) {

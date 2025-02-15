@@ -254,7 +254,7 @@ function SponsorsPt() {
                   <img
                     src={sponsorLogoplaste}
                     alt="Logoplaste"
-                    style={{ width: 300 }}
+                    style={{ width: 200 }}
                   />
                 </a>
                 <a
@@ -321,7 +321,7 @@ function SponsorsPt() {
                   <img
                     src={sponsorProtomill}
                     alt="Protomill"
-                    style={{ width: 200 }}
+                    style={{ width: 150 }}
                   />
                 </a>
                 <a href="https://symetria.pt" target="_blank" rel="noreferrer">
@@ -378,7 +378,7 @@ function SponsorsPt() {
                 <img
                   src={sponsorRamadaAcos}
                   alt="Ramada Aços"
-                  style={{ width: 200 }}
+                  style={{ width: 150 }}
                 />
               </a>
               <a href="http://linoefilhos.pt" target="_blank" rel="noreferrer">
