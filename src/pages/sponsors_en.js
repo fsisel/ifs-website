@@ -263,16 +263,6 @@ function SponsorsEn() {
                     style={{ width: 200 }}
                   />
                 </a>
-                <a
-                  href="https://www.henkel-adhesives.com/br/pt/sobre/nossas-marcas/loctite-new.html"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={sponsorLoctite}
-                    alt="Loctite"
-                  />
-                </a>
               </div>
           
           <div className="separator"></div>
@@ -310,11 +300,12 @@ function SponsorsEn() {
               <a href="https://sabino.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorSabino} alt="Sabino" />
               </a>
-
-              <div className="sponsors bronze">
-                <a href="https://rebelco.pt" target="_blank" rel="noreferrer">
+              <a href="https://rebelco.pt" target="_blank" rel="noreferrer">
                   <img src={sponsorRebelCo} alt="RebelCo" />
                 </a>
+            
+              <div className="sponsors bronze">
+               
                 <a
                   href="https://www.copisel.pt"
                   target="_blank"
@@ -338,6 +329,16 @@ function SponsorsEn() {
                   rel="noreferrer"
                 >
                   <img src={sponsorViGrade} alt="Vigrade" />
+                </a>
+                <a
+                  href="https://www.henkel-adhesives.com/pt/pt/empresa/as-nossas-marcas/loctite-new-we.html"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={sponsorLoctite}
+                    alt="Loctite"
+                  />
                 </a>
               </div>
             </div>

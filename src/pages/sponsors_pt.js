@@ -67,17 +67,18 @@ function SponsorsPt() {
       <HeaderPt />
 
       <article className="top_margin">
-        <h1 className="sponsors-titles">PATROCINADORES</h1>
+        <h1 className="sponsors-titles">SPONSORS</h1>
 
         <div id="sponsor_grid">
-          <section className="sponsors-category">
+          <div className="sponsors-category">
             <h2>PLATINA</h2>
+            </div>
             <div className="sponsors platinum">
               <a href="https://www.isel.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorIsel} alt="ISEL" />
               </a>
               <a href="https://www.ipl.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorIpl} alt="IPL" style={{ width: 300 }} />
+                <img src={sponsorIpl} alt="IPL"  style={{ width: 300 }}/>
               </a>
             </div>
             <div className="sponsors platinum">
@@ -111,13 +112,13 @@ function SponsorsPt() {
                 <img src={sponsorVlMoldes} alt="VL Moldes" />
               </a>
             </div>
-          </section>
+          
 
           <div className="separator"></div>
 
-          <section className="sponsors-category">
-            <br></br>
+          <div className="sponsors-category">
             <h2>OURO</h2>
+          </div>
 
             <div className="sponsors gold">
               <a
@@ -157,13 +158,14 @@ function SponsorsPt() {
                 <img src={sponsorReiman} alt="Reiman" />
               </a>
             </div>
-          </section>
+         
 
           <div className="separator"></div>
 
-          <section className="sponsors-category">
-            <br></br>
+          <div className="sponsors-category">
             <h2>PRATA</h2>
+            </div>
+
             <div className="sponsors silver">
               <a href="/en/sponsors">
                 <img src={sponsorMaquitorno} alt="Maquitorno" />
@@ -186,6 +188,9 @@ function SponsorsPt() {
               <a href="https://deconorma.com" target="_blank" rel="noreferrer">
                 <img src={sponsorDeconorma} alt="Deconorma" />
               </a>
+
+            </div> 
+
               <div className="sponsors silver">
                 <a
                   href="http://www.natrater.pt"
@@ -216,10 +221,11 @@ function SponsorsPt() {
                   <img
                     src={sponsorCubotonic}
                     alt="Cubotónic"
-                    style={{ width: 225 }}
+                   
                   />
                 </a>
               </div>
+
               <div className="sponsors silver">
                 <a href="http://www.carlis.pt" target="_blank" rel="noreferrer">
                   <img src={sponsorCarlis} alt="Carlis" />
@@ -232,7 +238,7 @@ function SponsorsPt() {
                   <img
                     src={sponsorCasauto}
                     alt="Casauto"
-                    style={{ width: 200 }}
+                   
                   />
                 </a>
                 <a
@@ -243,7 +249,7 @@ function SponsorsPt() {
                   <img
                     src={sponsorCtw}
                     alt="Critical Techworks"
-                    style={{ width: 180 }}
+                   
                   />
                 </a>
                 <a
@@ -257,25 +263,14 @@ function SponsorsPt() {
                     style={{ width: 200 }}
                   />
                 </a>
-                <a
-                  href="https://www.henkel-adhesives.com/br/pt/sobre/nossas-marcas/loctite-new.html"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={sponsorLoctite}
-                    alt="Loctite"
-                  />
-                </a>
               </div>
-            </div>
-          </section>
-
+          
           <div className="separator"></div>
 
-          <section className="sponsors-category">
-            <br></br>
-            <h2>BRONZE</h2>
+            <div className="sponsors-category">
+              <h2>BRONZE</h2>
+            </div>
+
             <div className="sponsors bronze">
               <a
                 href="https://almeida-lamas.pt/"
@@ -285,7 +280,7 @@ function SponsorsPt() {
                 <img
                   src={sponsorAlmeidaLamas}
                   alt="Almeida & Lamas"
-                  style={{ width: 180 }}
+                  style={{ width: 160 }}
                 />
               </a>
               <a
@@ -305,11 +300,12 @@ function SponsorsPt() {
               <a href="https://sabino.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorSabino} alt="Sabino" />
               </a>
-
-              <div className="sponsors bronze">
-                <a href="https://rebelco.pt" target="_blank" rel="noreferrer">
+              <a href="https://rebelco.pt" target="_blank" rel="noreferrer">
                   <img src={sponsorRebelCo} alt="RebelCo" />
                 </a>
+            
+              <div className="sponsors bronze">
+               
                 <a
                   href="https://www.copisel.pt"
                   target="_blank"
@@ -334,15 +330,25 @@ function SponsorsPt() {
                 >
                   <img src={sponsorViGrade} alt="Vigrade" />
                 </a>
+                <a
+                  href="https://www.henkel-adhesives.com/pt/pt/empresa/as-nossas-marcas/loctite-new-we.html"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={sponsorLoctite}
+                    alt="Loctite"
+                  />
+                </a>
               </div>
             </div>
-          </section>
+         
 
           <div className="separator"></div>
 
-          <section className="sponsors-category">
-            <br></br>
+          <div className="sponsors-category">
             <h2>PARCEIROS</h2>
+            </div>
             <div id="partners" className="sponsors bronze">
               <a
                 href="https://www.simscale.com/"
@@ -356,7 +362,7 @@ function SponsorsPt() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={sponsorRus} alt="Rus" />
+                <img src={sponsorRus} alt="Rus" style={{ width: 180 }} />
               </a>
               <a href="https://www.ansys.com" target="_blank" rel="noreferrer">
                 <img src={sponsorAnsys} alt="Ansys" />
@@ -432,7 +438,8 @@ function SponsorsPt() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={sponsorSchroth} alt="Schroth" />
+                <img src={sponsorSchroth} alt="Schroth Racing" />
+                
               </a>
               <a
                 href="https://frademetalurgica.pt/"
@@ -461,7 +468,7 @@ function SponsorsPt() {
                 <img
                   src={sponsorMvieira}
                   alt="MViera"
-                  style={{ height: 130, paddingBottom: "2em" }}
+                  style={{ height: "5em" }}
                 />
               </a>
               <a
@@ -475,7 +482,7 @@ function SponsorsPt() {
                 <img src={sponsorAutoSock} alt="Auto Sock" />
               </a>
             </div>
-          </section>
+          
         </div>
       </article>
       <h1 className="sponsors-titles">Interessado em apoiar o projeto ?</h1>

@@ -106,11 +106,11 @@ article.top_margin {
 img.cover {
   width: 100%;
   object-fit: cover;
-  max-height: 40em;
+  max-height: 70em;
 }
 
 img.cover.tall {
-  height: 70vh;
+  height: 80vh;
   object-fit: cover;
 }
 
@@ -886,7 +886,7 @@ footer > div {
 @media (max-width: 400px) {
   footer {
     width: 100%;
-    grid-template-columns: repeat(1, 1fr); /* 1 colunas em telas menores */
+    grid-template-columns: repeat(1, 1fr); /* 1 coluna em telas menores */
     grid-template-rows: auto auto auto auto;
   }
 }
