@@ -68,7 +68,7 @@ function SponsorsPt() {
       <HeaderPt />
 
       <article className="top_margin">
-        <h1 className="sponsors-titles">SPONSORS</h1>
+        <h1 className="sponsors-titles">PATROCINADORES</h1>
 
         <div id="sponsor_grid">
           <div className="sponsors-category">
