@@ -60,6 +60,7 @@ import sponsorMvieira from "../sponsor_logos/mvieira.webp";
 import sponsorFocoCriativo from "../sponsor_logos/focoCriativo.webp";
 import sponsorAutoSock from "../sponsor_logos/auto_sock.webp";
 import sponsorLoctite from "../sponsor_logos/loctite.webp";
+import sponsorMauser from "../sponsor_logos/mauser.webp";
 
 function SponsorsEn() {
   return (
@@ -340,6 +341,16 @@ function SponsorsEn() {
                     alt="Loctite"
                   />
                 </a>
+                <a
+                  href="https://mauser.pt/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={sponsorMauser}
+                    alt="Mauser.pt"
+                  />
+                </a>
               </div>
             </div>
          
@@ -485,7 +496,7 @@ function SponsorsEn() {
           
         </div>
       </article>
-      <h1 className="sponsors-titles">Interested in helping our project ?</h1>
+      <h1 className="sponsors-titles">Interested in help ?</h1>
 
       <Link to="/en/contacts" className="parallelogram center">
         <div className="orange_detail"></div>

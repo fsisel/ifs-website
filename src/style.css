@@ -894,6 +894,10 @@ footer > div {
 /* ########## RESPONSIVE ########## */
 
 @media screen and (max-width: 900px) {
+  h2 {
+    font-size: 1.7em;
+  }
+
   /* ########## PRODUCTS ########## */
 
   .product_center > div {
