@@ -496,7 +496,7 @@ function SponsorsEn() {
           
         </div>
       </article>
-      <h1 className="sponsors-titles">Interested in helping our project ?</h1>
+      <h1 className="sponsors-titles">Interested in help ?</h1>
 
       <Link to="/en/contacts" className="parallelogram center">
         <div className="orange_detail"></div>

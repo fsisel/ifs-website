@@ -68,7 +68,7 @@ function SponsorsPt() {
       <HeaderPt />
 
       <article className="top_margin">
-        <h1 className="sponsors-titles">SPONSORS</h1>
+        <h1 className="sponsors-titles">PATROCINADORES</h1>
 
         <div id="sponsor_grid">
           <div className="sponsors-category">
@@ -496,7 +496,7 @@ function SponsorsPt() {
           
         </div>
       </article>
-      <h1 className="sponsors-titles">Interessado em apoiar o projeto ?</h1>
+      <h1 className="sponsors-titles">Interessado em ajudar ?</h1>
 
       <Link to="/pt/contacts" className="parallelogram center">
         <div className="orange_detail"></div>
