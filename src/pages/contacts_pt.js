@@ -40,6 +40,10 @@ function ContactsPt() {
                 required
               />
 
+              <input type="hidden" name="_cc" value="joao.miguel@iselfs.pt"></input>
+              <input type="hidden" name="_next" value="https://formulastudent.isel.pt/pt"></input>
+
+
               <label for="name" className="form-label">
                 Nome da entidade
               </label>

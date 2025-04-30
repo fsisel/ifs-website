@@ -61,6 +61,8 @@ import sponsorFocoCriativo from "../sponsor_logos/focoCriativo.webp";
 import sponsorAutoSock from "../sponsor_logos/auto_sock.webp";
 import sponsorLoctite from "../sponsor_logos/loctite.webp";
 import sponsorMauser from "../sponsor_logos/mauser.webp";
+import sponsorPCBWay from "../sponsor_logos/PCBWay.svg";
+import sponsorkvaser from "../sponsor_logos/kvaser.svg";
 
 function SponsorsPt() {
   return (
@@ -68,7 +70,7 @@ function SponsorsPt() {
       <HeaderPt />
 
       <article className="top_margin">
-        <h1 className="sponsors-titles">SPONSORS</h1>
+        <h1 className="sponsors-titles">PATROCINADORES</h1>
 
         <div id="sponsor_grid">
           <div className="sponsors-category">
@@ -351,6 +353,16 @@ function SponsorsPt() {
                     alt="Mauser.pt"
                   />
                 </a>
+                <a
+                  href="https://kvaser.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src={sponsorkvaser}
+                    alt="Kvaser"
+                  />
+                </a>
               </div>
             </div>
          
@@ -491,6 +503,9 @@ function SponsorsPt() {
               </a>
               <a href="https://autosock.com/" target="_blank" rel="noreferrer">
                 <img src={sponsorAutoSock} alt="Auto Sock" />
+              </a>
+              <a href="https://www.pcbway.com/" target="_blank" rel="noreferrer">
+                <img src={sponsorPCBWay} alt="PCB Way" />
               </a>
             </div>
           

@@ -39,14 +39,17 @@ function ContactsEn() {
                 required
               />
 
-              <label for="inputPassword4" className="form-label">
+              <input type="hidden" name="_cc" value="joao.miguel@iselfs.pt"></input>
+              <input type="hidden" name="_next" value="https://formulastudent.isel.pt/en"></input>
+
+              <label for="Entity" className="form-label">
                 Entity Name
               </label>
               <input
                 type="text"
                 className="form-control"
-                id="name"
-                name="name"
+                id="Entity"
+                name="Entity"
                 placeholder="Enter your entity name"
                 required
               />
