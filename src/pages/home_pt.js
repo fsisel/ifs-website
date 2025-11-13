@@ -48,7 +48,7 @@ handleScroll = () => {
                     <img className="logo" src={logoDark} alt="ISEL Formula Student" />
                     <div id="header_menu">
                         <Link to="/pt/about_us" ><span>SOBRE NÓS</span></Link>
-                        <Link to="/pt/ifs04"><span>IFS04</span></Link>
+                        <Link to="/pt/ifs04"><span>IFS05</span></Link>
                         <Link to="/pt/sponsors"><span>PATROCINADORES</span></Link>
                         <Link to="/pt/contacts"><span>CONTACTOS</span></Link>
                     </div>
@@ -104,7 +104,7 @@ handleScroll = () => {
             <img src={ifs04} alt="IFS04" />
             <div className="column">
               <div className="wrapper">
-                <div className="detail">O ÚLTIMO</div>
+                <div className="detail">O ÚLTIMO <b>Projejeto</b></div>
                 <div className="text">IFS04</div>
               </div>
               <Link to="/pt/ifs04" className="parallelogram center">
