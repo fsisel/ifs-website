@@ -40,7 +40,6 @@ import sponsorAtomicShop from "../sponsor_logos/atomic_shop.svg";
 import sponsorCarlis from "../sponsor_logos/carlis.webp";
 import sponsorSimscale from "../sponsor_logos/SimScale.webp";
 import sponsorCoficab from "../sponsor_logos/Coficab.webp";
-import sponsorTesla from "../sponsor_logos/tesla.png";
 import sponsorCasauto from "../sponsor_logos/Casauto.webp";
 import sponsorGleal from "../sponsor_logos/GLeal.webp";
 import sponsorRebelCo from "../sponsor_logos/Rebelco.webp";
@@ -61,6 +60,7 @@ import sponsorFocoCriativo from "../sponsor_logos/focoCriativo.webp";
 import sponsorAutoSock from "../sponsor_logos/auto_sock.webp";
 import sponsorLoctite from "../sponsor_logos/loctite.webp";
 import sponsorMauser from "../sponsor_logos/mauser.webp";
+import sponsorBerner from "../sponsor_logos/berner.svg";
 
 function SponsorsEn() {
   return (
@@ -96,21 +96,12 @@ function SponsorsEn() {
                   style={{ width: 270 }}
                 />
               </a>
-            </div>
-            <div className="sponsors platinum">
               <a
                 href="https://www.milwaukeetool.eu"
                 target="_blank"
                 rel="noreferrer"
               >
                 <img src={sponsorMilwaukee} alt="Milwaukee" />
-              </a>
-              <a
-                href="https://www.vlmoldes.pt"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={sponsorVlMoldes} alt="VL Moldes" />
               </a>
             </div>
           
@@ -133,11 +124,22 @@ function SponsorsEn() {
                 <img src={sponsorLeomavel} alt="Leomavel Moldes" />
               </a>
               <a
-                href="https://www.tesla.com/pt_pt"
+                href="https://www.jdeus.com/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={sponsorTesla} alt="Tesla" />
+                <img src={sponsorJdeus} alt="Jdeus" />
+              </a>
+              <a
+                href="https://www.cubotonic.pt"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={sponsorCubotonic}
+                  alt="Cubotónic"
+                  
+                />
               </a>
             </div>
 
@@ -158,8 +160,24 @@ function SponsorsEn() {
               <a href="https://reiman.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorReiman} alt="Reiman" />
               </a>
+              <a
+                href="https://almeida-lamas.pt/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={sponsorAlmeidaLamas}
+                  alt="Almeida & Lamas"
+                  style={{ width: 160 }}
+                />
+              </a>
             </div>
-         
+
+            <div class="sponsors gold">
+              <a href="https://shop.berner.eu/pt-pt" target="_blank" rel="noreferrer">
+                <img src={sponsorBerner} alt="Berner" />
+              </a>
+            </div>
 
           <div className="separator"></div>
 
@@ -207,30 +225,9 @@ function SponsorsEn() {
                 >
                   <img src={sponsorFocoCriativo} alt="Foco Criativo" />
                 </a>
-                <a
-                  href="https://www.jdeus.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={sponsorJdeus} alt="Jdeus" />
-                </a>
-                <a
-                  href="https://www.cubotonic.pt"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={sponsorCubotonic}
-                    alt="Cubotónic"
-                   
-                  />
-                </a>
               </div>
 
               <div className="sponsors silver">
-                <a href="http://www.carlis.pt" target="_blank" rel="noreferrer">
-                  <img src={sponsorCarlis} alt="Carlis" />
-                </a>
                 <a
                   href="https://casauto.lojasonlinectt.pt/"
                   target="_blank"
@@ -274,17 +271,6 @@ function SponsorsEn() {
 
             <div className="sponsors bronze">
               <a
-                href="https://almeida-lamas.pt/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={sponsorAlmeidaLamas}
-                  alt="Almeida & Lamas"
-                  style={{ width: 160 }}
-                />
-              </a>
-              <a
                 href="https://www.solutions4metrology.com/"
                 target="_blank"
                 rel="noreferrer"
@@ -298,13 +284,22 @@ function SponsorsEn() {
               >
                 <img src={sponsorGleal} alt="GLeal" />
               </a>
+              <a
+                href="https://www.vlmoldes.pt"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={sponsorVlMoldes} alt="VL Moldes" />
+              </a>
               <a href="https://sabino.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorSabino} alt="Sabino" />
               </a>
               <a href="https://rebelco.pt" target="_blank" rel="noreferrer">
                   <img src={sponsorRebelCo} alt="RebelCo" />
                 </a>
-            
+              <a href="http://www.carlis.pt" target="_blank" rel="noreferrer">
+                  <img src={sponsorCarlis} alt="Carlis" />
+                </a>
               <div className="sponsors bronze">
                
                 <a
@@ -331,6 +326,13 @@ function SponsorsEn() {
                 >
                   <img src={sponsorViGrade} alt="Vigrade" />
                 </a>
+                <a href="https://www.ramada.pt" target="_blank" rel="noreferrer">
+                <img
+                  src={sponsorRamadaAcos}
+                  alt="Ramada Aços"
+                  style={{ width: 150 }}
+                />
+              </a>
                 <a
                   href="https://www.henkel-adhesives.com/pt/pt/empresa/as-nossas-marcas/loctite-new-we.html"
                   target="_blank"
@@ -391,13 +393,6 @@ function SponsorsEn() {
             </div>
 
             <div id="partners" className="sponsors bronze">
-              <a href="https://www.ramada.pt" target="_blank" rel="noreferrer">
-                <img
-                  src={sponsorRamadaAcos}
-                  alt="Ramada Aços"
-                  style={{ width: 150 }}
-                />
-              </a>
               <a href="http://linoefilhos.pt" target="_blank" rel="noreferrer">
                 <img
                   src={sponsorCarpintariaLinoEFilhos}
