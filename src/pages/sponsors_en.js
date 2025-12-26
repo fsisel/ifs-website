@@ -17,20 +17,14 @@ import sponsorJdeus from "../sponsor_logos/jdeus.svg";
 import sponsorGrupoMetal from "../sponsor_logos/grupo_metal.svg";
 import sponsorIpl from "../sponsor_logos/ipl.svg";
 import sponsorIsel from "../sponsor_logos/isel.svg";
-import sponsorLogoplaste from "../sponsor_logos/logoplaste.svg";
 import sponsorMjbranco from "../sponsor_logos/mjbranco.webp";
-import sponsorNatrater from "../sponsor_logos/natrater.webp";
 import sponsorRamadaAcos from "../sponsor_logos/ramada_acos.svg";
 import sponsorSolidworks from "../sponsor_logos/solidworks.svg";
-import sponsorSymetria from "../sponsor_logos/symetria.webp";
 import sponsorTeConnectivity from "../sponsor_logos/te_connectivity.svg";
-import sponsorTsf from "../sponsor_logos/tsf.webp";
 import sponsorCubotonic from "../sponsor_logos/cubotonic.webp";
 import sponsorInfusao from "../sponsor_logos/infusao.webp";
 import sponsorLeomavel from "../sponsor_logos/leomavel.webp";
 import sponsorReiman from "../sponsor_logos/reiman.svg";
-import sponsorMaquitorno from "../sponsor_logos/maquitorno.webp";
-import sponsorNorelem from "../sponsor_logos/norelem.webp";
 import sponsorAeisel from "../sponsor_logos/aeisel.webp";
 import sponsorSabino from "../sponsor_logos/Sabino.webp";
 import sponsorEasyComposites from "../sponsor_logos/easy_composites.webp";
@@ -41,9 +35,7 @@ import sponsorCarlis from "../sponsor_logos/carlis.webp";
 import sponsorSimscale from "../sponsor_logos/SimScale.webp";
 import sponsorCoficab from "../sponsor_logos/Coficab.webp";
 import sponsorCasauto from "../sponsor_logos/Casauto.webp";
-import sponsorGleal from "../sponsor_logos/GLeal.webp";
 import sponsorRebelCo from "../sponsor_logos/Rebelco.webp";
-import sponsorProtomill from "../sponsor_logos/Protomill.webp";
 import sponsorCrm from "../sponsor_logos/CRM.webp";
 import sponsorRapid from "../sponsor_logos/rapidharness.webp";
 import sponsorSchroth from "../sponsor_logos/Schroth.webp";
@@ -51,12 +43,10 @@ import sponsorMathWorks from "../sponsor_logos/mathworks.svg";
 import sponsorViGrade from "../sponsor_logos/vi-grade_red.svg";
 import sponsorCtw from "../sponsor_logos/ctw.svg";
 import sponsorAlmeidaLamas from "../sponsor_logos/Almeida_Lamas.svg";
-import sponsorS4 from "../sponsor_logos/s4metro.svg";
 import sponsorRus from "../sponsor_logos/rus-logo.svg";
 import sponsorEnepaq from "../sponsor_logos/enepaq.webp";
 import sponsorFrade from "../sponsor_logos/frade.webp";
 import sponsorMvieira from "../sponsor_logos/mvieira.webp";
-import sponsorFocoCriativo from "../sponsor_logos/focoCriativo.webp";
 import sponsorAutoSock from "../sponsor_logos/auto_sock.webp";
 import sponsorLoctite from "../sponsor_logos/loctite.webp";
 import sponsorMauser from "../sponsor_logos/mauser.webp";
@@ -71,6 +61,7 @@ import sponsorThinkOpen from "../icons/noIMG.svg"
 import sponsorCMfonseca from "../sponsor_logos/Fonseca.svg";
 import sponsorCamnetics from "../icons/noIMG.svg";
 import sponsorCalspan from "../icons/noIMG.svg";
+import sponsorKvaser from "../icons/noIMG.svg";
 
 function SponsorsEn() {
   return (
@@ -154,16 +145,6 @@ function SponsorsEn() {
             </div>
 
             <div className="sponsors gold">
-              <a
-                href="http://www.tsf-trofa.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={sponsorTsf} alt="TSF" />
-              </a>
-              <a href="https://www.te.com" target="_blank" rel="noreferrer">
-                <img src={sponsorTeConnectivity} alt="TE Connectivity" />
-              </a>
               <a href="http://www.mjbranco.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorMjbranco} alt="MJBranco" />
               </a>
@@ -205,12 +186,6 @@ function SponsorsEn() {
             </div>
 
             <div className="sponsors silver">
-              <a href="/en/sponsors">
-                <img src={sponsorMaquitorno} alt="Maquitorno" />
-              </a>
-              <a href="https://norelem.es" target="_blank" rel="noreferrer">
-                <img src={sponsorNorelem} alt="Norelem" />
-              </a>
               <a
                 href="https://www.eurocircuits.com"
                 target="_blank"
@@ -230,20 +205,6 @@ function SponsorsEn() {
             </div> 
 
               <div className="sponsors silver">
-                <a
-                  href="http://www.natrater.pt"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={sponsorNatrater} alt="Natrater" />
-                </a>
-                <a
-                  href="https://fococriativo.pt/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src={sponsorFocoCriativo} alt="Foco Criativo" />
-                </a>
                 <a href="https://rmc.com.pt/en/company" target="_blank" rel="noreferrer">
                 <img src={sponsorRMC} alt="RMCengrenagens" />
               </a>
@@ -274,17 +235,9 @@ function SponsorsEn() {
                     alt="Critical Techworks"
                    
                   />
-                </a>
-                <a
-                  href="https://www.logoplaste.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={sponsorLogoplaste}
-                    alt="Logoplaste"
-                    style={{ width: 200 }}
-                  />
+                  <a href="https://www.te.com" target="_blank" rel="noreferrer">
+                    <img src={sponsorTeConnectivity} alt="TE Connectivity" />
+                  </a>
                 </a>
               </div>
           
@@ -295,20 +248,6 @@ function SponsorsEn() {
             </div>
 
             <div className="sponsors bronze">
-              <a
-                href="https://www.solutions4metrology.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={sponsorS4} alt="S4 Metro" />
-              </a>
-              <a
-                href="https://www.gleal.pt/pt/home/index"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={sponsorGleal} alt="GLeal" />
-              </a>
               <a
                 href="https://www.vlmoldes.pt"
                 target="_blank"
@@ -336,16 +275,6 @@ function SponsorsEn() {
                 rel="noreferrer"
               >
                 <img src={sponsorCopisel} alt="Copisel" />
-              </a>
-              <a href="https://protomill.pt" target="_blank" rel="noreferrer">
-                <img
-                  src={sponsorProtomill}
-                  alt="Protomill"
-                  style={{ width: 150 }}
-                />
-              </a>
-              <a href="https://symetria.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorSymetria} alt="Symetria" />
               </a>
               <a
                 href="https://www2.news.vi-grade.com/e/832623/2025-01-13/2cdft7/894804871/h/GJKopkmegudU6l7fOWnryJc5KiKF2YJa8B3CDOn6X0s"
@@ -382,8 +311,11 @@ function SponsorsEn() {
                   />
                 </a>
                 <a href="https://thinkopen.solutions" target="_blank" rel="noreferrer">
-                <img src={sponsorThinkOpen} alt="ThinkOpen" />
-              </a>
+                  <img src={sponsorThinkOpen} alt="ThinkOpen" />
+                </a>
+                <a href="https://kvaser.com" target="_blank" rel="noreferrer">
+                  <img src={sponsorKvaser} alt="KVASER" />
+                </a>
               </div>
             </div>
          
@@ -529,9 +461,6 @@ function SponsorsEn() {
               </a>
               <a href="https://camnetics.com" target="_blank" rel="noreferrer">
                 <img src={sponsorCamnetics} alt="Camnetics" />
-              </a>
-              <a href="https://enepaq.com" target="_blank" rel="noreferrer">
-                <img src={sponsorEnepaq} alt="Enepaq" />
               </a>
             </div>
           

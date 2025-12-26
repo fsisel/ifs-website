@@ -94,8 +94,8 @@ function FooterPt() {
         <Link id="footer_privacypolicy" className="link" to="/pt/about_us">
           <h5>Sobre nós</h5>
         </Link>
-        <Link id="footer_privacypolicy" className="link" to="/pt/ifs04">
-          <h5>IFS04</h5>
+        <Link id="footer_privacypolicy" className="link" to="/pt/ifs05">
+          <h5>IFS05</h5>
         </Link>
         <Link id="footer_privacypolicy" className="link" to="/pt/sponsors">
           <h5>Patrocinadores</h5>

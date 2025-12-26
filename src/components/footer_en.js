@@ -94,8 +94,8 @@ function FooterEn() {
         <Link className="link" to="/en/about_us">
           <h5>About us</h5>
         </Link>
-        <Link  className="link" to="/en/ifs04">
-          <h5>IFSO4</h5>
+        <Link  className="link" to="/en/ifs05">
+          <h5>IFSO5</h5>
         </Link>
         <Link  className="link" to="/en/sponsors">
           <h5>Sponsors</h5>

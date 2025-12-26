@@ -41,7 +41,7 @@ function HeaderEn() {
 
       <div id="navbar_menu">
         <Link to="/en/about_us">ABOUT US&nbsp;</Link>
-        <Link to="/en/ifs04">IFS04&nbsp;</Link>
+        <Link to="/en/ifs05">IFS05&nbsp;</Link>
         <Link to="/en/sponsors">SPONSORS&nbsp;</Link>
         <Link to="/en/contacts">CONTACTS&nbsp;</Link>
       </div>

@@ -16,7 +16,6 @@ import ifs04 from "../images/ifs04-main.webp";
 import ifs05 from "../images/ifs05_1.webp";
 
 export default class HomepageEn extends Component {
-
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll, true);
     document.getElementById("navbar").style.top = "-4em"
@@ -96,17 +95,33 @@ handleScroll = () => {
             </div>
             <div className="text_wrapper">
               <div>
-                <h2><b>IFS05</b></h2>
+                <h2><b>IFS06</b></h2>
                 <p>Coming soon...</p>
               </div>
             </div>
           </div>
 
           <div className="product big">
-            <img src={ifs04} alt="IFS04" />
+            
             <div className="column">
               <div className="wrapper">
                 <div className="detail">OUR LATEST</div>
+                <div className="text">IFS05</div>
+              </div>
+              <div>
+                <Link to="/en/ifs05" className="parallelogram center">
+                  <div className="orange_detail"></div>
+                  <div className="text">CHECK IT OUT</div>
+                </Link>
+              </div>
+            </div>
+            <img src={ifs04} alt="IFS05" />
+          </div>
+
+          <div className="product big">
+            <img src={ifs04} alt="IFS04" />
+            <div className="column">
+              <div className="wrapper">
                 <div className="text">IFS04</div>
               </div>
               <div>
