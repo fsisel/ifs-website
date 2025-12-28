@@ -50,7 +50,7 @@ handleScroll = () => {
 
                     <div id="header_menu">
                         <Link to="/en/about_us"><span>ABOUT US</span></Link>
-                        <Link to="/en/ifs04"><span>IFS04</span></Link>
+                        <Link to="/en/ifs05"><span>IFS05</span></Link>
                         <Link to="/en/sponsors"><span>SPONSORS</span></Link>
                         <Link to="/en/contacts"><span>CONTACTS</span></Link>
                     </div>
@@ -118,17 +118,16 @@ handleScroll = () => {
             <img src={ifs04} alt="IFS05" />
           </div>
 
-          <div className="product big">
-            <img src={ifs04} alt="IFS04" />
-            <div className="column">
-              <div className="wrapper">
-                <div className="text">IFS04</div>
-              </div>
+          <div className="container-fluid dual right">
+            <div className="image_wrapper">
+              <img src={ifs04} alt="IFS04" />
+            </div>
+            <div className="text_wrapper">
               <div>
-                <Link to="/en/ifs04" className="parallelogram center">
-                  <div className="orange_detail"></div>
-                  <div className="text">CHECK IT OUT</div>
-                </Link>
+                <h2><b>IFS04</b></h2>
+                <p>
+                  The IFS04 is a vehicle 
+                </p>
               </div>
             </div>
           </div>

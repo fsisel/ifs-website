@@ -114,16 +114,17 @@ handleScroll = () => {
             <img src={ifs04} alt="IFS05" />
           </div>
 
-          <div className="product big">
-            <img src={ifs04} alt="IFS04" />
-            <div className="column">
-              <div className="wrapper">
-                <div className="text">IFS04</div>
+          <div className="container-fluid dual right">
+            <div className="image_wrapper">
+              <img src={ifs04} alt="IFS04" />
+            </div>
+            <div className="text_wrapper">
+              <div>
+                <h2><b>IFS04</b></h2>
+                <p>
+                  O IFS04 é uma veículo
+                </p>
               </div>
-              <Link to="/pt/ifs04" className="parallelogram center">
-                <div className="orange_detail"></div>
-                <div className="text">SABE MAIS</div>
-              </Link>
             </div>
           </div>
 
