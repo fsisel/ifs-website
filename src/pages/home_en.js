@@ -13,7 +13,7 @@ import ifs02_1 from "../images/ifs02_1.webp";
 import ifs02_2 from "../images/ifs02_2.webp";
 import ifs03Front from "../images/ifs03_front_whitebg.webp";
 import ifs04 from "../images/ifs04-main.webp";
-import ifs05 from "../images/ifs05_1.webp";
+import ifs05 from "../images/ifs05_main.webp";
 
 export default class HomepageEn extends Component {
   componentDidMount() {
@@ -89,7 +89,7 @@ handleScroll = () => {
             </div>
           </div>
 
-          <div className="container-fluid dual right">
+          {/* <div className="container-fluid dual right">
             <div className="image_wrapper">
               <img src={ifs05} alt="IFS05" />
             </div>
@@ -99,7 +99,7 @@ handleScroll = () => {
                 <p>Coming soon...</p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="product big">
             
@@ -115,7 +115,7 @@ handleScroll = () => {
                 </Link>
               </div>
             </div>
-            <img src={ifs04} alt="IFS05" />
+            <img src={ifs05} alt="IFS05" />
           </div>
 
           <div className="container-fluid dual right">

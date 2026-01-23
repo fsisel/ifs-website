@@ -8,7 +8,6 @@ import sponsorAltium from "../sponsor_logos/altium.svg";
 import sponsorAnsys from "../sponsor_logos/ansys.svg";
 import sponsorBender from "../sponsor_logos/bender.svg";
 import sponsorCarpintariaLinoEFilhos from "../sponsor_logos/carpintaria_lino_e_filhos.webp";
-import sponsorCodi from "../sponsor_logos/codi.svg";
 import sponsorCopisel from "../sponsor_logos/copisel.svg";
 import sponsorDeconorma from "../sponsor_logos/deconorma.webp";
 import sponsorEurocorreias from "../sponsor_logos/eurocorreias.webp";
@@ -28,7 +27,6 @@ import sponsorReiman from "../sponsor_logos/reiman.svg";
 import sponsorAeisel from "../sponsor_logos/aeisel.webp";
 import sponsorSabino from "../sponsor_logos/Sabino.webp";
 import sponsorEasyComposites from "../sponsor_logos/easy_composites.webp";
-import sponsorMilwaukee from "../sponsor_logos/milwaukee.svg";
 import sponsorVlMoldes from "../sponsor_logos/vl_moldes.svg";
 import sponsorAtomicShop from "../sponsor_logos/atomic_shop.svg";
 import sponsorCarlis from "../sponsor_logos/carlis.webp";
@@ -62,6 +60,8 @@ import sponsorCMfonseca from "../sponsor_logos/Fonseca.svg";
 import sponsorCamnetics from "../icons/noIMG.svg";
 import sponsorCalspan from "../icons/noIMG.svg";
 import sponsorKvaser from "../icons/noIMG.svg";
+import sponsorFacom from "../icons/noIMG.svg";
+import sponsorTesla from "../sponsor_logos/tesla.svg";
 
 function SponsorsPt() {
   return (
@@ -84,9 +84,6 @@ function SponsorsPt() {
               </a>
             </div>
             <div className="sponsors platinum">
-              <a href="https://www.codi.pt" target="_blank" rel="noreferrer">
-                <img src={sponsorCodi} alt="CODI" />
-              </a>
               <a href="https://grupometal.com" target="_blank" rel="noreferrer">
                 <img src={sponsorGrupoMetal} alt="Grupo Metal" />
               </a>
@@ -98,11 +95,30 @@ function SponsorsPt() {
                 />
               </a>
               <a
-                href="https://www.milwaukeetool.eu"
+                href="https://www.facom.com/"
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={sponsorMilwaukee} alt="Milwaukee" />
+                <img src={sponsorFacom} alt="Facom" />
+              </a>
+              <a
+                href="https://www.cubotonic.pt"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={sponsorCubotonic}
+                  alt="Cubotónic" />
+              </a>
+              <a
+                href="https://almeida-lamas.pt/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={sponsorAlmeidaLamas}
+                  alt="Almeida & Lamas"
+                  style={{ width: 160 }} />
               </a>
             </div>
           
@@ -121,26 +137,9 @@ function SponsorsPt() {
               >
                 <img src={sponsorCoficab} alt="Coficab" />
               </a>
+
               <a href="http://leomavel.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorLeomavel} alt="Leomavel Moldes" />
-              </a>
-              <a
-                href="https://www.jdeus.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={sponsorJdeus} alt="Jdeus" />
-              </a>
-              <a
-                href="https://www.cubotonic.pt"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={sponsorCubotonic}
-                  alt="Cubotónic"
-                  
-                />
               </a>
             </div>
 
@@ -151,16 +150,8 @@ function SponsorsPt() {
               <a href="https://reiman.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorReiman} alt="Reiman" />
               </a>
-              <a
-                href="https://almeida-lamas.pt/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src={sponsorAlmeidaLamas}
-                  alt="Almeida & Lamas"
-                  style={{ width: 160 }}
-                />
+              <a href="https://www.tesla.com/" target="_blank" rel="noreferrer">
+                <img src={sponsorTesla} alt="Tesla" />
               </a>
             </div>
 
@@ -186,7 +177,7 @@ function SponsorsPt() {
             <h2>PRATA</h2>
             </div>
 
-            <div className="sponsors silver">
+           <div className="sponsors silver">
               <a
                 href="https://www.eurocircuits.com"
                 target="_blank"
@@ -202,7 +193,13 @@ function SponsorsPt() {
               <a href="https://deconorma.com" target="_blank" rel="noreferrer">
                 <img src={sponsorDeconorma} alt="Deconorma" />
               </a>
-
+              <a
+                href="https://www.jdeus.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={sponsorJdeus} alt="Jdeus" />
+              </a>
             </div> 
 
               <div className="sponsors silver">
@@ -270,13 +267,6 @@ function SponsorsPt() {
               </a>
             <div className="sponsors bronze">
               
-              <a
-                href="https://www.copisel.pt"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src={sponsorCopisel} alt="Copisel" />
-              </a>
               <a
                 href="https://www2.news.vi-grade.com/e/832623/2025-01-13/2cdft7/894804871/h/GJKopkmegudU6l7fOWnryJc5KiKF2YJa8B3CDOn6X0s"
                 target="_blank"
@@ -346,6 +336,13 @@ function SponsorsPt() {
               </a>
               <a href="https://www.altium.com" target="_blank" rel="noreferrer">
                 <img src={sponsorAltium} alt="Altium" />
+              </a>
+              <a
+                href="https://www.copisel.pt"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={sponsorCopisel} alt="Copisel" />
               </a>
               <a
                 href="https://www.easycomposites.eu/"
