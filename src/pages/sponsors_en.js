@@ -55,12 +55,12 @@ import sponsorXiraPlas from "../sponsor_logos/xiraplas.svg";
 import sponsorRMC from "../sponsor_logos/RMC_ORIGINAL.svg";
 import sponsorRibermold from "../sponsor_logos/Ribermold.svg";
 import sponsorCadflow from "../sponsor_logos/Cadflow.svg";
-import sponsorThinkOpen from "../icons/noIMG.svg"
+import sponsorThinkOpen from "../sponsor_logos/ThinkOpen.webp"
 import sponsorCMfonseca from "../sponsor_logos/Fonseca.svg";
-import sponsorCamnetics from "../icons/noIMG.svg";
-import sponsorCalspan from "../icons/noIMG.svg";
-import sponsorKvaser from "../icons/noIMG.svg";
-import sponsorFacom from "../icons/noIMG.svg";
+import sponsorCamnetics from "../sponsor_logos/camnetics.webp";
+import sponsorCalspan from "../sponsor_logos/Calspan.webp";
+import sponsorKvaser from "../sponsor_logos/Kvaser.webp";
+import sponsorFacom from "../sponsor_logos/facom.webp";
 import sponsorTesla from "../sponsor_logos/tesla.svg";
 
 function SponsorsEn() {
@@ -118,7 +118,7 @@ function SponsorsEn() {
                 <img
                   src={sponsorAlmeidaLamas}
                   alt="Almeida & Lamas"
-                  style={{ width: 160 }} />
+                  style={{ width: 240 }} />
               </a>
             </div>
           

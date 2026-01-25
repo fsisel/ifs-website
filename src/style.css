@@ -330,7 +330,7 @@ a.parallelogram:hover .text {
 }
 
 #header_menu a {
-  width: 10em;
+  /* width: 10em; */
   padding: 0.4em 0.2em;
   border-right: 0 solid #f50;
   color: #fff;
