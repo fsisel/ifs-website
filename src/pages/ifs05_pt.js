@@ -23,19 +23,19 @@ function Ifs05Pt() {
   return (
     <div>
       <Header />
-
+      
       <div id="black_container">
         <img id="cover" src={imageIfs05} alt="IFS05" />
-        <img id="title" src={logoIfs04} alt="IFS05" />
+        {/* <img id="title" src={logoIfs04} alt="IFS05" /> */}
       </div>
 
       <article>
         <div className="main_container">
-          O IFS04 é o último veículo elétrico desenvolvido pela equipa ISEL
+          O IFS05 é o último veículo elétrico desenvolvido pela equipa ISEL
           Formula Student.
           <br />
           <br />
-          Projetado a pensar no peso reduzido e fiabilidade, o IFS04 atinge o
+          Projetado a pensar no peso reduzido e fiabilidade, o IFS05 atinge o
           equilíbrio perfeito entre desempenho e agilidade.
         </div>
 

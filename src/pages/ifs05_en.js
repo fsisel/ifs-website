@@ -26,16 +26,16 @@ function Ifs05En() {
 
       <div id="black_container">
         <img id="cover" src={imageIfs05} alt="IFS05" />
-        <img id="title" src={logoIfs04} alt="IFS05" />
+        {/*<img id="title" src={logoIfs04} alt="IFS05" />*/}
       </div>
 
       <article>
         <div className="main_container">
-          IFS04 is the latest fully electric vehicle developed by ISEL Formula
+          IFS05 is the latest fully electric vehicle developed by ISEL Formula
           Student.
           <br />
           <br />
-          Designed with lightness and reliability in mind IFS04 strikes the
+          Designed with lightness and reliability in mind IFS05 strikes the
           perfect balance between performance and agility.
         </div>
 
