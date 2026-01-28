@@ -229,7 +229,7 @@ a.parallelogram:hover .text {
   margin: auto 0;
   padding: 0 0.5em;
   color: #000;
-  background-color: rgb(255, 255, 255, 0.75);
+  background-color: rgb(255, 255, 255);
   border-radius: 2em;
   font-size: 0.9em;
   font-weight: 700;
@@ -330,7 +330,7 @@ a.parallelogram:hover .text {
 }
 
 #header_menu a {
-  width: 10em;
+  /* width: 10em; */
   padding: 0.4em 0.2em;
   border-right: 0 solid #f50;
   color: #fff;

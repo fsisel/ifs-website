@@ -13,7 +13,7 @@ import ifs02_1 from "../images/ifs02_1.webp";
 import ifs02_2 from "../images/ifs02_2.webp";
 import ifs03Front from "../images/ifs03_front_whitebg.webp";
 import ifs04 from "../images/ifs04-main.webp";
-import ifs05 from "../images/ifs05_1.webp";
+import ifs05 from "../images/ifs05_main.webp";
 
 export default class HomepagePt extends Component {
   componentDidMount() {
@@ -48,7 +48,7 @@ handleScroll = () => {
                     <img className="logo" src={logoDark} alt="ISEL Formula Student" />
                     <div id="header_menu">
                         <Link to="/pt/about_us" ><span>SOBRE NÓS</span></Link>
-                        <Link to="/pt/ifs04"><span>IFS04</span></Link>
+                        <Link to="/pt/ifs05"><span>IFS05</span></Link>
                         <Link to="/pt/sponsors"><span>PATROCINADORES</span></Link>
                         <Link to="/pt/contacts"><span>CONTACTOS</span></Link>
                     </div>
@@ -88,29 +88,43 @@ handleScroll = () => {
             </div>
           </div>
 
-          <div className="container-fluid dual right">
+          {/* <div className="container-fluid dual right">
             <div className="image_wrapper">
-              <img src={ifs05} alt="IFS05" />
+              <img src={ifs05} alt="IFS06" />
             </div>
             <div className="text_wrapper">
               <div>
-                <h2><b>IFS05</b></h2>
+                <h2><b>IFS06</b></h2>
                 <p>Em breve...</p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="product big">
-            <img src={ifs04} alt="IFS04" />
             <div className="column">
               <div className="wrapper">
                 <div className="detail">O ÚLTIMO</div>
-                <div className="text">IFS04</div>
+                <div className="text">IFS05</div>
               </div>
-              <Link to="/pt/ifs04" className="parallelogram center">
+              <Link to="/pt/ifs05" className="parallelogram center">
                 <div className="orange_detail"></div>
                 <div className="text">SABE MAIS</div>
               </Link>
+            </div>
+            <img src={ifs05} alt="IFS05" />
+          </div>
+
+          <div className="container-fluid dual right">
+            <div className="image_wrapper">
+              <img src={ifs04} alt="IFS04" />
+            </div>
+            <div className="text_wrapper">
+              <div>
+                <h2><b>IFS04</b></h2>
+                <p>
+                  O IFS04 é uma veículo
+                </p>
+              </div>
             </div>
           </div>
 

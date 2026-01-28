@@ -63,6 +63,11 @@ function ContactsPt() {
                 placeholder="Escreva algo..."
                 required
               ></textarea>
+              <input
+                type="hidden"
+                name="_cc"
+                value="pedro.costa@iselfs.pt,martim-jorge@iselfs.pt"
+              ></input>
               <div class="col-md-6 offset-md-3">
                 <button type="submit" className="btn-sub w-100">
                   ENVIAR

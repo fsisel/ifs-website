@@ -3,10 +3,10 @@ import React from "react";
 import Header from "../components/header_en";
 import Footer from "../components/footer_en";
 
-import imageIfs04 from "../images/ifs04-lateral.webp";
-import logoIfs04 from "../logos/Logo_IFS04_W.svg";
+import imageIfs05 from "../images/ifs05-lateral.webp";
+/*import logoIfs04 from "../logos/Logo_IFS04_W.svg";*/
 
-import imageIfs04Top from "../images/ifs04-up.webp";
+import imageIfs05Top from "../images/ifs05-up.webp";
 
 import iconElectric from "../icons/electric.svg";
 import iconPerformance from "../icons/performance.svg";
@@ -16,30 +16,31 @@ import iconBody from "../icons/body.svg";
 import iconSuspension from "../icons/suspension.svg";
 
 import imageDrivetrain from "../images/drivetrain.webp";
-import imageIfs04Back from "../images/ifs04-rear.webp";
+/* import imageIfs04Back from "../images/ifs04-rear.webp"; */
+import imageIfs05Front from "../images/ifs05-front.webp";
 
-function Ifs04En() {
+function Ifs05En() {
   return (
     <div>
       <Header />
 
       <div id="black_container">
-        <img id="cover" src={imageIfs04} alt="IFS04" />
-        <img id="title" src={logoIfs04} alt="IFS04" />
+        <img id="cover" src={imageIfs05} alt="IFS05" />
+        {/*<img id="title" src={logoIfs04} alt="IFS05" />*/}
       </div>
 
       <article>
         <div className="main_container">
-          IFS04 is the latest fully electric vehicle developed by ISEL Formula
+          IFS05 is the latest fully electric vehicle developed by ISEL Formula
           Student.
           <br />
           <br />
-          Designed with lightness and reliability in mind IFS04 strikes the
+          Designed with lightness and reliability in mind IFS05 strikes the
           perfect balance between performance and agility.
         </div>
 
         <div className="product_center">
-          <img className="responsive" src={imageIfs04Top} alt="IFS04"/>
+          <img className="responsive" src={imageIfs05Top} alt="IFS05"/>
           <div>
             <div className="column left">
               <div className="wrapper">
@@ -55,7 +56,7 @@ function Ifs04En() {
                 <img className="icon" src={iconAgility} alt="agility" />
               </div>
             </div>
-            <img className="large" src={imageIfs04Top} alt="IFS04" />
+            <img className="large" src={imageIfs05Top} alt="IFS05" />
             <div className="column">
               <div className="wrapper">
                 <img className="icon" src={iconChassis} alt="chassis" />
@@ -74,7 +75,7 @@ function Ifs04En() {
         </div>
 
         <div className="product">
-          <img src={imageDrivetrain} alt="IFS04 drivetrain" />
+          <img src={imageDrivetrain} alt="IFS05 drivetrain" />
           <div className="column">
             <div className="wrapper">
               <div className="detail">POWER</div>
@@ -98,7 +99,7 @@ function Ifs04En() {
               <div className="text">TBA</div>
             </div>
           </div>
-          <img src={imageIfs04Back} alt="IFS04"/>
+          <img src={imageIfs05Front} alt="IFS04"/>
         </div>
       </article>
 
@@ -107,4 +108,4 @@ function Ifs04En() {
   );
 }
 
-export default Ifs04En;
+export default Ifs05En;
