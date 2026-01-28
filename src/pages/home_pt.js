@@ -122,7 +122,7 @@ handleScroll = () => {
               <div>
                 <h2><b>IFS04</b></h2>
                 <p>
-                  O IFS04 é uma veículo
+                  O IFS04 é o terceiro veículo elétrico desenvolvido pela equipa ISEL Formula Student. Este carro foi projetado e construído numa época competitiva (2023-2024) com foco em desempenho, leveza e fiabilidade para participar em competições de Formula Student em Portugal e Espanha.
                 </p>
               </div>
             </div>

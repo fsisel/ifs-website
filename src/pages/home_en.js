@@ -126,7 +126,7 @@ handleScroll = () => {
               <div>
                 <h2><b>IFS04</b></h2>
                 <p>
-                  The IFS04 is a vehicle 
+                  The IFS04 is the third electric vehicle developed by the ISEL Formula Student team. It was designed and built during the 2023–2024 competitive season, with a focus on performance, lightness, and reliability, to compete in Formula Student events in Portugal and Spain.
                 </p>
               </div>
             </div>
