@@ -4,7 +4,7 @@ import Header from "../components/header_en";
 import Footer from "../components/footer_en";
 
 import imageIfs05 from "../images/ifs05-lateral.webp";
-import logoIfs04 from "../logos/Logo_IFS04_W.svg";
+/*import logoIfs04 from "../logos/Logo_IFS04_W.svg";*/
 
 import imageIfs05Top from "../images/ifs05-up.webp";
 
