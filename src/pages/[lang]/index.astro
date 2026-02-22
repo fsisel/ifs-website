@@ -1,0 +1,50 @@
+---
+import Welcome from '../../components/Welcome.astro';
+import Layout from '../../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+import { translations } from "../../i18n/translations";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof translations;
+
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
+
+const otherLang = lang === "en" ? "pt" : "en";
+
+---
+
+<Layout>
+  <!-- <h1>{t.title}</h1>
+
+  <a href={`/${otherLang}/`}>
+    <button>{t.button}</button>
+  </a> -->
+
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-200">
+
+  <div class="bg-white p-10 rounded-2xl shadow-xl text-center">
+
+    <h1 class="text-4xl font-bold mb-6">
+      {t.title}
+    </h1>
+
+    <a href={`/${otherLang}/`}>
+      <button class="px-5 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+        {t.button}
+      </button>
+    </a>
+
+  </div>
+
+</div>
+
+</Layout>
