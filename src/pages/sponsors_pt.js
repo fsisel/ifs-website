@@ -39,7 +39,6 @@ import sponsorRapid from "../sponsor_logos/rapidharness.webp";
 import sponsorSchroth from "../sponsor_logos/Schroth.webp";
 import sponsorMathWorks from "../sponsor_logos/mathworks.svg";
 import sponsorViGrade from "../sponsor_logos/vi-grade_red.svg";
-import sponsorCtw from "../sponsor_logos/ctw.svg";
 import sponsorAlmeidaLamas from "../sponsor_logos/Almeida_Lamas.svg";
 import sponsorRus from "../sponsor_logos/rus-logo.svg";
 import sponsorEnepaq from "../sponsor_logos/enepaq.webp";
@@ -61,7 +60,10 @@ import sponsorCamnetics from "../sponsor_logos/camnetics.webp";
 import sponsorCalspan from "../sponsor_logos/Calspan.webp";
 import sponsorKvaser from "../sponsor_logos/Kvaser.webp";
 import sponsorFacom from "../sponsor_logos/facom.webp";
-import sponsorTesla from "../sponsor_logos/tesla.svg";
+import sponsorBnD from "../sponsor_logos/bnd.webp";
+import sponsorAMTita from "../sponsor_logos/AM_tita.webp";
+import sponsorCanelasEspiga from "../sponsor_logos/canelas&espiga.webp";
+import sponsorS4metro from "../sponsor_logos/s4metro.svg";
 
 function SponsorsPt() {
   return (
@@ -150,15 +152,13 @@ function SponsorsPt() {
               <a href="https://reiman.pt" target="_blank" rel="noreferrer">
                 <img src={sponsorReiman} alt="Reiman" />
               </a>
-              <a href="https://www.tesla.com/" target="_blank" rel="noreferrer">
-                <img src={sponsorTesla} alt="Tesla" />
+              <a href="https://shop.berner.eu/pt-pt" target="_blank" rel="noreferrer">
+                  <img src={sponsorBerner} alt="Berner" />
               </a>
             </div>
 
             <div class="sponsors gold">
-              <a href="https://shop.berner.eu/pt-pt" target="_blank" rel="noreferrer">
-                <img src={sponsorBerner} alt="Berner" />
-              </a>
+              
               <a href="https://www.3d-iso.pt" target="_blank" rel="noreferrer">
                 <img src={sponsor3dISO} alt="3D-ISO" />
               </a>
@@ -223,19 +223,8 @@ function SponsorsPt() {
                    
                   />
                 </a>
-                <a
-                  href="https://www.criticaltechworks.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={sponsorCtw}
-                    alt="Critical Techworks"
-                   
-                  />
-                  <a href="https://www.te.com" target="_blank" rel="noreferrer">
-                    <img src={sponsorTeConnectivity} alt="TE Connectivity" />
-                  </a>
+                <a href="https://www.te.com" target="_blank" rel="noreferrer">
+                  <img src={sponsorTeConnectivity} alt="TE Connectivity" />
                 </a>
               </div>
           
@@ -265,6 +254,26 @@ function SponsorsPt() {
               <a href="https://www.cadflow.pt/index.php" target="_blank" rel="noreferrer">
                 <img src={sponsorCadflow} alt="Cadflow" />
               </a>
+            </div>
+
+            <div id="partners" className="sponsors bronze">
+              <a href="bnd.pt" target="_blank"rel="noreferrer">
+                <img src={sponsorBnD} alt="BND" style={{width:150}}/>
+              </a>
+              <a href="https://www.amtita.pt" target="_blank" rel="noreferrer">
+                <img src={sponsorAMTita} alt="A.M.Tita" />
+              </a>              
+              <a href="https://www.solutions4metrology.com" target="_blank" rel="noreferrer">
+                <img src={sponsorS4metro} alt="S4Metro" />
+              </a>
+              <a href="https://www.canelas-espiga.com" target="_blank" rel="noreferrer">
+                <img src={sponsorCanelasEspiga} alt="Canelas&Espiga" />
+              </a>
+               <a href="https://mauser.pt/" target="_blank" rel="noreferrer">
+                  <img src={sponsorMauser} alt="Mauser.pt"/>
+                </a>
+            </div>
+
             <div className="sponsors bronze">
               
               <a
@@ -291,16 +300,6 @@ function SponsorsPt() {
                     alt="Loctite"
                   />
                 </a>
-                <a
-                  href="https://mauser.pt/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src={sponsorMauser}
-                    alt="Mauser.pt"
-                  />
-                </a>
                 <a href="https://thinkopen.solutions" target="_blank" rel="noreferrer">
                   <img src={sponsorThinkOpen} alt="ThinkOpen" />
                 </a>
@@ -308,7 +307,6 @@ function SponsorsPt() {
                   <img src={sponsorKvaser} alt="KVASER" />
                 </a>
               </div>
-            </div>
          
 
           <div className="separator"></div>
