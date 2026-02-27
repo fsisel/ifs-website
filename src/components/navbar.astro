@@ -1,0 +1,62 @@
+---
+import { translations } from "../i18n/translations";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof translations;
+
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
+
+const otherLang = lang === "en" ? "pt" : "en";
+---
+
+<!-- header -->
+<nav class="w-full bg-black opacity-85 shadow-md fixed top-0 left-0 z-50 text-white" id="navbar">
+	<div class=" mx-auto px-4 lg:px-8">
+		<!-- Header -->
+		<div class="flex items-center justify-between h-16">
+
+			<!-- Logo -->
+			<div class="flex items-center gap-3">
+				<img src="/logos/ifs_logo_dark.svg" alt="ISEL Formula Student" class="h-10 w-auto" />
+			</div>
+			<div class="flex items-end gap-8">
+				<div class="hidden md:flex items-center gap-8 text-sm font-bold tracking-wide">
+					<a href="/en/about_us" class="hover:text-orange-500 transition">
+					{t.aboutUs}
+					</a>
+					<a href="/en/ifs05" class="hover:text-orange-500 transition">
+					IFS05
+					</a>
+					<a href="/en/sponsors" class="hover:text-orange-500 transition">
+					{t.sponsors}
+					</a>
+					<a href="/en/contacts" class="hover:text-orange-500 transition">
+					{t.contacts}
+					</a>
+				</div>
+			
+				<div class="flex items-center gap-4">
+					<!-- Language Switch -->
+					<a href={`/${otherLang}/`} title="Português">
+						<img src="/icons/pt.svg" alt="Portuguese" class="h-6 w-6 rounded-sm" />
+					</a>
+					<!-- Mobile Menu Button -->
+					<button
+					id="menu_button"
+					class="md:hidden flex items-center gap-2 text-sm font-semibold"
+					>
+						MENU
+						<img src="/icons/menu.svg" alt="Menu" class="h-5 w-5" />
+					</button>
+
+				</div>	
+			</div>	
+		</div>	
+	</div>
+</nav>

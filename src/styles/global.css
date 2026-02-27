@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(/fonts/open_sans/OpenSans-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(/fonts/open_sans/OpenSans-Bold.ttf);
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(/fonts/open_sans/OpenSans-ExtraBold.ttf);
+  font-display: swap;
+  font-weight: 900;
+}
+
+/* Montserrat font */
+@font-face {
+  font-family: "Montserrat";
+  src: url(/fonts/montserrat/Montserrat-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(/fonts/montserrat/Montserrat-Bold.ttf);
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(/fonts/montserrat/Montserrat-ExtraBold.ttf);
+  font-display: swap;
+  font-weight: 900;
+}
+
+/* header */
+
+#navbar{
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  padding: 0 7vw;
+}
