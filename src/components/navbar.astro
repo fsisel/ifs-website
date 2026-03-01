@@ -13,6 +13,9 @@ const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
 
 const otherLang = lang === "en" ? "pt" : "en";
+export interface Props {
+  children: any;
+}
 ---
 
 <!-- header -->
@@ -23,7 +26,7 @@ const otherLang = lang === "en" ? "pt" : "en";
 
 			<!-- Logo -->
 			<div class="flex items-center gap-3">
-				<img src="/logos/ifs_logo_dark.svg" alt="ISEL Formula Student" class="h-10 w-auto" />
+				<img src="/logos/ifs_icon_dark.svg" alt="ISEL Formula Student" class="h-6 w-auto" />
 			</div>
 			<div class="flex items-end gap-8">
 				<div class="hidden md:flex items-center gap-8 text-sm font-bold tracking-wide">

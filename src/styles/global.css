@@ -48,3 +48,15 @@
   font-style: italic;
   padding: 0 7vw;
 }
+.bodier{
+  height:1500px;
+}
+footer{
+  padding-left: 7vw;
+  padding-right: 7vw;
+  font-family: "Montserrat", sans-serif;
+  
+}
+#footer-links{
+  font-size: 20px;
+}

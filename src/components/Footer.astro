@@ -1,0 +1,130 @@
+---
+import { translations } from "../i18n/translations";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof translations;
+
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
+const year = new Date().getFullYear();
+
+---
+
+<footer class="bg-[#181818] gap-1.5 text-white py-7.5 px-6 md:px-16  flex-col items-center font-medium">
+  <!-- Top Section -->
+  <div class="flex justify-between items-center">
+    <!-- Logo -->
+    <div class="flex items-start">
+      <img
+        src="/logos/ifs_icon_dark.svg"
+        alt="ISEL Formula Student Logo"
+        class="w-28"
+      />
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h4 class="text-[24px] mb-4">Newsletter</h4>
+
+      <div class="flex">
+        <input
+          type="text"
+          placeholder="Soon..."
+          aria-label="Your email here"
+          disabled
+          class="w-full px-4 py-2 rounded-l-md bg-white border border-zinc-700 text-sm placeholder-zinc-600 focus:outline-none"
+        />
+        <button
+          disabled
+          class="px-4 py-2 rounded-r-md bg-inherit border border-zinc-600 text-sm text-zinc-400 cursor-not-allowed"
+        >
+          Subscribe
+        </button>
+      </div>
+    </div>
+
+    <!-- Social -->
+
+      <div class="flex gap-4 items-center">
+        <a
+          href="https://www.linkedin.com/company/isel-formula-student/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:opacity-70 transition"
+        >
+          <img src="/icons/linkedin.svg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+
+        <a
+          href="https://www.instagram.com/isel.formulastudent/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:opacity-70 transition"
+        >
+          <img src="/icons/instagram.svg" alt="Instagram" class="w-6 h-6" />
+        </a>
+
+        <a
+          href="https://www.facebook.com/IselFormulaStudent"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:opacity-70 transition"
+        >
+          <img src="/icons/facebook.svg" alt="Facebook" class="w-6 h-6" />
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@iselformulastudent"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:opacity-70 transition"
+        >
+          <img src="/icons/tiktok_s.svg" alt="Tiktok" class="w-6 h-6" />
+        </a>
+      </div>
+
+    <!-- Location -->
+    <div>
+      <h4 class="text-[24px] mb-4">{t.location}</h4>
+
+      <a
+        href="https://www.google.pt/maps/place/Formula+Student+ISEL/@38.7558962,-9.1197376,17z/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-zinc-400 hover:text-white transition text-sm leading-relaxed"
+      >
+        Rua Conselheiro Emídio Navarro, 1<br />
+        1959-007 Lisboa
+      </a>
+  </div>
+
+  <!-- Bottom Section -->
+
+    <!-- Pages -->
+    <div class="flex flex-col flex-wrap gap-2 " id="footer-links">
+      <a href="/en" class="hover:text-white transition"><h5>{t.home}</h5></a>
+      <a href="/en/about_us" class="hover:text-white transition"><h5>{t.aboutUs}</h5></a>
+      <a href="/en/ifs05" class="hover:text-white transition"><h5>IFSO5</h5></a>
+      <a href="/en/sponsors" class="hover:text-white transition"><h5>{t.sponsors}</h5></a>
+      <a href="/en/contacts" class="hover:text-white transition"><h5>{t.contacts}</h5></a>
+    </div>
+    </div>
+    <!-- Copyright -->
+    <div class="flex items-center gap-4 justify-center my-2" >
+      <span>© {year} ISEL FS - Associação de Estudantes de Engenharia</span>
+      <span class="hidden md:inline-block w-px h-4 bg-zinc-700"></span>
+      <a
+        href="/en/privacy_policy"
+        class="hover:text-white transition"
+      >
+        Privacy Policy
+      </a>
+    </div>
+
+</footer>
+

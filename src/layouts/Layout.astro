@@ -1,8 +1,9 @@
 ---
 import "../styles/global.css";
-import Header from "../components/navbar.astro"
 
-
+export interface Props {
+  children: any;
+}
 ---
 
 <!doctype html>
@@ -17,13 +18,7 @@ import Header from "../components/navbar.astro"
 	</head>
 	<body class="bg-black">
 		<!-- header -->
-
-
-
 		<slot />
-
-
-
 		<!-- footer -->
 	</body>
 </html>
