@@ -15,11 +15,10 @@ const year = new Date().getFullYear();
 
 ---
 
-<footer class="bg-[#181818] gap-1.5 text-white py-7.5 px-6 md:px-16  flex-col items-center font-medium">
+<footer class="bg-[#181818] gap-1.5 text-[#ddd] py-7.5 px-6 md:px-16  flex-col items-center font-medium">
   <!-- Top Section -->
-  <div class="flex justify-between items-center">
-    <!-- Logo -->
-    <div class="flex items-start">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-12 w-full place-items-center text-center md:text-left ">    <!-- Logo -->
+    <div>
       <img
         src="/logos/ifs_icon_dark.svg"
         alt="ISEL Formula Student Logo"
@@ -28,8 +27,8 @@ const year = new Date().getFullYear();
     </div>
 
     <!-- Newsletter -->
-    <div>
-      <h4 class="text-[24px] mb-4">Newsletter</h4>
+    <div class=" justify-center">
+      <h4 class="text-[24px] mb-2">Newsletter</h4>
 
       <div class="flex">
         <input
@@ -50,7 +49,7 @@ const year = new Date().getFullYear();
 
     <!-- Social -->
 
-      <div class="flex gap-4 items-center">
+      <div class="flex gap-4 items-center justify-center">
         <a
           href="https://www.linkedin.com/company/isel-formula-student/"
           target="_blank"
@@ -89,8 +88,8 @@ const year = new Date().getFullYear();
       </div>
 
     <!-- Location -->
-    <div>
-      <h4 class="text-[24px] mb-4">{t.location}</h4>
+    <div class="justify-center">
+      <h4 class="text-[24px] mb-2">{t.location}</h4>
 
       <a
         href="https://www.google.pt/maps/place/Formula+Student+ISEL/@38.7558962,-9.1197376,17z/"
@@ -106,16 +105,16 @@ const year = new Date().getFullYear();
   <!-- Bottom Section -->
 
     <!-- Pages -->
-    <div class="flex flex-col flex-wrap gap-2 " id="footer-links">
-      <a href="/en" class="hover:text-white transition"><h5>{t.home}</h5></a>
-      <a href="/en/about_us" class="hover:text-white transition"><h5>{t.aboutUs}</h5></a>
-      <a href="/en/ifs05" class="hover:text-white transition"><h5>IFSO5</h5></a>
-      <a href="/en/sponsors" class="hover:text-white transition"><h5>{t.sponsors}</h5></a>
-      <a href="/en/contacts" class="hover:text-white transition"><h5>{t.contacts}</h5></a>
+    <div class="flex flex-col flex-wrap gap-2  justify-center" id="footer-links">
+      <a href="/en" class="hover:text-white transition">{t.home}</a>
+      <a href="/en/about_us" class="hover:text-white transition">{t.aboutUs}</a>
+      <a href="/en/ifs05" class="hover:text-white transition">IFSO5</a>
+      <a href="/en/sponsors" class="hover:text-white transition">{t.sponsors}</a>
+      <a href="/en/contacts" class="hover:text-white transition">{t.contacts}</a>
     </div>
     </div>
     <!-- Copyright -->
-    <div class="flex items-center gap-4 justify-center my-2" >
+    <div class="flex items-center gap-4 justify-center my-2 text-[.9em]" >
       <span>© {year} ISEL FS - Associação de Estudantes de Engenharia</span>
       <span class="hidden md:inline-block w-px h-4 bg-zinc-700"></span>
       <a

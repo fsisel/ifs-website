@@ -2,18 +2,18 @@ export const translations = {
   en: {
     title: "Welcome",
     button: "Switch to Portuguese",
-    sponsors: "Sponsors",
-    aboutUs: "About us",
-    contacts: "Contacts",
+    sponsors: "SPONSORS",
+    aboutUs: "ABOUT US",
+    contacts: "CONTACTS",
     home: "Home Page",
     location: "Location"
   },
   pt: {
     title: "Bem vindo",
     button: "Trocar para inglês",
-    sponsors: "Patrocinadores",
-    aboutUs: "Sobre nós",
-    contacts: "Contactos",
+    sponsors: "PATROCINADORES",
+    aboutUs: "SOBRE NÓS",
+    contacts: "CONTACTOS",
     home: "Página principal",
     location: "Localização"
   }
