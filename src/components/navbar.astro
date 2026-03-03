@@ -13,8 +13,10 @@ const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
 
 const otherLang = lang === "en" ? "pt" : "en";
+
+//to remove no children error
 export interface Props {
-  children: any;
+  children?: any;
 }
 ---
 
@@ -26,7 +28,9 @@ export interface Props {
 
 			<!-- Logo -->
 			<div class="flex items-center gap-3">
-				<img src="/logos/ifs_icon_dark.svg" alt="ISEL Formula Student" class="h-6 w-auto" />
+				<a href={`/${lang}/`}>
+					<img src="/logos/ifs_icon_dark.svg" alt="ISEL Formula Student" class="h-6 w-auto" />
+				</a>
 			</div>
 			<div class="flex items-end gap-8">
 				<div class="hidden md:flex items-center gap-8 text-sm font-bold tracking-wide text-[16px]">

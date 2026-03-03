@@ -49,7 +49,7 @@
   padding: 0 7vw;
 }
 .bodier{
-  height:1500px;
+  height:auto;
 }
 footer{
   padding-left: 7vw;
@@ -59,4 +59,9 @@ footer{
 }
 #footer-links{
   font-size: 20px;
+}
+.contentBlcoks{
+  font-family: "Montserrat", sans-serif;
+  padding: 0 7vw;
+
 }

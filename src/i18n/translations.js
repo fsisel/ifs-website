@@ -15,6 +15,6 @@ export const translations = {
     aboutUs: "SOBRE NÓS",
     contacts: "CONTACTOS",
     home: "Página principal",
-    location: "Localização"
+    location: "Localização",
   }
 };

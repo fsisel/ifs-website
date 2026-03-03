@@ -1,0 +1,34 @@
+---
+export interface Props {
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  text: string;        // may contain HTML
+  reverse?: boolean;
+}
+
+const { imageSrc, imageAlt, title, text, reverse = false } = Astro.props;
+---
+
+<div class="w-full flex justify-center px-4 py-12 contentBlocks">
+  <div class={`max-w-6xl w-full flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} bg-[#181818] shadow-lg overflow-hidden text-white`}>
+    
+    <!-- Image Block -->
+    <div class="md:w-1/2 w-full">
+      <img 
+        src={imageSrc} 
+        alt={imageAlt} 
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Text Block -->
+    <div class="md:w-1/2 w-full p-8 flex flex-col justify-center">
+      <h2 class="text-[35.2px] font-bold mb-4">
+        {title}
+      </h2>
+      <p class="leading-relaxed text-[22.4px]" set:html={text}></p>
+    </div>
+
+  </div>
+</div>

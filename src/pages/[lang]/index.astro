@@ -3,6 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/navbar.astro';
 import Footer from '../../components/Footer.astro';
 
+import ContentBlock from '../../components/contentBlock.astro';
+import { blocks } from "../../data/blocks";
+
+
 export interface Props {
   children: any;
 }
@@ -29,9 +33,32 @@ const otherLang = lang === "en" ? "pt" : "en";
 
 <Layout>
   <Header />
-  <div class="bodier">  
+    <div class="bodier">  
+      <ContentBlock 
+        imageSrc="/images/ifs02_2.webp"
+        imageAlt="IFS02"
+        title="IFS02"
+        text={blocks[0].text[lang]}
+      />
 
+      <ContentBlock 
+        imageSrc="/images/ifs01_2.webp"
+        imageAlt="IFS01"
+        title="IFS01"
+        text={blocks[1].text[lang]}
+        reverse={true}
+      />
 
-  </div>
+      {blocks.map((block, index) => (
+        <ContentBlock
+          imageSrc={block.image}
+          imageAlt={block.title}
+          title={block.title}
+          text={block.text[lang]}
+          reverse={index % 2 !== 0}
+          />
+      ))}
+
+    </div>
   <Footer />
 </Layout>
