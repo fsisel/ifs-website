@@ -10,8 +10,8 @@ export interface Props {
 const { imageSrc, imageAlt, title, text, reverse = false } = Astro.props;
 ---
 
-<div class="w-full flex justify-center px-4 py-12 contentBlocks">
-  <div class={`max-w-6xl w-full flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} bg-[#181818] shadow-lg overflow-hidden text-white`}>
+<div class="w-full justify-center items-center py-12 ">
+  <div class={`w-full flex flex-col md:flex-row ${reverse ? 'md:flex-row-reverse' : ''} bg-[#181818] shadow-lg overflow-hidden text-white`}>
     
     <!-- Image Block -->
     <div class="md:w-1/2 w-full">
@@ -27,7 +27,7 @@ const { imageSrc, imageAlt, title, text, reverse = false } = Astro.props;
       <h2 class="text-[35.2px] font-bold mb-4">
         {title}
       </h2>
-      <p class="leading-relaxed text-[22.4px]" set:html={text}></p>
+      <p class="text-[22.4px]" set:html={text}></p>
     </div>
 
   </div>

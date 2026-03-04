@@ -1,5 +1,27 @@
 export const blocks = [
   {
+    image: "/images/ifs05_main.webp",
+    title: "IFS05",
+    text: {
+      en: "",
+      pt: ""
+    }
+  },{
+    image: "/images/ifs04-main.webp",
+    title: "IFS04",
+    text: {
+      en: "The IFS04 is the third electric vehicle developed by the ISEL Formula Student team. It was designed and built during the 2023–2024 competitive season, with a focus on performance, lightness, and reliability, to compete in Formula Student events in Portugal and Spain.",
+      pt: "O IFS04 é o terceiro veículo elétrico desenvolvido pela equipa ISEL Formula Student. Este carro foi projetado e construído numa época competitiva (2023-2024) com foco em desempenho, leveza e fiabilidade para participar em competições de Formula Student em Portugal e Espanha."
+    }
+  },{
+    image: "/images/ifs03_front_whitebg.webp",
+    title: "IFS03",
+    text: {
+      en: "The IFS03 vehicle was the successor to the IFS02, showcasing the team’s advancements in electric car technology. It delivered improved efficiency and performance.",
+      pt: "O veículo IFS03 foi o sucessor do IFS02, apresentando os avanços da equipa na tecnologia de automóveis eléctricos. Proporcionou uma maior eficiência e desempenho."
+    }
+  },
+  {
     image: "/images/ifs02_2.webp",
     title: "IFS02",
     text: {

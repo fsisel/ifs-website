@@ -33,8 +33,8 @@ const otherLang = lang === "en" ? "pt" : "en";
 
 <Layout>
   <Header />
-    <div class="bodier">  
-      <ContentBlock 
+    <div class="bodier contentBlocks">  
+      <!-- <ContentBlock 
         imageSrc="/images/ifs02_2.webp"
         imageAlt="IFS02"
         title="IFS02"
@@ -47,7 +47,7 @@ const otherLang = lang === "en" ? "pt" : "en";
         title="IFS01"
         text={blocks[1].text[lang]}
         reverse={true}
-      />
+      /> -->
 
       {blocks.map((block, index) => (
         <ContentBlock
