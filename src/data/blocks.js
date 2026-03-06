@@ -1,10 +1,40 @@
 export const blocks = [
   {
-    image: "/images/ifs05_main.webp",
-    title: "IFS05",
+    image: "/images/ifs02_1.webp",
+    title: {
+      en:"<h2 class='text-[35.2px] font-bold mb-4' >We make high performance racing cars.</h2>", 
+      pt:"<h2 class='text-[35.2px] font-bold mb-4' >Construímos Veículos de Competição.</h2>"
+    },
     text: {
-      en: "",
-      pt: ""
+      en: "We are a team of engineering students from Lisbon School of Engineering. Passionate about cars and technology, we design and build a racing car for the formula student competition.",
+      pt: "A ISEL Formula Student é uma equipa constituída por alunos do Instituto Superior de Engenharia de Lisboa e tem a missão de projetar e manufaturar um veículo capaz de participar nas competições de Formula Student."
+    },
+    button: {
+      en:{
+        text: "ABOUT US",
+        link: "/en/about_us"
+      },
+      pt:{
+        text: "SOBRE NÓS",
+        link: "/pt/about_us"
+      }
+    }
+  },{
+    image: "/images/ifs05_main.webp",
+    title: "<span class=' flex text-[#f50] justify-center text-[1.5em]'>OUR LATEST</span>",
+    text: {
+      en: "<span class=' flex justify-center text-[3em] font-bold'>IFS05</span>",
+      pt: "<span class=' flex justify-center text-[3em] font-bold'>IFS05</span>"
+    },
+    button: {
+      en:{
+        text: "CHECK IT OUT",
+        link: "/en/ifs05"
+      },
+      pt:{
+        text: "SABE MAIS",
+        link: "/pt/ifs05"
+      }
     }
   },{
     image: "/images/ifs04-main.webp",

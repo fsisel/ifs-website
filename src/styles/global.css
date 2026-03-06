@@ -64,7 +64,28 @@ footer{
 .contentBlocks{
   font-family: "Montserrat", sans-serif;
   max-width: 120em;
-  margin: 2em 14vw;
+  margin: 2em 12vw;
   padding: 0 7vw;
 
+}
+
+
+
+
+@media (max-width:1967px) {
+  .contentBlocks{
+    max-width: 120em;
+    margin: 1em 10vw;
+
+  }
+}
+@media (max-width:1200px) {
+  .contentBlocks{
+    max-width: 90%;
+    margin: 1em 6vw;
+
+  }
+}
+@media (max-width:750px) {
+  header{display: none;}
 }
