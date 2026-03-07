@@ -30,10 +30,22 @@ const t = translations[lang] ?? translations.en;
 const otherLang = lang === "en" ? "pt" : "en";
 
 ---
+<script>
+const target = document.querySelector("#navbar");
+
+window.addEventListener("scroll", () => {
+  if(!target!)return;
+  if (window.scrollY <= 219) {
+    target.classList.add("-translate-y-12");
+  }else {
+    target.classList.remove("-translate-y-12");
+  }
+});
+</script>
 
 <Layout>
-  <!-- <Navbar /> -->
-  <header class=" flex items-center justify-between w-full bg-[#0a0a0ab3] shadow-md  top-0 left-0 z-50 px-[7vw] py-5 text-white" >
+  <Navbar/>
+  <header class=" flex items-center justify-between w-full bg-black shadow-md absolute top-0 left-0 z-50 px-[7vw] py-5 text-white" id="header" >
     <div class="flex items-center gap-3">
       <a href={`/${lang}/`}>
         <img src="/logos/ifs_logo_dark.svg" alt="ISEL Formula Student" class=" h-auto w-full " />
@@ -74,19 +86,30 @@ const otherLang = lang === "en" ? "pt" : "en";
       </div>	
     </div>	
   </header>
+  <section class="relative w-full">
+    <!-- Image -->
+    <img 
+      src="/images/Team04_fspt_1-1.webp"
+      alt={(lang == "en")? "Team FSPT 2024" : "Equipa FSPT 2024"}
+      class="w-full h-[80vh] max-h-[65em] object-cover"
+    />
+
+    <!-- Overlay content -->
+    
     <div class="bodier contentBlocks">  
       {blocks.map((block, index) => (
         
         <ContentBlock
-          imageSrc={block.image}
-          imageAlt={(block.title as Record<string, any>)[lang] ?? block.title}
-          title={(block.title as Record<string, any>)[lang] ?? block.title}
-          text={block.text[lang]}
-          button={block.button?.[lang]}
-          reverse={index % 2 !== 0}
-          />
+        imageSrc={block.image}
+        imageAlt={(block.title as Record<string, any>)[lang] ?? block.title}
+        title={(block.title as Record<string, any>)[lang] ?? block.title}
+        text={block.text[lang]}
+        button={block.button?.[lang]}
+        reverse={index % 2 !== 0}
+        />
       ))}
 
     </div>
+  </section>
   <Footer />
 </Layout>
