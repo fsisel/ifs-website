@@ -14,6 +14,19 @@ const t = translations[lang] ?? translations.en;
 
 const otherLang = lang === "en" ? "pt" : "en";
 
+const url = Astro.url.pathname;          // /en/about_us
+const segments = url.split("/");
+
+const currentLang = segments[1];         // en
+
+segments[1] = otherLang;
+
+const switchUrl = segments.join("/");
+
+
+
+
+
 //to remove no children error
 export interface Props {
   children?: any;
@@ -50,7 +63,7 @@ export interface Props {
 			
 				<div class="flex items-center gap-4">
 					<!-- Language Switch -->
-					<a href={`/${otherLang}/`} title="Português">
+					<a href={switchUrl} title="Português">
 						<img src={`/icons/${otherLang}.svg`} alt="Portuguese" class="h-6 w-6 rounded-sm" />
 					</a>
 					<!-- Mobile Menu Button -->

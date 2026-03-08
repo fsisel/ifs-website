@@ -21,7 +21,10 @@ export const blocks = [
     }
   },{
     image: "/images/ifs05_main.webp",
-    title: "<span class=' flex text-[#f50] justify-center text-[1.5em]'>OUR LATEST</span>",
+    title: {
+      en:"<span class=' flex text-[#f50] justify-center text-[1.5em]'>OUR LATEST</span>",
+      pt:"<span class=' flex text-[#f50] justify-center text-[1.5em]'>O ÚLTIMO</span>"
+    },
     text: {
       en: "<span class=' flex justify-center text-[3em] font-bold'>IFS05</span>",
       pt: "<span class=' flex justify-center text-[3em] font-bold'>IFS05</span>"

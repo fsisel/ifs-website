@@ -6,7 +6,8 @@ export const translations = {
     aboutUs: "ABOUT US",
     contacts: "CONTACTS",
     home: "Home Page",
-    location: "Location"
+    location: "Location",
+    submit: "SUBMIT"
   },
   pt: {
     title: "Bem vindo",
@@ -16,5 +17,6 @@ export const translations = {
     contacts: "CONTACTOS",
     home: "Página principal",
     location: "Localização",
+    submit: "ENVIAR"
   }
 };
