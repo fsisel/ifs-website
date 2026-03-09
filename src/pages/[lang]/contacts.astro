@@ -20,94 +20,92 @@ const t = translations[lang] ?? translations.en;
 
 <Layout>
     <Navbar/>
-    <article class="text-black mx-40 py-16 flex flex-col min-h-[calc(100dvh-17.5em)] dark:text-white">
-        <h1 class="text-[56px] mb-10">CONTACTS</h1>
+    <div class="flex justify-center">
+  <article class="text-black px-6 sm:px-12 lg:px-24 py-16 flex flex-col min-h-[calc(100dvh-17.5em)] w-full max-w-[120em] dark:text-white">
 
-        <div class="bg-[#f5f5f5] grid gap-12 p-5 dark:bg-[#181818] rounded-sm">
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl mb-8 lg:mb-10">CONTACTS</h1>
 
-            <!-- Email section -->
-            <div>
-                <h2 class="text-2xl mb-3">Email</h2>
-                <p>
-                    <a 
-                    href="mailto:formulastudent@isel.pt"
-                    class="hover:underline"
-                    >
-                    formulastudent@isel.pt
-                    </a>
-                </p>
+    <div class="bg-[#f5f5f5] grid gap-10 p-6 sm:p-8 lg:p-10 dark:bg-[#181818] rounded-sm">
+
+      <!-- Email section -->
+      <div>
+        <h2 class="text-2xl sm:text-3xl mb-3">Email</h2>
+        <p>
+          <a 
+            href="mailto:formulastudent@isel.pt"
+            class="hover:underline text-lg sm:text-xl break-all"
+          >
+            formulastudent@isel.pt
+          </a>
+        </p>
+      </div>
+
+      <div class="px-0 sm:px-10 lg:px-20">
+        <!-- Form -->
+        <form
+          class="flex flex-col gap-5"
+          target="_blank"
+          method="POST"
+          action="https://formsubmit.co/formulastudent@isel.pt"
+        >
+
+          <div class="flex flex-col gap-2">
+            <label for="inputEmail4" class="font-medium">Email</label>
+            <input
+              type="email"
+              id="inputEmail4"
+              name="email"
+              placeholder="Enter your email"
+              required
+              class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="name" class="font-medium">Entity Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your entity name"
+              required
+              class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="message" class="font-medium">Write your message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Write something here..."
+              required
+              class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+            ></textarea>
+          </div>
+
+          <input
+            type="hidden"
+            name="_cc"
+            value="pedro.costa@iselfs.pt,martim-jorge@iselfs.pt"
+          />
+
+          <button
+            type="submit"
+            class="group relative flex w-full sm:w-[70%] lg:w-[50%] my-6 skew-x-[-18deg] mx-auto"
+          >
+            <div class="bg-white w-full h-[3em] flex items-center justify-center text-[#f50] font-bold text-sm sm:text-base dark:bg-black border-[0.3em] border-[#f50] transition duration-200 group-hover:bg-[#f50] group-hover:text-white">
+              {t.submit}
             </div>
-            
-            <div class="px-20">
-            <!-- Form -->
-            <form
-            class="flex flex-col gap-5"
-            target="_blank"
-            method="POST"
-            action="https://formsubmit.co/formulastudent@isel.pt"
-            >
-            
+          </button>
 
-            <div class="flex flex-col gap-2">
-                <label for="inputEmail4" class="font-medium">Email</label>
-                <input
-                type="email"
-                id="inputEmail4"
-                name="email"
-                placeholder="Enter your email"
-                required
-                class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                />
-            </div>
-            
-            
-                <div class="flex flex-col gap-2">
-                    <label for="name" class="font-medium">Entity Name</label>
-                    <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your entity name"
-                    required
-                    class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                    />
-                </div>
+        </form>
+      </div>
 
-                <div class="flex flex-col gap-2">
-                    <label for="message" class="font-medium">Write your message</label>
-                    <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    placeholder="Write something here..."
-                    required
-                    class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                    ></textarea>
-                </div>
+    </div>
 
-                <input
-                    type="hidden"
-                    name="_cc"
-                    value="pedro.costa@iselfs.pt,martim-jorge@iselfs.pt"
-                />
-
-                <button
-                    type="submit"
-                    class="group relative flex px-20 my-8 w-full skew-x-[-18deg] w-fit mx-auto no-underline"
-                >
-                    
-
-    <!--                 <div class="absolute left-0 w-6 h-20 bg-[#f50] transition-transform duration-200 group-hover:-translate-x-5"></div>
-    -->
-                    <div class="bg-white w-full h-[3em] flex items-center justify-center text-[#f50] font-bold text-[14.4px] dark:bg-black border-[0.3em] border-[#f50] transition duration-200 group-hover:bg-[#f50] group-hover:text-white">
-                        {t.submit}
-                    </div>
-
-                    
-                </button>
-                </div>
-            </form>
-        </div>
-    </article>
+  </article>
+</div>
     <Footer/>
 </Layout>

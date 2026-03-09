@@ -28,7 +28,6 @@ const { imageSrc, imageAlt, title, text, reverse = false, button= null } = Astro
     </div>
 
     <!-- Text Block -->
-    <!-- with button : without -->
     {button ? (
       <div class="md:w-1/2 w-full p-8 flex flex-col justify-center">
         <p class=" mb-4 " set:html={title}></p>
@@ -42,7 +41,6 @@ const { imageSrc, imageAlt, title, text, reverse = false, button= null } = Astro
       <div class="md:w-1/2 w-full p-8 flex flex-col justify-center">
         <h2 class="text-[35.2px] font-bold mb-4" set:html={title}></h2>
         <p class="text-[22.4px] " set:html={text}></p>
-        {/* This part runs if button is falsy, but you're checking button again? */}
       </div>
     )}
 
