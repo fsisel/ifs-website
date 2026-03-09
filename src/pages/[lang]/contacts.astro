@@ -20,14 +20,14 @@ const t = translations[lang] ?? translations.en;
 
 <Layout>
     <Navbar/>
-    <article class="text-black max-w-5xl mx-auto px-6 py-16 flex flex-col min-h-[calc(100dvh-17.5em)] dark:text-white">
-        <h1 class="text-4xl mb-10">CONTACTS</h1>
+    <article class="text-black mx-40 py-16 flex flex-col min-h-[calc(100dvh-17.5em)] dark:text-white">
+        <h1 class="text-[56px] mb-10">CONTACTS</h1>
 
-        <div class="grid gap-12 p-5 bg-[#181818] rounded-sm">
+        <div class="bg-[#f5f5f5] grid gap-12 p-5 dark:bg-[#181818] rounded-sm">
 
             <!-- Email section -->
             <div>
-                <h2 class="text-2xl font-semibold mb-3">Email</h2>
+                <h2 class="text-2xl mb-3">Email</h2>
                 <p>
                     <a 
                     href="mailto:formulastudent@isel.pt"
@@ -37,7 +37,8 @@ const t = translations[lang] ?? translations.en;
                     </a>
                 </p>
             </div>
-
+            
+            <div class="px-20">
             <!-- Form -->
             <form
             class="flex flex-col gap-5"
@@ -45,6 +46,7 @@ const t = translations[lang] ?? translations.en;
             method="POST"
             action="https://formsubmit.co/formulastudent@isel.pt"
             >
+            
 
             <div class="flex flex-col gap-2">
                 <label for="inputEmail4" class="font-medium">Email</label>
@@ -54,55 +56,56 @@ const t = translations[lang] ?? translations.en;
                 name="email"
                 placeholder="Enter your email"
                 required
-                class="border border-zinc-300 bg-white rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
             </div>
-
-            <div class="flex flex-col gap-2">
-                <label for="name" class="font-medium">Entity Name</label>
-                <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your entity name"
-                required
-                class="border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                />
-            </div>
-
-            <div class="flex flex-col gap-2">
-                <label for="message" class="font-medium">Write your message</label>
-                <textarea
-                id="message"
-                name="message"
-                rows="4"
-                placeholder="Write something here..."
-                required
-                class="border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
-                ></textarea>
-            </div>
-
-            <input
-                type="hidden"
-                name="_cc"
-                value="pedro.costa@iselfs.pt,martim-jorge@iselfs.pt"
-            />
-
-            <button
-                type="submit"
-                class="group relative flex my-8 skew-x-[-18deg] w-fit mx-auto no-underline"
-            >
-                
-
-                <div class="absolute left-0 w-6 h-20 bg-[#f50] transition-transform duration-200 group-hover:-translate-x-5"></div>
-
-                <div class="bg-white w-45 h-[4.2em] flex items-center justify-center text-[#f50] font-bold text-[1.2em] dark:bg-black border-[0.3em] border-[#f50] z-10 transition-all duration-200 group-hover:translate-x-3 group-hover:bg-[#f50] group-hover:text-white">
-                    {t.submit}
+            
+            
+                <div class="flex flex-col gap-2">
+                    <label for="name" class="font-medium">Entity Name</label>
+                    <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your entity name"
+                    required
+                    class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    />
                 </div>
 
-                
-            </button>
+                <div class="flex flex-col gap-2">
+                    <label for="message" class="font-medium">Write your message</label>
+                    <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Write something here..."
+                    required
+                    class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    ></textarea>
+                </div>
 
+                <input
+                    type="hidden"
+                    name="_cc"
+                    value="pedro.costa@iselfs.pt,martim-jorge@iselfs.pt"
+                />
+
+                <button
+                    type="submit"
+                    class="group relative flex px-20 my-8 w-full skew-x-[-18deg] w-fit mx-auto no-underline"
+                >
+                    
+
+    <!--                 <div class="absolute left-0 w-6 h-20 bg-[#f50] transition-transform duration-200 group-hover:-translate-x-5"></div>
+    -->
+                    <div class="bg-white w-full h-[3em] flex items-center justify-center text-[#f50] font-bold text-[14.4px] dark:bg-black border-[0.3em] border-[#f50] transition duration-200 group-hover:bg-[#f50] group-hover:text-white">
+                        {t.submit}
+                    </div>
+
+                    
+                </button>
+                </div>
             </form>
         </div>
     </article>

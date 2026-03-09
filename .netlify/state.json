@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Lisbon",
+			"country": {
+				"code": "PT",
+				"name": "Portugal"
+			},
+			"subdivision": {
+				"code": "11",
+				"name": "Lisbon"
+			},
+			"timezone": "Europe/Lisbon",
+			"latitude": 38.7219,
+			"longitude": -9.1398,
+			"postalCode": "1100-001"
+		},
+		"timestamp": 1771421767769
+	}
+}
