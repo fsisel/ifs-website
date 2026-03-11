@@ -6,10 +6,25 @@ import Navbar from "../../components/navbar.astro";
 import { sponsors } from "../../data/sponsors";
 
 import { translations } from "../../i18n/translations";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof translations;
+
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
 ---
 
 <Layout>
     <Navbar/>
-
+    {sponsors.map((sponsor, index) => (
+        sponsor.array.forEach(element => {
+            element
+        })
+    ))}
     <Footer/>
 </Layout>
