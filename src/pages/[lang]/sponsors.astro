@@ -4,6 +4,7 @@ import Footer from "../../components/Footer.astro";
 import Navbar from "../../components/navbar.astro";
 
 import { sponsors } from "../../data/sponsors";
+const categories = Object.entries(sponsors)
 
 import { translations } from "../../i18n/translations";
 
@@ -17,14 +18,28 @@ type Lang = keyof typeof translations;
 
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
+
 ---
 
 <Layout>
     <Navbar/>
-    {sponsors.map((sponsor, index) => (
-        sponsor.array.forEach(element => {
-            element
-        })
-    ))}
+    <article>
+      <h1>{t.sponsors}</h1>
+      {categories.map(([category, items]) => (
+        <div>
+          <h2>
+            {category}
+          </h2>
+          {items.map((sponsor: any)=>(
+            <a href={sponsor.link}>
+              <img src={sponsor.image} alt={sponsor.altName}>
+            </a>
+          ))}
+        </div>
+        
+      ))}
+
+
+    </article>
     <Footer/>
 </Layout>
