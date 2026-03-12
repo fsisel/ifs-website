@@ -23,20 +23,25 @@ const t = translations[lang] ?? translations.en;
 
 <Layout>
     <Navbar/>
-    <article>
+    <article class="dark:text-white">
       <h1>{t.sponsors}</h1>
-      {categories.map(([category, items]) => (
+      {categories.map(([category, items],i) => (
+        <>
         <div>
           <h2>
-            {category}
+            {category.toUpperCase()}
           </h2>
-          {items.map((sponsor: any)=>(
+          {items.map((sponsor: { altName: string; link: string; image: string })=>(
             <a href={sponsor.link}>
-              <img src={sponsor.image} alt={sponsor.altName}>
+              <img src={sponsor.image} alt={sponsor.altName} class="max-w-60">
             </a>
           ))}
         </div>
-        
+        {i !== categories.length -1 && (
+          <div class="separator"></div>
+        )}
+          
+        </>
       ))}
 
 
