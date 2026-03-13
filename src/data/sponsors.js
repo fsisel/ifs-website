@@ -10,17 +10,20 @@ export const sponsors =
     {
       "altName": "IPL",
       "link": "https://www.ipl.pt",
-      "image": "/sponsor_logos/ipl.svg"
+      "image": "/sponsor_logos/ipl.svg",
+      "classes": "w-[300px]"
     },
     {
       "altName": "Grupo Metal",
       "link": "https://grupometal.com",
-      "image": "/sponsor_logos/grupo_metal.svg"
+      "image": "/sponsor_logos/grupo_metal.svg",
+      "classes": "w-[13em]"
     },
     {
       "altName": "Infusão",
       "link": "https://www.infusao.pt",
-      "image": "/sponsor_logos/infusao.webp"
+      "image": "/sponsor_logos/infusao.webp",
+      "classes": "w-[270px]"
     },
     {
       "altName": "Facom",
@@ -35,7 +38,8 @@ export const sponsors =
     {
       "altName": "Almeida & Lamas",
       "link": "https://almeida-lamas.pt/",
-      "image": "/sponsor_logos/Almeida_Lamas.svg"
+      "image": "/sponsor_logos/Almeida_Lamas.svg",
+      "classes": "w-[240px]"
     }
   ],
   gold: [
@@ -58,11 +62,6 @@ export const sponsors =
       "altName": "Reiman",
       "link": "https://reiman.pt",
       "image": "/sponsor_logos/reiman.svg"
-    },
-    {
-      "altName": "Tesla",
-      "link": "https://www.tesla.com/",
-      "image": "/sponsor_logos/tesla.svg"
     },
     {
       "altName": "Berner",
@@ -89,7 +88,8 @@ export const sponsors =
     {
       "altName": "Eurocircuits",
       "link": "https://www.eurocircuits.com",
-      "image": "/sponsor_logos/euro_circuits.webp"
+      "image": "/sponsor_logos/euro_circuits.webp",
+      "classes": "w-[120px]"
     },
     {
       "altName": "Deconorma",
@@ -161,7 +161,8 @@ export const sponsors =
     {
       "altName": "Ramada Aços",
       "link": "https://www.ramada.pt",
-      "image": "/sponsor_logos/ramada_acos.svg"
+      "image": "/sponsor_logos/ramada_acos.svg",
+      "classes": "w-[150px]"
     },
     {
       "altName": "Loctite",
@@ -193,7 +194,8 @@ export const sponsors =
     {
       "altName": "Rus",
       "link": "https://www.rohde-schwarz.com/pt/home_48230.html",
-      "image": "/sponsor_logos/rus-logo.svg"
+      "image": "/sponsor_logos/rus-logo.svg",
+      "classes": "w-[180px]"
     },
     {
       "altName": "Ansys",
@@ -278,12 +280,14 @@ export const sponsors =
     {
       "altName": "Eurocorreias",
       "link": "https://eurocorreias.pt",
-      "image": "/sponsor_logos/eurocorreias.webp"
+      "image": "/sponsor_logos/eurocorreias.webp",
+      "classes": "w-[200px]"
     },
     {
       "altName": "MViera",
       "link": "https://mvieira.pt/",
-      "image": "/sponsor_logos/mvieira.webp"
+      "image": "/sponsor_logos/mvieira.webp",
+      "classes": "h-[5em]"
     },
     {
       "altName": "MathWorks",

@@ -19,43 +19,75 @@ type Lang = keyof typeof translations;
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
 
+
+function chunkArray<T>(arr: T[], size: number): T[][] {
+  const chunks: T[][] = []
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size))
+  }
+  return chunks
+}
+
 const categoryClasses: Record<string, string> = {
-  platinum: "w-[336px]",
-  gold: "w-[248px]",
-  silver: "w-[189.4px]",
-  bronze: "w-[176px]",
-  partners: "w-[176px]"
+  platinum: "w-[15em]",
+  gold: "w-[11.5em]",
+  silver: "w-[9em]",
+  bronze: "w-[8em] h-[7em]",
+  partners: "w-[8em] h-[7em]"
+};
+const rowSizes: Record<string, number> = {
+  platinum: 2,
+  gold: 3,
+  silver: 3,
+  bronze: 5,
+  partners: 6
 };
 ---
 
 <Layout>
     <Navbar/>
-    <div class=" m-20">
-      <h1 class="text-white text-[3.5em]">{t.sponsors}</h1>
-      <article class="bg-white text-black">
-        {categories.map(([category, items],i) => (
-          <>
-        <div class="">
-          <h2 class="text-[2.2em] pl-[1em] my-[1em]">
-            {category.toUpperCase()}
-          </h2>
-          <div class="grid grid-cols-3 gap-3 pt-2 pb-4 px-10">
+    <div class="max-w-[120em] mx-auto my-20 px-6">
+      <h1 class="text-white text-[3.5em] text-left">
+        {t.sponsors}
+      </h1>
 
-          {items.map((sponsor: { altName: string; link: string; image: string;classes?: string})=>(
-            <a href={sponsor.link} class={`${categoryClasses[category]} ${sponsor.classes ?? ""}flex align-center justify-center`}>
-              <img src={sponsor.image} alt={sponsor.altName} class="h-min">
-            </a>
-          ))}
-          </div>
-        </div>
-        {i !== categories.length -1 && (
-          <div class="bg-[#f50] h-0.5 w-full"></div>
-        )}
-        
-        </>
-      ))}
+      <article class="bg-white text-black mt-8">
+        {categories.map(([category, items], i) => {
+          const rows = chunkArray(items, rowSizes[category])
 
+          return (
+            <>
+              <div class="max-w-[120em] mx-auto">
 
+                <h2 class="text-[2.2em] pl-6 my-6 pt-6 text-left">
+                  {category.toUpperCase()}
+                </h2>
+
+                {rows.map((row) => (
+                  <div class="flex flex-wrap justify-center gap-15 px-10 pb-6">
+                    {row.map((sponsor: { altName: string; link: string; image: string; classes?: string }) => (
+                      <a
+                        href={sponsor.link}
+                        class={`${sponsor.classes ?? ""} ${categoryClasses[category]}  flex items-center justify-center`}
+                      >
+                        <img
+                          src={sponsor.image}
+                          alt={sponsor.altName}
+                          class={`${sponsor.classes ?? ""} object-contain `}
+                        />
+                      </a>
+                    ))}
+                  </div>
+                ))}
+
+              </div>
+
+              {i !== categories.length - 1 && (
+                <div class="bg-[#f50] h-0.5 w-full"></div>
+              )}
+            </>
+          )
+        })}
       </article>
     </div>
     <Footer/>
