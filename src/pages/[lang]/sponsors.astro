@@ -19,32 +19,44 @@ type Lang = keyof typeof translations;
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
 
+const categoryClasses: Record<string, string> = {
+  platinum: "w-[336px]",
+  gold: "w-[248px]",
+  silver: "w-[189.4px]",
+  bronze: "w-[176px]",
+  partners: "w-[176px]"
+};
 ---
 
 <Layout>
     <Navbar/>
-    <article class="dark:text-white">
-      <h1>{t.sponsors}</h1>
-      {categories.map(([category, items],i) => (
-        <>
-        <div>
-          <h2>
+    <div class=" m-20">
+      <h1 class="text-white text-[3.5em]">{t.sponsors}</h1>
+      <article class="bg-white text-black">
+        {categories.map(([category, items],i) => (
+          <>
+        <div class="">
+          <h2 class="text-[2.2em] pl-[1em] my-[1em]">
             {category.toUpperCase()}
           </h2>
-          {items.map((sponsor: { altName: string; link: string; image: string })=>(
-            <a href={sponsor.link}>
-              <img src={sponsor.image} alt={sponsor.altName} class="max-w-60">
+          <div class="grid grid-cols-3 gap-3 pt-2 pb-4 px-10">
+
+          {items.map((sponsor: { altName: string; link: string; image: string;classes?: string})=>(
+            <a href={sponsor.link} class={`${categoryClasses[category]} ${sponsor.classes ?? ""}flex align-center justify-center`}>
+              <img src={sponsor.image} alt={sponsor.altName} class="h-min">
             </a>
           ))}
+          </div>
         </div>
         {i !== categories.length -1 && (
-          <div class="separator"></div>
+          <div class="bg-[#f50] h-0.5 w-full"></div>
         )}
-          
+        
         </>
       ))}
 
 
-    </article>
+      </article>
+    </div>
     <Footer/>
 </Layout>

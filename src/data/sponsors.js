@@ -4,7 +4,8 @@ export const sponsors =
     {
       "altName": "ISEL",
       "link": "https://www.isel.pt",
-      "image": "/sponsor_logos/isel.svg"
+      "image": "/sponsor_logos/isel.svg",
+      "classes": "asdaw"
     },
     {
       "altName": "IPL",
