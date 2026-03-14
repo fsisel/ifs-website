@@ -91,4 +91,6 @@ body{
 }
 @media (max-width:750px) {
   header{display: none;}
+/*   #Interested{font-size: 2.5em; width: auto;}
+ */  #sponsors{font-size: 2.5em; text-align: center;}
 }

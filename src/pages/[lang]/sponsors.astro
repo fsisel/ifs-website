@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 import Navbar from "../../components/navbar.astro";
+import ParallelogramButton from "../../components/parallelogramButton.astro";
 
 import { sponsors } from "../../data/sponsors";
 const categories = Object.entries(sponsors)
@@ -46,12 +47,12 @@ const rowSizes: Record<string, number> = {
 
 <Layout>
     <Navbar/>
-    <div class="max-w-[120em] mx-auto my-20 px-6">
-      <h1 class="text-white text-[3.5em] text-left">
+    <div class="max-w-[120em] mx-auto my-20 px-12">
+      <h1 class="text-black dark:text-white text-[3.5em] text-left" id="sponsors">
         {t.sponsors}
       </h1>
 
-      <article class="bg-white text-black mt-8">
+      <article class="bg-white text-black mt-8 mb-25 shadow-2xl">
         {categories.map(([category, items], i) => {
           const rows = chunkArray(items, rowSizes[category])
 
@@ -59,8 +60,8 @@ const rowSizes: Record<string, number> = {
             <>
               <div class="max-w-[120em] mx-auto">
 
-                <h2 class="text-[2.2em] pl-6 my-6 pt-6 text-left">
-                  {category.toUpperCase()}
+                <h2 class="text-[1.7em] text-center md:text-[2.2em] pl-6 my-6 pt-6 md:text-left">
+                  {`${t[category as keyof typeof t]}`}
                 </h2>
 
                 {rows.map((row) => (
@@ -83,12 +84,17 @@ const rowSizes: Record<string, number> = {
               </div>
 
               {i !== categories.length - 1 && (
-                <div class="bg-[#f50] h-0.5 w-full"></div>
+                <div class="bg-[#f50] h-px w-full"></div>
               )}
             </>
           )
         })}
       </article>
+      <h1 class="text-[2.5em] md:text-[3.5em] dark:text-white mx-auto text-center" id="Interested">{t.interested}</h1>
+      <ParallelogramButton
+          link={`/${lang}/contacts`}
+          text={t.contact_us}
+        />
     </div>
     <Footer/>
 </Layout>

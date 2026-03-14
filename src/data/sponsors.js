@@ -117,74 +117,89 @@ export const sponsors =
       "image": "/sponsor_logos/Casauto.webp"
     },
     {
-      "altName": "Critical Techworks",
-      "link": "https://www.criticaltechworks.com/",
-      "image": "/sponsor_logos/ctw.svg"
-    },
-    {
       "altName": "TE Connectivity",
       "link": "https://www.te.com",
       "image": "/sponsor_logos/te_connectivity.svg"
     }
   ],
   bronze: [
-    {
-      "altName": "VL Moldes",
-      "link": "https://www.vlmoldes.pt",
-      "image": "/sponsor_logos/vl_moldes.svg"
-    },
-    {
-      "altName": "Sabino",
-      "link": "https://sabino.pt",
-      "image": "/sponsor_logos/Sabino.webp"
-    },
-    {
-      "altName": "RebelCo",
-      "link": "https://rebelco.pt",
-      "image": "/sponsor_logos/Rebelco.webp"
-    },
-    {
-      "altName": "Carlis",
-      "link": "http://www.carlis.pt",
-      "image": "/sponsor_logos/carlis.webp"
-    },
-    {
-      "altName": "Cadflow",
-      "link": "https://www.cadflow.pt/index.php",
-      "image": "/sponsor_logos/Cadflow.svg"
-    },
-    {
-      "altName": "Vigrade",
-      "link": "https://www2.news.vi-grade.com/e/832623/2025-01-13/2cdft7/894804871/h/GJKopkmegudU6l7fOWnryJc5KiKF2YJa8B3CDOn6X0s",
-      "image": "/sponsor_logos/vi-grade_red.svg"
-    },
-    {
-      "altName": "Ramada Aços",
-      "link": "https://www.ramada.pt",
-      "image": "/sponsor_logos/ramada_acos.svg",
-      "classes": "w-[150px]"
-    },
-    {
-      "altName": "Loctite",
-      "link": "https://www.henkel-adhesives.com/pt/pt/empresa/as-nossas-marcas/loctite-new-we.html",
-      "image": "/sponsor_logos/loctite.webp"
-    },
-    {
-      "altName": "Mauser.pt",
-      "link": "https://mauser.pt/",
-      "image": "/sponsor_logos/mauser.webp"
-    },
-    {
-      "altName": "ThinkOpen",
-      "link": "https://thinkopen.solutions",
-      "image": "/sponsor_logos/ThinkOpen.webp"
-    },
-    {
-      "altName": "KVASER",
-      "link": "https://kvaser.com",
-      "image": "/sponsor_logos/Kvaser.webp"
-    }
-  ],
+  {
+    "altName": "VL Moldes",
+    "link": "https://www.vlmoldes.pt",
+    "image": "/sponsor_logos/vl_moldes.svg"
+  },
+  {
+    "altName": "Sabino",
+    "link": "https://sabino.pt",
+    "image": "/sponsor_logos/Sabino.webp"
+  },
+  {
+    "altName": "RebelCo",
+    "link": "https://rebelco.pt",
+    "image": "/sponsor_logos/Rebelco.webp"
+  },
+  {
+    "altName": "Carlis",
+    "link": "http://www.carlis.pt",
+    "image": "/sponsor_logos/carlis.webp"
+  },
+  {
+    "altName": "Cadflow",
+    "link": "https://www.cadflow.pt/index.php",
+    "image": "/sponsor_logos/Cadflow.svg"
+  },
+  {
+    "altName": "BND",
+    "link": "bnd.pt",
+    "image": "/sponsor_logos/bnd.webp"
+  },
+  {
+    "altName": "A.M.Tita",
+    "link": "https://www.amtita.pt",
+    "image": "/sponsor_logos/AM_tita.webp"
+  },
+  {
+    "altName": "S4Metro",
+    "link": "https://www.solutions4metrology.com",
+    "image": "/sponsor_logos/s4metro.svg"
+  },
+  {
+    "altName": "Canelas&Espiga",
+    "link": "https://www.canelas-espiga.com",
+    "image": "/sponsor_logos/canelas&espiga.webp"
+  },
+  {
+    "altName": "Mauser.pt",
+    "link": "https://mauser.pt/",
+    "image": "/sponsor_logos/mauser.webp"
+  },
+  {
+    "altName": "Vigrade",
+    "link": "https://www2.news.vi-grade.com/e/832623/2025-01-13/2cdft7/894804871/h/GJKopkmegudU6l7fOWnryJc5KiKF2YJa8B3CDOn6X0s",
+    "image": "/sponsor_logos/vi-grade_red.svg"
+  },
+  {
+    "altName": "Ramada Aços",
+    "link": "https://www.ramada.pt",
+    "image": "/sponsor_logos/ramada_acos.svg",
+    "classes": "w-[150px]"
+  },
+  {
+    "altName": "Loctite",
+    "link": "https://www.henkel-adhesives.com/pt/pt/empresa/as-nossas-marcas/loctite-new-we.html",
+    "image": "/sponsor_logos/loctite.webp"
+  },
+  {
+    "altName": "ThinkOpen",
+    "link": "https://thinkopen.solutions",
+    "image": "/sponsor_logos/ThinkOpen.webp"
+  },
+  {
+    "altName": "KVASER",
+    "link": "https://kvaser.com",
+    "image": "/sponsor_logos/Kvaser.webp"
+  }
+],
   partners: [
     {
       "altName": "Simscale",
