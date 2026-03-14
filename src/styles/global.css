@@ -64,7 +64,7 @@ footer{
 .contentBlocks{
   font-family: "Montserrat", sans-serif;
   max-width: 120em;
-  margin: 2em 12vw;
+  margin: 2em auto;
   padding: 0 7vw;
 
 }

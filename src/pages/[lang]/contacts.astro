@@ -23,7 +23,7 @@ const t = translations[lang] ?? translations.en;
     <div class="flex justify-center">
   <article class="text-black px-6 sm:px-12 lg:px-24 py-16 flex flex-col min-h-[calc(100dvh-17.5em)] w-full max-w-[120em] dark:text-white">
 
-    <h1 class="text-3xl sm:text-4xl lg:text-5xl mb-8 lg:mb-10">CONTACTS</h1>
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl mb-8 lg:mb-10">{t.contacts}</h1>
 
     <div class="bg-[#f5f5f5] grid gap-10 p-6 sm:p-8 lg:p-10 dark:bg-[#181818] rounded-sm">
 
@@ -55,31 +55,31 @@ const t = translations[lang] ?? translations.en;
               type="email"
               id="inputEmail4"
               name="email"
-              placeholder="Enter your email"
+              placeholder={t.emailTxt}
               required
               class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="name" class="font-medium">Entity Name</label>
+            <label for="name" class="font-medium">{t.entityName}</label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Enter your entity name"
+              placeholder={t.entityTxt}
               required
               class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
             />
           </div>
 
           <div class="flex flex-col gap-2">
-            <label for="message" class="font-medium">Write your message</label>
+            <label for="message" class="font-medium">{t.writeMsg}</label>
             <textarea
               id="message"
               name="message"
               rows="4"
-              placeholder="Write something here..."
+              placeholder={t.writeTxt}
               required
               class="bg-white text-black border border-zinc-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
             ></textarea>
