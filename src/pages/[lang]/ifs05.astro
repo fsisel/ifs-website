@@ -1,0 +1,142 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import Navbar from "../../components/navbar.astro"
+import Footer from "../../components/Footer.astro"
+
+
+import { Image } from "astro:assets";
+import ifs05 from "/public/images/ifs05-lateral.webp"
+import ifs05Up from "/public/images/ifs05-up.webp"
+import drivetrain from "/public/images/drivetrain.webp"
+import ifs05Front from "/public/images/ifs05-front.webp"
+
+import { translations } from "../../i18n/translations";
+import {text} from "../../data/car.js"
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof translations;
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
+const c = text[lang] ?? text.en
+---
+
+<Layout>
+    <Navbar/>
+    <div class="bg-black">
+      <Image src={ifs05} alt="IFS05" width={1200} class="w-1/2 max-w-[75em] mx-auto my-10" loading={"eager"}/>
+    </div>
+      
+    <div class="max-w-[120em] mx-auto ">
+
+        <div class="dark:text-white text-[2em] mx-auto max-w-[50em] p-[2em] text-center w-[80%] font-bold">
+            {c.text1}
+            <br><br>
+            {c.text2}
+        </div>
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-10 px-6">
+
+        <!-- Mobile image -->
+        <Image
+          src={ifs05Up}
+          alt="IFS05"
+          width={640}
+          class="lg:hidden w-full max-w-md"
+          loading="eager"
+        />
+
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-8 w-full text-[#f50]">
+
+          <!-- Left characteristics -->
+          <div class="caracteristic flex flex-col gap-6 text-center lg:text-right">
+            <div class="flex items-center justify-center lg:justify-end gap-3">
+              <div>100% {c.electric}</div>
+              <img src="/icons/electric.svg" alt="electric">
+            </div>
+
+            <div class="flex items-center justify-center lg:justify-end gap-3">
+              <div>{c.performance}</div>
+              <img src="/icons/performance.svg" alt="performance">
+            </div>
+
+            <div class="flex items-center justify-center lg:justify-end gap-3">
+              <div>{c.agility}</div>
+              <img src="/icons/agility.svg" alt="agility">
+            </div>
+          </div>
+
+          <!-- Desktop image -->
+          <Image
+            src={ifs05Up}
+            alt="IFS05"
+            width={640}
+            class="hidden lg:block w-full max-w-160"
+            loading="eager"
+          />
+
+          <!-- Right characteristics -->
+          <div class="caracteristic right flex flex-col gap-6 text-center lg:text-left">
+            <div class="flex items-center justify-center lg:justify-start gap-3">
+              <img src="/icons/chassis.svg" alt="chassis">
+              <div>{c.chassis}</div>
+            </div>
+
+            <div class="flex items-center justify-center lg:justify-start gap-3">
+              <img src="/icons/body.svg" alt="body">
+              <div>{c.body}</div>
+            </div>
+
+            <div class="flex items-center justify-center lg:justify-start gap-3">
+              <img src="/icons/suspension.svg" alt="suspension">
+              <div>{c.suspension}</div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+        <div class="flex flex-row justify-center items-center max-w-[120em] my-[8em]">
+          <Image  
+              src={drivetrain}
+              alt="drivetrain"
+              width={640}
+              class="w-[35%]"
+              loading="lazy"
+            />
+          <div class="flex flex-col w-[50%] ">
+            <div class="py-[1em] px-[4em] ">
+              <p class="text-[#f50]">{c.power}</p>
+              <p class="text-[3em] font-bold dark:text-white">80 kW (107 cv)</p>
+            </div>
+            <div class="py-[1em] px-[4em] "> 
+              <p class="text-[#f50]">TORQUE</p>
+              <p class="text-[3em] font-bold dark:text-white">240 Nm</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-row-reverse justify-center items-center max-w-[120em] my-[8em]">
+          <Image  
+              src={ifs05Front}
+              alt="IFS05"
+              width={640}
+              class="w-[35%]"
+              loading="lazy"
+            />
+          <div class="flex flex-col w-[50%] items-end">
+            <div class="py-[1em] px-[4em] ">
+              <p class="text-[#f50] text-right">{c.weight}</p>
+              <p class="text-[3em] font-bold dark:text-white">215 Kg</p>
+            </div>
+            <div class="py-[1em] px-[4em] "> 
+              <p class="text-[#f50] text-right">0-100 KM/H</p>
+              <p class="text-[3em] font-bold dark:text-white">TBA</p>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <Footer/>
+</Layout>

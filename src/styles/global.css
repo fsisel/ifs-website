@@ -72,8 +72,22 @@ body{
   font-family: "Montserrat", sans-serif;
 
 }
-
-
+/* car page */
+.caracteristic{
+  @apply flex flex-col ;
+}
+.caracteristic div{
+  @apply flex items-center my-5
+}
+.caracteristic div div{
+  @apply text-[1.4em] mr-8 font-semibold max-w-[10em]
+}
+.caracteristic.right div div{
+  @apply mr-0 ml-8
+}
+.caracteristic div img{
+  @apply h-[4em] w-[4em] dark:invert
+}
 
 @media (max-width:1967px) {
   .contentBlocks{

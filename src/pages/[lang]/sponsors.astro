@@ -74,6 +74,8 @@ const rowSizes: Record<string, number> = {
                         <img
                           src={sponsor.image}
                           alt={sponsor.altName}
+                          loading="lazy"
+                          decoding="async"
                           class={`${sponsor.classes ?? ""} object-contain `}
                         />
                       </a>
