@@ -34,7 +34,7 @@ const target = document.querySelector("#navbar");
 
 window.addEventListener("scroll", () => {
   if(!target!)return;
-  if (window.scrollY <= 219) {
+  if (window.scrollY <= 219 && window.outerWidth>=768) {
     target.classList.add("-translate-y-12");
   }else {
     target.classList.remove("-translate-y-12");
@@ -43,8 +43,8 @@ window.addEventListener("scroll", () => {
 </script>
 
 <Layout>
-  <Navbar/>
-  <header class=" flex items-center justify-between w-full bg-black shadow-md absolute top-0 left-0 z-50 px-[7vw] py-5 text-white" id="header" >
+  <Navbar class:list={["block md:hidden"]}/>
+  <header class="hidden md:flex items-center justify-between w-full bg-black shadow-md absolute top-0 left-0 z-50 px-[7vw] py-5 text-white" id="header" >
     <div class="flex items-center gap-3">
       <a href={`/${lang}/`}>
         <img src="/logos/ifs_logo_dark.svg" alt="ISEL Formula Student" class=" h-auto w-full " />
@@ -91,7 +91,7 @@ window.addEventListener("scroll", () => {
     <img 
       src="/images/Team04_fspt_1-1.webp"
       alt={(lang == "en")? "Team FSPT 2024" : "Equipa FSPT 2024"}
-      class="w-full h-[80vh] max-h-[65em] object-cover"
+      class="h-[35vh] w-full md:h-[85vh] max-h-[65em] object-cover"
     />
 
     <!-- Overlay content -->
