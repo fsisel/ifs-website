@@ -25,6 +25,7 @@ export const translations = {
     writeMsg:"Write you message",
     writeTxt:"Write something here",
     submit: "SUBMIT",
+    msgUs: "Send us a message",
   },
   pt: {
     title: "Bem vindo",
@@ -52,5 +53,7 @@ export const translations = {
     writeMsg:"A sua mensagem",
     writeTxt:"Escreve algo...",
     submit: "ENVIAR",
+    msgUs: "Envie-nos uma mensagem",
+
   }
 };

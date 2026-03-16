@@ -9,10 +9,11 @@ export interface Props {
       text: string;
       link: string;
     };
+  loading:boolean; //true->eager false->lazy
   }
 import ParallelogramButton from './parallelogramButton.astro';
 
-const { imageSrc, imageAlt, title, text, reverse = false, button= null } = Astro.props;
+const { imageSrc, imageAlt, title, text, reverse = false, button= null, loading } = Astro.props;
 ---
 
 <div class="w-full justify-center items-center py-12 ">
@@ -24,6 +25,7 @@ const { imageSrc, imageAlt, title, text, reverse = false, button= null } = Astro
         src={imageSrc} 
         alt={imageAlt} 
         class="w-full h-full object-cover"
+        loading={loading ? 'eager' :  'lazy'}
       />
     </div>
 
