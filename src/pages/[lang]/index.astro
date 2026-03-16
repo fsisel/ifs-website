@@ -106,6 +106,7 @@ window.addEventListener("scroll", () => {
         text={block.text[lang]}
         button={block.button?.[lang]}
         reverse={index % 2 !== 0}
+        loading={index <=1 ? true:false}
         />
       ))}
 
