@@ -14,9 +14,9 @@ export const text = {
             "No decorrer da época de 2020-2021 não foi possível a realização das competições devido à COVID-19. A equipa continuou a realizar todas as tarefas necessárias para obter um bom desempenho futuro.",
             "Na época de 2021-2022 a equipa participou novamente na competição Formula Student Spain, em Barcelona, com o IFS03.",
             "E em 2022-2023, competiu pela primeira vez, com o seu carro IFS03, na competição de FS Áustria no Red Bull Ring, em Spielberg e na FS Portugal, no Kartódromo de Castelo Branco.",
-            "Em 2023-2024, a equipa desenvolveu o seu terceiro veículo elétrico, fazendo-o num ano, o IFS04, e irá mais uma vez às competições FS Espanha e FS Portugal, apresentando o IFS04 ao público com um lançamento.",
-            "Nesta época 2024-2025, a equipa começou a desenvolver o seu quarto veículo elétrico, o IFS05.",
-            "Nesta época 2025-2026, a equipa começou a desenvolver o seu quarto veículo elétrico, o IFS06."
+            "Em 2023-2024, a equipa desenvolveu o seu terceiro veículo elétrico, fazendo-o num ano, o IFS04, e foi mais uma vez às competições FS Espanha e FS Portugal, apresentando o IFS04 ao público com um lançamento.",
+            "Durante a época 2024-2025, a equipa voltou a competir em FS Espanha e FS Portugal com o carro IFS05, que foi aprovado nos Scruts, evidenciando o desempenho alcançado e a evolução contínua da equipa.",
+            "Na época 2025-2026, a equipa iniciou o desenvolvimento do seu quinto veículo elétrico, o IFS06, aplicando a experiência adquirida com os modelos anteriores para criar um carro com maior desempenho e fiabilidade."
         ]
     },
     en:{
@@ -35,9 +35,9 @@ export const text = {
             "During the 2020-2021 season, it was not possible to hold competitions due to COVID-19. The team continued to carry out all the tasks necessary to perform well in the future.",
             "In the 2021-2022 season, the team again took part in the Formula Student Spain competition in Barcelona with IFS03.",
             "In 2022-2023 the team competed for the first time, with its IFS03 car, in the FS Austria competition at the Red Bull Ring in Spielberg and in FS Portugal at the Kartódromo de Castelo Branco.",
-            "In 2023-2024, the team has developed its third electric vehicle, doing it in a year, the IFS04, and will once again go to the FS Spain and FS Portugal competitions, presenting the IFS04 to the public with a rollout.",
-            "This season 2024-2025, the team has started to develop its fourth electric vehicle, the IFS05.",//alterar
-            "This season 2025-2026, the team has started to develop its fifth electric vehicle, the IFS06."
+            "In 2023-2024, the team has developed its third electric vehicle, doing it in a year, the IFS04, and went once again go to the FS Spain and FS Portugal competitions, presenting the IFS04 to the public with a rollout.",
+            "During the 2024-2025 season, the team once again competed in FS Spain and FS Portugal with the IFS05 car, which passed scrutineering, highlighting the performance achieved and the team's continuous evolution.",
+            "This season 2025-2026, the team has started to develop its fifth electric vehicle, the IFS06, applying the experience acquired from the previos models to create a car with more performance and reliability."
 
         ]
     }
