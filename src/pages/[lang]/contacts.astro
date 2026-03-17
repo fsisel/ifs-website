@@ -6,7 +6,7 @@ import "../../styles/global.css"
 
 import { translations } from "../../i18n/translations";
 
-const TeamLeaderPhone = "+351 999 999 999";
+const TeamLeaderPhone = "+351 925 732 781";
 export function getStaticPaths() {
   return [
     { params: { lang: "en" } },
@@ -19,7 +19,7 @@ const t = translations[lang] ?? translations.en;
 ---
 <script>
   const copyVal = document.getElementById("copy")
-  const TeamLeaderPhone = "+351 999 999 999";
+  const TeamLeaderPhone = "+351 925 732 781";
   if(copyVal)
     {copyVal.addEventListener("click", async () => {
       try {
