@@ -33,19 +33,42 @@ export interface Props {
 }
 ---
 <script>
-  const button = document.getElementById("menu_button")
-  const menu = document.getElementById("mobile_menu")
-  const icon = document.getElementById("menu_icon")
+	const button = document.getElementById("menu_button")
+	const menu = document.getElementById("mobile_menu")
+	const icon = document.getElementById("menu_icon")
 
-  button?.addEventListener("click", () => {
-    menu?.classList.toggle("hidden")
+	function closeMenu() {
+		menu?.classList.add("hidden")
 
-	button?.classList.toggle("bg-white")
-    button?.classList.toggle("text-white")
+		button?.classList.add("bg-white")
+		button?.classList.remove("text-white")
 
-    icon?.classList.toggle("invert")
-    icon?.classList.toggle("rotate-180")
-  })
+		icon?.classList.add("invert")
+		icon?.classList.remove("rotate-180")
+	}
+
+	document.addEventListener("click", (event) => {
+		const target = event.target;
+
+		if (!(target instanceof Node)) return;
+
+		const isClickInsideMenu = menu?.contains(target);
+		const isClickOnButton = button?.contains(target);
+
+		if (!isClickInsideMenu && !isClickOnButton) {
+			closeMenu();
+		}
+	});
+
+	button?.addEventListener("click", () => {
+		menu?.classList.toggle("hidden")
+
+		button?.classList.toggle("bg-white")
+		button?.classList.toggle("text-white")
+
+		icon?.classList.toggle("invert")
+		icon?.classList.toggle("rotate-180")
+	})
 </script>
 <!-- header -->
 <nav class=" transition duration-200 w-full bg-[#000000d2] shadow-md fixed top-0 left-0 z-50 text-white" id="navbar">
