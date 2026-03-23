@@ -46,57 +46,55 @@ const rowSizes: Record<string, number> = {
 ---
 
 <Layout>
-    <Navbar/>
-    <div class="max-w-[120em] mx-auto my-20 px-12">
-      <h1 class="text-black dark:text-white text-[3.5em] text-left" id="sponsors">
-        {t.sponsors}
-      </h1>
+  <div class="max-w-[120em] mx-auto my-20 px-12">
+    <h1 class="text-black dark:text-white text-[3.5em] text-left" id="sponsors">
+      {t.sponsors}
+    </h1>
 
-      <article class="bg-white text-black mt-8 mb-25 shadow-2xl">
-        {categories.map(([category, items], i) => {
-          const rows = chunkArray(items, rowSizes[category])
+    <article class="bg-white text-black mt-8 mb-25 shadow-2xl">
+      {categories.map(([category, items], i) => {
+        const rows = chunkArray(items, rowSizes[category])
 
-          return (
-            <>
-              <div class="max-w-[120em] mx-auto">
+        return (
+          <>
+            <div class="max-w-[120em] mx-auto">
 
-                <h2 class="text-[1.7em] text-center md:text-[2.2em] pl-6 my-6 pt-6 md:text-left">
-                  {`${t[category as keyof typeof t]}`}
-                </h2>
+              <h2 class="text-[1.7em] text-center md:text-[2.2em] pl-6 my-6 pt-6 md:text-left">
+                {`${t[category as keyof typeof t]}`}
+              </h2>
 
-                {rows.map((row) => (
-                  <div class="flex flex-wrap justify-center gap-15 px-10 pb-6">
-                    {row.map((sponsor: { altName: string; link: string; image: string; classes?: string }) => (
-                      <a
-                        href={sponsor.link}
-                        class={`${sponsor.classes ?? ""} ${categoryClasses[category]}  flex items-center justify-center`}
-                      >
-                        <img
-                          src={sponsor.image}
-                          alt={sponsor.altName}
-                          loading="lazy"
-                          decoding="async"
-                          class={`${sponsor.classes ?? ""} object-contain `}
-                        />
-                      </a>
-                    ))}
-                  </div>
-                ))}
+              {rows.map((row) => (
+                <div class="flex flex-wrap justify-center gap-15 px-10 pb-6">
+                  {row.map((sponsor: { altName: string; link: string; image: string; classes?: string }) => (
+                    <a
+                      href={sponsor.link}
+                      class={`${sponsor.classes ?? ""} ${categoryClasses[category]}  flex items-center justify-center`}
+                    >
+                      <img
+                        src={sponsor.image}
+                        alt={sponsor.altName}
+                        loading="lazy"
+                        decoding="async"
+                        class={`${sponsor.classes ?? ""} object-contain `}
+                      />
+                    </a>
+                  ))}
+                </div>
+              ))}
 
-              </div>
+            </div>
 
-              {i !== categories.length - 1 && (
-                <div class="bg-[#f50] h-px w-full"></div>
-              )}
-            </>
-          )
-        })}
-      </article>
-      <h1 class="text-[2.5em] md:text-[3.5em] dark:text-white mx-auto text-center" id="Interested">{t.interested}</h1>
-      <ParallelogramButton
-          link={`/${lang}/contacts`}
-          text={t.contact_us}
-        />
-    </div>
-    <Footer/>
+            {i !== categories.length - 1 && (
+              <div class="bg-[#f50] h-px w-full"></div>
+            )}
+          </>
+        )
+      })}
+    </article>
+    <h1 class="text-[2.5em] md:text-[3.5em] dark:text-white mx-auto text-center" id="Interested">{t.interested}</h1>
+    <ParallelogramButton
+        link={`/${lang}/contacts`}
+        text={t.contact_us}
+      />
+  </div>
 </Layout>

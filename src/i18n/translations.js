@@ -2,7 +2,7 @@ export const translations = {
   en: {
     title: "Welcome",
     button: "Switch to Portuguese",
-    home: "Home Page",
+    home: "HOME PAGE",
     /* sponsors */
     sponsors: "SPONSORS",
     platinum: "PLATINUM",
@@ -30,7 +30,7 @@ export const translations = {
   pt: {
     title: "Bem vindo",
     button: "Trocar para inglês",
-    home: "Página principal",
+    home: "PÁGINA PRINCIPAL",
     /* sponsors */
     sponsors: "PATROCINADORES",    
     platinum: "PLATINA",

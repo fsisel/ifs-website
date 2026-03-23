@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Navbar from "../components/navbar.astro"
+import Footer from "../components/Footer.astro";
 
 export interface Props {
   children: any;
@@ -17,9 +19,11 @@ export interface Props {
 		<title>ISEL Formula student</title>
 	</head>
 	<body class="bg-white min-h-screen dark:bg-black ">
-		<!-- header -->
+		<Navbar />
+
 		<slot /><!-- content -->
-		<!-- footer -->
+
+		<Footer /> 
 	</body>
 </html>
 
