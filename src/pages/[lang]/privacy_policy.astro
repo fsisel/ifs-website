@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { translations } from "../../i18n/translations";
+import { privacyPolicyTexts } from "../../data/privacy_policy";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof translations;
+
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
+const pp= privacyPolicyTexts[lang] ?? privacyPolicyTexts.en;
+
+---
+
+<Layout>
+    <div class="min-h-6/12 flex flex-col justify-evenly">
+        <article class="text-white mx-auto my-30 max-w-[120em] w-[90%]">
+
+            <h1 class="text-4xl mb-20">{t.privacy_policy.toUpperCase()}</h1>
+
+            <div class="max-w-[90%] text-2xl">
+                <div class="flex flex-col gap-5 ">
+                    <p>{pp.l1}</p>
+
+                    <p>{pp.l2}</p>
+
+                    <p set:html={pp.questions}></p>
+
+                    <p>{pp.concent}</p>
+                </div>
+            </div>
+
+        </article>
+    </div>
+
+
+
+
+
+
+</Layout>
