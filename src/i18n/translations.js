@@ -3,6 +3,7 @@ export const translations = {
     title: "Welcome",
     button: "Switch to Portuguese",
     home: "HOME PAGE",
+    privacy_policy:"Privacy Policy",
     /* sponsors */
     sponsors: "SPONSORS",
     platinum: "PLATINUM",
@@ -26,11 +27,17 @@ export const translations = {
     writeTxt:"Write something here",
     submit: "SUBMIT",
     msgUs: "Send us a message",
+    //Newsletter
+    subscribe: "Subscribe",
+    success: "Subscribed! Please check your email.",
+    error: "Something went wrong",
   },
   pt: {
     title: "Bem vindo",
     button: "Trocar para inglês",
     home: "PÁGINA PRINCIPAL",
+    privacy_policy:"Política de privacidadde",
+
     /* sponsors */
     sponsors: "PATROCINADORES",    
     platinum: "PLATINA",
@@ -54,6 +61,9 @@ export const translations = {
     writeTxt:"Escreve algo...",
     submit: "ENVIAR",
     msgUs: "Envie-nos uma mensagem",
-
+    //Newsletter
+    subscribe: "Subscreva",
+    success: "Sucesso! Confirme o seu email.",
+    error: "Algo correu mal",
   }
 };
