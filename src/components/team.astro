@@ -1,0 +1,56 @@
+---
+import { members as data } from "../tools/members";
+
+const typedData = data as TeamData;
+import genreralAIMember from "../../public/images/General_AIMember.webp"; 
+
+const { car } = Astro.props as { car: keyof typeof typedData };
+const carr = typedData[car];
+
+const entries = Object.entries(carr) as [string, Member[]][];
+
+type Member = {
+  task: string;
+  name: string;
+  Email: string;
+  picture: string;
+  contact: string;
+};
+
+type TeamData = {
+  [car: string]: {
+    [department: string]: Member[];
+  };
+};
+---
+
+<div id="team" class="">
+  <div class="teams_titles">
+        <span class="orange_losangle"></span>
+        <h1><b>Team</b></h1>
+    </div>
+
+    {Object.entries(carr).map(([deptName, members]) => (
+        <div class="department ">
+            <div class="teams_titles my-5 ">
+                 <span class="orange_losangle"></span>
+                 <h2 class="text-5xl"><b>{deptName}</b></h2>
+            </div>
+
+            <div class="members flex flex-row gap-10 flex-wrap">
+                {members.map((member, index) => {
+                    const src = member.picture || genreralAIMember.src;
+                    const contact = member.contact || "";
+                    return (
+                        <span class="member  max-w-53 ">
+                            <img src={src} alt={member.name} class=" w-53 h-auto" />
+                            <p class="py-1 pl-1 text-xl font-semibold">{member.name}</p>
+                            <p class="py-1 pl-1 text-lg">{member.task}</p>
+                            <p class="py-1 pl-1 text-lg">{member.contact}</p>
+                        </span>
+                );
+                })}
+            </div>
+        </div>
+    ))}
+</div>
