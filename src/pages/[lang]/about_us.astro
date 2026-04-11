@@ -17,6 +17,8 @@ const t = translations[lang] ?? translations.en;
 const abt = text[lang] ?? text.en;
 
 import Team from "../../components/team.astro";
+import Organogram from "../../components/organogram.astro";
+import Organogram2 from "../../components/organogram2.astro";
 
 ---
 
@@ -47,7 +49,10 @@ import Team from "../../components/team.astro";
             </div>
         </div>
 
-        <Team car="06"/>
+        <Team car='06'/>
+
+        <Organogram />
+        <Organogram2 />
 
     </div>
 </Layout>

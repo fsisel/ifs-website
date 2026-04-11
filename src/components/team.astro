@@ -1,5 +1,17 @@
 ---
 import { members as data } from "../tools/members";
+import { tasks } from "../data/members_tasks";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof tasks;
+const { lang } = Astro.params as { lang: Lang };
+const t = tasks[lang] ?? tasks.en;
+
 
 const typedData = data as TeamData;
 import genreralAIMember from "../../public/images/General_AIMember.webp"; 
@@ -7,10 +19,10 @@ import genreralAIMember from "../../public/images/General_AIMember.webp";
 const { car } = Astro.props as { car: keyof typeof typedData };
 const carr = typedData[car];
 
-const entries = Object.entries(carr) as [string, Member[]][];
+type TaskKey = keyof typeof t;
 
 type Member = {
-  task: string;
+  task: TaskKey;
   name: string;
   Email: string;
   picture: string;
@@ -25,29 +37,34 @@ type TeamData = {
 ---
 
 <div id="team" class="">
-  <div class="teams_titles">
+    <div class="teams_titles">
         <span class="orange_losangle"></span>
         <h1><b>Team</b></h1>
     </div>
 
     {Object.entries(carr).map(([deptName, members]) => (
-        <div class="department ">
-            <div class="teams_titles my-5 ">
+        <div class="department">
+            <div class="teams_titles my-5">
                  <span class="orange_losangle"></span>
-                 <h2 class="text-5xl"><b>{deptName}</b></h2>
+                 <div class="flex flex-row gap-2 items-center">
+                    <span class="skewed"></span>
+                    <h2 class="text-3xl md:text-4xl"><b>{deptName}</b></h2>
+                 </div>
             </div>
 
-            <div class="members flex flex-row gap-10 flex-wrap">
+            <div class="members grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(130px,1fr))] gap-6 md:gap-10">
                 {members.map((member, index) => {
                     const src = member.picture || genreralAIMember.src;
                     const contact = member.contact || "";
                     return (
-                        <span class="member  max-w-53 ">
-                            <img src={src} alt={member.name} class=" w-53 h-auto" />
-                            <p class="py-1 pl-1 text-xl font-semibold">{member.name}</p>
-                            <p class="py-1 pl-1 text-lg">{member.task}</p>
-                            <p class="py-1 pl-1 text-lg">{member.contact}</p>
-                        </span>
+                        <div class="member flex flex-col">
+                            <img src={src} alt={member.name} class="w-full aspect-square object-cover bg-gray-100" />
+                            
+                            <p class="py-1 pl-1 text-lg md:text-xl text-gray-200 font-semibold mt-2">{member.name}</p>
+                            <p class="py-1 pl-1 text-base md:text-lg text-gray-400 wrap-break-words">{t[member.task] || member.task}</p>                           
+                            
+                            <p class="py-1 pl-1 text-base md:text-lg mt-auto">{contact}</p>
+                        </div>
                 );
                 })}
             </div>

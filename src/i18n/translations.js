@@ -4,6 +4,7 @@ export const translations = {
     button: "Switch to Portuguese",
     home: "HOME PAGE",
     privacy_policy:"Privacy Policy",
+    garage:"Garage",
     /* sponsors */
     sponsors: "SPONSORS",
     platinum: "PLATINUM",
@@ -37,6 +38,7 @@ export const translations = {
     button: "Trocar para inglês",
     home: "PÁGINA PRINCIPAL",
     privacy_policy:"Política de privacidadde",
+    garage:"Garagem",
 
     /* sponsors */
     sponsors: "PATROCINADORES",    

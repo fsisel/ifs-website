@@ -1,0 +1,215 @@
+---
+// Assuming 'members' is your imported JSON object
+// Example structure: { "Chassis": [...], "Powertrain": [...] }
+import {members} from "../tools/members";
+
+// Helper to define task priority
+const getPriority = (task:string) => {
+  const t = task.toLowerCase();
+  if (t === 'dt' || t === 'headooperations') return 1;
+  if (t !== 'member' && t !== 'recruit') return 2; // Specific tasks (e.g., pedalboard)
+  if (t === 'member') return 3;
+  return 4; // Recruits/others
+};
+interface Member {
+  name: string;
+  task: string;
+  Email: string;
+}
+
+const getGroupedMembers = (deptMembers: Member[]) => {
+  const dts = deptMembers.filter(m => m.task.toLowerCase() === 'dt' || m.task.toLowerCase() === 'headooperations');
+  const others = deptMembers.filter(m => m.task.toLowerCase() !== 'dt');
+  
+  // Group the "others" by their task name
+  const grouped = others.reduce((acc, member) => {
+    const key = member.task;
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(member);
+    return acc;
+  }, {} as Record<string, Member[]>);
+
+  return { dts, grouped };
+};
+
+export interface Props {
+  children?: any;
+}
+---
+
+<style>
+    /* --- THE CSS FIX FOR JOINT COMMAND --- */
+  
+  /* Ensure the root <li> containing the DTs doesn't draw a top line */
+  .org-tree > ul > li::before, .org-tree > ul > li::after { display: none; }
+
+  .org-tree ul { display: flex; position: relative; padding-top: 30px; }
+  .org-tree li { display: flex; flex-direction: column; align-items: center; position: relative; padding: 25px 10px 0 10px; }
+  
+  .org-tree .node { 
+    padding: 0.85rem; 
+    border-radius: 0.75rem; 
+    min-width: 170px; 
+    text-align: center; 
+    position: relative; 
+    z-index: 10; 
+  }
+
+  /* Connecting Lines Styling */
+  .org-tree ul::before, .org-tree li::before, .org-tree li::after { 
+    border-color: #555 !important; 
+/*     border-width: 2px; 
+ */  }
+
+  /* Vertical drop line from the DT group container */
+  .org-tree ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #555;
+    height: 30px;
+    transform: translateX(-50%);
+  }
+
+  /* Horizontal bars for children */
+  .org-tree li::before, .org-tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #555;
+    width: 50%;
+    height: 30px;
+  }
+  .org-tree li::after { right: auto; left: 50%; border-left: 2px solid #555; }
+
+  /* Automatic line hiding for edge cases */
+  .org-tree li:only-child::after, .org-tree li:only-child::before { display: none; }
+  .org-tree li:only-child { padding-top: 0; }
+  .org-tree li:first-child::before, .org-tree li:last-child::after { border: 0 none; }
+  .org-tree li:last-child::before { border-right: 2px solid #555; border-radius: 0 10px 0 0; }
+  .org-tree li:first-child::after { border-radius: 10px 0 0 0; }
+  
+  summary::-webkit-details-marker { display: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+</style>
+
+<div class="max-w-4xl mx-auto space-y-4 p-4">
+  {Object.entries(members["06"]).map(([deptName, deptMembers]) => {
+    // 1. Sort the members based on the hierarchy
+    const sortedMembers = deptMembers.sort((a, b) => getPriority(a.task) - getPriority(b.task));
+
+    return (
+      <details class="group border border-gray-700 bg-[#222222] rounded-lg overflow-hidden">
+        <summary class="flex justify-between items-center p-5 cursor-pointer list-none hover:bg-[#2a2a2a] transition-colors">
+          <div class="flex items-center gap-4">
+             <span class="w-3 h-3 bg-[#f50] transform rotate-45"></span>
+             <h2 class="text-white text-2xl font-bold uppercase tracking-wide">{deptName}</h2>
+          </div>
+          <svg 
+            class="w-6 h-6 text-[#f50] transition-transform group-open:rotate-180" 
+            fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+
+        <div class="p-5 bg-black/20 border-t border-gray-800">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {sortedMembers.map((person) => (
+              <div class={`flex items-center justify-between p-3 rounded border ${
+                person.task.toLowerCase() === 'dt' || person.task.toLowerCase() === 'headooperations'
+                ? 'bg-[#f50]/10 border-[#f50] shadow-[0_0_10px_rgba(255,85,0,0.2)]' 
+                : 'bg-[#2a2a2a] border-gray-700'
+              }`}>
+                <div>
+                  <p class="text-white font-bold">{person.name}</p>
+                  <p class="text-xs text-gray-400 font-mono">{person.Email}</p>
+                </div>
+                <div class="text-right">
+                  <span class={`text-[10px] px-2 py-1 rounded uppercase font-black ${
+                    person.task.toLowerCase() === 'dt' || person.task.toLowerCase() === 'headooperations'
+                    ? 'bg-[#f50] text-white' 
+                    : 'bg-gray-700 text-gray-300'
+                  }`}>
+                    {person.task}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </details>
+    );
+  })}
+</div>
+
+<style>
+  /* Hide the default triangle on <summary> */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
+
+
+<div class="w-full border border-b-white"></div>
+<!-- <div class="max-w-7xl mx-auto space-y-6 p-4 bg-[#1a1a1a]">
+  {Object.entries(members["06"]).map(([deptName, deptMembers]) => {
+    const { dts, grouped } = getGroupedMembers(deptMembers);
+
+    return (
+      <details class="group border border-gray-800 bg-[#222222] rounded-xl overflow-hidden shadow-lg">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none hover:bg-[#2a2a2a] transition-colors">
+          <div class="flex items-center gap-5">
+             <span class="skewed"></span>
+             <h2 class="text-white text-3xl font-extrabold uppercase tracking-wider">{deptName}</h2>
+          </div>
+          <svg class="w-7 h-7 text-[#f50] transition-transform duration-300 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+          </svg>
+        </summary>
+
+        <div class="p-8 bg-black/30 border-t border-gray-800 overflow-x-auto no-scrollbar">
+          <div class="org-tree min-w-max flex justify-center px-4">
+            <ul>
+              <li>
+                <div class="flex justify-center gap-10 relative">
+                  {dts.map((dt) => (
+                    <div class="node bg-[#f50] text-white ring-4 ring-orange-500/20 shadow-[0_0_20px_rgba(255,85,0,0.3)]">
+                      <h3 class="text-xl font-bold">{dt.name}</h3>
+                      <p class="text-xs uppercase tracking-widest font-black opacity-90">{dt.task}</p>
+                      <p class="text-[10px] opacity-70 font-mono mt-1">{dt.Email}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <ul>
+                  {Object.entries(grouped).map(([taskName, people]) => (
+                    <li>
+                      <div class="node bg-white text-black border-2 border-[#f50]/30">
+                        <h4 class="text-sm font-black uppercase text-[#f50]">{taskName}</h4>
+                      </div>
+                      
+                      {/* Individual Members inside that Task Group */}
+                      <ul>
+                        {people.map((person) => (
+                          <li>
+                            <div class="node bg-[#333] text-white border border-gray-700">
+                              <h5 class="font-bold text-sm">{person.name}</h5>
+                              <p class="text-[10px] text-gray-400 font-mono">{person.Email}</p>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    );
+  })}
+</div> -->

@@ -1,0 +1,325 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { translations } from "../../i18n/translations";
+import {text} from "../../data/car.js"
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof translations;
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
+
+
+---
+<script>
+    function scrollRight() {
+        const container = document.getElementById('scrollContainer');
+        const container1 = document.getElementById('scrollContainer1');
+        const container2 = document.getElementById('scrollContainer2');
+        container?.scrollBy({ left: 300, behavior: 'smooth' });
+        container1?.scrollBy({ left: 300, behavior: 'smooth' });
+        container2?.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+    document.getElementById("scrollRightButton")?.addEventListener('click', scrollRight);
+    document.getElementById("scrollRightButton1")?.addEventListener('click', scrollRight);
+    document.getElementById("scrollRightButton2")?.addEventListener('click', scrollRight);
+</script>
+
+<style>
+/* Hide scrollbar (optional) */
+.no-scrollbar::-webkit-scrollbar {
+display: none;
+}
+.no-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+</style>
+<Layout>
+
+    <section class="container mx-auto px-4 py-8 pt-30">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+    
+            <div class="lg:col-span-2 h-full">
+                <img 
+                    src="/images/ifs05-lateral.webp" 
+                    alt="Your image description" 
+                    class="w-full h-full min-h-75 lg:min-h-125 object-contain  rounded-lg shadow-md"
+                />
+            </div>
+
+            <div class="flex flex-col gap-4 justify-between">
+            
+                <div class="bg-white p-5 lg:p-6 rounded-sm shadow border flex flex-1 justify-center items-center">
+                    <h3 class="text-xl font-bold mb-2 text-black">100% Electric</h3>
+                   <!--  <p class="text-black text-sm md:text-base">
+                    This is your first text box. The flex-1 class ensures all these boxes stretch evenly if the image gets really tall.
+                    </p> -->
+                </div>
+
+                <div class="bg-[#f50] p-5 lg:p-6 rounded-sm shadow border flex flex-1 justify-center items-center">
+                    <h3 class="text-xl font-bold mb-2 text-white">80kW (107cv)</h3>
+                    <!-- <p class="text-black text-3xl md:text-base font-semibold">
+                    Write your content here. On mobile, this will stack neatly below the large image.
+                    </p> -->
+                </div>
+
+                <div class="bg-white p-5 lg:p-6 rounded-sm shadow border flex flex-1 justify-center items-center">
+                    <h3 class="text-xl font-bold mb-2 text-black">0-100 - 4.2s</h3>
+                    <!-- <p class="text-black text-sm md:text-base">
+                    Write your content here. The gap-4 on the parent container keeps them evenly spaced.
+                    </p> -->
+                </div>
+
+                <div class="bg-[#f50] p-5 lg:p-6 rounded-sm shadow border  flex flex-1 justify-center items-center">
+                    <h3 class="text-xl font-bold mb-2 text-white">230 Kg</h3>
+                   <!--  <p class="text-black text-3xl md:text-base font-semibold">
+                    Write your content here. Tailwind makes this kind of responsive layout incredibly simple.
+                    </p> -->
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!--
+    
+    
+    
+    
+    
+    test 1 
+     
+    
+    
+    
+    
+    -->
+    <div class="w-full max-w-5xl mx-auto">
+        <details class="group border  rounded-xl overflow-hidden">
+        
+            <summary class="flex items-center justify-between cursor-pointer p-4 bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white">
+                <span class="text-lg font-semibold">Car Specs</span>
+
+                <!-- Arrow (rotates when open) -->
+                <svg 
+                    class="w-5 h-5 transition-transform duration-300 group-open:rotate-180"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </summary>
+
+        <div class="relative bg-[#222222] p-4">
+            
+            <div 
+                id="scrollContainer"
+                class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar"
+            >
+                <div class="min-w-[22%] bg-[#f50] p-4 rounded-lg text-white">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+                <div class="min-w-[22%] bg-white p-4 rounded-lg text-black">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+                <div class="min-w-[22%] bg-[#f50] p-4 rounded-lg text-white">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+                <div class="min-w-[22%] bg-white p-4 rounded-lg text-black">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+                <div class="min-w-[22%] bg-[#f50] p-4 rounded-lg text-white">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+                <div class="min-w-[22%] bg-white p-4 rounded-lg text-black">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+
+
+
+            </div>
+
+            <!-- RIGHT ARROW -->
+            <button
+                id="scrollRightButton"
+                onclick="scrollRight()"
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-700 hover:bg-gray-600 p-2 rounded-full"
+            >
+                →
+            </button>
+
+        </div>
+    </details>
+    </div>
+
+    <!--
+    
+    
+    
+    
+    test 2 
+     
+    
+    
+    -->
+    <div class="w-full max-w-5xl mx-auto">
+        <details class="group border  rounded-xl overflow-hidden">
+        
+            <summary class="flex items-center justify-between cursor-pointer p-4 bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white">
+                <span class="text-lg font-semibold">Car Specs</span>
+
+                <!-- Arrow (rotates when open) -->
+                <svg 
+                    class="w-5 h-5 transition-transform duration-300 group-open:rotate-180"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </summary>
+
+        <div class="relative bg-[#222222] text-black text-lg md:text-xl ">
+            <div 
+                id="scrollContainer2"
+                class="flex overflow-x-auto scroll-smooth no-scrollbar items-stretch"
+            >
+            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[22%] bg-[#f50] p-6 md:p-8 flex flex-col">
+                <h3 class="text-2xl font-bold mb-3 text-white">Motor</h3>
+                <p class="text-white">100% electric, with 80Kw (107hp) and capable of going from 0Km/h to 100Km/h in 4.2 seconds.</p>
+            </div>
+
+            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[22%] bg-white p-6 md:p-8 flex flex-col">
+                <h3 class="text-2xl font-bold mb-3">Body</h3>
+                <p class="text-gray-800">Made from steel and carbon fiber it weights approximately 240Kg without a driver.</p>
+            </div>
+
+            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] bg-[#f50] p-6 md:p-8 flex flex-col">
+                <h2 class="text-2xl font-bold mb-4 text-white">Powertrain</h2>
+                
+                <dl class="flex flex-col gap-3 w-full text-white">
+                    
+                    <div class="flex flex-row justify-between items-end border-b border-white/30 pb-1">
+                        <dt class="font-medium opacity-90">Motor</dt>
+                        <dd class="font-bold text-right max-w-[60%]">(algo)</dd>
+                    </div>
+                    
+                    <div class="flex flex-row justify-between items-end border-b border-white/30 pb-1">
+                        <dt class="font-medium opacity-90">Power</dt>
+                        <dd class="font-bold text-right max-w-[60%]">80Kw (107hp)</dd>
+                    </div>
+                    
+                    <div class="flex flex-row justify-between items-end border-b border-white/30 pb-1">
+                        <dt class="font-medium opacity-90">Battery</dt>
+                        <dd class="font-bold text-right max-w-[60%]">LiCoO2 cells (Custom Pack)</dd>
+                    </div>
+
+                </dl>
+            </div>
+
+            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[22%] bg-white p-6 md:p-8 flex flex-col">
+                <h3 class="text-2xl font-bold mb-3">Chassis</h3>
+                <p class="text-gray-800">Tubular spaceframe designed for maximum rigidity and safety during high-speed cornering.</p>
+            </div>
+            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[22%] bg-[#f50] p-6 md:p-8 flex flex-col">
+                <h3 class="text-2xl font-bold mb-3">Body</h3>
+                <p class="text-gray-800">Made from steel and carbon fiber it weights approximately 240Kg without a driver.</p>
+            </div>
+            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[22%] bg-white p-6 md:p-8 flex flex-col">
+                <h3 class="text-2xl font-bold mb-3">Body</h3>
+                <p class="text-gray-800">Made from steel and carbon fiber it weights approximately 240Kg without a driver.</p>
+            </div>
+            <!-- RIGHT ARROW -->
+            <button
+                id="scrollRightButton2"
+                onclick="scrollRight()"
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-black hover:bg-[#222222] text-white  p-2 rounded-full"
+            >
+                →
+            </button>
+
+        </div>
+    </details>
+    </div>
+
+    <!--
+    
+    
+    
+    test 3
+    
+    
+    
+    
+    -->    
+    <div class="w-full max-w-5xl mx-auto">
+        <details class="group border  rounded-xl overflow-hidden">
+        
+            <summary class="flex items-center justify-between cursor-pointer p-4 bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white">
+                <span class="text-lg font-semibold">Car Specs</span>
+
+                <!-- Arrow (rotates when open) -->
+                <svg 
+                    class="w-5 h-5 transition-transform duration-300 group-open:rotate-180"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </summary>
+
+        <div class="relative bg-[#222222] p-4">
+            
+            <div 
+                id="scrollContainer1"
+                class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar"
+            >
+                <div class="min-w-[22%] bg-[#2f2f2f] p-4 rounded-lg text-white">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+                <div class="min-w-[22%] bg-[#2f2f2f] p-4 rounded-lg text-white">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+                <div class="min-w-[22%] bg-[#2f2f2f] p-4 rounded-lg text-white">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+                <div class="min-w-[22%] bg-[#2f2f2f] p-4 rounded-lg text-white">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+                <div class="min-w-[22%] bg-[#2f2f2f] p-4 rounded-lg text-white">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+                <div class="min-w-[22%] bg-[#2f2f2f] p-4 rounded-lg text-white">
+                    <h3 class="font-bold mb-2">Column </h3>
+                    <p class="text-sm opacity-70">Some content...</p>
+                </div>
+
+
+
+            </div>
+
+            <!-- RIGHT ARROW -->
+            <button
+                id="scrollRightButton1"
+                onclick="scrollRight()"
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#4c4b4beb] hover:bg-[#4c4b4beb] p-2 rounded-full"
+            >
+                →
+            </button>
+
+        </div>
+    </details>
+    </div>
+
+    
+</Layout>
