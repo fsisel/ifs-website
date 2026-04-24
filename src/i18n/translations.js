@@ -36,7 +36,12 @@ export const translations = {
     support:"Support",
     helpUsRace:"Help us race",
     crowdFunding:"CrowdFunding",
-
+    //dates
+    days:"Days",
+    hours:"Hours",
+    minutes:"Minutes",
+    seconds:"Seconds",
+    compIn:"Competition starts in",
   },
   pt: {
     title: "Bem vindo",
@@ -76,5 +81,11 @@ export const translations = {
     support:"Ajude-nos",
     helpUsRace:"Ajude-nos a correr",
     crowdFunding:"Angariação",
+    //dates
+    days:"Dias",
+    hours:"Horas",
+    minutes:"Minutos",
+    seconds:"Segundos",
+    compIn:"A competição começa em",
   }
 };
