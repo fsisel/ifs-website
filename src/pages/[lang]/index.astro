@@ -92,17 +92,20 @@ tick();
     </div>
     <div class="flex items-center justify-center gap-8">
       <div class="flex flex-col text-right md:flex items-right gap-4 font-bold tracking-wide text-[20.8px] ">
-        <a href={`/${lang}/about_us`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out">
+        <a href={`/${lang}/about_us`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
         {t.aboutUs}
         </a>
-        <a href={`/${lang}/ifs05`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out">
+        <a href={`/${lang}/ifs05`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
         IFS05
         </a>
-        <a href={`/${lang}/sponsors`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out">
+        <a href={`/${lang}/sponsors`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
         {t.sponsors}
         </a>
-        <a href={`/${lang}/contacts`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out">
+        <a href={`/${lang}/contacts`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
         {t.contacts}
+        </a>
+        <a href={`/${lang}/fundme`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
+        {t.crowdFunding}
         </a>
       </div>
     
@@ -137,39 +140,51 @@ tick();
 
     <!-- Overlay content -->
     <div class="contentBlocks">
-      <div class="max-w-[120em] my-[2em] px-[7vw]  bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col flex-nowrap   ">
-        <img src="/logos/FSPT.webp" alt="FSPT" class="w-150 h-auto mx-auto pt-10">
-        <div class="w-[90%] border-b-white border mt-10 mx-auto"></div>
-          
+  <div class="max-w-[120em] my-[2em] px-[7vw] bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col items-center py-10">
+    
+    <!-- Logo -->
+    <img src="/logos/FSPT.webp" alt="FSPT" class="w-150 h-auto mx-auto">
+    <div class="w-[90%] border-b border-white/20 mt-8 mx-auto"></div>
 
-        <div id="countdown" class=" text-3xl pt-10 flex flex-row gap-3">
-          <div class="w-[50%] text-right flex flex-row justify-end gap-5">
-            <span id="days" class=""></span>
-            <span class="vertical_separator">:</span>
-            <span id="hours"></span>
-            <span class="vertical_separator">:</span>
-          </div>
-          <div class=" text-left flex flex-row justify-start gap-5 pl-2">
-            <span id="minutes"></span>
-            <span class="vertical_separator">:</span>
-            <span id="seconds"></span>
-          </div>
+    <!-- Subtitle -->
+    <p class="text-white/40 uppercase tracking-widest text-xs mt-8 mb-6">{t.compIn}</p>
+
+    <!-- Countdown blocks -->
+    <div id="countdown" class="flex flex-row gap-4 md:gap-8  w-full">
+      <div class="w-[50%] flex flex-row justify-end">
+        <div class="flex flex-col items-center px-6 py-4 min-w-20">
+          <span id="days" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+          <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.days}</span>
         </div>
-        <div id="countdown" class="text-center text-2xl py-10 flex flex-row justify-center ">
-          <div class="w-[50%] text-right flex flex-row justify-end gap-5">
-            <span >Dias</span>
-            <span class="vertical_separator">:</span>
-            <span >Horas</span>
-            <span class="vertical_separator">:</span>
-          </div>
-          <div class="w-[50%] text-left flex flex-row justify-start gap-5 pl-5">
-            <span >Minutos</span>
-            <span class="vertical_separator">:</span>
-            <span >Segundos</span>
-          </div>
+  
+        <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+  
+        <div class="flex flex-col items-center px-6 py-4 min-w-20">
+          <span id="hours" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+          <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.hours}</span>
         </div>
+  
+        <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+
+      </div>
+      <div class="flex flex-row justify-start">
+
+        <div class="flex flex-col items-center pr-6 py-4 min-w-20">
+          <span id="minutes" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+          <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.minutes}</span>
+        </div>
+        
+        <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+        
+        <div class="flex flex-col items-center px-6 py-4 min-w-20">
+          <span id="seconds" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+          <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.seconds}</span>
+        </div>
+        
       </div>
     </div>
+  </div>
+</div>
 
     <div class="contentBlocks">  
       {blocks.map((block, index) => (
