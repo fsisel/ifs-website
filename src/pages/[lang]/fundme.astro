@@ -39,27 +39,27 @@ const f = fundMe[lang] ?? fundMe.en;
   </div>
 
     <div class="text-left dark:text-white text-black w-[80%] pb-10 mx-auto ">
-     <p class="pb-4 text-wrap pl-5 font-bold">{f.announcement}</p>
+     <p class="pb-4 text-wrap pl-5 " set:html={f.announcement}></p>
   
-    <p class="pb-4 text-wrap pl-5">{f.intro}</p>
+    <p class="pb-4 text-wrap pl-5" set:html={f.intro}></p>
     
-    <p class="pb-4 text-wrap pl-5">{f.theTeam}</p>
+    <p class="pb-4 text-wrap pl-5" set:html={f.theTeam}></p>
     
-    <p class="pb-4 text-wrap pl-5 font-bold">{f.milestone}</p>
+    <p class="pb-4 text-wrap pl-5 " set:html={f.milestone}></p>
     
-    <p class="pb-4 text-wrap pl-5">{f.obstacle}</p>
+    <p class="pb-4 text-wrap pl-5" set:html={f.obstacle}></p>
     
-    <p class="pb-4 text-wrap pl-5 font-bold">{f.money}</p>
+    <p class="pb-4 text-wrap pl-5" set:html={f.money}></p>
     
-    <p class="pb-4 text-wrap pl-5 font-bold">{f.callToAction}</p>
+    <p class="pb-4 text-wrap pl-5 " set:html=>{f.callToAction}</p>
     
-    <p class="pb-4 text-wrap pl-5">{f.byStudents}</p>
+    <p class="pb-4 text-wrap pl-5" set:html={f.byStudents}></p>
     
-    <p class="pb-4 text-wrap pl-5">{f.support}</p>
+    <p class="pb-4 text-wrap pl-5" set:html={f.support}></p>
     
-    <p class="pb-4 text-wrap pl-5 font-bold">{f.reward}</p>
+    <p class="pb-4 text-wrap pl-5 " set:html={f.reward}></p>
     
-    <p class="pb-4 text-wrap pl-5 font-bold">{f.thanks}</p>
+    <p class="pb-4 text-wrap pl-5 " set:html={f.thanks}></p>
       
       <button class="group relative flex w-full my-6 skew-x-[-18deg] mx-auto py-5">
         <div class="bg-white w-full h-[3em] flex items-center justify-center text-[#f50] font-bold text-sm sm:text-base dark:bg-[#0f0f0f] border-[0.3em] border-[#f50] transition duration-200 group-hover:bg-[#f50] group-hover:text-white">
