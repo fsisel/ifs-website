@@ -78,7 +78,7 @@ export const translations = {
     success: "Sucesso! Confirme o seu email.",
     error: "Algo correu mal",
     //fund me
-    support:"Ajude-nos",
+    support:"Ajuda-nos",
     helpUsRace:"Ajude-nos a correr",
     crowdFunding:"Angariação",
     //dates
