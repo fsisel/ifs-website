@@ -38,6 +38,46 @@ window.addEventListener("scroll", () => {
     target.classList.remove("-translate-y-12");
   }
 });
+const targetDate = "2026-07-19T00:00:00";
+const targetTimer = new Date(targetDate).getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = targetTimer - now;
+
+    if (diff <= 0) {
+      const countdownElement = document.getElementById("countdown");
+      if(countdownElement){
+        countdownElement.innerText = "Time's up";
+        return;
+      }
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+
+    if (daysElement) daysElement.innerText = String(days);
+    if (hoursElement) hoursElement.innerText = String(hours);
+    if (minutesElement) minutesElement.innerText = String(minutes);
+    if (secondsElement) secondsElement.innerText = String(seconds);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+function tick() {
+  updateCountdown();
+  setTimeout(tick, 1000);
+}
+
+tick();
 </script>
 
 <Layout>
@@ -93,8 +133,42 @@ window.addEventListener("scroll", () => {
     />
 
     <!-- Overlay content -->
-    
-    <div class="bodier contentBlocks">  
+    <div class="contentBlocks">
+      <div class="max-w-[120em] my-[2em] px-[7vw]  bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col flex-nowrap   ">
+        <img src="/logos/FSPT.webp" alt="FSPT" class="w-150 h-auto mx-auto pt-10">
+        <div class="w-[90%] border-b-white border mt-10"></div>
+          
+
+        <div id="countdown" class=" text-3xl pt-10 flex flex-row gap-3">
+          <div class="w-[50%] text-right flex flex-row justify-end gap-5">
+            <span id="days" class=""></span>
+            <span class="vertical_separator">:</span>
+            <span id="hours"></span>
+            <span class="vertical_separator">:</span>
+          </div>
+          <div class=" text-left flex flex-row justify-start gap-5 pl-2">
+            <span id="minutes"></span>
+            <span class="vertical_separator">:</span>
+            <span id="seconds"></span>
+          </div>
+        </div>
+        <div id="countdown" class="text-center text-2xl py-10 flex flex-row justify-center ">
+          <div class="w-[50%] text-right flex flex-row justify-end gap-5">
+            <span >Dias</span>
+            <span class="vertical_separator">:</span>
+            <span >Horas</span>
+            <span class="vertical_separator">:</span>
+          </div>
+          <div class="w-[50%] text-left flex flex-row justify-start gap-5 pl-5">
+            <span >Minutos</span>
+            <span class="vertical_separator">:</span>
+            <span >Segundos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contentBlocks">  
       {blocks.map((block, index) => (
         
         <ContentBlock
