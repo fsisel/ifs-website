@@ -84,20 +84,23 @@ export interface Props {
 			</div>
 			<div class="flex items-end gap-8">
 				<div class="hidden md:flex items-center gap-8 text-sm font-bold tracking-wide text-[16px]">
-					<a href={`/${lang}/about_us`} class="hover:text-orange-500 transition">
+					<a href={`/${lang}/about_us`} class="hover:text-orange-500 transition uppercase">
 					{t.aboutUs}
 					</a>
-					<a href={`/${lang}/ifs05`} class="hover:text-orange-500 transition">
+					<a href={`/${lang}/ifs05`} class="hover:text-orange-500 transition uppercase">
 					IFS05
 					</a>
-					<a href={`/${lang}/sponsors`} class="hover:text-orange-500 transition">
+					<a href={`/${lang}/sponsors`} class="hover:text-orange-500 transition uppercase">
 					{t.sponsors}
 					</a>
-					<a href={`/${lang}/contacts`} class="hover:text-orange-500 transition">
+					<a href={`/${lang}/contacts`} class="hover:text-orange-500 transition uppercase">
 					{t.contacts}
 					</a>
-					<a href={`/${lang}/garage`} class="hover:text-orange-500 transition">
+					<a href={`/${lang}/garage`} class="hover:text-orange-500 transition uppercase">
 					{t.garage}
+					</a>
+					<a href={`/${lang}/garage`} class="hover:text-orange-500 transition uppercase">
+					{t.crowdFunding}
 					</a>
 				</div>
 			
@@ -137,6 +140,9 @@ export interface Props {
 
 	<a href={`/${lang}/contacts`} class="px-6 py-4 ">
 		{t.contacts}
+	</a>
+	<a href={`/${lang}/contacts`} class="px-6 py-4 ">
+		{t.crowdFunding}
 	</a>
 	</div>
 </nav>
