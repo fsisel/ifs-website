@@ -1,0 +1,30 @@
+---
+import HeroImage from "../../components/heroImage.astro"   
+
+import Layout from "../../layouts/Layout.astro"
+import ContentBlock from "../../components/contentBlock.astro";
+
+import {text} from "../../data/about_us"
+import { translations } from "../../i18n/translations";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+
+type Lang = keyof typeof translations;
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
+---
+<Layout>
+
+
+    <HeroImage
+    title="Where Light Meets Shadow"
+    subtitle="Your custom subtitle here."
+  imageUrl="https://your-image-url.com/photo.jpg"
+/>
+
+</Layout>
