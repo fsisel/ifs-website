@@ -1,7 +1,20 @@
 ---
 // HeroSection.astro
 // A cinematic hero component with background image, layered text shadows, and centered composition
+import { translations } from "../i18n/translations";
 
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof translations;
+
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
+
+const otherLang = lang === "en" ? "pt" : "en";
 
 
 interface Props {
@@ -19,10 +32,10 @@ const {
 } = Astro.props;
 ---
 
-<section class="hero-section relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+<section class="hero-section relative w-full pt-32 sm:pt-0 sm:min-h-screen flex items-center justify-center overflow-hidden">
 
   <!-- Background Image Layer -->
-  <div class="absolute inset-0 z-0">
+  <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent z-10 brightness-50">
     <img
       src={imageUrl}
       alt={imageAlt}
@@ -31,8 +44,8 @@ const {
   </div>
 
   <!-- Gradient Overlays for depth -->
-  <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div>
-  <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+  <div class="absolute inset-0 z-10 bg-linear-to-t from-black/80 via-black/30 to-black/20"></div>
+  <div class="absolute inset-0 z-10 bg-linear-to-r from-black/40 via-transparent to-black/40"></div>
 
   <!-- Noise texture overlay -->
   <div class="absolute inset-0 z-10 opacity-20 noise-overlay"></div>
@@ -41,20 +54,20 @@ const {
   <div class="relative z-20 text-center px-6 md:px-12 max-w-5xl mx-auto hero-content">
 
     <!-- Eyebrow label -->
-    <p class="eyebrow-text text-amber-300/80 uppercase tracking-[0.4em] text-xs md:text-sm font-medium mb-6 opacity-0 animate-fade-up" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
-      Featured Collection
+    <p class="eyebrow-text text-[#f50] uppercase tracking-[0.4em] text-lg md:text-lg font-medium mb-6 opacity-0 animate-fade-up" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
+      {t.support}
     </p>
 
     <!-- Main Title -->
-    <h1 class="hero-title font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-8 opacity-0 animate-fade-up" style="animation-delay: 0.4s; animation-fill-mode: forwards;">
+    <h1 class="hero-title font-display max-w-max text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-8 opacity-0 animate-fade-up" style="animation-delay: 0.4s; animation-fill-mode: forwards;">
       {title}
     </h1>
 
     <!-- Decorative rule -->
     <div class="flex items-center justify-center gap-4 mb-8 opacity-0 animate-fade-up" style="animation-delay: 0.6s; animation-fill-mode: forwards;">
-      <div class="h-px w-16 bg-gradient-to-r from-transparent to-amber-400/60"></div>
-      <div class="w-1.5 h-1.5 rounded-full bg-amber-400/80"></div>
-      <div class="h-px w-16 bg-gradient-to-l from-transparent to-amber-400/60"></div>
+      <div class="h-px w-16 bg-linear-to-r from-transparent to-[#f50]"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-[#f50]"></div>
+      <div class="h-px w-16 bg-linear-to-l from-transparent to-[#f50]"></div>
     </div>
 
     <!-- Subtitle -->
@@ -62,43 +75,30 @@ const {
       {subtitle}
     </p>
 
-    <!-- CTA Button -->
-    <div class="opacity-0 animate-fade-up" style="animation-delay: 1s; animation-fill-mode: forwards;">
-      <a
-        href="#explore"
-        class="cta-btn inline-flex items-center gap-3 border border-white/25 bg-white/10 backdrop-blur-sm text-white text-sm uppercase tracking-[0.2em] px-8 py-4 hover:bg-white hover:text-black transition-all duration-500 group"
-      >
-        <span>Explore</span>
-        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </a>
-    </div>
+    
   </div>
-
   <!-- Bottom scroll indicator -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-0 animate-fade-up" style="animation-delay: 1.4s; animation-fill-mode: forwards;">
     <div class="scroll-indicator flex flex-col items-center gap-2 text-white/40 text-xs tracking-widest uppercase">
       <span>Scroll</span>
-      <div class="w-px h-8 bg-gradient-to-b from-white/40 to-transparent scroll-line"></div>
+      <div class="w-px h-8 bg-linear-to-b from-white/40 to-transparent scroll-line"></div>
     </div>
   </div>
-
 </section>
 
 <style>
   /* ── Import distinctive fonts ── */
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
 
-  .hero-section {
+  /* .hero-section {
     font-family: 'Jost', sans-serif;
-  }
+  } */
 
   /* ── Hero image ken-burns effect ── */
-  .hero-img {
+  ./* hero-img {
     animation: kenBurns 20s ease-in-out infinite alternate;
     transform-origin: center center;
-  }
+  } */
 
   @keyframes kenBurns {
     0%   { transform: scale(1.05) translate(0%, 0%); }
@@ -106,7 +106,7 @@ const {
   }
 
   /* ── Display font ── */
-  .font-display {
+  /* .font-display {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 300;
     font-style: italic;
@@ -115,7 +115,7 @@ const {
   .font-body {
     font-family: 'Jost', sans-serif;
     font-weight: 300;
-  }
+  } */
 
   /* ── Layered text shadows ── */
   .hero-title {
@@ -163,29 +163,10 @@ const {
     animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* ── Scroll line pulse ── */
-  .scroll-line {
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
 
   @keyframes scrollPulse {
     0%, 100% { opacity: 0.4; transform: scaleY(1); }
     50%       { opacity: 0.9; transform: scaleY(1.15); }
   }
 
-  /* ── CTA button shadow ── */
-  .cta-btn {
-    box-shadow:
-      0 2px 8px rgba(0,0,0,0.4),
-      0 4px 24px rgba(0,0,0,0.3),
-      inset 0 1px 0 rgba(255,255,255,0.1);
-    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  }
-
-  .cta-btn:hover {
-    box-shadow:
-      0 4px 16px rgba(0,0,0,0.2),
-      0 8px 32px rgba(0,0,0,0.15);
-    text-shadow: none;
-  }
 </style>

@@ -2,10 +2,9 @@
 import HeroImage from "../../components/heroImage.astro"   
 
 import Layout from "../../layouts/Layout.astro"
-import ContentBlock from "../../components/contentBlock.astro";
 
-import {text} from "../../data/about_us"
 import { translations } from "../../i18n/translations";
+import {fundMe} from "../../data/fund_me"
 
 export function getStaticPaths() {
   return [
@@ -17,14 +16,44 @@ export function getStaticPaths() {
 type Lang = keyof typeof translations;
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
+const f = fundMe[lang] ?? fundMe.en;
+
 ---
 <Layout>
 
 
     <HeroImage
-    title="Where Light Meets Shadow"
-    subtitle="Your custom subtitle here."
-  imageUrl="https://your-image-url.com/photo.jpg"
-/>
+    title="ISEL Formula Student"
+    subtitle=""
+    imageUrl="/images/ifs05_testPic.webp"
+  />
+
+  <div class="max-w-[95%] sm:max-w-[120em] pt-10 mx-auto">
+    <div class="relative aspect-video mx-auto w-[80%] my-10 ">
+    <iframe
+      class="absolute inset-0 w-full h-full rounded"
+      src="https://www.youtube.com/embed/fdGWRq1dVBA?start=27&autoplay=1&mute=1&loop=1"
+      title="Video"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+    <div class="text-left dark:text-white text-black w-[80%] pb-10 mx-auto ">
+      <p class="pb-4 text-wrap pl-5 ">{f.announcement}</p>
+      <p class="pb-4 text-wrap pl-5 ">{f.byStudents}</p>
+      <p class="pb-4 text-wrap pl-5 ">{f.money}</p>
+      <p class="pb-4 text-wrap pl-5 ">{f.byStudents}</p></p>
+      
+      <button class="group relative flex w-full my-6 skew-x-[-18deg] mx-auto py-5">
+        <div class="bg-white w-full h-[3em] flex items-center justify-center text-[#f50] font-bold text-sm sm:text-base dark:bg-[#0f0f0f] border-[0.3em] border-[#f50] transition duration-200 group-hover:bg-[#f50] group-hover:text-white">
+          {t.helpUsRace}
+        </div>
+
+      </button>
+    </div>
+
+
+  </div>
+
 
 </Layout>

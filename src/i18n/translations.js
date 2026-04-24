@@ -32,6 +32,11 @@ export const translations = {
     subscribe: "Subscribe",
     success: "Subscribed! Please check your email.",
     error: "Something went wrong",
+    //fund me
+    support:"Support",
+    helpUsRace:"Help us race",
+    crowdFunding:"CrowdFunding",
+
   },
   pt: {
     title: "Bem vindo",
@@ -67,5 +72,9 @@ export const translations = {
     subscribe: "Subscreva",
     success: "Sucesso! Confirme o seu email.",
     error: "Algo correu mal",
+    //fund me
+    support:"Ajude-nos",
+    helpUsRace:"Ajude-nos a correr",
+    crowdFunding:"Angariação",
   }
 };
