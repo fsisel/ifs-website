@@ -1,0 +1,172 @@
+---
+// HeroSection.astro
+// A cinematic hero component with background image, layered text shadows, and centered composition
+import { translations } from "../i18n/translations";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof translations;
+
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
+
+const otherLang = lang === "en" ? "pt" : "en";
+
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+}
+
+const {
+  title = "Where Light Meets Shadow",
+  subtitle = "Crafted for those who find beauty in the contrast between darkness and brilliance — a moment suspended in time.",
+  imageUrl = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80",
+  imageAlt = "Dramatic mountain landscape at golden hour",
+} = Astro.props;
+---
+
+<section class="hero-section relative w-full pt-32 sm:pt-0 sm:min-h-screen flex items-center justify-center overflow-hidden">
+
+  <!-- Background Image Layer -->
+  <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent z-10 brightness-50">
+    <img
+      src={imageUrl}
+      alt={imageAlt}
+      class="w-full h-full object-cover object-center scale-105 hero-img"
+    />
+  </div>
+
+  <!-- Gradient Overlays for depth -->
+  <div class="absolute inset-0 z-10 bg-linear-to-t from-black/80 via-black/30 to-black/20"></div>
+  <div class="absolute inset-0 z-10 bg-linear-to-r from-black/40 via-transparent to-black/40"></div>
+
+  <!-- Noise texture overlay -->
+  <div class="absolute inset-0 z-10 opacity-20 noise-overlay"></div>
+
+  <!-- Content -->
+  <div class="relative z-20 text-center px-6 md:px-12 max-w-5xl mx-auto hero-content">
+
+    <!-- Eyebrow label -->
+    <p class="eyebrow-text text-[#f50] uppercase tracking-[0.4em] text-lg md:text-lg font-medium mb-6 opacity-0 animate-fade-up" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
+      {t.support}
+    </p>
+
+    <!-- Main Title -->
+    <h1 class="hero-title font-display max-w-max text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-8 opacity-0 animate-fade-up" style="animation-delay: 0.4s; animation-fill-mode: forwards;">
+      {title}
+    </h1>
+
+    <!-- Decorative rule -->
+    <div class="flex items-center justify-center gap-4 mb-8 opacity-0 animate-fade-up" style="animation-delay: 0.6s; animation-fill-mode: forwards;">
+      <div class="h-px w-16 bg-linear-to-r from-transparent to-[#f50]"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-[#f50]"></div>
+      <div class="h-px w-16 bg-linear-to-l from-transparent to-[#f50]"></div>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="hero-subtitle font-body text-white/70 text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-12 opacity-0 animate-fade-up" style="animation-delay: 0.8s; animation-fill-mode: forwards;">
+      {subtitle}
+    </p>
+
+    
+  </div>
+  <!-- Bottom scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-0 animate-fade-up hidden sm:block" style="animation-delay: 1.4s; animation-fill-mode: forwards;">
+    <div class="scroll-indicator flex flex-col items-center gap-2 text-white/40 text-xs tracking-widest uppercase">
+      <span>Scroll</span>
+      <div class="w-px h-8 bg-linear-to-b from-white/40 to-transparent scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ── Import distinctive fonts ── */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+  /* .hero-section {
+    font-family: 'Jost', sans-serif;
+  } */
+
+  /* ── Hero image ken-burns effect ── */
+  ./* hero-img {
+    animation: kenBurns 20s ease-in-out infinite alternate;
+    transform-origin: center center;
+  } */
+
+  @keyframes kenBurns {
+    0%   { transform: scale(1.05) translate(0%, 0%); }
+    100% { transform: scale(1.12) translate(-1%, -1%); }
+  }
+
+  /* ── Display font ── */
+  /* .font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .font-body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+  } */
+
+  /* ── Layered text shadows ── */
+  .hero-title {
+    text-shadow:
+      0 1px 0 rgba(0,0,0,0.4),
+      0 2px 4px rgba(0,0,0,0.5),
+      0 4px 12px rgba(0,0,0,0.6),
+      0 8px 32px rgba(0,0,0,0.5),
+      0 16px 64px rgba(0,0,0,0.4);
+  }
+
+  .hero-subtitle {
+    text-shadow:
+      0 1px 2px rgba(0,0,0,0.8),
+      0 2px 8px rgba(0,0,0,0.6),
+      0 4px 20px rgba(0,0,0,0.5);
+  }
+
+  .eyebrow-text {
+    text-shadow:
+      0 1px 2px rgba(0,0,0,0.9),
+      0 2px 8px rgba(0,0,0,0.7);
+  }
+
+  /* ── Noise texture ── */
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 128px 128px;
+  }
+
+  /* ── Fade-up animation ── */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50%       { opacity: 0.9; transform: scaleY(1.15); }
+  }
+
+</style>

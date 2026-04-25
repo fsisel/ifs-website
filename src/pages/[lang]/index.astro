@@ -1,8 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/navbar.astro';
-import Footer from '../../components/Footer.astro';
 
+import ParallelogramButton from '../../components/parallelogramButton.astro';
 import ContentBlock from '../../components/contentBlock.astro';
 import { blocks } from "../../data/blocks";
 
@@ -12,6 +11,7 @@ export interface Props {
 }
 
 import { translations } from "../../i18n/translations";
+import {fundMEbanner} from "../../data/fundMebanner"
 import Image from 'astro/components/Image.astro';
 
 export function getStaticPaths() {
@@ -24,6 +24,7 @@ type Lang = keyof typeof translations;
 
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
+const b = fundMEbanner[lang] ?? fundMEbanner.en;
 
 const otherLang = lang === "en" ? "pt" : "en";
 
@@ -39,6 +40,46 @@ window.addEventListener("scroll", () => {
     target.classList.remove("-translate-y-12");
   }
 });
+const targetDate = "2026-07-19T00:00:00";
+const targetTimer = new Date(targetDate).getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = targetTimer - now;
+
+    if (diff <= 0) {
+      const countdownElement = document.getElementById("countdown");
+      if(countdownElement){
+        countdownElement.innerText = "Time's up";
+        return;
+      }
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    const daysElement = document.getElementById("days");
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+
+    if (daysElement) daysElement.innerText = String(days);
+    if (hoursElement) hoursElement.innerText = String(hours);
+    if (minutesElement) minutesElement.innerText = String(minutes);
+    if (secondsElement) secondsElement.innerText = String(seconds);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+function tick() {
+  updateCountdown();
+  setTimeout(tick, 1000);
+}
+
+tick();
 </script>
 
 <Layout>
@@ -50,17 +91,20 @@ window.addEventListener("scroll", () => {
     </div>
     <div class="flex items-center justify-center gap-8">
       <div class="flex flex-col text-right md:flex items-right gap-4 font-bold tracking-wide text-[20.8px] ">
-        <a href={`/${lang}/about_us`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out">
+        <a href={`/${lang}/about_us`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
         {t.aboutUs}
         </a>
-        <a href={`/${lang}/ifs05`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out">
+        <a href={`/${lang}/ifs05`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
         IFS05
         </a>
-        <a href={`/${lang}/sponsors`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out">
+        <a href={`/${lang}/sponsors`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
         {t.sponsors}
         </a>
-        <a href={`/${lang}/contacts`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out">
+        <a href={`/${lang}/contacts`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
         {t.contacts}
+        </a>
+        <a href={`/${lang}/fundme`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
+        {t.crowdFunding}
         </a>
       </div>
     
@@ -94,8 +138,74 @@ window.addEventListener("scroll", () => {
     />
 
     <!-- Overlay content -->
+    <div class="contentBlocks">
+      <div class="w-full justify-center items-center py-12">
+  <div class="bg-[#f5f5f5] text-black w-full dark:bg-[#181818] shadow-lg overflow-hidden dark:text-white">
     
-    <div class="bodier contentBlocks">  
+    <div class="w-full p-8 md:p-14 flex flex-col justify-center items-center text-center">
+      
+      <p class="text-[35.2px] font-black uppercase tracking-tight leading-none mb-6" set:html={b.title}></p>
+
+      <p class="text-[22.4px] max-w-2xl" set:html={b.description}></p>
+
+      <div class="mt-8">
+        <ParallelogramButton
+          link="fundme"
+          text={b.cta}
+        />
+      </div>
+
+    </div>
+
+  </div>
+</div>
+      <div class="max-w-[120em] my-[2em] px-[7vw] bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col items-center py-10">
+    
+        <!-- Logo -->
+        <img src="/logos/FSPT.webp" alt="FSPT" class="w-150 h-auto mx-auto">
+        <div class="w-[90%] border-b border-white/20 mt-8 mx-auto"></div>
+
+        <!-- Subtitle -->
+        <p class="text-white/40 uppercase tracking-widest text-xs mt-8 mb-6">{t.compIn}</p>
+
+        <!-- Countdown blocks -->
+        <div id="countdown" class="flex flex-row gap-4 md:gap-8  w-full">
+          <div class="w-[50%] flex flex-row justify-end">
+            <div class="flex flex-col items-center px-6 py-4 min-w-20">
+              <span id="days" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.days}</span>
+            </div>
+      
+            <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+      
+            <div class="flex flex-col items-center px-6 py-4 min-w-20">
+              <span id="hours" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.hours}</span>
+            </div>
+      
+            <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+
+          </div>
+          <div class="flex flex-row justify-start">
+
+            <div class="flex flex-col items-center pr-6 py-4 min-w-20">
+              <span id="minutes" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.minutes}</span>
+            </div>
+            
+            <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+            
+            <div class="flex flex-col items-center px-6 py-4 min-w-20">
+              <span id="seconds" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.seconds}</span>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contentBlocks">  
       {blocks.map((block, index) => (
         
         <ContentBlock

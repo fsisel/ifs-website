@@ -3,6 +3,8 @@ export const translations = {
     title: "Welcome",
     button: "Switch to Portuguese",
     home: "HOME PAGE",
+    privacy_policy:"Privacy Policy",
+    garage:"Garage",
     /* sponsors */
     sponsors: "SPONSORS",
     platinum: "PLATINUM",
@@ -26,11 +28,28 @@ export const translations = {
     writeTxt:"Write something here",
     submit: "SUBMIT",
     msgUs: "Send us a message",
+    //Newsletter
+    subscribe: "Subscribe",
+    success: "Subscribed! Please check your email.",
+    error: "Something went wrong",
+    //fund me
+    support:"Support",
+    helpUsRace:"Help us race",
+    crowdFunding:"CrowdFunding",
+    //dates
+    days:"Days",
+    hours:"Hours",
+    minutes:"Minutes",
+    seconds:"Seconds",
+    compIn:"Competition starts in",
   },
   pt: {
     title: "Bem vindo",
     button: "Trocar para inglês",
     home: "PÁGINA PRINCIPAL",
+    privacy_policy:"Política de privacidadde",
+    garage:"Garagem",
+
     /* sponsors */
     sponsors: "PATROCINADORES",    
     platinum: "PLATINA",
@@ -54,6 +73,19 @@ export const translations = {
     writeTxt:"Escreve algo...",
     submit: "ENVIAR",
     msgUs: "Envie-nos uma mensagem",
-
+    //Newsletter
+    subscribe: "Subscreva",
+    success: "Sucesso! Confirme o seu email.",
+    error: "Algo correu mal",
+    //fund me
+    support:"Ajuda-nos",
+    helpUsRace:"Ajude-nos a correr",
+    crowdFunding:"Angariação",
+    //dates
+    days:"Dias",
+    hours:"Horas",
+    minutes:"Minutos",
+    seconds:"Segundos",
+    compIn:"A competição começa em",
   }
 };
