@@ -1,5 +1,6 @@
 ---
 import { translations } from "../i18n/translations";
+import NewsletterForm from "./newsletterForm.astro";
 
 export function getStaticPaths() {
   return [
@@ -38,21 +39,7 @@ export interface Props {
     <div class=" justify-center">
       <h4 class="text-[24px] mb-2">Newsletter</h4>
 
-      <div class="flex">
-        <input
-          type="text"
-          placeholder="Soon..."
-          aria-label="Your email here"
-          disabled
-          class="w-full px-4 py-2 rounded-l-md bg-white border border-zinc-700 text-sm placeholder-zinc-600 focus:outline-none"
-        />
-        <button
-          disabled
-          class="px-4 py-2 rounded-r-md bg-inherit border border-zinc-600 text-sm text-zinc-400 cursor-not-allowed"
-        >
-          Subscribe
-        </button>
-      </div>
+      <NewsletterForm/>
     </div>
 
     <!-- Social -->

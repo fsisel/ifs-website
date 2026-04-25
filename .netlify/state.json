@@ -1,7 +1,7 @@
 {
 	"geolocation": {
 		"data": {
-			"city": "Lisbon",
+			"city": "Amadora",
 			"country": {
 				"code": "PT",
 				"name": "Portugal"
@@ -11,10 +11,10 @@
 				"name": "Lisbon"
 			},
 			"timezone": "Europe/Lisbon",
-			"latitude": 38.7219,
-			"longitude": -9.1398,
-			"postalCode": "1100-001"
+			"latitude": 38.7521,
+			"longitude": -9.2279,
+			"postalCode": "2700-001"
 		},
-		"timestamp": 1771421767769
+		"timestamp": 1775391294292
 	}
 }

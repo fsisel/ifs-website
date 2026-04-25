@@ -1,0 +1,160 @@
+---
+import Navbar from "../components/navbar.astro";
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+  children: any;
+  lang?: string;
+}
+
+// Get children as array and lang from props
+const { children, lang = "en" } = Astro.props;
+const childrenArray = Array.isArray(children) ? children : [children];
+
+// Phone dimensions
+const PHONE_WIDTH = 390;
+const PHONE_HEIGHT = 844;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Testing Layout - Split Screen</title>
+  </head>
+  <body style="margin: 0; padding: 0; height: 100vh; overflow: hidden; background: #000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;">
+    <div style="display: flex; height: 100vh; width: 100vw;">
+      <!-- Left Phone -->
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center; background: #1a1a1a; padding: 2rem; overflow: hidden;">
+        <div
+          style={`
+            position: relative;
+            width: ${PHONE_WIDTH}px;
+            height: ${PHONE_HEIGHT}px;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(255, 107, 0, 0.3), 0 0 120px rgba(0, 0, 0, 0.8);
+            background: #fff;
+            border: 8px solid #000;
+            display: flex;
+            flex-direction: column;
+          `}
+        >
+          <!-- Notch -->
+          <div
+            style={`
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 150px;
+              height: 27px;
+              background: #000;
+              border-radius: 0 0 20px 20px;
+              z-index: 10;
+            `}
+          />
+
+          <!-- Navbar -->
+          <div style="width: 100%; z-index: 40; position: relative;">
+            <Navbar />
+          </div>
+
+          <!-- Content Viewport -->
+          <div
+            style={`
+              flex: 1;
+              overflow-y: auto;
+              overflow-x: hidden;
+              width: 100%;
+              scrollbar-width: thin;
+              scrollbar-color: rgba(200, 200, 200, 0.3) transparent;
+            `}
+          >
+            {childrenArray[0]}
+          </div>
+
+          <!-- Footer -->
+          <div style="width: 100%; position: relative; z-index: 20;">
+            <Footer />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Phone -->
+      <div style="flex: 1; display: flex; align-items: center; justify-content: center; background: #1a1a1a; padding: 2rem; overflow: hidden;">
+        <div
+          style={`
+            position: relative;
+            width: ${PHONE_WIDTH}px;
+            height: ${PHONE_HEIGHT}px;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(255, 107, 0, 0.3), 0 0 120px rgba(0, 0, 0, 0.8);
+            background: #fff;
+            border: 8px solid #000;
+            display: flex;
+            flex-direction: column;
+          `}
+        >
+          <!-- Notch -->
+          <div
+            style={`
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 150px;
+              height: 27px;
+              background: #000;
+              border-radius: 0 0 20px 20px;
+              z-index: 10;
+            `}
+          />
+
+          <!-- Navbar -->
+          <div style="width: 100%; z-index: 40; position: relative;">
+            <Navbar />
+          </div>
+
+          <!-- Content Viewport -->
+          <div
+            style={`
+              flex: 1;
+              overflow-y: auto;
+              overflow-x: hidden;
+              width: 100%;
+              scrollbar-width: thin;
+              scrollbar-color: rgba(200, 200, 200, 0.3) transparent;
+            `}
+          >
+            {childrenArray[1]}
+          </div>
+
+          <!-- Footer -->
+          <div style="width: 100%; position: relative; z-index: 20;">
+            <Footer />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(200, 200, 200, 0.3);
+        border-radius: 2px;
+      }
+    </style>
+  </body>
+</html>

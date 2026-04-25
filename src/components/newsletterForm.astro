@@ -1,0 +1,83 @@
+---
+import { translations } from "../i18n/translations";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof translations;
+
+const { lang } = Astro.params as { lang: Lang };
+const t = translations[lang] ?? translations.en;
+
+const otherLang = lang === "en" ? "pt" : "en";
+
+const pathname = Astro.url.pathname;
+
+export interface Props {
+  children?: any;
+}
+---
+
+
+  <form id="newsletter-form" class="input-group mb-3 flex">
+    <input
+      type="email"
+      name="email"
+      required
+      class="form-control w-full px-4 py-2 rounded-l-md bg-white border border-zinc-700 text-sm placeholder-zinc-600 focus:outline-none text-black"
+      placeholder={t.emailTxt}
+    />
+    <button class="btn px-4 py-2 rounded-r-md bg-inherit border border-zinc-600 text-sm text-zinc-400 cursor-pointer" type="submit">
+      {t.subscribe}
+    </button>
+  </form>
+  <p id="newsletter-message"></p>
+
+<script>
+  const form = document.getElementById("newsletter-form");
+  const messageEl = document.getElementById("newsletter-message");
+
+  const translations = {
+    en: {
+      success: "Subscribed! Please check your email.",
+      error: "Something went wrong",
+      network: "Network error",
+    },
+    pt: {
+      success: "Sucesso! Confirme o seu email.",
+      error: "Algo correu mal",
+      network: "Erro de rede",
+    },
+  };
+
+  const lang = window.location.pathname.startsWith("/pt") ? "pt" : "en";
+  const t = translations[lang];
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = (form as HTMLFormElement).email.value;
+
+    try {
+      const res = await fetch("/.netlify/functions/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (messageEl) {
+        messageEl.textContent = res.ok ? t.success : t.error;
+      }
+    } catch (err) {
+      console.error(err);
+      if (messageEl) {
+        messageEl.textContent = t.network;
+      }
+    }
+  });
+</script>

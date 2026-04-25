@@ -120,6 +120,12 @@ export const sponsors =
       "altName": "TE Connectivity",
       "link": "https://www.te.com",
       "image": "/sponsor_logos/te_connectivity.svg"
+    },
+    {
+      "altName": "EPedal",
+      "link": "https://epedal.pt/pt/",
+      "image": "/sponsor_logos/epedal.webp",
+      "classes":"w-[13em]"
     }
   ],
   bronze: [
@@ -318,7 +324,13 @@ export const sponsors =
       "altName": "Camnetics",
       "link": "https://camnetics.com",
       "image": "/sponsor_logos/camnetics.webp"
-    }
+    },
+    {
+      "altName": "Eplan",
+      "link": "https://www.eplan.com/de-en/",
+      "image": "/sponsor_logos/Eplan.webp",
+      "classes":"h-[5.5em]"
+    },
   ]
 }
     
