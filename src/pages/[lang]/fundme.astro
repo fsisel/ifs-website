@@ -29,14 +29,28 @@ const f = fundMe[lang] ?? fundMe.en;
   />
 
   <div class="max-w-[95%] sm:max-w-[120em] pt-10 mx-auto">
-    <div class="relative aspect-video mx-auto w-[80%] my-10 ">
-    <iframe
-      class="absolute inset-0 w-full h-full rounded"
-      src="https://www.youtube.com/embed/fdGWRq1dVBA?start=27&autoplay=1&mute=1&loop=1"
-      title="Video"
-      allowfullscreen
-    ></iframe>
-  </div>
+    <div class="relative aspect-video mx-auto w-[80%] my-10 flex flex-col gap-10">
+      <!-- <iframe
+        class="absolute inset-0 w-full h-full rounded"
+        src="https://www.youtube.com/embed/fdGWRq1dVBA?start=27&autoplay=1&mute=1&loop=1"
+        title="Video"
+        allowfullscreen
+      ></iframe> -->
+      <video
+        class="w-full h-full object-cover rounded"
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+      >
+        <source src="/videos/ifs_rollout05.webm" type="video/webm" />
+      </video>
+      <img src="/images/rollout_IFS05_I54.webp" alt="rollout IFS05 car" class="w-full rounded">
+      <img src="/images/ifs05test_I1256.webp" alt="IFS05 car" class="w-full rounded">
+
+
+    </div>
 
     <div class="text-left dark:text-white text-black w-[80%] pb-10 mx-auto ">
      <p class="pb-4 text-wrap pl-5 " set:html={f.announcement}></p>
@@ -63,9 +77,8 @@ const f = fundMe[lang] ?? fundMe.en;
       
       <button class="group relative flex w-full my-6 skew-x-[-18deg] mx-auto py-5">
         <div class="bg-white w-full h-[3em] flex items-center justify-center text-[#f50] font-bold text-sm sm:text-base dark:bg-[#0f0f0f] border-[0.3em] border-[#f50] transition duration-200 group-hover:bg-[#f50] group-hover:text-white">
-          {t.helpUsRace}
+          <a href="https://www.gofundme.com/f/Isel-Formula-Student?attribution_id=al%3Aa9d53cc2-5b0a-42d4-9458-6c533d7a1a84" target="_blank">{t.helpUsRace}</a>
         </div>
-
       </button>
     </div>
 
