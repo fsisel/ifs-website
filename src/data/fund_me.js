@@ -1,6 +1,22 @@
 export const fundMe = {
     en: {
-        announcement: "From 📍<b>Chelas, Portugal</b> <img src='/icons/pt.svg' alt='Portuguese' class='h-6 w-6 rounded-sm' /> to 📍<b>Spielberg, Austria</b> <img src='/icons/Austria.svg' alt='Austia' class='h-4 w-6 ' /> <br/><b>Help us be present at the competition!</b>",
+        announcement: `<span class="flex flex-col gap-3">
+                <span>
+                <span class="inline-flex items-center">
+                    From 📍<b>Chelas, Portugal</b>
+                    <img src='/icons/pt.svg' alt='Portuguese' class='h-6 w-6 rounded-sm ml-2' />
+                </span>
+                <br>
+                <span class="inline-flex items-center">
+                    to 📍<b>Spielberg, Austria</b>
+                    <img src='/icons/Austria.svg' alt='Austria' class='h-4 w-6 ml-2' />
+                </span>
+                </span>
+                <span>
+                    <b>Help us be present at the competition!</b>
+                </span>
+                
+            </span>`,
         intro: "Imagine spending thousands of hours building something from scratch... We're not talking about a game or a simulation... But, yes, in a <b>garage in real life!</b> We work several hours, day after day, not only building the car but fueling our dreams and passions.",
         theTeam: "We are <b>ISEL Formula Student</b> — engineering students from Lisbon who, since 2023, build an <b>electric competition car</b> from scratch, every year.",
         milestone: "<b>This year, we've gone further than ever.</b>",
@@ -15,7 +31,22 @@ export const fundMe = {
         thanks: "Thank you for believing in us, <b>ISEL Formula Student Team</b>"
     },
     pt: {
-        announcement: "De 📍<b>Chelas, Portugal</b> <img src='/icons/pt.svg' alt='Portuguese' class='h-6 w-6 rounded-sm' /> Para 📍<b>Spielberg, Austria</b> <img src='/icons/Austria.svg' alt='Austia' class='h-4 w-6 rounded-sm' /> <br/><b>Ajuda-nos a estar presentes na competição!</b>",
+        announcement: `<span class="flex flex-col gap-3">
+                <span>
+                    <span class="inline-flex items-center">
+                        De 📍<b>Chelas, Portugal</b>
+                        <img src='/icons/pt.svg' alt='Portuguese' class='h-6 w-6 rounded-sm ml-2' />
+                    </span>
+                    <br>
+                    <span class="inline-flex items-center">
+                        Para 📍<b>Spielberg, Austria</b>
+                        <img src='/icons/Austria.svg' alt='Austria' class='h-4 w-6 ml-2' />
+                    </span>
+                </span>
+                <span>
+                    <b>Ajuda-nos a estar presentes na competição!</b>
+                </span>
+            </span>`,
         intro: "Imagina passar milhares de horas a construir algo do zero... Não estamos a falar num jogo ou numa simulação… Mas, sim, numa <b>garagem na vida real!</b> Trabalhamos varias horas, dia após dia a construir não só o carro mas a alimentar os nossos sonhos e paixões.",
         theTeam: "Somos a <b>ISEL Formula Student</b> — estudantes de engenharia de Lisboa que, desde 2023, constroem um <b>carro elétrico de competição</b> de raiz, todos os anos.",
         milestone: "<b>Este ano, chegámos mais longe do que nunca.</b>",
