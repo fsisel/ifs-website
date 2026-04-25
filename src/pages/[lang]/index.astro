@@ -163,43 +163,41 @@ tick();
     
         <!-- Logo -->
         <img src="/logos/FSPT.webp" alt="FSPT" class="w-150 h-auto mx-auto">
-        <div class="w-[90%] border-b border-white/20 mt-8 mx-auto"></div>
+        <div class="w-[90%] border-b border-black/20 dark:border-white/20 mt-8 mx-auto"></div>
 
         <!-- Subtitle -->
-        <p class="text-white/40 uppercase tracking-widest text-xs mt-8 mb-6">{t.compIn}</p>
+        <p class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-8 mb-6">{t.compIn}</p>
 
         <!-- Countdown blocks -->
-        <div id="countdown" class="flex flex-row gap-4 md:gap-8  w-full">
+        <div id="countdown" class="flex flex-row gap-4 md:gap-8 w-full">
           <div class="w-[50%] flex flex-row justify-end">
             <div class="flex flex-col items-center px-6 py-4 min-w-20">
-              <span id="days" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
-              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.days}</span>
+              <span id="days" class="font-mono text-5xl md:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
+              <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-2">{t.days}</span>
             </div>
       
-            <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+            <span class="text-black/30 dark:text-white/30 text-4xl font-thin self-center mb-4">:</span>
       
             <div class="flex flex-col items-center px-6 py-4 min-w-20">
-              <span id="hours" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
-              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.hours}</span>
+              <span id="hours" class="font-mono text-5xl md:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
+              <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-2">{t.hours}</span>
             </div>
       
-            <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
-
+            <span class="text-black/30 dark:text-white/30 text-4xl font-thin self-center mb-4">:</span>
           </div>
-          <div class="flex flex-row justify-start">
 
+          <div class="flex flex-row justify-start">
             <div class="flex flex-col items-center pr-6 py-4 min-w-20">
-              <span id="minutes" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
-              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.minutes}</span>
+              <span id="minutes" class="font-mono text-5xl md:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
+              <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-2">{t.minutes}</span>
             </div>
             
-            <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+            <span class="text-black/30 dark:text-white/30 text-4xl font-thin self-center mb-4">:</span>
             
             <div class="flex flex-col items-center px-6 py-4 min-w-20">
-              <span id="seconds" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
-              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.seconds}</span>
+              <span id="seconds" class="font-mono text-5xl md:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
+              <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-2">{t.seconds}</span>
             </div>
-            
           </div>
         </div>
       </div>
