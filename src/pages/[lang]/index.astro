@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-
+import ParallelogramButton from '../../components/parallelogramButton.astro';
 import ContentBlock from '../../components/contentBlock.astro';
 import { blocks } from "../../data/blocks";
 
@@ -11,6 +11,7 @@ export interface Props {
 }
 
 import { translations } from "../../i18n/translations";
+import {fundMEbanner} from "../../data/fundMebanner"
 import Image from 'astro/components/Image.astro';
 
 export function getStaticPaths() {
@@ -23,6 +24,7 @@ type Lang = keyof typeof translations;
 
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
+const b = fundMEbanner[lang] ?? fundMEbanner.en;
 
 const otherLang = lang === "en" ? "pt" : "en";
 
@@ -140,51 +142,71 @@ tick();
 
     <!-- Overlay content -->
     <div class="contentBlocks">
-  <div class="max-w-[120em] my-[2em] px-[7vw] bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col items-center py-10">
+      <div class="w-full justify-center items-center py-12">
+  <div class="bg-[#f5f5f5] text-black w-full dark:bg-[#181818] shadow-lg overflow-hidden dark:text-white">
     
-    <!-- Logo -->
-    <img src="/logos/FSPT.webp" alt="FSPT" class="w-150 h-auto mx-auto">
-    <div class="w-[90%] border-b border-white/20 mt-8 mx-auto"></div>
+    <div class="w-full p-8 md:p-14 flex flex-col justify-center items-center text-center">
+      
+      <p class="text-[35.2px] font-black uppercase tracking-tight leading-none mb-6" set:html={b.title}></p>
 
-    <!-- Subtitle -->
-    <p class="text-white/40 uppercase tracking-widest text-xs mt-8 mb-6">{t.compIn}</p>
+      <p class="text-[22.4px] max-w-2xl" set:html={b.description}></p>
 
-    <!-- Countdown blocks -->
-    <div id="countdown" class="flex flex-row gap-4 md:gap-8  w-full">
-      <div class="w-[50%] flex flex-row justify-end">
-        <div class="flex flex-col items-center px-6 py-4 min-w-20">
-          <span id="days" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
-          <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.days}</span>
-        </div>
-  
-        <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
-  
-        <div class="flex flex-col items-center px-6 py-4 min-w-20">
-          <span id="hours" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
-          <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.hours}</span>
-        </div>
-  
-        <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
-
+      <div class="mt-8">
+        <ParallelogramButton
+          link="fundme"
+          text={b.cta}
+        />
       </div>
-      <div class="flex flex-row justify-start">
 
-        <div class="flex flex-col items-center pr-6 py-4 min-w-20">
-          <span id="minutes" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
-          <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.minutes}</span>
-        </div>
-        
-        <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
-        
-        <div class="flex flex-col items-center px-6 py-4 min-w-20">
-          <span id="seconds" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
-          <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.seconds}</span>
-        </div>
-        
-      </div>
     </div>
+
   </div>
 </div>
+      <div class="max-w-[120em] my-[2em] px-[7vw] bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col items-center py-10">
+    
+        <!-- Logo -->
+        <img src="/logos/FSPT.webp" alt="FSPT" class="w-150 h-auto mx-auto">
+        <div class="w-[90%] border-b border-white/20 mt-8 mx-auto"></div>
+
+        <!-- Subtitle -->
+        <p class="text-white/40 uppercase tracking-widest text-xs mt-8 mb-6">{t.compIn}</p>
+
+        <!-- Countdown blocks -->
+        <div id="countdown" class="flex flex-row gap-4 md:gap-8  w-full">
+          <div class="w-[50%] flex flex-row justify-end">
+            <div class="flex flex-col items-center px-6 py-4 min-w-20">
+              <span id="days" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.days}</span>
+            </div>
+      
+            <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+      
+            <div class="flex flex-col items-center px-6 py-4 min-w-20">
+              <span id="hours" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.hours}</span>
+            </div>
+      
+            <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+
+          </div>
+          <div class="flex flex-row justify-start">
+
+            <div class="flex flex-col items-center pr-6 py-4 min-w-20">
+              <span id="minutes" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.minutes}</span>
+            </div>
+            
+            <span class="text-white/30 text-4xl font-thin self-center mb-4">:</span>
+            
+            <div class="flex flex-col items-center px-6 py-4 min-w-20">
+              <span id="seconds" class="font-mono text-5xl md:text-6xl font-bold text-white tabular-nums">00</span>
+              <span class="text-white/40 uppercase tracking-widest text-xs mt-2">{t.seconds}</span>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="contentBlocks">  
       {blocks.map((block, index) => (
