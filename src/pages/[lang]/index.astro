@@ -140,65 +140,63 @@ tick();
     <!-- Overlay content -->
     <div class="contentBlocks">
       <div class="w-full justify-center items-center py-12">
-  <div class="bg-[#f5f5f5] text-black w-full dark:bg-[#181818] shadow-lg overflow-hidden dark:text-white">
-    
-    <div class="w-full p-8 md:p-14 flex flex-col justify-center items-center text-center">
-      
-      <p class="text-[35.2px] font-black uppercase tracking-tight leading-none mb-6" set:html={b.title}></p>
+        <div class="bg-[#f5f5f5] text-black w-full dark:bg-[#181818] shadow-lg overflow-hidden dark:text-white">
+          
+          <div class="w-full p-8 md:p-14 flex flex-col justify-center items-center text-center">
+            
+            <p class="text-[35.2px] font-black uppercase tracking-tight leading-none mb-6" set:html={b.title}></p>
 
-      <p class="text-[22.4px] max-w-2xl" set:html={b.description}></p>
+            <p class="text-[22.4px] max-w-2xl" set:html={b.description}></p>
 
-      <div class="mt-8">
-        <ParallelogramButton
-          link="fundme"
-          text={b.cta}
-        />
+            <div class="mt-8">
+              <ParallelogramButton
+                link="fundme"
+                text={b.cta}
+              />
+            </div>
+
+          </div>
+
+        </div>
       </div>
+      <div class=" my-[2em] px-[4vw] md:px-[7vw] bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col items-center py-8 md:py-10">
 
-    </div>
-
-  </div>
-</div>
-      <div class="max-w-[120em] my-[2em] px-[7vw] bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col items-center py-10">
-    
         <!-- Logo -->
         <img src="/logos/FSPT.webp" alt="FSPT" class="w-150 h-auto mx-auto">
         <div class="w-[90%] border-b border-black/20 dark:border-white/20 mt-8 mx-auto"></div>
 
         <!-- Subtitle -->
-        <p class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-8 mb-6">{t.compIn}</p>
+        <p class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-8 mb-6 text-center">{t.compIn}</p>
 
         <!-- Countdown blocks -->
-        <div id="countdown" class="flex flex-row gap-4 md:gap-8 w-full">
-          <div class="w-[50%] flex flex-row justify-end">
-            <div class="flex flex-col items-center px-6 py-4 min-w-20">
-              <span id="days" class="font-mono text-5xl md:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
-              <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-2">{t.days}</span>
-            </div>
-      
-            <span class="text-black/30 dark:text-white/30 text-4xl font-thin self-center mb-4">:</span>
-      
-            <div class="flex flex-col items-center px-6 py-4 min-w-20">
-              <span id="hours" class="font-mono text-5xl md:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
-              <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-2">{t.hours}</span>
-            </div>
-      
-            <span class="text-black/30 dark:text-white/30 text-4xl font-thin self-center mb-4">:</span>
+        <div id="countdown" class="flex flex-row justify-center items-center gap-1 w-full px-2">
+
+          <div class="flex flex-col items-center py-4 flex-1 min-w-0 max-w-20 sm:max-w-25 md:max-w-30">
+            <span id="days" class="font-mono text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
+            <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-[8px] sm:text-xs mt-2">{t.days}</span>
           </div>
 
-          <div class="flex flex-row justify-start">
-            <div class="flex flex-col items-center pr-6 py-4 min-w-20">
-              <span id="minutes" class="font-mono text-5xl md:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
-              <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-2">{t.minutes}</span>
-            </div>
-            
-            <span class="text-black/30 dark:text-white/30 text-4xl font-thin self-center mb-4">:</span>
-            
-            <div class="flex flex-col items-center px-6 py-4 min-w-20">
-              <span id="seconds" class="font-mono text-5xl md:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
-              <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-2">{t.seconds}</span>
-            </div>
+          <span class="text-black/30 dark:text-white/30 text-xl sm:text-3xl md:text-4xl font-thin self-center mb-4 shrink-0">:</span>
+
+          <div class="flex flex-col items-center py-4 flex-1 min-w-0 max-w-20 sm:max-w-25 md:max-w-30">
+            <span id="hours" class="font-mono text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
+            <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-[8px] sm:text-xs mt-2">{t.hours}</span>
           </div>
+
+          <span class="text-black/30 dark:text-white/30 text-xl sm:text-3xl md:text-4xl font-thin self-center mb-4 shrink-0">:</span>
+
+          <div class="flex flex-col items-center py-4 flex-1 min-w-0 max-w-20 sm:max-w-25 md:max-w-30">
+            <span id="minutes" class="font-mono text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
+            <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-[8px] sm:text-xs mt-2">{t.minutes}</span>
+          </div>
+
+          <span class="text-black/30 dark:text-white/30 text-xl sm:text-3xl md:text-4xl font-thin self-center mb-4 shrink-0">:</span>
+
+          <div class="flex flex-col items-center py-4 flex-1 min-w-0 max-w-20 sm:max-w-25 md:max-w-30">
+            <span id="seconds" class="font-mono text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
+            <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-[8px] sm:text-xs mt-2">{t.seconds}</span>
+          </div>
+
         </div>
       </div>
     </div>
