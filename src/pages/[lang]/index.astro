@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 
 import ParallelogramButton from '../../components/parallelogramButton.astro';
+import CountDown from '../../components/countDown.astro';
 import ContentBlock from '../../components/contentBlock.astro';
 import { blocks } from "../../data/blocks";
 
@@ -30,7 +31,6 @@ const otherLang = lang === "en" ? "pt" : "en";
 
 
 
-
 ---
 <script>
 const target = document.querySelector("#navbar");
@@ -43,46 +43,6 @@ window.addEventListener("scroll", () => {
     target.classList.remove("-translate-y-12");
   }
 });
-const targetDate = "2026-07-19T00:00:00";
-const targetTimer = new Date(targetDate).getTime();
-
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const diff = targetTimer - now;
-
-    if (diff <= 0) {
-      const countdownElement = document.getElementById("countdown");
-      if(countdownElement){
-        countdownElement.innerText = "Time's up";
-        return;
-      }
-    }
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    const daysElement = document.getElementById("days");
-    const hoursElement = document.getElementById("hours");
-    const minutesElement = document.getElementById("minutes");
-    const secondsElement = document.getElementById("seconds");
-
-    if (daysElement) daysElement.innerText = String(days);
-    if (hoursElement) hoursElement.innerText = String(hours);
-    if (minutesElement) minutesElement.innerText = String(minutes);
-    if (secondsElement) secondsElement.innerText = String(seconds);
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-function tick() {
-  updateCountdown();
-  setTimeout(tick, 1000);
-}
-
-tick();
 </script>
 
 <Layout>
@@ -162,46 +122,28 @@ tick();
 
         </div>
       </div>
-      <div class=" my-[2em] px-[4vw] md:px-[7vw] bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col items-center py-8 md:py-10">
+      <div class="flex flex-col lg:flex-row justify-center items-stretch gap-4 my-[2em]">
 
-        <!-- Logo -->
-        <img src="/logos/FSPT.webp" alt="FSPT" class="w-150 h-auto mx-auto">
-        <div class="w-[90%] border-b border-black/20 dark:border-white/20 mt-8 mx-auto"></div>
+  <div class="px-[4vw] md:px-[7vw] bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col items-center py-8 md:py-10 flex-1 lg:max-w-[50%] ">
+    <div class="h-20 sm:h-24 flex items-center justify-center w-full">
+      <img src="/logos/FSPT.webp" alt="FSPT" class="max-h-full max-w-[70%] object-contain mx-auto">
+    </div>
+    <div class="w-[90%] border-b border-black/20 dark:border-white/20 mt-8 mx-auto"></div>
+    <p class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-8 mb-6">{t.compIn}</p>
+    <CountDown lang={lang} targetDate="2026-07-19T00:00:00" id='fspt-countdown' />
+  </div>
 
-        <!-- Subtitle -->
-        <p class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-8 mb-6">{t.compIn}</p>
+  <div class="px-[4vw] md:px-[7vw] bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white flex flex-col items-center py-8 md:py-10 flex-1 lg:max-w-[50%]">
+    <div class="h-20 sm:h-24 flex items-center justify-center w-full">
+      <img src="/logos/fsa-logo.webp" alt="FSA" class="max-h-full max-w-[70%] object-contain mx-auto">
+    </div>
+    <div class="w-[90%] border-b border-black/20 dark:border-white/20 mt-8 mx-auto"></div>
+    <p class="text-black/40 dark:text-white/40 uppercase tracking-widest text-xs mt-8 mb-6">{t.compIn}</p>
+    <CountDown lang={lang} targetDate="2026-07-26T00:00:00" id='fsa-countdown' />
+  </div>
 
-        <!-- Countdown blocks -->
-        <div id="countdown" class="flex flex-row justify-center items-center gap-1 w-full px-2">
-
-          <div class="flex flex-col items-center py-4 flex-1 min-w-0">
-            <span id="days" class="font-mono text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
-            <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-[8px] sm:text-xs mt-2">{t.days}</span>
-          </div>
-
-          <span class="text-black/30 dark:text-white/30 text-xl sm:text-3xl md:text-4xl font-thin self-center mb-4 shrink-0">:</span>
-
-          <div class="flex flex-col items-center py-4 flex-1 min-w-0">
-            <span id="hours" class="font-mono text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
-            <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-[8px] sm:text-xs mt-2">{t.hours}</span>
-          </div>
-
-          <span class="text-black/30 dark:text-white/30 text-xl sm:text-3xl md:text-4xl font-thin self-center mb-4 shrink-0">:</span>
-
-          <div class="flex flex-col items-center py-4 flex-1 min-w-0">
-            <span id="minutes" class="font-mono text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
-            <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-[8px] sm:text-xs mt-2">{t.minutes}</span>
-          </div>
-
-          <span class="text-black/30 dark:text-white/30 text-xl sm:text-3xl md:text-4xl font-thin self-center mb-4 shrink-0">:</span>
-
-          <div class="flex flex-col items-center py-4 flex-1 min-w-0">
-            <span id="seconds" class="font-mono text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white tabular-nums">00</span>
-            <span class="text-black/40 dark:text-white/40 uppercase tracking-widest text-[8px] sm:text-xs mt-2">{t.seconds}</span>
-          </div>
-
-        </div>
-      </div>
+</div>
+    </div>
     </div>
 
     <div class="contentBlocks">  
