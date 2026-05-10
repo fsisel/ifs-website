@@ -41,6 +41,10 @@ const imgSrc = (picture: string) => picture ? "/memberPics/" + picture : genrera
 
 const { tops, grouped } = getGroupedMembers(members["06"]["BigTable"] as Member[]);
 const hasMultipleTops = tops.length > 1;
+
+export interface Props {
+  children: any;
+}
 ---
 
 <style>
