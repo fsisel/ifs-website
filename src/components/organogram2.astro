@@ -252,7 +252,7 @@ export interface Props {
                         {dts.map((dt) => (
                           <li>
                             <div class="node bg-[#f50] text-white ring-4 ring-orange-500/20 shadow-[0_0_20px_rgba(255,85,0,0.3)] flex flex-col items-center">
-                              <img src={dt.picture || genreralAIMember.src} alt={dt.name} class="w-35 md:w-32.5">
+                              <img src={dt.picture ? "/memberPics/"+dt.picture: genreralAIMember.src} alt={dt.name} class="w-35 md:w-32.5">
                               <h3 class="text-xl font-bold">{dt.name}</h3>
                               <p class="text-xs uppercase tracking-widest font-black opacity-90">{t[dt.task as keyof typeof t] || dt.task}</p>
                               {dt.contact && <p class="text-[10px] opacity-70 font-mono mt-1">{dt.contact}</p>}
@@ -286,7 +286,7 @@ export interface Props {
                   ) : (
                     <li>
                       <div class="node bg-[#f50] text-white ring-4 ring-orange-500/20 shadow-[0_0_20px_rgba(255,85,0,0.3)] flex flex-col items-center">
-                        <img src={dts[0]?.picture || genreralAIMember.src} alt={dts[0]?.name} class="w-35 md:w-32.5">
+                        <img src={dts[0]?.picture ? "/memberPics/"+dts[0].picture : genreralAIMember.src} alt={dts[0]?.name} class="w-35 md:w-32.5">
                         <h3 class="text-xl font-bold">{dts[0]?.name}</h3>
                         <p class="text-xs uppercase tracking-widest font-black opacity-90">{t[dts[0]?.task as keyof typeof t] || dts[0]?.task}</p>
                         {dts[0]?.contact && <p class="text-[10px] opacity-70 font-mono mt-1">{dts[0].contact}</p>}

@@ -1,0 +1,82 @@
+---
+import genreralAIMember from "../../public/images/General_AIMember.webp";
+
+// --- SWAP THIS GLOB TO YOUR FOLDER ---
+const imageModules = import.meta.glob("../../public/memberPics/*", { eager: true });
+const images: string[] = Object.values(imageModules).map((mod: any) => mod.default?.src ?? mod.default);
+
+// Shuffle helper
+function shuffle<T>(arr: T[]): T[] {
+  return [...arr].sort(() => Math.random() - 0.5);
+}
+
+// Pull a random image from the pool (cycles if more members than images)
+function pickImage(pool: string[], index: number): string {
+  if (!pool.length) return genreralAIMember.src;
+  return pool[index % pool.length];
+}
+
+// --- DEFAULT TEST DATA ---
+const testData: Record<string, { name: string; task: string; Email: string; contact: string }[]> = {
+  "Aerodynamics": [
+    { name: "Alice Martins",  task: "CFD Simulation",     Email: "alice@team.com",   contact: "alice#1234"   },
+    { name: "Bruno Costa",    task: "Wind Tunnel Testing", Email: "bruno@team.com",   contact: "bruno#5678"   },
+    { name: "Carla Sousa",    task: "Body Design",         Email: "carla@team.com",   contact: "carla#9012"   },
+  ],
+  "Powertrain": [
+    { name: "Daniel Ferreira",task: "Engine Mapping",      Email: "daniel@team.com",  contact: "daniel#3456"  },
+    { name: "Eva Rodrigues",  task: "Drivetrain Design",   Email: "eva@team.com",     contact: "eva#7890"     },
+    { name: "Fábio Nunes",    task: "Suspension Setup",    Email: "fabio@team.com",   contact: "fabio#2345"   },
+    { name: "Gisela Pinto",   task: "Brake Systems",       Email: "gisela@team.com",  contact: "gisela#6789"  },
+  ],
+  "Electronics": [
+    { name: "Hugo Lopes",     task: "ECU Programming",     Email: "hugo@team.com",    contact: "hugo#0123"    },
+    { name: "Inês Carvalho",  task: "Sensor Integration",  Email: "ines@team.com",    contact: "ines#4567"    },
+    { name: "João Melo",      task: "Wiring Harness",      Email: "joao@team.com",    contact: "joao#8901"    },
+  ],
+  "Management": [
+    { name: "Kira Alves",     task: "Team Captain",        Email: "kira@team.com",    contact: "kira#2468"    },
+    { name: "Luís Batista",   task: "Logistics",           Email: "luis@team.com",    contact: "luis#1357"    },
+  ],
+};
+
+const shuffledImages = shuffle(images);
+---
+
+<div id="team" class="">
+  <div class="teams_titles">
+    <span class="orange_losangle"></span>
+    <h1><b>Team</b></h1>
+  </div>
+
+  {Object.entries(testData).map(([deptName, members]) => (
+    <div class="department">
+      <div class="teams_titles my-5">
+        <span class="orange_losangle"></span>
+        <div class="flex flex-row gap-2 items-center">
+          <span class="skewed"></span>
+          <h2 class="text-3xl md:text-4xl"><b>{deptName}</b></h2>
+        </div>
+      </div>
+
+      <div class="members grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(130px,1fr))] gap-6 md:gap-10">
+        {members.map((member, index) => {
+          const globalIndex = Object.values(testData)
+            .slice(0, Object.keys(testData).indexOf(deptName))
+            .reduce((acc, m) => acc + m.length, 0) + index;
+
+          const src = pickImage(shuffledImages, globalIndex);
+
+          return (
+            <div class="member flex flex-col">
+              <img src={src} alt={member.name} class="w-full aspect-square object-cover bg-gray-100" />
+              <p class="py-1 pl-1 text-lg md:text-xl text-gray-200 font-semibold mt-2">{member.name}</p>
+              <p class="py-1 pl-1 text-base md:text-lg text-gray-400 wrap-break-words">{member.task}</p>
+              <p class="py-1 pl-1 text-base md:text-lg mt-auto">{member.contact}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,321 @@
+---
+import {members} from "../tools/members";
+import { tasks } from "../data/members_tasks";
+import genreralAIMember from "../../public/images/General_AIMember.webp"; 
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof tasks;
+const { lang } = Astro.params as { lang: Lang };
+const t = tasks[lang] ?? tasks.en;
+
+interface Member {
+    name: string;
+    task: string;
+    Email: string;
+    picture: string;
+    contact: string;
+}
+
+const TOP_TASKS = ["team leader", "headooperations"];
+
+const getGroupedMembers = (deptMembers: Member[]) => {
+  const tops = deptMembers.filter(m => TOP_TASKS.includes(m.task.toLowerCase()));
+  const others = deptMembers.filter(m => !TOP_TASKS.includes(m.task.toLowerCase()));
+  
+  const grouped = others.reduce((acc, member) => {
+    const key = t[member.task as keyof typeof t] || member.task;
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(member);
+    return acc;
+  }, {} as Record<string, Member[]>);
+
+  return { tops, grouped };
+};
+
+const imgSrc = (picture: string) => picture ? "/memberPics/" + picture : genreralAIMember.src;
+
+const { tops, grouped } = getGroupedMembers(members["06"]["BigTable"] as Member[]);
+const hasMultipleTops = tops.length > 1;
+---
+
+<style>
+  /* ── Org tree (desktop) ── */
+  .org-tree > ul::before { display: none; }
+  .org-tree > ul > li::before,
+  .org-tree > ul > li::after { display: none; }
+
+  .org-tree ul {
+    display: flex;
+    position: relative;
+    padding-top: 30px;
+  }
+
+  .org-tree li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 25px 10px 0 10px;
+  }
+
+  .org-tree .node {
+    padding: 0.85rem;
+    border-radius: 0.75rem;
+    min-width: 170px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .org-tree li::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 25px;
+    border-left: 2px solid #555;
+  }
+
+  .org-tree li::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 0;
+    border-top: 2px solid #555;
+  }
+
+  .org-tree ul::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 30px;
+    border-left: 2px solid #555;
+  }
+
+  .org-tree li:first-child::after { left: 50%;  border-radius: 10px 0 0 0; }
+  .org-tree li:last-child::after  { right: 50%; border-radius: 0 10px 0 0; }
+
+  .org-tree li:only-child::after  { display: none; }
+  .org-tree li:only-child::before { display: none; }
+  .org-tree li:only-child         { padding-top: 0; }
+
+  .org-tree li.trunk { padding-top: 0; }
+  .org-tree li.trunk::before,
+  .org-tree li.trunk::after { display: none; }
+  .org-tree li.trunk > ul:first-child::before { display: none; }
+
+  .org-tree .trunk-stem {
+    width: 0; height: 30px;
+    align-self: center;
+    border-left: 2px solid #555;
+  }
+
+  .org-tree li.trunk > ul + ul::before { display: none; }
+
+  .org-tree li.trunk > ul:first-child {
+    padding-top: 0;
+    align-items: flex-end;
+  }
+  .org-tree li.trunk > ul:first-child > li {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .org-tree li.trunk > ul:first-child > li::before {
+    display: block !important;
+    top: auto; bottom: -30px; height: 30px;
+  }
+  .org-tree li.trunk > ul:first-child > li::after {
+    top: auto; bottom: -30px;
+    border-top: none;
+    border-bottom: 2px solid #555;
+  }
+  .org-tree li.trunk > ul:first-child > li:first-child::after {
+    left: 50%; border-radius: 0 0 0 10px;
+  }
+  .org-tree li.trunk > ul:first-child > li:last-child::after {
+    right: 50%; border-radius: 0 0 10px 0;
+  }
+
+  /* ── Scroll / drag (desktop) ── */
+  .org-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .org-scroll.dragging { cursor: grabbing; }
+  .org-scroll::-webkit-scrollbar { display: none; }
+
+  .org-inner {
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    width: max-content;
+    padding: 0 2rem;
+  }
+
+  /* ── Mobile flat layout ── */
+  @media (max-width: 767px) {
+    .org-scroll  { overflow-x: visible; cursor: default; }
+    .org-inner   { width: 100%; justify-content: flex-start; padding: 0; }
+    .org-tree    { width: 100%; }
+
+    /* hide all connector lines */
+    .org-tree ul::before,
+    .org-tree li::before,
+    .org-tree li::after { display: none !important; }
+
+    /* re-enable vertical line from task node down to its members */
+    .org-tree li > ul::before { display: block !important; }
+
+    /* stack everything vertically */
+    .org-tree ul,
+    .org-tree li,
+    .org-tree li.trunk {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      width: 100%;
+    }
+
+    .org-tree ul { gap: 0.75rem; padding-top: 0.75rem; }
+    .org-tree .node { min-width: unset; width: 100%; }
+    .trunk-stem { display: none; }
+
+    /* top nodes side by side on mobile */
+    .org-tree li.trunk > ul:first-child {
+      flex-direction: row !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      align-items: flex-start !important;
+      padding-bottom: 0 !important;
+    }
+    .org-tree li.trunk > ul:first-child > li {
+      width: auto;
+      flex: 1 1 140px;
+      max-width: 200px;
+    }
+  }
+</style>
+
+<script>
+  function initDragScroll(el: HTMLElement) {
+    let isDown = false, startX = 0, scrollLeft = 0;
+    el.addEventListener('mousedown', (e) => {
+      isDown = true; el.classList.add('dragging');
+      startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft;
+    });
+    el.addEventListener('mouseleave', () => { isDown = false; el.classList.remove('dragging'); });
+    el.addEventListener('mouseup',    () => { isDown = false; el.classList.remove('dragging'); });
+    el.addEventListener('mousemove',  (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      el.scrollLeft = scrollLeft - (e.pageX - el.offsetLeft - startX) * 1.5;
+    });
+  }
+
+  document.querySelectorAll<HTMLElement>('.org-scroll').forEach((el) => {
+    initDragScroll(el);
+    el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+  });
+</script>
+
+<div class="max-w-7xl mx-auto p-4">
+  <div class="border border-gray-800 bg-[#222222] rounded-xl overflow-hidden shadow-lg">
+
+    <!-- Header — same style as accordion summary, minus the chevron -->
+    <div class="flex items-center gap-5 p-6 border-b border-gray-800">
+      <span class="skewed"></span>
+      <h2 class="text-white text-3xl font-extrabold uppercase tracking-wider">BigTable</h2>
+    </div>
+
+    <!-- Tree -->
+    <div class="p-8 bg-black/30">
+      <div class="org-scroll">
+        <div class="org-inner">
+          <div class="org-tree px-4">
+            <ul>
+              {hasMultipleTops ? (
+                <li class="trunk">
+                  <ul>
+                    {tops.map((top) => (
+                      <li>
+                        <div class="node bg-[#f50] text-white ring-4 ring-orange-500/20 shadow-[0_0_20px_rgba(255,85,0,0.3)] flex flex-col items-center">
+                          <img src={imgSrc(top.picture)} alt={top.name} class="w-35 md:w-32.5" />
+                          <h3 class="text-xl font-bold">{top.name}</h3>
+                          <p class="text-xs uppercase tracking-widest font-black opacity-90">{t[top.task as keyof typeof t] || top.task}</p>
+                          {top.contact && <p class="text-[10px] opacity-70 font-mono mt-1">{top.contact}</p>}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div class="trunk-stem"></div>
+
+                  <ul>
+                    {Object.entries(grouped).map(([taskName, people]) => (
+                      <li>
+                        <div class="node bg-white text-black border-2 border-[#f50]/30">
+                          <h4 class="text-sm font-black uppercase text-[#f50]">{t[taskName as keyof typeof t] || taskName}</h4>
+                        </div>
+                        <ul>
+                          {people.map((person) => (
+                            <li>
+                              <div class="node bg-[#333] text-white border border-gray-700 flex flex-col items-center">
+                                <img src={imgSrc(person.picture)} alt={person.name} class="w-20 aspect-square object-cover rounded-md mb-1" />
+                                <h5 class="font-bold text-sm">{person.name}</h5>
+                                {person.contact && <p class="text-[10px] text-gray-400 font-mono">{person.contact}</p>}
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li>
+                  <div class="node bg-[#f50] text-white ring-4 ring-orange-500/20 shadow-[0_0_20px_rgba(255,85,0,0.3)] flex flex-col items-center">
+                    <img src={imgSrc(tops[0]?.picture ?? "")} alt={tops[0]?.name} class="w-35 md:w-32.5" />
+                    <h3 class="text-xl font-bold">{tops[0]?.name}</h3>
+                    <p class="text-xs uppercase tracking-widest font-black opacity-90">{t[tops[0]?.task as keyof typeof t] || tops[0]?.task}</p>
+                    {tops[0]?.contact && <p class="text-[10px] opacity-70 font-mono mt-1">{tops[0].contact}</p>}
+                  </div>
+                  <ul>
+                    {Object.entries(grouped).map(([taskName, people]) => (
+                      <li>
+                        <div class="node bg-white text-black border-2 border-[#f50]/30">
+                          <h4 class="text-sm font-black uppercase text-[#f50]">{t[taskName as keyof typeof t] || taskName}</h4>
+                        </div>
+                        <ul>
+                          {people.map((person) => (
+                            <li>
+                              <div class="node bg-[#333] text-white border border-gray-700 flex flex-col items-center">
+                                <img src={imgSrc(person.picture)} alt={person.name} class="w-20 aspect-square object-cover rounded-md mb-1" />
+                                <h5 class="font-bold text-sm">{person.name}</h5>
+                                {person.contact && <p class="text-[10px] text-gray-400 font-mono">{person.contact}</p>}
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              )}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
