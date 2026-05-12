@@ -205,6 +205,12 @@ export const sponsors =
     "link": "https://kvaser.com",
     "image": "/sponsor_logos/Kvaser.webp"
   }
+  ,{
+    "altName": "Abrantimetal",
+    "link": "https://www.abrantimetal.pt/",
+    "image": "/sponsor_logos/abrantimetal.webp",
+    "classes" : "w-[160px]"
+  }
 ],
   partners: [
     {
