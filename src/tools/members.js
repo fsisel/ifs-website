@@ -18,7 +18,7 @@ export const members={
       { "task": "Drivetrain", "name": "Gabriel Barata", "Email": "gabriel.barata@iselfs.pt", "picture": "", "contact":"", },
       { "task": "VehicleModel", "name": "Marta Gonçalves", "Email": "marta.goncalves@iselfs.pt", "picture": "MartaGonçalves.webp", "contact":"", },
       { "task": "aerodynamics", "name": "Martim Barradas", "Email": "martim.barradas@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "aerodynamics", "name": "Martim Almeida", "Email": "martim.almeida@iselfs.pt", "picture": "", "contact":"", },
+      { "task": "aerodynamics", "name": "Martim Almeida", "Email": "martim.almeida@iselfs.pt", "picture": "MartimAlmeida.webp", "contact":"", },
       { "task": "aerodynamics", "name": "Samuel Pereira", "Email": "@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Rodrigo Almeida", "Email": "@iselfs.pt", "picture": "", "contact":"", },
     ],

@@ -21,10 +21,11 @@ import Organogram from "../../components/organogram.astro";
 import Organogram2 from "../../components/organogram2.astro";
 import TeamTest from "../../components/teamTest.astro";
 import TeamHead from "../../components/teamHead.astro";
+import TeamHead2 from "../../components/teamHead2.astro";
 ---
 
 <Layout>
-    <div class="max-w-[120em] mt-20 mb-20 mx-auto px-[7vw] text-black dark:text-white">
+    <div class="max-w-full sm:max-w-[120em] mt-20 mb-20 mx-0 sm:mx-auto px-[7vw] text-black dark:text-white">
         <h2 class="text-[3.5em]">{t.aboutUs}</h2>
         <ContentBlock 
             imageSrc="/images/fsg_teams.webp"
@@ -54,6 +55,7 @@ import TeamHead from "../../components/teamHead.astro";
 
         <!-- <TeamTest /> -->
         <TeamHead />
+        <TeamHead2 />
 <!--         <Organogram2 />
  -->
     </div>

@@ -1,0 +1,323 @@
+---
+import {members} from "../tools/members";
+import { tasks } from "../data/members_tasks";
+import genreralAIMember from "../../public/images/General_AIMember.webp"; 
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof tasks;
+const { lang } = Astro.params as { lang: Lang };
+const t = tasks[lang] ?? tasks.en;
+
+interface Member {
+    name: string;
+    task: string;
+    Email: string;
+    picture: string;
+    contact: string;
+}
+
+const bigtable = members["06"]["BigTable"] as Member[];
+
+const tl  = bigtable.find(m => m.task.toLowerCase() === "team leader")!;
+const hoo = bigtable.find(m => m.task.toLowerCase() === "headooperations")!;
+const pm  = bigtable.find(m => m.task.toLowerCase() === "project manager")!;
+
+const TOP_TASKS = ["team leader", "headooperations", "project manager"];
+const dts = bigtable.filter(m => !TOP_TASKS.includes(m.task.toLowerCase()));
+
+// pair into rows of 2: [[dt0, dt1], [dt2, dt3], ...]
+const dtRows: (typeof dts)[] = [];
+for (let i = 0; i < dts.length; i += 2) dtRows.push(dts.slice(i, i + 2));
+
+const imgSrc = (picture: string) => picture ? "/memberPics/" + picture : genreralAIMember.src;
+
+const hooDepts: { label: string; placeholder?: boolean }[] = [
+  { label: "Marketing",  placeholder: false },
+  { label: "Sponsors",   placeholder: false },
+  { label: "Logistics",  placeholder: false },
+];
+
+const CARD_W = "130px";
+const CARD_H = "140px";
+const TICK   = "20px";   // horizontal tick length
+const RAIL   = "#555";
+---
+
+<style>
+  .org-tree > ul::before { display: none; }
+  .org-tree > ul > li::before,
+  .org-tree > ul > li::after { display: none; }
+
+  .org-tree ul {
+    display: flex;
+    position: relative;
+    padding-top: 30px;
+  }
+
+  .org-tree li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 25px 10px 0 10px;
+  }
+
+  .org-tree .node {
+    padding: 0.85rem;
+    border-radius: 0.75rem;
+    min-width: 150px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .org-tree li::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 25px;
+    border-left: 2px solid #555;
+  }
+
+  .org-tree li::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 0;
+    border-top: 2px solid #555;
+  }
+
+  .org-tree ul::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 30px;
+    border-left: 2px solid #555;
+  }
+
+  .org-tree li:first-child::after { left: 50%;  border-radius: 10px 0 0 0; }
+  .org-tree li:last-child::after  { right: 50%; border-radius: 0 10px 0 0; }
+
+  .org-tree li:only-child::after  { display: none; }
+  .org-tree li:only-child::before { display: none; }
+  .org-tree li:only-child         { padding-top: 0; }
+
+  .org-tree li.trunk        { padding-top: 0; }
+  .org-tree li.trunk::before,
+  .org-tree li.trunk::after { display: none; }
+  .org-tree li.trunk > ul:first-child::before { display: none; }
+  .org-tree li.trunk > ul + ul::before        { display: none; }
+
+  .trunk-stem {
+    width: 0; height: 30px;
+    align-self: center;
+    border-left: 2px solid #555;
+  }
+
+  .org-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .org-scroll.dragging { cursor: grabbing; }
+  .org-scroll::-webkit-scrollbar { display: none; }
+
+  .org-inner {
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    width: max-content;
+    padding: 0 2rem;
+  }
+
+  @media (max-width: 1024px) {
+    .org-inner { padding: 0; }
+    .org-tree { padding-left: 0; padding-right: 0; }
+    .org-tree .node { padding: 0.6rem; min-width: 120px; }
+
+    /* Side layout for HOO departments on small screens */
+    .hoo-depts-list {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      padding-top: 30px !important;
+      position: relative;
+      width: 100% !important;
+    }
+    .hoo-depts-list::before {
+      content: '' !important;
+      display: block !important;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: #555;
+      transform: translateX(-50%);
+    }
+    .hoo-depts-list li {
+      padding: 0 20px 0 0 !important;
+      width: 50% !important;
+      display: flex !important;
+      justify-content: flex-end !important;
+      position: relative !important;
+      margin-top: 0.75rem;
+    }
+    .hoo-depts-list li::before { display: none !important; }
+    .hoo-depts-list li::after {
+      content: '' !important;
+      display: block !important;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 20px;
+      height: 2px;
+      background: #555;
+      transform: translateY(-50%);
+      border-top: none !important;
+      border-radius: 0 !important;
+    }
+    .hoo-depts-list .node {
+      margin-right: 0 !important;
+    }
+  }
+</style>
+
+<script>
+  function initDragScroll(el: HTMLElement) {
+    let isDown = false, startX = 0, scrollLeft = 0;
+    el.addEventListener('mousedown', (e) => {
+      isDown = true; el.classList.add('dragging');
+      startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft;
+    });
+    el.addEventListener('mouseleave', () => { isDown = false; el.classList.remove('dragging'); });
+    el.addEventListener('mouseup',    () => { isDown = false; el.classList.remove('dragging'); });
+    el.addEventListener('mousemove',  (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      el.scrollLeft = scrollLeft - (e.pageX - el.offsetLeft - startX) * 1.5;
+    });
+  }
+  document.querySelectorAll<HTMLElement>('.org-scroll').forEach((el) => {
+    initDragScroll(el);
+    setTimeout(() => {
+      el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+    }, 50);
+  });
+</script>
+
+<div class="w-full max-w-7xl mx-auto p-0 sm:p-4">
+  <div class="border-0 sm:border border-gray-800 bg-[#222222] rounded-none sm:rounded-xl overflow-hidden shadow-lg">
+
+    <div class="flex items-center gap-5 p-6 border-b border-gray-800">
+      <span class="skewed"></span>
+      <h2 class="text-white text-3xl font-extrabold uppercase tracking-wider">BigTable</h2>
+    </div>
+
+    <div class="p-2 sm:p-8 bg-black/30">
+      <div class="org-scroll">
+        <div class="org-inner">
+          <div class="org-tree px-0 sm:px-4">
+            <ul>
+              <li class="trunk">
+
+                {/* Team Leader */}
+                <div class="node bg-[#f50] text-white ring-4 ring-orange-500/20 shadow-[0_0_20px_rgba(255,85,0,0.3)] flex flex-col items-center">
+                  <img src={imgSrc(tl.picture)} alt={tl.name} class="w-32 aspect-square object-cover rounded-md mb-1" />
+                  <h3 class="text-lg font-bold">{tl.name}</h3>
+                  <p class="text-xs uppercase tracking-widest font-black opacity-90">{t[tl.task as keyof typeof t] || tl.task}</p>
+                </div>
+
+                <div class="trunk-stem"></div>
+
+                <ul>
+
+                  {/* HOO with depts */}
+                  <li>
+                    <div class="node bg-[#f50]/80 text-white ring-2 ring-orange-500/20 flex flex-col items-center">
+                      <img src={imgSrc(hoo.picture)} alt={hoo.name} class="w-28 aspect-square object-cover rounded-md mb-1" />
+                      <h3 class="text-base font-bold">{hoo.name}</h3>
+                      <p class="text-xs uppercase tracking-widest font-black opacity-90">{t[hoo.task as keyof typeof t] || hoo.task}</p>
+                    </div>
+                    <ul class="hoo-depts-list">
+                      {hooDepts.map((dept) => (
+                        <li>
+                          <div class={`node border-2 ${dept.placeholder ? "bg-[#2a2a2a] border-dashed border-gray-600 opacity-50" : "bg-[#2a2a2a] border-gray-600 text-gray-300"}`}>
+                            <p class="text-sm font-black uppercase text-gray-400">{dept.label}</p>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+
+                  {/* PM with DTs — vertical center rail layout */}
+                  <li class="min-w-132.5">
+                    <div class="node bg-[#f50]/80 text-white ring-2 ring-orange-500/20 flex flex-col items-center">
+                      <img src={imgSrc(pm.picture)} alt={pm.name} class="w-28 max-w-min aspect-square object-cover rounded-md mb-1 " />
+                      <h3 class="text-base font-bold">{pm.name}</h3>
+                      <p class="text-xs uppercase tracking-widest font-black opacity-90">{t[pm.task as keyof typeof t] || pm.task}</p>
+                    </div>
+
+                    <div style="display:flex; flex-direction:column; align-items:center;">
+
+                      {/* stem from PM to crossbar */}
+                      <div style={`width:2px; height:30px; background:${RAIL};`}></div>
+
+                      {/* outer wrapper — positions center rail */}
+                      <div style="position:relative; display:flex; flex-direction:column; gap:0.6rem;">
+
+                        {/* center vertical rail — spans full height of rows */}
+                        <div style={`position:absolute; top:0; left:50%; transform:translateX(-50%); width:2px; background:${RAIL}; height:calc(100% - ${CARD_H} / 2);`}></div>
+
+                        {dtRows.map((row) => (
+                          <div style="display:flex; flex-direction:row; align-items:center; position:relative;">
+
+                            {/* left card */}
+                            <div class="node bg-[#333] text-white border border-gray-700 flex flex-col items-center"
+                                 style={`width:${CARD_W}; height:${CARD_H}; justify-content:center;`}>
+                              <img src={imgSrc(row[0].picture)} alt={row[0].name} class="w-16 aspect-square object-cover rounded-md mb-1" />
+                              <h5 class="font-bold text-xs">{row[0].name}</h5>
+                              <p class="text-[10px] text-gray-400 uppercase">{t[row[0].task as keyof typeof t] || row[0].task}</p>
+                            </div>
+
+                            {/* left tick to center rail */}
+                            <div style={`height:2px; width:${TICK}; background:${RAIL};`}></div>
+
+                            {/* right tick from center rail */}
+                            <div style={`height:2px; width:${TICK}; background:${RAIL};`}></div>
+
+                            {/* right card (may be empty if odd number of DTs) */}
+                            {row[1] ? (
+                              <div class="node bg-[#333] text-white border border-gray-700 flex flex-col items-center"
+                                   style={`width:${CARD_W}; height:${CARD_H}; justify-content:center;`}>
+                                <img src={imgSrc(row[1].picture)} alt={row[1].name} class="w-16 aspect-square object-cover rounded-md mb-1" />
+                                <h5 class="font-bold text-xs">{row[1].name}</h5>
+                                <p class="text-[10px] text-gray-400 uppercase">{t[row[1].task as keyof typeof t] || row[1].task}</p>
+                              </div>
+                            ) : (
+                              <div style={`width:${CARD_W}; height:${CARD_H};`}></div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
