@@ -21,6 +21,7 @@ export const members={
       { "task": "aerodynamics", "name": "Martim Almeida", "Email": "martim.almeida@iselfs.pt", "picture": "MartimAlmeida.webp", "contact":"", },
       { "task": "aerodynamics", "name": "Samuel Pereira", "Email": "@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Rodrigo Almeida", "Email": "@iselfs.pt", "picture": "", "contact":"", },
+      { "task": "member", "name": "Rodrigo Almeida", "Email": "rodrigo.almeida@iselfs.pt", "picture": "RodrigoAlmeida.webp", "contact":"", },
     ],
 
     "Driverless": [
