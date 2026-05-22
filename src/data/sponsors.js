@@ -220,8 +220,8 @@ export const sponsors =
   ,{
     "altName": "Stellantis",
     "link": "https://www.stellantis.com/en",
-    "image": "/sponsor_logos/stellantis.svg",
-    "classes" : "w-[12em]"
+    "image": "/sponsor_logos/stellantis.webp",
+    "classes" : "w-[14em]"
   }
 ],
   partners: [
