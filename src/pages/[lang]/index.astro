@@ -33,7 +33,7 @@ const otherLang = lang === "en" ? "pt" : "en";
 
 ---
 <script>
-const target = document.querySelector("#navbar");
+/* const target = document.querySelector("#navbar");
 
 window.addEventListener("scroll", () => {
   if(!target!)return;
@@ -42,11 +42,11 @@ window.addEventListener("scroll", () => {
   }else {
     target.classList.remove("-translate-y-12");
   }
-});
+}); */
 </script>
 
 <Layout>
-  <header class="hidden md:flex items-center justify-between w-full bg-black shadow-md absolute top-0 left-0 z-50 px-[7vw] py-5 text-white" id="header" >
+  <!-- <header class="hidden md:flex items-center justify-between w-full bg-black shadow-md absolute top-0 left-0 z-50 px-[7vw] py-5 text-white" id="header" >
     <div class="flex items-center gap-3">
       <a href={`/${lang}/`}>
         <img src="/logos/ifs_logo_dark.svg" alt="ISEL Formula Student" class=" h-auto w-full " />
@@ -75,14 +75,12 @@ window.addEventListener("scroll", () => {
       </div>
     
       <div>
-        <!-- Language Switch -->
         <div class="h-full">
           <a href={`/${otherLang}/`} title="Português">
             <img src={`/icons/${otherLang}.svg`} alt="Portuguese" class="h-6 w-6 rounded-sm" />
           </a>
         </div>
 
-        <!-- Mobile Menu Button -->
         <button
         id="menu_button"
         class="md:hidden flex items-center gap-2 text-sm font-semibold"
@@ -92,8 +90,8 @@ window.addEventListener("scroll", () => {
         </button>
       </div>	
     </div>	
-  </header>
-  <section class="relative w-full">
+  </header> -->
+  <section class="relative w-full  bottom-40">
     <!-- Image -->
     <Image 
       src="/images/Team05_fspt.webp"
