@@ -18,8 +18,6 @@ export function getStaticPaths() {
 type Lang = keyof typeof translations;
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
-const f = fundMe[lang] ?? fundMe.en;
-
 ---
 <Layout>
 
@@ -27,7 +25,7 @@ const f = fundMe[lang] ?? fundMe.en;
     <RolloutHero
     over="Rollout"
     title="IFS 06"
-    subtitle="A nossa mais recente criação"
+    subtitle={t.newCreation}
     imageUrl="/images/rollout_IFS05_I54.webp"
     targetDate="2026-07-11T00:00:00"
   />
