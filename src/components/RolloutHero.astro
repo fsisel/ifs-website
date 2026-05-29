@@ -1,6 +1,8 @@
 ---
 // HeroSection.astro
 // A cinematic hero component with background image, layered text shadows, and centered composition
+import CountDown from "./countDown.astro";
+
 import { translations } from "../i18n/translations";
 
 export function getStaticPaths() {
@@ -23,14 +25,16 @@ interface Props {
   subtitle?: string;
   imageUrl?: string;
   imageAlt?: string;
+  targetDate?: string;
 }
 
 const {
   over = "Support",
-  title = "Where Light Meets Shadow",
+  title = "End of the year",
   subtitle = "Crafted for those who find beauty in the contrast between darkness and brilliance — a moment suspended in time.",
   imageUrl = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80",
   imageAlt = "Dramatic mountain landscape at golden hour",
+  targetDate ="2026-12-31T23:59:59",
 } = Astro.props;
 ---
 
@@ -62,7 +66,7 @@ const {
     </p>
 
     <!-- Main Title -->
-    <h1 class="hero-title font-display max-w-max text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-8 opacity-0 animate-fade-up" style="animation-delay: 0.4s; animation-fill-mode: forwards;">
+    <h1 class="hero-title font-display mx-auto max-w-max text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] tracking-tight mb-8 opacity-0 animate-fade-up" style="animation-delay: 0.4s; animation-fill-mode: forwards;">
       {title}
     </h1>
 
@@ -74,11 +78,12 @@ const {
     </div>
 
     <!-- Subtitle -->
-    <p class="hero-subtitle font-body text-white/70 text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-12 opacity-0 animate-fade-up" style="animation-delay: 0.8s; animation-fill-mode: forwards;">
+    <p class="hero-subtitle font-body text-white/70 text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto mb-2 md:mb-12 opacity-0 animate-fade-up" style="animation-delay: 0.8s; animation-fill-mode: forwards;">
       {subtitle}
     </p>
 
-    
+    <CountDown lang={lang} targetDate={targetDate} id='rolloutHero-countdown' />
+    <div class="mb-10 md:mb-0"></div>
   </div>
   <!-- Bottom scroll indicator -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 opacity-0 animate-fade-up hidden sm:block" style="animation-delay: 1.4s; animation-fill-mode: forwards;">

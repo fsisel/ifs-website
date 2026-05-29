@@ -1,3 +1,5 @@
+import Rollout from "../pages/[lang]/rollout.astro";
+
 export const translations = {
   en: {
     title: "Welcome",
@@ -42,6 +44,8 @@ export const translations = {
     minutes:"Minutes",
     seconds:"Seconds",
     compIn:"Competition starts in",
+    //Rollout
+    newCreation:"Our most recent creation",
   },
   pt: {
     title: "Bem vindo",
@@ -87,5 +91,7 @@ export const translations = {
     minutes:"Minutos",
     seconds:"Segundos",
     compIn:"A competição começa em",
+    //Rollout
+    newCreation:"A nossa criação mais recente",
   }
 };

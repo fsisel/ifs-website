@@ -68,6 +68,7 @@ const rowSizes: Record<string, number> = {
                   {row.map((sponsor: { altName: string; link: string; image: string; classes?: string }) => (
                     <a
                       href={sponsor.link}
+                      target="_blank"
                       class={`${sponsor.classes ?? ""} ${categoryClasses[category]}  flex items-center justify-center`}
                     >
                       <img
