@@ -163,7 +163,8 @@ export const sponsors =
   {
     "altName": "BND",
     "link": "bnd.pt",
-    "image": "/sponsor_logos/bnd.webp"
+    "image": "/sponsor_logos/bnd.webp",
+    "classes":"w-[120px]"
   },
   {
     "altName": "A.M.Tita",
@@ -215,7 +216,7 @@ export const sponsors =
     "altName": "Abrantimetal",
     "link": "https://www.abrantimetal.pt/",
     "image": "/sponsor_logos/abrantimetal.webp",
-    "classes" : "w-[160px]"
+    "classes" : "w-[200px]"
   }
   ,{
     "altName": "Stellantis",
