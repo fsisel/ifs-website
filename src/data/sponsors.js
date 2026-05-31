@@ -283,19 +283,9 @@ export const sponsors =
       "image": "/sponsor_logos/Fonseca.svg"
     },
     {
-      "altName": "Rapid Harness",
-      "link": "https://rapidharness.com/",
-      "image": "/sponsor_logos/rapidharness.webp"
-    },
-    {
       "altName": "Solidworks",
       "link": "https://www.solidworks.com",
       "image": "/sponsor_logos/solidworks.svg"
-    },
-    {
-      "altName": "Enepaq",
-      "link": "https://enepaq.com/",
-      "image": "/sponsor_logos/enepaq.webp"
     },
     {
       "altName": "Schroth Racing",
