@@ -21,16 +21,15 @@ interface Member {
     contact: string;
 }
 
-const bigtable = members["06"]["BigTable"] as Member[];
+const bigtable = members["06"]["Board"] as Member[];
 
 const tl  = bigtable.find(m => m.task.toLowerCase() === "team leader")!;
 const hoo = bigtable.find(m => m.task.toLowerCase() === "headooperations")!;
-const pm  = bigtable.find(m => m.task.toLowerCase() === "project manager")!;
+const pms = bigtable.filter(m => m.task.toLowerCase() === "project manager");
 
 const TOP_TASKS = ["team leader", "headooperations", "project manager"];
 const dts = bigtable.filter(m => !TOP_TASKS.includes(m.task.toLowerCase()));
 
-// pair into rows of 2: [[dt0, dt1], [dt2, dt3], ...]
 const dtRows: (typeof dts)[] = [];
 for (let i = 0; i < dts.length; i += 2) dtRows.push(dts.slice(i, i + 2));
 
@@ -44,22 +43,22 @@ const hooDepts: { label: string; placeholder?: boolean }[] = [
 
 const CARD_W = "130px";
 const CARD_H = "140px";
-const TICK   = "20px";   // horizontal tick length
+const TICK   = "20px";
 const RAIL   = "#555";
 ---
 
 <style>
-  .org-tree > ul::before { display: none; }
-  .org-tree > ul > li::before,
-  .org-tree > ul > li::after { display: none; }
+  #bigtable-org .org-tree > ul::before { display: none; }
+  #bigtable-org .org-tree > ul > li::before,
+  #bigtable-org .org-tree > ul > li::after { display: none; }
 
-  .org-tree ul {
+  #bigtable-org .org-tree ul {
     display: flex;
     position: relative;
     padding-top: 30px;
   }
 
-  .org-tree li {
+  #bigtable-org .org-tree li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,7 +66,7 @@ const RAIL   = "#555";
     padding: 25px 10px 0 10px;
   }
 
-  .org-tree .node {
+  #bigtable-org .org-tree .node {
     padding: 0.85rem;
     border-radius: 0.75rem;
     min-width: 150px;
@@ -76,7 +75,7 @@ const RAIL   = "#555";
     z-index: 10;
   }
 
-  .org-tree li::before {
+  #bigtable-org .org-tree li::before {
     content: '';
     position: absolute;
     top: 0; left: 50%;
@@ -85,14 +84,14 @@ const RAIL   = "#555";
     border-left: 2px solid #555;
   }
 
-  .org-tree li::after {
+  #bigtable-org .org-tree li::after {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; height: 0;
     border-top: 2px solid #555;
   }
 
-  .org-tree ul::before {
+  #bigtable-org .org-tree ul::before {
     content: '';
     position: absolute;
     top: 0; left: 50%;
@@ -101,26 +100,26 @@ const RAIL   = "#555";
     border-left: 2px solid #555;
   }
 
-  .org-tree li:first-child::after { left: 50%;  border-radius: 10px 0 0 0; }
-  .org-tree li:last-child::after  { right: 50%; border-radius: 0 10px 0 0; }
+  #bigtable-org .org-tree li:first-child::after { left: 50%;  border-radius: 10px 0 0 0; }
+  #bigtable-org .org-tree li:last-child::after  { right: 50%; border-radius: 0 10px 0 0; }
 
-  .org-tree li:only-child::after  { display: none; }
-  .org-tree li:only-child::before { display: none; }
-  .org-tree li:only-child         { padding-top: 0; }
+  #bigtable-org .org-tree li:only-child::after  { display: none; }
+  #bigtable-org .org-tree li:only-child::before { display: none; }
+  #bigtable-org .org-tree li:only-child         { padding-top: 0; }
 
-  .org-tree li.trunk        { padding-top: 0; }
-  .org-tree li.trunk::before,
-  .org-tree li.trunk::after { display: none; }
-  .org-tree li.trunk > ul:first-child::before { display: none; }
-  .org-tree li.trunk > ul + ul::before        { display: none; }
+  #bigtable-org .org-tree li.trunk        { padding-top: 0; }
+  #bigtable-org .org-tree li.trunk::before,
+  #bigtable-org .org-tree li.trunk::after { display: none; }
+  #bigtable-org .org-tree li.trunk > ul:first-child::before { display: none; }
+  #bigtable-org .org-tree li.trunk > ul + ul::before        { display: none; }
 
-  .trunk-stem {
+  #bigtable-org .trunk-stem {
     width: 0; height: 30px;
     align-self: center;
     border-left: 2px solid #555;
   }
 
-  .org-scroll {
+  #bigtable-org .org-scroll {
     overflow-x: auto;
     overflow-y: hidden;
     cursor: grab;
@@ -128,10 +127,10 @@ const RAIL   = "#555";
     -webkit-user-select: none;
     -webkit-overflow-scrolling: touch;
   }
-  .org-scroll.dragging { cursor: grabbing; }
-  .org-scroll::-webkit-scrollbar { display: none; }
+  #bigtable-org .org-scroll.dragging { cursor: grabbing; }
+  #bigtable-org .org-scroll::-webkit-scrollbar { display: none; }
 
-  .org-inner {
+  #bigtable-org .org-inner {
     display: flex;
     justify-content: center;
     min-width: 100%;
@@ -139,31 +138,38 @@ const RAIL   = "#555";
     padding: 0 2rem;
   }
 
-  @media (max-width: 1024px) {
-    .org-inner { padding: 0; }
-    .org-tree { padding-left: 0; padding-right: 0; }
-    .org-tree .node { padding: 0.6rem; min-width: 120px; }
+  /*
+    PM bridge: two cards side by side.
+    Each card has a short vertical stem going DOWN from its bottom-center.
+    A horizontal bar connects the two stems at the bottom.
+    Then a single stem continues down from the midpoint to the DT tree.
+  */
+  /* PM bridge — connector drawn via inline SVG, no extra CSS needed */
+  /* Suppress the default org-tree stem on the PM li since we draw our own fork */
+  #bigtable-org .org-tree li.pm-li::before { display: none; }
+  #bigtable-org .org-tree li.pm-li { padding-top: 0; }
 
-    /* Side layout for HOO departments on small screens */
-    .hoo-depts-list {
+  @media (max-width: 1024px) {
+    #bigtable-org .org-inner { padding: 0; }
+    #bigtable-org .org-tree { padding-left: 0; padding-right: 0; }
+    #bigtable-org .org-tree .node { padding: 0.6rem; min-width: 120px; }
+
+    #bigtable-org .hoo-depts-list {
       flex-direction: column !important;
       align-items: flex-start !important;
       padding-top: 30px !important;
       position: relative;
       width: 100% !important;
     }
-    .hoo-depts-list::before {
+    #bigtable-org .hoo-depts-list::before {
       content: '' !important;
       display: block !important;
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 2px;
-      background: #555;
+      top: 0; bottom: 0; left: 50%;
+      width: 2px; background: #555;
       transform: translateX(-50%);
     }
-    .hoo-depts-list li {
+    #bigtable-org .hoo-depts-list li {
       padding: 0 20px 0 0 !important;
       width: 50% !important;
       display: flex !important;
@@ -171,55 +177,64 @@ const RAIL   = "#555";
       position: relative !important;
       margin-top: 0.75rem;
     }
-    .hoo-depts-list li::before { display: none !important; }
-    .hoo-depts-list li::after {
+    #bigtable-org .hoo-depts-list li::before { display: none !important; }
+    #bigtable-org .hoo-depts-list li::after {
       content: '' !important;
       display: block !important;
       position: absolute;
-      top: 50%;
-      right: 0;
-      width: 20px;
-      height: 2px;
+      top: 50%; right: 0;
+      width: 20px; height: 2px;
       background: #555;
       transform: translateY(-50%);
       border-top: none !important;
       border-radius: 0 !important;
     }
-    .hoo-depts-list .node {
-      margin-right: 0 !important;
-    }
+    #bigtable-org .hoo-depts-list .node { margin-right: 0 !important; }
   }
 </style>
 
-<script>
-  function initDragScroll(el: HTMLElement) {
-    let isDown = false, startX = 0, scrollLeft = 0;
-    el.addEventListener('mousedown', (e) => {
-      isDown = true; el.classList.add('dragging');
-      startX = e.pageX - el.offsetLeft; scrollLeft = el.scrollLeft;
-    });
-    el.addEventListener('mouseleave', () => { isDown = false; el.classList.remove('dragging'); });
-    el.addEventListener('mouseup',    () => { isDown = false; el.classList.remove('dragging'); });
-    el.addEventListener('mousemove',  (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      el.scrollLeft = scrollLeft - (e.pageX - el.offsetLeft - startX) * 1.5;
-    });
-  }
-  document.querySelectorAll<HTMLElement>('.org-scroll').forEach((el) => {
-    initDragScroll(el);
-    setTimeout(() => {
-      el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
-    }, 50);
-  });
+<script is:inline>
+  (function () {
+    function initDragScroll(el) {
+      var isDown = false, startX = 0, scrollLeft = 0;
+      el.addEventListener('mousedown', function(e) {
+        isDown = true;
+        el.classList.add('dragging');
+        startX = e.pageX - el.offsetLeft;
+        scrollLeft = el.scrollLeft;
+      });
+      el.addEventListener('mouseleave', function() { isDown = false; el.classList.remove('dragging'); });
+      el.addEventListener('mouseup',    function() { isDown = false; el.classList.remove('dragging'); });
+      el.addEventListener('mousemove',  function(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        el.scrollLeft = scrollLeft - (e.pageX - el.offsetLeft - startX) * 1.5;
+      });
+    }
+
+    function init() {
+      document.querySelectorAll('#bigtable-org .org-scroll').forEach(function(el) {
+        initDragScroll(el);
+        setTimeout(function() {
+          el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
+        }, 50);
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
 </script>
 
-<div class="w-full max-w-7xl mx-auto p-0 sm:p-4">
+<div id="bigtable-org" class="w-full max-w-7xl mx-auto p-0 sm:p-4">
   <div class="border-0 sm:border border-gray-800 bg-[#222222] rounded-none sm:rounded-xl overflow-hidden shadow-lg">
 
     <div class="flex items-center gap-5 p-6 border-b border-gray-800">
       <span class="skewed"></span>
-      <h2 class="text-white text-3xl font-extrabold uppercase tracking-wider">BigTable</h2>
+      <h2 class="text-white text-3xl font-extrabold uppercase tracking-wider">Board</h2>
     </div>
 
     <div class="p-2 sm:p-8 bg-black/30">
@@ -229,7 +244,7 @@ const RAIL   = "#555";
             <ul>
               <li class="trunk">
 
-                {/* Team Leader */}
+                {/* ── Team Leader ── */}
                 <div class="node bg-[#f50] text-white ring-4 ring-orange-500/20 shadow-[0_0_20px_rgba(255,85,0,0.3)] flex flex-col items-center">
                   <img src={imgSrc(tl.picture)} alt={tl.name} class="w-32 aspect-square object-cover rounded-md mb-1" />
                   <h3 class="text-lg font-bold">{tl.name}</h3>
@@ -240,7 +255,7 @@ const RAIL   = "#555";
 
                 <ul>
 
-                  {/* HOO with depts */}
+                  {/* ── HOO branch ── */}
                   <li>
                     <div class="node bg-[#f50]/80 text-white ring-2 ring-orange-500/20 flex flex-col items-center">
                       <img src={imgSrc(hoo.picture)} alt={hoo.name} class="w-28 aspect-square object-cover rounded-md mb-1" />
@@ -258,29 +273,60 @@ const RAIL   = "#555";
                     </ul>
                   </li>
 
-                  {/* PM with DTs — vertical center rail layout */}
-                  <li class="min-w-132.5">
-                    <div class="node bg-[#f50]/80 text-white ring-2 ring-orange-500/20 flex flex-col items-center">
-                      <img src={imgSrc(pm.picture)} alt={pm.name} class="w-28 max-w-min aspect-square object-cover rounded-md mb-1 " />
-                      <h3 class="text-base font-bold">{pm.name}</h3>
-                      <p class="text-xs uppercase tracking-widest font-black opacity-90">{t[pm.task as keyof typeof t] || pm.task}</p>
-                    </div>
-
+                  {/* ── PM bridge: two PMs joined by a bar, single stem down to shared DTs ── */}
+                  <li class="pm-li">
                     <div style="display:flex; flex-direction:column; align-items:center;">
 
-                      {/* stem from PM to crossbar */}
-                      <div style={`width:2px; height:30px; background:${RAIL};`}></div>
+                      {/*
+                        Top fork SVG: single stem in from the top, splits to both card centers.
+                        Width 448px matches the cards+gap below.
+                        Left card center: 102, Right: 346, midpoint: 224
+                      */}
+                      <svg width="448" height="25" style="overflow:visible; display:block;">
+                        {/* stem in from top to the fork point */}
+                        <line x1="224" y1="0"  x2="224" y2="15" stroke="#555" stroke-width="2"/>
+                        {/* horizontal fork */}
+                        <line x1="102" y1="15" x2="346" y2="15" stroke="#555" stroke-width="2"/>
+                        {/* left drop to card */}
+                        <line x1="102" y1="15" x2="102" y2="25" stroke="#555" stroke-width="2"/>
+                        {/* right drop to card */}
+                        <line x1="346" y1="15" x2="346" y2="25" stroke="#555" stroke-width="2"/>
+                      </svg>
 
-                      {/* outer wrapper — positions center rail */}
+                      {/* Row 1: the two PM cards side by side */}
+                      <div style="display:flex; flex-direction:row; align-items:flex-end; gap:40px;">
+                        {pms.map((pm) => (
+                          <div style="display:flex; flex-direction:column; align-items:center;">
+                            <div class="node bg-[#f50]/80 text-white ring-2 ring-orange-500/20 flex flex-col items-center">
+                              <img src={imgSrc(pm.picture)} alt={pm.name} class="w-28 aspect-square object-cover rounded-md mb-1" />
+                              <h3 class="text-base font-bold">{pm.name}</h3>
+                              <p class="text-xs uppercase tracking-widest font-black opacity-90">{t[pm.task as keyof typeof t] || pm.task}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/*
+                        SVG connector: two stems down from each card center, horizontal bar, single stem to DTs.
+                        Card ~204px wide, gap 40px → total 448px
+                        Left card center: 102, Right card center: 346, midpoint: 224
+                      */}
+                      <svg width="448" height="50" style="overflow:visible; display:block;">
+                        <line x1="102" y1="0"  x2="102" y2="30" stroke="#555" stroke-width="2"/>
+                        <line x1="346" y1="0"  x2="346" y2="30" stroke="#555" stroke-width="2"/>
+                        <line x1="102" y1="30" x2="346" y2="30" stroke="#555" stroke-width="2"/>
+                        <line x1="224" y1="30" x2="224" y2="50" stroke="#555" stroke-width="2"/>
+                      </svg>
+
+                      {/* Shared DT vertical rail tree */}
                       <div style="position:relative; display:flex; flex-direction:column; gap:0.6rem;">
 
-                        {/* center vertical rail — spans full height of rows */}
+                        {/* center vertical rail */}
                         <div style={`position:absolute; top:0; left:50%; transform:translateX(-50%); width:2px; background:${RAIL}; height:calc(100% - ${CARD_H} / 2);`}></div>
 
                         {dtRows.map((row) => (
                           <div style="display:flex; flex-direction:row; align-items:center; position:relative;">
 
-                            {/* left card */}
                             <div class="node bg-[#333] text-white border border-gray-700 flex flex-col items-center"
                                  style={`width:${CARD_W}; height:${CARD_H}; justify-content:center;`}>
                               <img src={imgSrc(row[0].picture)} alt={row[0].name} class="w-16 aspect-square object-cover rounded-md mb-1" />
@@ -288,13 +334,9 @@ const RAIL   = "#555";
                               <p class="text-[10px] text-gray-400 uppercase">{t[row[0].task as keyof typeof t] || row[0].task}</p>
                             </div>
 
-                            {/* left tick to center rail */}
+                            <div style={`height:2px; width:${TICK}; background:${RAIL};`}></div>
                             <div style={`height:2px; width:${TICK}; background:${RAIL};`}></div>
 
-                            {/* right tick from center rail */}
-                            <div style={`height:2px; width:${TICK}; background:${RAIL};`}></div>
-
-                            {/* right card (may be empty if odd number of DTs) */}
                             {row[1] ? (
                               <div class="node bg-[#333] text-white border border-gray-700 flex flex-col items-center"
                                    style={`width:${CARD_W}; height:${CARD_H}; justify-content:center;`}>
@@ -308,6 +350,7 @@ const RAIL   = "#555";
                           </div>
                         ))}
                       </div>
+
                     </div>
                   </li>
 
