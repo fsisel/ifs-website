@@ -340,6 +340,12 @@ export const sponsors =
       "image": "/sponsor_logos/Eplan.webp",
       "classes":"h-[5.5em]"
     },
+    {
+      "altName": "Kissoft",
+      "link": "https://www.kisssoft.com/en",
+      "image": "/sponsor_logos/kisssoft.webp",
+      "classes":"h-[5.5em]"
+    },
   ]
 }
     
