@@ -26,24 +26,34 @@ export const members={
 
     "Dynamics": [
       { "task": "DT", "name": "Guilherme Pires", "Email": "guilherme.pires@iselfs.pt", "picture": "GuilhermePires.webp", "contact":"", },
-      { "task": "cooling", "name": "Beatriz Marques", "Email": "beatriz.marques@iselfs.pt", "picture": "BeatrizMarques.webp", "contact":"", },
-      { "task": "VehicleModel", "name": "Alexandre Baeta", "Email": "alexandre.beata@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "cooling", "name": "Francisco Marques", "Email": "francisco.marques@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "Drivetrain", "name": "Gabriel Barata", "Email": "gabriel.barata@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "VehicleModel", "name": "Marta Gonçalves", "Email": "marta.goncalves@iselfs.pt", "picture": "MartaGonçalves.webp", "contact":"", },
+
       { "task": "aerodynamics", "name": "Martim Barradas", "Email": "martim.barradas@iselfs.pt", "picture": "", "contact":"", },
       { "task": "aerodynamics", "name": "Martim Almeida", "Email": "martim.almeida@iselfs.pt", "picture": "MartimAlmeida.webp", "contact":"", },
       { "task": "aerodynamics", "name": "Samuel Pereira", "Email": "@iselfs.pt", "picture": "", "contact":"", },
+
+      { "task": "cooling", "name": "Beatriz Marques", "Email": "beatriz.marques@iselfs.pt", "picture": "BeatrizMarques.webp", "contact":"", },
+      { "task": "cooling", "name": "Francisco Marques", "Email": "francisco.marques@iselfs.pt", "picture": "", "contact":"", },
+
+      { "task": "Drivetrain", "name": "Gabriel Barata", "Email": "gabriel.barata@iselfs.pt", "picture": "", "contact":"", },
+
       { "task": "member", "name": "Rodrigo Almeida", "Email": "@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Rodrigo Almeida", "Email": "rodrigo.almeida@iselfs.pt", "picture": "RodrigoAlmeida.webp", "contact":"", },
+      { "task": "member", "name": "Miguel Peres", "Email": "", "picture": "", "contact":"", },
+      { "task": "member", "name": "Diogo Vasconcelos", "Email": "", "picture": "", "contact":"", },
+
+      { "task": "VehicleModel", "name": "Alexandre Baeta", "Email": "alexandre.beata@iselfs.pt", "picture": "", "contact":"", },
+      { "task": "VehicleModel", "name": "Marta Gonçalves", "Email": "marta.goncalves@iselfs.pt", "picture": "MartaGonçalves.webp", "contact":"", },
     ],
 
     "Driverless": [
       { "task": "DT", "name": "Miguel Alves", "Email": "miguel.alves@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "slam", "name": "Bráulio Silva", "Email": "braulio.silva@iselfs.pt", "picture": "", "contact":"", },
+
       { "task": "control", "name": "Gabriel Mano", "Email": "gabriel.mano@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "slam", "name": "Tiago Andrade", "Email": "tiago.andrade@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "integrationPlan", "name": "Tomás Silva", "Email": "tomas.silva@iselfs.pt", "picture": "", "contact":"", }
+
+      { "task": "integrationPlan", "name": "Tomás Silva", "Email": "tomas.silva@iselfs.pt", "picture": "", "contact":"", },
+
+      { "task": "slam", "name": "Bráulio Silva", "Email": "braulio.silva@iselfs.pt", "picture": "", "contact":"", },
+      { "task": "slam", "name": "Tiago Andrade", "Email": "tiago.andrade@iselfs.pt", "picture": "", "contact":"", }
     ],
 
     "Operations": [
@@ -68,10 +78,9 @@ export const members={
     ],
 
     "Vehicle Integration": [
-      
       { "task": "DT", "name": "Nuno Fonseca", "Email": "@iselfs.pt", "picture": "", "contact":"", },
+
       { "task": "member", "name": "Derek Ryan", "Email": "derek.ryan@iselfs.pt", "picture": "DerekRyan.webp", "contact":"", },
-      { "task": "pedalboard", "name": "Diogo Costa", "Email": "diogo.costa@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "João Moura", "Email": "joao.moura@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Luan Reis", "Email": "luanreis@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Miguel Courelas", "Email": "miguel.courelas@iselfs.pt", "picture": "", "contact":"", },
@@ -80,7 +89,10 @@ export const members={
       { "task": "member", "name": "Gonçalo Batista", "Email": "goncalo.batista@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Gonçalo Carioca", "Email": "goncalo.carioca@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Ricardo Gracioso", "Email": "ricardo.gracioso@iselfs.pt", "picture": "RicardoGracioso.webp", "contact":"", },
+
+      { "task": "pedalboard", "name": "Diogo Costa", "Email": "diogo.costa@iselfs.pt", "picture": "", "contact":"", }
     ],
+    
     "Powertrain":[
       { "task": "DT", "name": "Duarte Mendes", "Email": "duarte.mendes@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Afonso Jesus", "Email": "afonso.jesus@iselfs.pt", "picture": "", "contact":"", },
