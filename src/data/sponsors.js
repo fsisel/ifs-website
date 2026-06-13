@@ -125,13 +125,19 @@ export const sponsors =
       "altName": "EPedal",
       "link": "https://epedal.pt/pt/",
       "image": "/sponsor_logos/epedal.webp",
-      "classes":"w-[14em]"
+      "classes":"w-[15em]"
     },
     {
       "altName": "Leap Motor",
       "link": "https://www.leapmotor.net",
       "image": "/sponsor_logos/leapmotor.webp",
-      "classes":"w-[13em]"
+      "classes":"w-[12em]"
+    },
+    {
+      "altName": "Stellantis",
+      "link": "https://www.stellantis.com/en",
+      "image": "/sponsor_logos/stellantis.webp",
+      "classes" : "w-[15em]"
     },
   ],
   bronze: [
@@ -217,12 +223,6 @@ export const sponsors =
     "link": "https://www.abrantimetal.pt/",
     "image": "/sponsor_logos/abrantimetal.webp",
     "classes" : "w-[200px]"
-  }
-  ,{
-    "altName": "Stellantis",
-    "link": "https://www.stellantis.com/en",
-    "image": "/sponsor_logos/stellantis.webp",
-    "classes" : "w-[14em]"
   }
 ],
   partners: [
