@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import ParallelogramButton from '../../components/parallelogramButton.astro';
 import CountDown from '../../components/countDown.astro';
 import ContentBlock from '../../components/contentBlock.astro';
+import Alumnis from '../../components/alumnis.astro';
 import { blocks } from "../../data/blocks";
 
 
@@ -46,51 +47,6 @@ window.addEventListener("scroll", () => {
 </script>
 
 <Layout>
-  <!-- <header class="hidden md:flex items-center justify-between w-full bg-black shadow-md absolute top-0 left-0 z-50 px-[7vw] py-5 text-white" id="header" >
-    <div class="flex items-center gap-3">
-      <a href={`/${lang}/`}>
-        <img src="/logos/ifs_logo_dark.svg" alt="ISEL Formula Student" class=" h-auto w-full " />
-      </a>
-    </div>
-    <div class="flex items-center justify-center gap-8">
-      <div class="flex flex-col text-right md:flex items-right gap-4 font-bold tracking-wide text-[20.8px] ">
-        <a href={`/${lang}/about_us`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
-        {t.aboutUs}
-        </a>
-        <a href={`/${lang}/rollout`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
-        Rollout
-        </a>
-        <a href={`/${lang}/ifs05`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
-        IFS05
-        </a>
-        <a href={`/${lang}/sponsors`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
-        {t.sponsors}
-        </a>
-        <a href={`/${lang}/contacts`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
-        {t.contacts}
-        </a>
-        <a href={`/${lang}/fundme`} class="px-2 border-r-0 hover:border-r-5 border-orange-500 transition-all duration-80 ease-in-out uppercase">
-        {t.crowdFunding}
-        </a>
-      </div>
-    
-      <div>
-        <div class="h-full">
-          <a href={`/${otherLang}/`} title="Português">
-            <img src={`/icons/${otherLang}.svg`} alt="Portuguese" class="h-6 w-6 rounded-sm" />
-          </a>
-        </div>
-
-        <button
-        id="menu_button"
-        class="md:hidden flex items-center gap-2 text-sm font-semibold"
-        >
-          MENU
-          <img src="/icons/menu.svg" alt="Menu" class="h-5 w-5" />
-        </button>
-      </div>	
-    </div>	
-  </header> -->
   <section class="relative w-full  bottom-40">
     <!-- Image -->
     <Image 
@@ -144,23 +100,27 @@ window.addEventListener("scroll", () => {
   </div>
 
 </div>
-    </div>
-    </div>
+</div>
+</div>
 
-    <div class="contentBlocks">  
-      {blocks.map((block, index) => (
-        
-        <ContentBlock
-        imageSrc={block.image}
-        imageAlt={(block.title as Record<string, any>)[lang] ?? block.title}
-        title={(block.title as Record<string, any>)[lang] ?? block.title}
-        text={block.text[lang]}
-        button={block.button?.[lang]}
-        reverse={index % 2 !== 0}
-        loading={index <=1 ? true:false}
-        />
-      ))}
+<div class="contentBlocks">  
+  {blocks.map((block, index) => (
+    
+    <ContentBlock
+    imageSrc={block.image}
+    imageAlt={(block.title as Record<string, any>)[lang] ?? block.title}
+    title={(block.title as Record<string, any>)[lang] ?? block.title}
+    text={block.text[lang]}
+    button={block.button?.[lang]}
+    reverse={index % 2 !== 0}
+    loading={index <=1 ? true:false}
+    />
+  ))}
 
-    </div>
+</div>
+  <div class="w-[70%] mx-auto">
+    <Alumnis/>
+  </div>
+
   </section>
 </Layout>

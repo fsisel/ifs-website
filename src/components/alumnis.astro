@@ -1,0 +1,200 @@
+---
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "pt" } },
+  ];
+}
+type Lang = keyof typeof testemonies;
+const { lang } = Astro.params as { lang: Lang };
+
+import {testemonies} from "../data/alumiTestemonials";
+const members = testemonies[lang] ?? testemonies.en;
+
+
+---
+
+<section class="relative w-full overflow-hidden py-12">
+  <div
+    class="relative w-full overflow-hidden mask-[linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
+  >
+    <div
+      id="testimonial-track"
+      class="flex cursor-grab select-none gap-6 transition-transform duration-300 ease-in-out active:cursor-grabbing"
+    >
+      {
+        members.map((member) => (
+          <article
+            class="flex w-full shrink-0 flex-col gap-3 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm transition-opacity duration-300 sm:w-[42%] md:p-6"
+            >
+            <header>
+              <h3 class="text-base font-semibold text-neutral-900 md:text-lg">
+                {member.name}
+              </h3>
+              <p class="text-sm font-medium text-amber-600">{member.role}</p>
+            </header>
+            <p class="text-sm leading-relaxed text-neutral-600">
+              {member.text}
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+ 
+  <div class="mt-6 flex justify-center gap-2">
+    {
+      members.map((_, i) => (
+        <button
+          class="dot h-2 w-2 rounded-full bg-neutral-300 transition-colors data-[active=true]:bg-amber-600"
+          data-index={i}
+          aria-label={`Go to slide ${i + 1}`}
+        />
+      ))
+    }
+  </div>
+</section>
+ 
+<script>
+  const track = document.getElementById("testimonial-track") as HTMLElement;
+  const dots = Array.from(
+    document.querySelectorAll<HTMLElement>(".dot")
+  );
+ 
+  const total = track.children.length;
+  const clonesCount = 3;
+  const originals = Array.from(track.children) as HTMLElement[];
+ 
+  // Prepend clones of the last N cards, append clones of the first N cards,
+  // so the track can loop seamlessly in both directions.
+  for (let i = 0; i < clonesCount; i++) {
+    const startClone = originals[originals.length - clonesCount + i].cloneNode(
+      true
+    ) as HTMLElement;
+    startClone.setAttribute("aria-hidden", "true");
+    track.insertBefore(startClone, track.firstChild);
+  }
+  for (let i = 0; i < clonesCount; i++) {
+    const endClone = originals[i].cloneNode(true) as HTMLElement;
+    endClone.setAttribute("aria-hidden", "true");
+    track.appendChild(endClone);
+  }
+ 
+  const items = Array.from(track.children) as HTMLElement[];
+  // index is offset so that 0 corresponds to the first real card
+  let index = clonesCount;
+  let autoplayTimer: ReturnType<typeof setInterval>;
+ 
+  function getStep() {
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    return items[0].getBoundingClientRect().width + gap;
+  }
+ 
+  function getCenterOffset() {
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    const cardWidth = items[0].getBoundingClientRect().width;
+    const viewportWidth = track.parentElement!.getBoundingClientRect().width;
+    const pairWidth = cardWidth * 2 + gap;
+    return Math.max(0, (viewportWidth - pairWidth) / 2);
+  }
+ 
+  function update(animate = true) {
+    track.style.transition = animate
+      ? "transform 700ms ease-in-out"
+      : "none";
+    const offset = index * getStep() - getCenterOffset();
+    track.style.transform = `translateX(-${offset}px)`;
+ 
+    // Highlight the two focused cards, dim the rest
+    items.forEach((item, i) => {
+      const focused = i === index || i === index + 1;
+      item.style.opacity = focused ? "1" : "0.35";
+    });
+ 
+    const realIndex = ((index - clonesCount) % total + total) % total;
+    dots.forEach((dot, i) => {
+      dot.dataset.active = String(i === realIndex);
+    });
+  }
+ 
+  function settle() {
+    // Jump back into the real range without animating once we've
+    // scrolled into the cloned region on either end
+    if (index >= total + clonesCount) {
+      index -= total;
+      requestAnimationFrame(() => update(false));
+    } else if (index < clonesCount) {
+      index += total;
+      requestAnimationFrame(() => update(false));
+    }
+  }
+ 
+  function next() {
+    index += 1;
+    update();
+  }
+ 
+  function goTo(i: number) {
+    index = i + clonesCount;
+    update();
+    restartAutoplay();
+  } 
+ 
+  function startAutoplay() {
+    autoplayTimer = setInterval(next, 5000);
+  }
+ 
+  function restartAutoplay() {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  }
+ 
+  track.addEventListener("transitionend", (e) => {
+    if (e.propertyName === "transform") settle();
+  });
+ 
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => goTo(i));
+  });
+ 
+  window.addEventListener("resize", () => update(false));
+ 
+  // Drag support
+  let isDragging = false;
+  let startX = 0;
+ 
+  function dragStart(x: number) {
+    isDragging = true;
+    startX = x;
+    clearInterval(autoplayTimer);
+  }
+ 
+  function dragEnd(x: number) {
+    if (!isDragging) return;
+    isDragging = false;
+    const diff = startX - x;
+ 
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        index += 1;
+      } else {
+        index -= 1;
+      }
+      update();
+    }
+    startAutoplay();
+  }
+ 
+  track.addEventListener("mousedown", (e) => dragStart(e.clientX));
+  track.addEventListener("mouseup", (e) => dragEnd(e.clientX));
+  track.addEventListener("mouseleave", () => (isDragging = false));
+ 
+  track.addEventListener("touchstart", (e) => dragStart(e.touches[0].clientX));
+  track.addEventListener("touchend", (e) =>
+    dragEnd(e.changedTouches[0].clientX)
+  );
+ 
+  update(false);
+  startAutoplay();
+</script>
