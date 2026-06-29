@@ -346,6 +346,12 @@ export const sponsors =
       "image": "/sponsor_logos/kisssoft.webp",
       "classes":"h-[5.5em]"
     },
+    {
+      "altName": "AMZ",
+      "link": "https://www.amzracing.ch/en",
+      "image": "/sponsor_logos/AMZ.webp",
+      "classes":"w-[120px]"
+    },
   ]
 }
     
