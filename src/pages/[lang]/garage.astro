@@ -1,8 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
 import { translations } from "../../i18n/translations";
-import {text} from "../../data/car.js"
+// Assuming you exported 'garage' from this file based on our previous step
+import { garage } from "../../data/garage.js"; 
 
 export function getStaticPaths() {
   return [
@@ -10,269 +10,272 @@ export function getStaticPaths() {
     { params: { lang: "pt" } },
   ];
 }
+
 type Lang = keyof typeof translations;
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
 
-
+// Default car to load first
+const defaultCarId = "ifs05";
 ---
+
 <script>
     function scrollRight() {
         const container = document.getElementById('scrollContainer');
-        const container1 = document.getElementById('scrollContainer1');
-        const container2 = document.getElementById('scrollContainer2');
-        container?.scrollBy({ left: 300, behavior: 'smooth' });
-        container1?.scrollBy({ left: 300, behavior: 'smooth' });
-        container2?.scrollBy({ left: 300, behavior: 'smooth' });
+        container?.scrollBy({ left: 204, behavior: 'smooth' });
     }
     document.getElementById("scrollRightButton")?.addEventListener('click', scrollRight);
-    document.getElementById("scrollRightButton1")?.addEventListener('click', scrollRight);
-    document.getElementById("scrollRightButton2")?.addEventListener('click', scrollRight);
 </script>
+
 <script
   type="module"
   src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
 </script>
+
 <style>
-/* Hide scrollbar (optional) */
-.no-scrollbar::-webkit-scrollbar {
-display: none;
-}
-.no-scrollbar {
--ms-overflow-style: none;
-scrollbar-width: none;
-}
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 </style>
+
 <Layout>
-
-    <section class="container mx-auto px-4 py-8 pt-30">
-        <div class=" ">
+  <div class="min-h-screen bg-[#0e0e0e] text-white font-sans overflow-x-hidden selection:bg-[#f50] selection:text-white pb-6">
     
-            <div class="lg:col-span-2 h-full">
-                <div 
-                    style="background-image: url('/images/AIGarage.webp')"
-                    class="w-full h-full min-h-75 lg:min-h-125 bg-cover bg-center rounded-lg shadow-md flex justify-center relative items-center"
-                >
-                    <img 
-                    src="/images/ifs05-lateral.webp" 
-                    alt="Your image description" 
-                    class="w-[50%] h-auto object-contain relative top-15 left-25 brightness-90"
-                    />
-                </div>
-            </div>
-            <p class="text-8xl text-center text-white pt-5 pb-2">IFS<span class="text-[#f50]">05</span></p>
-            <p class="text-white text-center">O mais velóz</p>
-            <!-- <div class="flex flex-col gap-4 justify-between">
-            
-                <div class="bg-white p-5 lg:p-6 rounded-sm shadow border flex flex-1 justify-center items-center">
-                    <h3 class="text-xl font-bold mb-2 text-black">100% Electric</h3>
-                </div>
+    <div class="max-w-6xl mx-auto relative border-x border-[#222] min-h-[90vh] flex flex-col mt-16 lg:mt-24">
+      
+      <div class="absolute inset-0 pointer-events-none flex justify-center items-center z-0">
+        <div class="w-full h-[1px] bg-[#222]"></div>
+        <div class="h-full w-[1px] bg-[#222]"></div>
+      </div>
 
-                <div class="bg-[#f50] p-5 lg:p-6 rounded-sm shadow border flex flex-1 justify-center items-center">
-                    <h3 class="text-xl font-bold mb-2 text-white">80kW (107cv)</h3>
-                </div>
-
-                <div class="bg-white p-5 lg:p-6 rounded-sm shadow border flex flex-1 justify-center items-center">
-                    <h3 class="text-xl font-bold mb-2 text-black">0-100 - 4.2s</h3>
-                </div>
-
-                <div class="bg-[#f50] p-5 lg:p-6 rounded-sm shadow border  flex flex-1 justify-center items-center">
-                    <h3 class="text-xl font-bold mb-2 text-white">230 Kg</h3>
-                </div>
-
-            </div> -->
-
-        </div>
-        <div class="w-[90%] h-auto mx-auto">
-            <model-viewer
-                src="/models/mclaren/scene.gltf"
-
-                camera-controls
-                auto-rotate
-                disable-pan
-                style="width:100%;height:400px;">
-            </model-viewer>
-
-
-        </div>
-        <div class="w-[90%] h-90 mx-auto">
-            <model-viewer
-                src="/models/porsche/scene.gltf"
-                skybox-image="/models/3D background/parking_garage.jpg"
-                environment-image="/models/3D background/parking_garage.jpg"
-                
-                camera-controls
-                auto-rotate
-                disable-zoom
-                disable-pan
-                max-camera-orbit="auto 100deg auto"
-                style="width:100%;height:400px;">
-            </model-viewer>
-
-
-        </div>
-    </section>
-    <!--
-    
-    
-    
-    
-    
-    test 1 
-     
-    
-    
-    
-    
-    -->
-    <div class="w-full max-w-5xl mx-auto">
-        <details class="group border  rounded-xl overflow-hidden">
+      <div class="relative w-full pt-10 pb-16 px-4 flex flex-col items-center justify-center z-10 group" id="displayContainer">
         
-            <summary class="flex items-center justify-between cursor-pointer p-4 bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white">
-                <span class="text-lg font-semibold">Car Specs</span>
+        <button id="activateModel" class="absolute top-6 right-6 lg:top-8 lg:right-24 z-20 flex items-center gap-2 bg-[#1a1a1a]/80 text-white/50 hover:text-white backdrop-blur-sm px-4 py-2 rounded-full border border-white/5 hover:border-[#f50]/50 transition-all duration-300">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+            </svg>
+            <span class="text-[9px] font-bold tracking-widest uppercase">360º View</span>
+        </button>
 
-                <!-- Arrow (rotates when open) -->
-                <svg 
-                    class="w-5 h-5 transition-transform duration-300 group-open:rotate-180"
-                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </summary>
-
-        <div class="relative bg-[#222222] p-4">
+        <div id="mediaViewer" class="relative w-full max-w-4xl flex justify-center items-center min-h-[400px]">
+            <img id="mainImage" src="" alt="Vehicle" class="w-[90%] lg:w-[75%] h-auto object-contain transition-transform duration-500" />
             
-            <div 
-                id="scrollContainer"
-                class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar"
-            >
-                <div class="min-w-[22%] bg-[#f50] p-4 rounded-lg text-white">
-                    <h3 class="font-bold mb-2">Column </h3>
-                    <p class="text-sm opacity-70">Some content...</p>
-                </div>
-                <div class="min-w-[22%] bg-white p-4 rounded-lg text-black">
-                    <h3 class="font-bold mb-2">Column </h3>
-                    <p class="text-sm opacity-70">Some content...</p>
-                </div>
-                <div class="min-w-[22%] bg-[#f50] p-4 rounded-lg text-white">
-                    <h3 class="font-bold mb-2">Column </h3>
-                    <p class="text-sm opacity-70">Some content...</p>
-                </div>
-                <div class="min-w-[22%] bg-white p-4 rounded-lg text-black">
-                    <h3 class="font-bold mb-2">Column </h3>
-                    <p class="text-sm opacity-70">Some content...</p>
-                </div>
-                <div class="min-w-[22%] bg-[#f50] p-4 rounded-lg text-white">
-                    <h3 class="font-bold mb-2">Column </h3>
-                    <p class="text-sm opacity-70">Some content...</p>
-                </div>
-                <div class="min-w-[22%] bg-white p-4 rounded-lg text-black">
-                    <h3 class="font-bold mb-2">Column </h3>
-                    <p class="text-sm opacity-70">Some content...</p>
-                </div>
-
-
-
-            </div>
-
-            <!-- RIGHT ARROW -->
-            <button
-                id="scrollRightButton"
-                onclick="scrollRight()"
-                class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-700 hover:bg-gray-600 p-2 rounded-full"
-            >
-                →
+            <button id="closeModel" class="absolute top-6 right-6 z-30 bg-[#1a1a1a]/80 p-2 rounded-full hidden hover:bg-[#f50] text-white transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
+        </div>
+      </div>
+
+      <div class="text-center mt-[-40px] mb-12 relative z-10">
+        <h1 id="carTitle" class="text-6xl lg:text-8xl font-black tracking-tighter mb-2">
+          </h1>
+        <h2 id="carSubtitle" class="text-xs lg:text-sm tracking-[0.4em] text-white/60 font-medium uppercase">
+          </h2>
+      </div>
+
+      <div id="detailsContainer" class="flex flex-col md:flex-row gap-4 w-full px-4 lg:px-8 mb-16 relative z-20 flex-wrap justify-center">
+        </div>
+
+      <div class="bg-black/50 border-t border-[#222] p-4 relative z-10 w-full">
+        <div class="flex justify-between items-end mb-3 px-2 lg:px-6">
+          <h3 class="text-[10px] tracking-widest text-white/40 font-semibold">SELECT MODEL</h3>
+          <button 
+            id="scrollRightButton"
+            class="text-[9px] tracking-widest text-[#f50] hover:text-white font-semibold flex items-center gap-1.5 transition-colors cursor-pointer border border-[#f50]/30 px-2.5 py-1 rounded-full hover:bg-[#f50]/10"
+          >
+            SCROLL <span class="text-sm leading-none">→</span>
+          </button>
+        </div>
+
+        <div id="scrollContainer" class="flex gap-3 overflow-x-auto pb-2 scroll-smooth no-scrollbar snap-x px-2 lg:px-6">
+          
+          <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs06">
+            <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
+                <img src="/images/ifs05-lateral.webp" alt="IFS06" class="w-[70%] opacity-90 pointer-events-none" />
+            </div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
+            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-06</span>
+          </div>
+          
+          <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs05">
+            <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
+                <img src="/images/ifs05-lateral.webp" alt="IFS05" class="w-[70%] opacity-90 pointer-events-none" />
+            </div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
+            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-[#f50] pointer-events-none">IFS-05</span>
+          </div>
+          
+          <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs04">
+            <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
+                <img src="/images/ifs04-lateral.webp" alt="IFS04" class="w-[70%] opacity-90 pointer-events-none" />
+            </div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
+            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-04</span>
+          </div>
+
+           <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs03">
+            <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
+                <img src="/images/ifs03_right.webp" alt="IFS03" class="w-[70%] opacity-90 pointer-events-none" />
+            </div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
+            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-03</span>
+          </div>
+          
+           <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs02">
+            <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
+                <img src="/images/ifs02_2.webp" alt="IFS02" class="w-[70%] opacity-90 pointer-events-none" />
+            </div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
+            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-02</span>
+          </div>
+           
+          <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs01">
+            <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
+                <img src="/images/ifs01_2.webp" alt="IFS01" class="w-[70%] opacity-90 pointer-events-none" />
+            </div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
+            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-01</span>
+          </div>
 
         </div>
-    </details>
+      </div>
+      
     </div>
-
-    <!--
-    
-    
-    
-    
-    test 2 
-     
-    
-    
-    -->
-    <div class="w-full max-w-5xl mx-auto">
-        <details class="group border  rounded-xl overflow-hidden">
-        
-            <summary class="flex items-center justify-between cursor-pointer p-4 bg-[#f5f5f5] text-black dark:bg-[#181818] dark:text-white">
-                <span class="text-lg font-semibold">Car Specs</span>
-
-                <!-- Arrow (rotates when open) -->
-                <svg 
-                    class="w-5 h-5 transition-transform duration-300 group-open:rotate-180"
-                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </summary>
-
-        <div class="relative bg-[#222222] text-black text-lg md:text-xl ">
-            <div 
-                id="scrollContainer2"
-                class="flex overflow-x-auto scroll-smooth no-scrollbar items-stretch"
-            >
-            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[22%] bg-[#f50] p-6 md:p-8 flex flex-col">
-                <h3 class="text-2xl font-bold mb-3 text-white">Motor</h3>
-                <p class="text-white">100% electric, with 80Kw (107hp) and capable of going from 0Km/h to 100Km/h in 4.2 seconds.</p>
-            </div>
-
-            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[22%] bg-white p-6 md:p-8 flex flex-col">
-                <h3 class="text-2xl font-bold mb-3">Body</h3>
-                <p class="text-gray-800">Made from steel and carbon fiber it weights approximately 240Kg without a driver.</p>
-            </div>
-
-            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[30%] bg-[#f50] p-6 md:p-8 flex flex-col">
-                <h2 class="text-2xl font-bold mb-4 text-white">Powertrain</h2>
-                
-                <dl class="flex flex-col gap-3 w-full text-white">
-                    
-                    <div class="flex flex-row justify-between items-end border-b border-white/30 pb-1">
-                        <dt class="font-medium opacity-90">Motor</dt>
-                        <dd class="font-bold text-right max-w-[60%]">(algo)</dd>
-                    </div>
-                    
-                    <div class="flex flex-row justify-between items-end border-b border-white/30 pb-1">
-                        <dt class="font-medium opacity-90">Power</dt>
-                        <dd class="font-bold text-right max-w-[60%]">80Kw (107hp)</dd>
-                    </div>
-                    
-                    <div class="flex flex-row justify-between items-end border-b border-white/30 pb-1">
-                        <dt class="font-medium opacity-90">Battery</dt>
-                        <dd class="font-bold text-right max-w-[60%]">LiCoO2 cells (Custom Pack)</dd>
-                    </div>
-
-                </dl>
-            </div>
-
-            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[22%] bg-white p-6 md:p-8 flex flex-col">
-                <h3 class="text-2xl font-bold mb-3">Chassis</h3>
-                <p class="text-gray-800">Tubular spaceframe designed for maximum rigidity and safety during high-speed cornering.</p>
-            </div>
-            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[22%] bg-[#f50] p-6 md:p-8 flex flex-col">
-                <h3 class="text-2xl font-bold mb-3">Body</h3>
-                <p class="text-gray-800">Made from steel and carbon fiber it weights approximately 240Kg without a driver.</p>
-            </div>
-            <div class="min-w-[85%] md:min-w-[45%] lg:min-w-[22%] bg-white p-6 md:p-8 flex flex-col">
-                <h3 class="text-2xl font-bold mb-3">Body</h3>
-                <p class="text-gray-800">Made from steel and carbon fiber it weights approximately 240Kg without a driver.</p>
-            </div>
-            <!-- RIGHT ARROW -->
-            <button
-                id="scrollRightButton2"
-                onclick="scrollRight()"
-                class="absolute right-2 top-1/2 -translate-y-1/2 bg-black hover:bg-[#222222] text-white  p-2 rounded-full"
-            >
-                →
-            </button>
-
-        </div>
-    </details>
-    </div>
-
-    
+  </div>
 </Layout>
+
+<script define:vars={{ garageData: garage, currentLang: lang, defaultCar: defaultCarId }}>
+    const displayContainer = document.getElementById('displayContainer');
+    const mediaViewer = document.getElementById('mediaViewer');
+    const mainImage = document.getElementById('mainImage');
+    const activateBtn = document.getElementById('activateModel');
+    const closeBtn = document.getElementById('closeModel');
+    const detailsContainer = document.getElementById('detailsContainer');
+    const titleEl = document.getElementById('carTitle');
+    const subtitleEl = document.getElementById('carSubtitle');
+    
+    // Store currently active model path
+    let currentModelPath = '';
+
+    // 1. Data Rendering Logic
+    function renderCar(carId) {
+        const langData = garageData[currentLang] || garageData['en'];
+        const car = langData[carId];
+        if (!car) return;
+
+        // Extract numbers from ID for title (e.g. 'ifs05' -> 'IFS' '05')
+        const prefix = carId.substring(0, 3).toUpperCase();
+        const number = carId.substring(3);
+        
+        titleEl.innerHTML = `<span class="text-white">${prefix}</span><span class="text-[#f50]">${number}</span>`;
+        subtitleEl.textContent = car.description || "Technical Specifications";
+
+        // Handle Media Reset
+        if (car.media) {
+            mainImage.src = car.media.thumbnail;
+            currentModelPath = car.media.model;
+        }
+
+        // Reset 3D viewer if open
+        const existingModel = document.querySelector('model-viewer');
+        if (existingModel) existingModel.remove();
+        mainImage.classList.remove('hidden');
+        closeBtn.classList.add('hidden');
+        
+        // Hide activate button if no model exists for this car
+        if (currentModelPath) {
+            activateBtn.classList.remove('hidden');
+        } else {
+            activateBtn.classList.add('hidden');
+        }
+
+        // Build Details HTML dynamically
+        let html = '';
+        const skipKeys = ['nickname', 'description', 'media'];
+
+        for (const [category, fields] of Object.entries(car)) {
+            if (skipKeys.includes(category)) continue;
+
+            html += `
+                <div class="flex-1 min-w-[200px] bg-[#151515] border border-white/5 rounded-lg p-5 shadow-xl hover:border-[#f50]/30 transition-colors">
+                    <h3 class="font-bold text-[#f50] mb-4 text-[10px] tracking-widest uppercase">${category}</h3>
+                    <div class="space-y-3 text-sm">
+                        ${renderFields(fields)}
+                    </div>
+                </div>
+            `;
+        }
+        detailsContainer.innerHTML = html;
+
+        // Update active state in bottom scrollbar
+        document.querySelectorAll('.car-selector').forEach(card => {
+            if(card.getAttribute('data-car-id') === carId) {
+                card.classList.replace('border-white/10', 'border-[#f50]/60');
+                card.classList.add('shadow-[0_0_10px_rgba(255,85,0,0.1)]');
+                card.querySelector('span').classList.add('text-[#f50]');
+                card.querySelector('span').classList.remove('text-white/50');
+            } else {
+                card.classList.replace('border-[#f50]/60', 'border-white/10');
+                card.classList.remove('shadow-[0_0_10px_rgba(255,85,0,0.1)]');
+                card.querySelector('span').classList.remove('text-[#f50]');
+                card.querySelector('span').classList.add('text-white/50');
+            }
+        });
+    }
+
+    function renderFields(fields) {
+        if (typeof fields === 'string') {
+            return `<p class="text-sm text-white/60 leading-relaxed">${fields}</p>`;
+        }
+        
+        return Object.entries(fields).map(([key, value]) => `
+            <div class="flex justify-between border-b border-white/10 pb-1">
+                <span class="text-white/60">${key.replace(/_/g, ' ')}</span>
+                <span class="font-bold text-white text-right max-w-[60%]">${value || 'TBA'}</span>
+            </div>
+        `).join('');
+    }
+
+    // 2. Add click listeners to cards
+    document.querySelectorAll('.car-selector').forEach(card => {
+        card.addEventListener('click', (e) => {
+            const id = e.currentTarget.getAttribute('data-car-id');
+            renderCar(id);
+        });
+    });
+
+    // 3. 3D Viewer Logic
+    displayContainer?.addEventListener('click', (e) => {
+        if (e.target !== closeBtn && !document.querySelector('model-viewer') && currentModelPath) {
+            mainImage.classList.add('hidden');
+            activateBtn.classList.add('hidden');
+            closeBtn.classList.remove('hidden');
+
+            const modelHtml = `
+                <model-viewer 
+                    src="${currentModelPath}" 
+                    camera-controls auto-rotate disable-pan 
+                    max-camera-orbit="auto 100deg auto" 
+                    style="width:100%;height:400px;">
+                </model-viewer>
+            `;
+            mediaViewer.insertAdjacentHTML('beforeend', modelHtml);
+        }
+    });
+
+    closeBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const modelViewer = document.querySelector('model-viewer');
+        modelViewer?.remove();
+        mainImage.classList.remove('hidden');
+        if(currentModelPath) activateBtn.classList.remove('hidden');
+        closeBtn.classList.add('hidden');
+    });
+
+    // Initialize Page
+    renderCar(defaultCar);
+</script>
