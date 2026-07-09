@@ -10,15 +10,15 @@ export const garage ={
             
             performance:{
                 Top_Speed:"TBA",
-                O_to_hundred:"4.2s",
-                Weight:"TBD",
+                "0-100 Km/h":"4.2s",
+                Weight:"250Kg",
             },
             powertrain:{
-                Motor:"(algo)",
+                Motor:"Emrax",
                 Power:"80kW (107cv)",
-                Battery:"LiCoO2 (Personalizada)",
+                Battery:"Li-ion<br> 7.4kW/h / 403.2 V",
             },
-            suspension:"Sistema de suspensão de duplo triângulo otimizado para condições de pista.",
+            suspension:"Double wishbone <br> <b>FOX Floar x2 </b>",
             
             chassis:"Chassis tubular tipo spaceframe concebido para máxima rigidez e segurança em curvas de alta velocidade.",
         },
@@ -31,13 +31,13 @@ export const garage ={
             },
             performance:{
                 Top_Speed:"TBA",
-                O_to_hundred:"4.2s",
-                Weight:"230kg",
+                "0-100 Km/h":"4.2s",
+                Weight:"240kg",
             },
             powertrain:{
-                Motor:"(algo)",
+                Motor:"Emrax",
                 Power:"80kW (107cv)",
-                Battery:"LiCoO2 (Personalizada)",
+                Battery:"Li-ion",
             },
             suspension:"Sistema de suspensão de duplo triângulo otimizado para condições de pista.",
             
@@ -52,13 +52,13 @@ export const garage ={
             },
             performance:{
                 Top_Speed:"",
-                O_to_hundred:"",
+                "0-100 Km/h":"",
                 Weight:"",
             },
             powertrain:{
-                Motor:"",
+                Motor:"Emrax",
                 Power:"",
-                Battery:"",
+                Battery:"Li-ion",
             },
             suspension:{
                 text:""
@@ -76,13 +76,13 @@ export const garage ={
             },
             performance:{
                 Top_Speed:"",
-                O_to_hundred:"",
+                "0-100 Km/h":"",
                 Weight:"",
             },
             powertrain:{
-                Motor:"",
+                Motor:"Emrax",
                 Power:"",
-                Battery:"",
+                Battery:"Li-ion",
             },
             suspension:{
                 text:""
@@ -95,18 +95,17 @@ export const garage ={
             nickname:"",
             description:"",
             media: {
-                thumbnail: "/images/ifs02_2.webp",
-                model: "/models/porsche/scene.gltf"
+                thumbnail: "/images/ifs02-lateral.webp",
             },
             performance:{
                 Top_Speed:"",
-                O_to_hundred:"",
+                "0-100 Km/h":"",
                 Weight:"",
             },
             powertrain:{
-                Motor:"",
+                Motor:"Emrax",
                 Power:"",
-                Battery:"",
+                Battery:"Li-ion",
             },
             suspension:{
                 text:""
@@ -119,12 +118,11 @@ export const garage ={
             nickname:"",
             description:"",
             media: {
-                thumbnail: "/images/ifs01_2.webp",
-                model: "/models/porsche/scene.gltf"
+                thumbnail: "/images/ifs01-lateral.webp",
             },
             performance:{
                 Top_Speed:"",
-                O_to_hundred:"",
+                "0-100 Km/h":"",
                 Weight:"",
             },
             powertrain:{
@@ -150,17 +148,17 @@ export const garage ={
             },
             performance:{
                 Top_Speed:"TBA",
-                O_to_hundred:"4.2s",
-                Weight:"TBD",
+                "0-100 Km/h":"4.2s",
+                Weight:"250Kg",
             },
             powertrain:{
-                Motor:"(something)",
+                Motor:"Emrax",
                 Power:"80kW (107hp)",
-                Battery:"LiCoO2 (Custom)",
+                Battery:"Li-ion <br> 7.4kW/h / 403.2 V",
             },
-            suspension:"Double wishbone suspension system optimized for track conditions.",
+            suspension:"Double wishbone <br> <b>FOX Floar x2 </b>",
             
-            chassis:"Tubular spaceframe designed for maximum rigidity and safety during high-speed cornering.",
+            chassis:"<b>Space Frame </b> <br>Steel 25 CrM04",
         },
         ifs05:{
             nickname:"IFS05",
@@ -171,13 +169,13 @@ export const garage ={
             },
             performance:{
                 Top_Speed:"TBA",
-                O_to_hundred:"4.2s",
-                Weight:"230kg",
+                "0-100 Km/h":"4.2s",
+                Weight:"240kg",
             },
             powertrain:{
-                Motor:"(something)",
+                Motor:"Emrax",
                 Power:"80kW (107hp)",
-                Battery:"LiCoO2 (Custom)",
+                Battery:"Li-ion",
             },
             suspension:"Double wishbone suspension system optimized for track conditions.",
             
@@ -192,13 +190,13 @@ export const garage ={
             },
             performance:{
                 Top_Speed:"",
-                O_to_hundred:"",
+                "0-100 Km/h":"",
                 Weight:"",
             },
             powertrain:{
-                Motor:"",
+                Motor:"Emrax",
                 Power:"",
-                Battery:"",
+                Battery:"Li-ion",
             },
             suspension:{
                 text:""
@@ -216,13 +214,13 @@ export const garage ={
             },
             performance:{
                 Top_Speed:"",
-                O_to_hundred:"",
+                "0-100 Km/h":"",
                 Weight:"",
             },
             powertrain:{
-                Motor:"",
+                Motor:"Emrax",
                 Power:"",
-                Battery:"",
+                Battery:"Li-ion",
             },
             suspension:{
                 text:""
@@ -235,18 +233,17 @@ export const garage ={
             nickname:"",
             description:"",
             media: {
-                thumbnail: "/images/ifs02_2.webp",
-                model: "/models/porsche/scene.gltf"
+                thumbnail: "/images/ifs02-lateral.webp",
             },
             performance:{
                 Top_Speed:"",
-                O_to_hundred:"",
+                "0-100 Km/h":"",
                 Weight:"",
             },
             powertrain:{
-                Motor:"",
+                Motor:"Emrax",
                 Power:"",
-                Battery:"",
+                Battery:"Li-ion",
             },
             suspension:{
                 text:""
@@ -259,12 +256,11 @@ export const garage ={
             nickname:"",
             description:"",
             media: {
-                thumbnail: "/images/ifs01_2.webp",
-                model: "/models/porsche/scene.gltf"
+                thumbnail: "/images//ifs01-lateral.webp",
             },
             performance:{
                 Top_Speed:"",
-                O_to_hundred:"",
+                "0-100 Km/h":"",
                 Weight:"",
             },
             powertrain:{
