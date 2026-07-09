@@ -16,6 +16,7 @@ export const garage ={
             powertrain:{
                 Motor:"Emrax",
                 Power:"80kW (107cv)",
+                Binário:"240Nm",
                 Battery:"Li-ion<br> 7.4kW/h / 403.2 V",
             },
             suspension:"Double wishbone <br> <b>FOX Floar x2 </b>",
@@ -154,6 +155,7 @@ export const garage ={
             powertrain:{
                 Motor:"Emrax",
                 Power:"80kW (107hp)",
+                Binary:"240Nm",
                 Battery:"Li-ion <br> 7.4kW/h / 403.2 V",
             },
             suspension:"Double wishbone <br> <b>FOX Floar x2 </b>",
