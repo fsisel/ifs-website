@@ -139,6 +139,12 @@ export const sponsors =
       "image": "/sponsor_logos/stellantis.webp",
       "classes" : "w-[15em]"
     },
+    {
+      "altName": "Eplan",
+      "link": "https://www.eplan.com/de-en/",
+      "image": "/sponsor_logos/Eplan.webp",
+      "classes":"h-[100px]"
+    },
   ],
   bronze: [
   {
@@ -333,12 +339,6 @@ export const sponsors =
       "altName": "Camnetics",
       "link": "https://camnetics.com",
       "image": "/sponsor_logos/camnetics.webp"
-    },
-    {
-      "altName": "Eplan",
-      "link": "https://www.eplan.com/de-en/",
-      "image": "/sponsor_logos/Eplan.webp",
-      "classes":"h-[5.5em]"
     },
     {
       "altName": "Kissoft",
