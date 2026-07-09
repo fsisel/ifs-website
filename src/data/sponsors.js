@@ -143,7 +143,19 @@ export const sponsors =
       "altName": "Eplan",
       "link": "https://www.eplan.com/de-en/",
       "image": "/sponsor_logos/Eplan.webp",
-      "classes":"h-[100px]"
+      "classes":"h-[120px]"
+    },
+    {
+      "altName": "Althima",
+      "link": "https://www.althima.com/pt",
+      "image": "/sponsor_logos/althima.svg",
+      "classes" : "w-[12em]"
+    },
+    {
+      "altName": "Astara",
+      "link": "https://astara.com/en",
+      "image": "/sponsor_logos/astara.webp",
+      "classes" : "w-[11em]"
     },
   ],
   bronze: [
@@ -229,6 +241,11 @@ export const sponsors =
     "link": "https://www.abrantimetal.pt/",
     "image": "/sponsor_logos/abrantimetal.webp",
     "classes" : "w-[200px]"
+  }
+  ,{
+    "altName": "Hirose",
+    "link": "https://www.hirose.com",
+    "image": "/sponsor_logos/hirose.webp",
   }
 ],
   partners: [
