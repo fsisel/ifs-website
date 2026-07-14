@@ -1,7 +1,7 @@
 export const garage ={
     pt:{
         ifs06:{
-            nickname:"IFS06",
+            nickname:"",
             description:"O mais veloz",
             media: {
                 thumbnail: "/images/ifs05-lateral.webp",
@@ -24,7 +24,7 @@ export const garage ={
             chassis:"Chassis tubular tipo spaceframe concebido para máxima rigidez e segurança em curvas de alta velocidade.",
         },
         ifs05:{
-            nickname:"IFS05",
+            nicknameImage:"/logos/Logo_IFS05.svg",
             description:"O mais veloz",
             media: {
                 thumbnail: "/images/ifs05-lateral.webp",
@@ -45,13 +45,13 @@ export const garage ={
             chassis:"Chassis tubular tipo spaceframe concebido para máxima rigidez e segurança em curvas de alta velocidade.",
         },
         ifs04:{
-            nickname:"",
+            nicknameImage:"/logos/Logo_IFS04_W.svg",
             description:"",
             media: {
                 thumbnail: "/images/ifs04-lateral.webp",
                 model: "/models/porsche/scene.gltf"
             },
-            performance:{
+           /*  performance:{
                 Top_Speed:"",
                 "0-100 Km/h":"",
                 Weight:"",
@@ -66,7 +66,7 @@ export const garage ={
             },
             chassis:{
                 text:""
-            },
+            }, */
         },
         ifs03:{
             nickname:"",
@@ -75,7 +75,7 @@ export const garage ={
                 thumbnail: "/images/ifs03_right.webp",
                 model: "/models/porsche/scene.gltf"
             },
-            performance:{
+           /*  performance:{
                 Top_Speed:"",
                 "0-100 Km/h":"",
                 Weight:"",
@@ -90,7 +90,7 @@ export const garage ={
             },
             chassis:{
                 text:""
-            },
+            }, */
         },
         ifs02:{
             nickname:"",
@@ -98,7 +98,7 @@ export const garage ={
             media: {
                 thumbnail: "/images/ifs02-lateral.webp",
             },
-            performance:{
+           /*  performance:{
                 Top_Speed:"",
                 "0-100 Km/h":"",
                 Weight:"",
@@ -113,7 +113,7 @@ export const garage ={
             },
             chassis:{
                 text:""
-            },
+            }, */
         },
         ifs01:{
             nickname:"",
@@ -121,7 +121,7 @@ export const garage ={
             media: {
                 thumbnail: "/images/ifs01-lateral.webp",
             },
-            performance:{
+           /*  performance:{
                 Top_Speed:"",
                 "0-100 Km/h":"",
                 Weight:"",
@@ -136,12 +136,12 @@ export const garage ={
             },
             chassis:{
                 text:""
-            },
+            }, */
         },
     },
     en:{
         ifs06:{
-            nickname:"IFS06",
+            nickname:"",
             description:"The fastest",
             media: {
                 thumbnail: "/images/ifs05-lateral.webp",
@@ -163,7 +163,7 @@ export const garage ={
             chassis:"<b>Space Frame </b> <br>Steel 25 CrM04",
         },
         ifs05:{
-            nickname:"IFS05",
+            nicknameImage:"/logos/Logo_IFS05.svg",
             description:"The fastest",
             media: {
                 thumbnail: "/images/ifs05-lateral.webp",
@@ -184,13 +184,13 @@ export const garage ={
             chassis:"Tubular spaceframe designed for maximum rigidity and safety during high-speed cornering.",
         },
         ifs04:{
-            nickname:"",
+            nicknameImage:"/logos/Logo_IFS04_W.svg",
             description:"",
             media: {
                 thumbnail: "/images/ifs04-lateral.webp",
                 model: "/models/porsche/scene.gltf"
             },
-            performance:{
+           /*  performance:{
                 Top_Speed:"",
                 "0-100 Km/h":"",
                 Weight:"",
@@ -205,7 +205,7 @@ export const garage ={
             },
             chassis:{
                 text:""
-            },
+            }, */
         },
         ifs03:{
             nickname:"",
@@ -214,7 +214,7 @@ export const garage ={
                 thumbnail: "/images/ifs03_right.webp",
                 model: "/models/porsche/scene.gltf"
             },
-            performance:{
+           /*  performance:{
                 Top_Speed:"",
                 "0-100 Km/h":"",
                 Weight:"",
@@ -229,7 +229,7 @@ export const garage ={
             },
             chassis:{
                 text:""
-            },
+            }, */
         },
         ifs02:{
             nickname:"",
@@ -237,7 +237,7 @@ export const garage ={
             media: {
                 thumbnail: "/images/ifs02-lateral.webp",
             },
-            performance:{
+           /*  performance:{
                 Top_Speed:"",
                 "0-100 Km/h":"",
                 Weight:"",
@@ -252,7 +252,7 @@ export const garage ={
             },
             chassis:{
                 text:""
-            },
+            }, */
         },
         ifs01:{
             nickname:"",
@@ -260,7 +260,7 @@ export const garage ={
             media: {
                 thumbnail: "/images//ifs01-lateral.webp",
             },
-            performance:{
+            /* performance:{
                 Top_Speed:"",
                 "0-100 Km/h":"",
                 Weight:"",
@@ -275,7 +275,7 @@ export const garage ={
             },
             chassis:{
                 text:""
-            },
+            }, */
         },
     }
 
