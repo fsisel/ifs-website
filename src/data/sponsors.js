@@ -40,7 +40,13 @@ export const sponsors =
       "link": "https://almeida-lamas.pt/",
       "image": "/sponsor_logos/Almeida_Lamas.svg",
       "classes": "w-[240px]"
-    }
+    },
+    {
+      "altName": "CODI",
+      "link": "https://www.codi.pt/?lang=en",
+      "image": "/sponsor_logos/codi.svg",
+      "classes": "w-[160px]"
+    },
   ],
   gold: [
     {
@@ -82,7 +88,17 @@ export const sponsors =
       "altName": "xiraplas",
       "link": "https://www.xiraplas.pt",
       "image": "/sponsor_logos/xiraplas.svg"
-    }
+    },
+    {
+      "altName": "MCG",
+      "link": "https://www.mcg.pt",
+      "image": "/sponsor_logos/mcg.webp"
+    },
+    {
+      "altName": "CK",
+      "link": "https://compositeskingdom.com",
+      "image": "/sponsor_logos/ck.webp"
+    },
   ],
   silver: [
     {
@@ -157,6 +173,17 @@ export const sponsors =
       "image": "/sponsor_logos/astara.webp",
       "classes" : "w-[11em]"
     },
+    {
+      "altName": "FSDynamics",
+      "link": "https://fsdynamics.eu",
+      "image": "/sponsor_logos/fsdynamics.svg",
+      "classes" : "w-[240px]"
+    },
+    {
+      "altName": "SASIPL",
+      "link": "https://www.ipl.pt/sas-ipl",
+      "image": "/sponsor_logos/SASIPL.webp",
+    },
   ],
   bronze: [
   {
@@ -186,7 +213,7 @@ export const sponsors =
   },
   {
     "altName": "BND",
-    "link": "bnd.pt",
+    "link": "https://bnd.pt",
     "image": "/sponsor_logos/bnd.webp",
     "classes":"w-[120px]"
   },
