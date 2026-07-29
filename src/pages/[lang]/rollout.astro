@@ -1,12 +1,11 @@
 ---
 import RolloutHero from "../../components/RolloutHero.astro";
-import HeroImage from "../../components/heroImage.astro"   
-import CountDown from "../../components/countDown.astro";
+
 
 import Layout from "../../layouts/Layout.astro"
 
 import { translations } from "../../i18n/translations";
-import {fundMe} from "../../data/fund_me"
+import { text } from "../../data/rollout";
 
 export function getStaticPaths() {
   return [
@@ -18,6 +17,19 @@ export function getStaticPaths() {
 type Lang = keyof typeof translations;
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
+const r = text[lang] ?? text.en;
+
+
+const images = [
+  { src: '/images/rollout_06/img1.webp', alt: 'Horizontal 1', orientation: 'horizontal' },
+  { src: '/images/rollout_06/img2.webp', alt: 'Vertical 1', orientation: 'vertical' },
+  { src: '/images/rollout_06/img3.webp', alt: 'Horizontal 2', orientation: 'horizontal' },
+  { src: '/images/rollout_06/img4.webp', alt: 'Vertical 2', orientation: 'vertical' },
+  { src: '/images/rollout_06/img5.webp', alt: 'Horizontal 3', orientation: 'horizontal' },
+];
+
+
+
 ---
 <Layout>
 
@@ -29,85 +41,83 @@ const t = translations[lang] ?? translations.en;
     imageUrl="/images/rollout_IFS05_I54.webp"
     targetDate="2026-07-11T00:00:00"
   />
-<!-- 
-  <div class="max-w-[98%] sm:max-w-[120em] pt-10 mx-auto">
-    <div class="flex flex-row w-[95%] mx-auto gap-2">
+<br>
+<br>
+<br>
+<div>
+  <p class="flex justify-items-center text-black dark:text-white lg:mx-50">
+    Um enorme obrigado a todos os que se juntaram a nós no nosso evento de lançamento! Ficámos muito felizes por ver tantas caras conhecidas e por partilhar a nossa visão convosco. Ter o vosso apoio neste passo tão importante significa muito para nós. Obrigado por terem tornado este dia verdadeiramente especial!
+  </p>
+</div>  
 
-      <div class=" w-[80%]  relative aspect-video mx-auto sm:w-[80%] my-10 flex flex-col gap-10 justify-center items-center">
-        <iframe
-        class="w-full h-full object-cover rounded"
-        src="https://www.youtube.com/embed/fdGWRq1dVBA?start=27&autoplay=1&mute=1&loop=1"
-        title="Video"
-        allowfullscreen
-        ></iframe>
-       <video
-        class="w-full h-full object-cover rounded"
-        autoplay
-        muted
-        loop
-        playsinline
-        controls
-      >
-        <source src="/videos/ifs_rollout05.webm" type="video/webm" />
-      </video> 
-      </div>
+<div class="max-w-6xl mx-auto p-6" id="gallery-container">
+  <!-- Grid layout that respects viewport height -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[70vh] min-h-[400px]">
+    
+    <!-- Main Image Display -->
+    <!-- Changed to flex for centering and removed fixed overflow that cuts off elements -->
+    <div class="md:col-span-2 rounded-xl shadow-2xl bg-black flex items-center justify-center overflow-hidden">
+      <img 
+        id="main-image"
+        src={images[0].src} 
+        alt={images[0].alt} 
+        class="w-full h-full object-contain transition-opacity duration-300 rounded-xl" 
+      />
+    </div>
+
+    <!-- Scrollable Thumbnails -->
+    <!-- Added h-full and overflow-y-auto to contain it within the grid -->
+    <div class="md:col-span-1 overflow-y-auto px-2 pt-2 space-y-4 h-full scrollbar-hide">
+      {images.map((img) => (
+        <button 
+          data-src={img.src}
+          data-alt={img.alt}
+          class="thumb-btn w-full rounded-lg overflow-hidden shadow-sm aspect-video hover:ring-2 ring-blue-400 transition-all"
+        >
+          <img src={img.src} alt={img.alt} class="w-full h-full object-cover" />
+        </button>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  const mainImage = document.getElementById('main-image') as HTMLImageElement;
+  const buttons = document.querySelectorAll('.thumb-btn');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      const newSrc = button.getAttribute('data-src');
+      const newAlt = button.getAttribute('data-alt');
       
-      <div class="text-white w-[40%] mx-auto rounded-xl bg-[#181818] p-6  border-white/5 shadow-xl h-max my-auto">
-          <p class="text-lg leading-relaxed text-white/80">Join us at the ISEL Grand Auditorium as we showcase the pinnacle of student engineering. Be the first to witness the evolution of the IFS-06.</p>
-          <div class="my-5"></div>
+      // Update the main image
+      if (mainImage && newSrc) {
+        mainImage.style.opacity = '0';
+        setTimeout(() => {
+          mainImage.src = newSrc;
+          mainImage.alt = newAlt || '';
+          mainImage.style.opacity = '1';
+        }, 150);
+      }
+    });
+  });
+</script>
 
-          <div class="flex flex-col gap-4">
-            <div class="flex flex-row items-center gap-4">
-              <div class="bg-[#f50]/10 border border-[#f50]/20 rounded-xl p-3 shrink-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#ff5500"
-                  stroke-width="1.75"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="w-6 h-6"
-                >
-                  <path d="M8 2v4"/>
-                  <path d="M16 2v4"/>
-                  <rect width="18" height="18" x="3" y="4" rx="2"/>
-                  <path d="M3 10h18"/>
-                </svg>
-              </div>
-              <div class="flex flex-col">
-                <div class="text-xs font-semibold uppercase tracking-widest text-[#f50]">Date</div>
-                <div class="text-2xl font-light mt-0.5">July 11, 2026</div>
-              </div>
-            </div>
+<style>
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
 
-            <div class="flex flex-row items-center gap-4">
-              <div class="bg-[#f50]/10 border border-[#f50]/20 rounded-xl p-3 shrink-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#ff5500"
-                  stroke-width="1.75"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="w-6 h-6"
-                >
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-              </div>
-              <div class="flex flex-col">
-                <div class="text-xs font-semibold uppercase tracking-widest text-[#f50]">Location</div>
-                <div class="text-2xl font-light mt-0.5">ISEL Main Auditorium</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-      
-      </div>
-      </div>
+<style>
+  /* Optional: Hide scrollbar for a cleaner look */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+  
 
-  </div> -->
 </Layout>
