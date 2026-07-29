@@ -45,6 +45,7 @@ export const translations = {
     seconds:"Seconds",
     compIn:"Competition starts in",
     compEnds:"Copmetition ends in",
+    ended:"Ended",
     //Rollout
     newCreation:"Our most recent creation",
   },
@@ -93,6 +94,7 @@ export const translations = {
     seconds:"Segundos",
     compIn:"A competição começa em",
     compEnds:"A competição acaba em",
+    ended:"Terminou",
     //Rollout
     newCreation:"A nossa criação mais recente",
   }
