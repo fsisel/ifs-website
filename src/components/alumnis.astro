@@ -12,7 +12,9 @@ const { lang } = Astro.params as { lang: Lang };
 import {testemonies} from "../data/alumiTestemonials";
 const members = testemonies[lang] ?? testemonies.en;
 
-
+export interface Props {
+  children?: any;
+}
 ---
 
 <section class="relative w-full overflow-hidden py-12">
