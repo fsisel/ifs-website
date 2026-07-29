@@ -44,18 +44,17 @@ const images = [
 <br>
 <br>
 <br>
-<div>
+<!-- <div>
   <p class="flex justify-items-center text-black dark:text-white lg:mx-50">
     Um enorme obrigado a todos os que se juntaram a nós no nosso evento de lançamento! Ficámos muito felizes por ver tantas caras conhecidas e por partilhar a nossa visão convosco. Ter o vosso apoio neste passo tão importante significa muito para nós. Obrigado por terem tornado este dia verdadeiramente especial!
   </p>
-</div>  
+</div>  --> 
 
-<div class="max-w-6xl mx-auto p-6" id="gallery-container">
+<div class="max-w-6xl mx-auto p-6 mb-15" id="gallery-container">
   <!-- Grid layout that respects viewport height -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[70vh] min-h-[400px]">
     
     <!-- Main Image Display -->
-    <!-- Changed to flex for centering and removed fixed overflow that cuts off elements -->
     <div class="md:col-span-2 rounded-xl shadow-2xl bg-black flex items-center justify-center overflow-hidden">
       <img 
         id="main-image"
@@ -66,13 +65,15 @@ const images = [
     </div>
 
     <!-- Scrollable Thumbnails -->
-    <!-- Added h-full and overflow-y-auto to contain it within the grid -->
     <div class="md:col-span-1 overflow-y-auto px-2 pt-2 space-y-4 h-full scrollbar-hide">
-      {images.map((img) => (
+      {images.map((img, index) => (
         <button 
           data-src={img.src}
           data-alt={img.alt}
-          class="thumb-btn w-full rounded-lg overflow-hidden shadow-sm aspect-video hover:ring-2 ring-blue-400 transition-all"
+          
+          class={`thumb-btn w-full rounded-lg overflow-hidden shadow-sm aspect-video transition-all ${
+            index === 0 ? 'ring-4 ring-orange-500 scale-[1.02]' : 'opacity-70 hover:opacity-100 hover:ring-2 hover:ring-orange-400'
+          }`}
         >
           <img src={img.src} alt={img.alt} class="w-full h-full object-cover" />
         </button>
@@ -90,7 +91,17 @@ const images = [
       const newSrc = button.getAttribute('data-src');
       const newAlt = button.getAttribute('data-alt');
       
-      // Update the main image
+      // Update active styles across all buttons
+      buttons.forEach(btn => {
+        btn.classList.remove('ring-4', 'ring-orange-500', 'scale-[1.02]');
+        btn.classList.add('opacity-70');
+      });
+
+      // Highlight the clicked button
+      button.classList.remove('opacity-70');
+      button.classList.add('ring-4', 'ring-orange-500', 'scale-[1.02]');
+
+      // Update the main image with fade effect
       if (mainImage && newSrc) {
         mainImage.style.opacity = '0';
         setTimeout(() => {
