@@ -96,22 +96,10 @@ export const members={
     "Powertrain":[
       { "task": "DT", "name": "Duarte Mendes", "Email": "duarte.mendes@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Afonso Jesus", "Email": "afonso.jesus@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "member", "name": "David Pereira", "Email": "david.pereira@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Diogo Nunes", "Email": "diogo.nunes@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Filipe Mira", "Email": "filipe.mira@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Guilherme Bernardo", "Email": "guilherme.bernardo@iselfs.pt", "picture": "", "contact":"", },
       { "task": "member", "name": "Mateus Antunes", "Email": "mateus.antunes@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "member", "name": "Ricardo Pessoa", "Email": "mateus.antunes@iselfs.pt", "picture": "", "contact":"", },
-      
-    ],
-
-    "unknown": [
-      { "task": "aa", "name": "João Vieira", "Email": "joao.vieira@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "aa", "name": "Manuel Fernandes", "Email": "manuel.fernandes@iselfs.pt", "picture": "", "contact":"", },
-      { "task": "aa", "name": "Rodrigo Matias", "Email": "rodrigo.matias@iselfs.pt", "picture": "", "contact":"", }
-    ],
-    
-  
-  
+    ],  
   }
 }

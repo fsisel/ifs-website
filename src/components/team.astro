@@ -1,6 +1,8 @@
 ---
+
 import { members as data } from "../tools/members";
 import { tasks } from "../data/members_tasks";
+import genreralAIMember from "../../public/images/General_AIMember.webp";
 
 export function getStaticPaths() {
   return [
@@ -8,16 +10,10 @@ export function getStaticPaths() {
     { params: { lang: "pt" } },
   ];
 }
+
 type Lang = keyof typeof tasks;
 const { lang } = Astro.params as { lang: Lang };
 const t = tasks[lang] ?? tasks.en;
-
-
-const typedData = data as TeamData;
-import genreralAIMember from "../../public/images/General_AIMember.webp"; 
-
-const { car } = Astro.props as { car: keyof typeof typedData };
-const carr = typedData[car];
 
 type TaskKey = keyof typeof t;
 
@@ -34,6 +30,16 @@ type TeamData = {
     [department: string]: Member[];
   };
 };
+
+const typedData = data as TeamData;
+
+export interface Props {
+  car: keyof typeof typedData;
+  children?: any;
+}
+
+const { car, children } = Astro.props as Props;
+const carr = typedData[car];
 ---
 
 <div id="team" class="">

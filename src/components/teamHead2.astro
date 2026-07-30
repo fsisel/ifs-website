@@ -1,4 +1,5 @@
 ---
+import "../styles/TeamHead.css"; // adjust path to wherever you keep it
 import {members} from "../tools/members";
 import { tasks } from "../data/members_tasks";
 import genreralAIMember from "../../public/images/General_AIMember.webp"; 
@@ -21,7 +22,13 @@ interface Member {
     contact: string;
 }
 
-const bigtable = members["06"]["Board"] as Member[];
+interface Props {
+  car?: keyof typeof members;
+}
+
+const { car = "06" } = Astro.props as Props;
+
+const bigtable = members[car]["Board"] as Member[];
 
 const tl  = bigtable.find(m => m.task.toLowerCase() === "team leader")!;
 const hoo = bigtable.find(m => m.task.toLowerCase() === "headooperations")!;
@@ -46,172 +53,6 @@ const CARD_H = "140px";
 const TICK   = "20px";
 const RAIL   = "#555";
 ---
-
-<style>
-  #bigtable-org .org-tree > ul::before { display: none; }
-  #bigtable-org .org-tree > ul > li::before,
-  #bigtable-org .org-tree > ul > li::after { display: none; }
-
-  #bigtable-org .org-tree ul {
-    display: flex;
-    position: relative;
-    padding-top: 30px;
-  }
-
-  #bigtable-org .org-tree li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding: 25px 10px 0 10px;
-  }
-
-  #bigtable-org .org-tree .node {
-    padding: 0.85rem;
-    border-radius: 0.75rem;
-    min-width: 150px;
-    text-align: center;
-    position: relative;
-    z-index: 10;
-  }
-
-  #bigtable-org .org-tree li::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 50%;
-    transform: translateX(-50%);
-    width: 0; height: 25px;
-    border-left: 2px solid #555;
-  }
-
-  #bigtable-org .org-tree li::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 0;
-    border-top: 2px solid #555;
-  }
-
-  #bigtable-org .org-tree ul::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 50%;
-    transform: translateX(-50%);
-    width: 0; height: 30px;
-    border-left: 2px solid #555;
-  }
-
-  #bigtable-org .org-tree li:first-child::after { left: 50%;  border-radius: 10px 0 0 0; }
-  #bigtable-org .org-tree li:last-child::after  { right: 50%; border-radius: 0 10px 0 0; }
-
-  #bigtable-org .org-tree li:only-child::after  { display: none; }
-  #bigtable-org .org-tree li:only-child::before { display: none; }
-  #bigtable-org .org-tree li:only-child         { padding-top: 0; }
-
-  #bigtable-org .org-tree li.trunk        { padding-top: 0; }
-  #bigtable-org .org-tree li.trunk::before,
-  #bigtable-org .org-tree li.trunk::after { display: none; }
-  #bigtable-org .org-tree li.trunk > ul:first-child::before { display: none; }
-  #bigtable-org .org-tree li.trunk > ul + ul::before        { display: none; }
-
-  #bigtable-org .trunk-stem {
-    width: 0; height: 30px;
-    align-self: center;
-    border-left: 2px solid #555;
-  }
-
-  #bigtable-org .org-scroll {
-    overflow-x: auto;
-    overflow-y: hidden;
-    cursor: grab;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  #bigtable-org .org-scroll.dragging { cursor: grabbing; }
-  #bigtable-org .org-scroll::-webkit-scrollbar { display: none; }
-
-  #bigtable-org .org-inner {
-    display: flex;
-    justify-content: center;
-    min-width: 100%;
-    width: max-content;
-    padding: 0 2rem;
-  }
-
-  /*
-    PM bridge: two cards side by side.
-    Each card has a short vertical stem going DOWN from its bottom-center.
-    A horizontal bar connects the two stems at the bottom.
-    Then a single stem continues down from the midpoint to the DT tree.
-  */
-  /* PM bridge — connector drawn via inline SVG, no extra CSS needed */
-  /* Suppress the default org-tree stem on the PM li since we draw our own fork */
-  #bigtable-org .org-tree li.pm-li::before { display: none; }
-  #bigtable-org .org-tree li.pm-li { padding-top: 0; }
-
-  @media (max-width: 1024px) {
-    #bigtable-org .org-inner { padding: 0; }
-    #bigtable-org .org-tree { padding-left: 0; padding-right: 0; }
-    #bigtable-org .org-tree .node { padding: 0.6rem; min-width: 120px; }
-
-    /*
-      Mobile HOO dept list: stack vertically.
-      Vertical rail runs down the left (at x=0 of the list).
-      Each item has a horizontal tick from the rail to the card.
-
-        │   ← rail (left edge)
-        ├── [Marketing]
-        ├── [Sponsors]
-        └── [Logistics]
-    */
-    #bigtable-org .hoo-depts-list {
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      padding-top: 0 !important;
-      padding-left: 30px !important;   /* space for rail + tick */
-      position: relative !important;
-      width: auto !important;
-    }
-    /* vertical rail on the left edge */
-    #bigtable-org .hoo-depts-list::before {
-      content: '' !important;
-      display: block !important;
-      position: absolute !important;
-      top: 0 !important; bottom: 0 !important; left: 0 !important;
-      width: 2px !important;
-      background: #555 !important;
-      transform: none !important;
-    }
-    /* suppress the org-tree horizontal connector between siblings */
-    #bigtable-org .hoo-depts-list::after { display: none !important; }
-    #bigtable-org .hoo-depts-list li {
-      padding: 0.4rem 0 0.4rem 0 !important;
-      width: auto !important;
-      display: flex !important;
-      justify-content: flex-start !important;
-      align-items: center !important;
-      position: relative !important;
-      margin-top: 0 !important;
-    }
-    /* suppress default tree stems on these li's */
-    #bigtable-org .hoo-depts-list li::before { display: none !important; }
-    /* horizontal tick from rail to card */
-    #bigtable-org .hoo-depts-list li::after {
-      content: '' !important;
-      display: block !important;
-      position: absolute !important;
-      top: 50% !important;
-      left: -30px !important;           /* start at the rail */
-      width: 30px !important;           /* tick length to card */
-      height: 2px !important;
-      background: #555 !important;
-      transform: translateY(-50%) !important;
-      border-top: none !important;
-      border-radius: 0 !important;
-    }
-    #bigtable-org .hoo-depts-list .node { margin-right: 0 !important; }
-  }
-</style>
 
 <script is:inline>
   (function () {
@@ -254,7 +95,7 @@ const RAIL   = "#555";
 
     <div class="flex items-center gap-5 p-6 border-b border-gray-800">
       <span class="skewed"></span>
-      <h2 class="text-white text-3xl font-extrabold uppercase tracking-wider">BigTable</h2>
+      <h2 class="text-white text-3xl font-extrabold uppercase tracking-wider">Board</h2>
     </div>
 
     <div class="p-2 sm:p-8 bg-black/30">

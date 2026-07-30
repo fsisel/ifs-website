@@ -1,7 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Team from "../../components/team.astro";
+import TeamHead2 from "../../components/teamHead2.astro";
+
 import { translations } from "../../i18n/translations";
-// Assuming you exported 'garage' from this file based on our previous step
 import { garage } from "../../data/garage.js"; 
 
 export function getStaticPaths() {
@@ -15,10 +17,8 @@ type Lang = keyof typeof translations;
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
 
-// Default car to load first
 const defaultCarId = "ifs05";
 ---
-
 <script>
     function scrollRight() {
         const container = document.getElementById('scrollContainer');
@@ -48,8 +48,8 @@ const defaultCarId = "ifs05";
     <div class="max-w-6xl mx-auto relative border-x border-[#222] min-h-[90vh] flex flex-col mt-16 lg:mt-24">
       
       <div class="absolute inset-0 pointer-events-none flex justify-center items-center z-0">
-        <div class="w-full h-[1px] bg-[#222]"></div>
-        <div class="h-full w-[1px] bg-[#222]"></div>
+        <!-- <div class="w-full h-[1px] bg-[#222]"></div> -->
+        <!-- <div class="h-full w-[1px] bg-[#222]"></div> -->
       </div>
 
       <div class="relative w-full pt-10 pb-16 px-4 flex flex-col items-center justify-center z-10 group" id="displayContainer">
@@ -71,14 +71,12 @@ const defaultCarId = "ifs05";
       </div>
 
       <div class="text-center mt-[-40px] mb-12 relative z-10">
-        <h1 id="carTitle" class="text-6xl lg:text-8xl font-black tracking-tighter mb-2">
-          </h1>
-        <h2 id="carSubtitle" class="text-xs lg:text-sm tracking-[0.4em] text-white/60 font-medium uppercase">
-          </h2>
+        <h1 id="carTitle" class="text-6xl lg:text-8xl font-black tracking-tighter mb-2"></h1>
+        <h2 id="carSubtitle" class="text-xs lg:text-sm tracking-[0.4em] text-white/60 font-medium uppercase"></h2>
       </div>
 
       <div id="detailsContainer" class="flex flex-col md:flex-row gap-4 w-full px-4 lg:px-8 mb-16 relative z-20 flex-wrap justify-center">
-        </div>
+      </div>
 
       <div class="bg-black/50 border-t border-[#222] p-4 relative z-10 w-full">
         <div class="flex justify-between items-end mb-3 px-2 lg:px-6">
@@ -92,63 +90,67 @@ const defaultCarId = "ifs05";
         </div>
 
         <div id="scrollContainer" class="flex gap-3 overflow-x-auto pb-2 scroll-smooth no-scrollbar snap-x px-2 lg:px-6">
-          
-          <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs06">
+            
+            <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs06">
             <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
                 <img src="/images/ifs05-lateral.webp" alt="IFS06" class="w-[70%] opacity-90 pointer-events-none" />
             </div>
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
-            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-06</span>
-          </div>
-          
-          <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs05">
+            <span id="label-ifs06" class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-06</span>
+            </div>
+            
+            <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs05">
             <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
                 <img src="/images/ifs05-lateral.webp" alt="IFS05" class="w-[70%] opacity-90 pointer-events-none" />
             </div>
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
-            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-[#f50] pointer-events-none">IFS-05</span>
-          </div>
-          
-          <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs04">
+            <span id="label-ifs05" class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-05</span>
+            </div>
+            
+            <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs04">
             <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
                 <img src="/images/ifs04-lateral.webp" alt="IFS04" class="w-[70%] opacity-90 pointer-events-none" />
             </div>
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
-            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-04</span>
-          </div>
+            <span id="label-ifs04" class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-04</span>
+            </div>
 
-           <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs03">
+            <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs03">
             <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
                 <img src="/images/ifs03_right.webp" alt="IFS03" class="w-[70%] opacity-90 pointer-events-none" />
             </div>
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
-            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-03</span>
-          </div>
-          
-           <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs02">
+            <span id="label-ifs03" class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-03</span>
+            </div>
+            
+            <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs02">
             <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
                 <img src="/images/ifs02-lateral.webp" alt="IFS02" class="w-[70%] opacity-90 pointer-events-none" />
             </div>
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
-            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-02</span>
-          </div>
-           
-          <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs01">
+            <span id="label-ifs02" class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-02</span>
+            </div>
+            
+            <div class="car-selector relative w-60 h-auto bg-[#0a0a0a] rounded-lg border border-white/10 overflow-hidden group hover:border-[#f50]/40 transition-colors snap-start shrink-0 cursor-pointer" data-car-id="ifs01">
             <div class="w-full h-full bg-[#1a1a1a] flex items-center justify-center">
                 <img src="/images/ifs01-lateral.webp" alt="IFS01" class="w-[70%] opacity-90 pointer-events-none" />
             </div>
             <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent pointer-events-none"></div>
-            <span class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-01</span>
-          </div>
+            <span id="label-ifs01" class="absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none">IFS-01</span>
+            </div>
 
         </div>
       </div>
-      
+      <div class="p-5">
+        <TeamHead2 car="06"/>
+        <Team car='06' />
+
+      </div>
     </div>
   </div>
 </Layout>
 
-<script define:vars={{ garageData: garage, currentLang: lang, defaultCar: defaultCarId }}>
+<script define:vars={{ garageData: garage, currentLang: lang, defaultCar: defaultCarId, dict: t.garage_obj }}>
     const displayContainer = document.getElementById('displayContainer');
     const mediaViewer = document.getElementById('mediaViewer');
     const mainImage = document.getElementById('mainImage');
@@ -184,7 +186,7 @@ const defaultCarId = "ifs05";
             titleEl.innerHTML = `<span class="text-white">${prefix}</span><span class="text-[#f50]">${number}</span>`;
         }
         
-        // 3. Subtitle Logic: Only show if description exists
+        // 3. Subtitle Logic
         if (car.description) {
             subtitleEl.textContent = car.description;
             subtitleEl.classList.remove('hidden');
@@ -201,31 +203,110 @@ const defaultCarId = "ifs05";
 
         // 5. Details Rendering
         let html = '';
-        const skipKeys = ['nickname', 'nicknameimage', 'description', 'media'];
+        const skipKeys = ['nickname', 'nicknameimage', 'description', 'media', 'comps'];
 
         for (const [category, fields] of Object.entries(car)) {
             if (skipKeys.includes(category.toLowerCase())) continue;
             
-            // Only add if there is actual data in the fields
             html += `
                 <div class="flex-1 min-w-[200px] bg-[#151515] border border-white/5 rounded-lg p-5 shadow-xl hover:border-[#f50]/30 transition-colors">
-                    <h3 class="font-bold text-[#f50] mb-4 text-[10px] tracking-widest uppercase">${category}</h3>
+                    <h3 class="font-bold text-[#f50] mb-4 text-[10px] tracking-widest uppercase">
+                        ${dict[category.toLowerCase()] || category.replace(/_/g, ' ')}
+                    </h3>
                     <div class="space-y-3 text-sm">
                         ${renderFields(fields)}
                     </div>
                 </div>
             `;
         }
+
+        // Highlight the active car card in the bottom scroll container (MOVED OUTSIDE CATEGORY LOOP)
+        document.querySelectorAll('.car-selector').forEach(card => {
+            const id = card.getAttribute('data-car-id');
+            const label = document.getElementById(`label-${id}`);
+            
+            if (id === carId) {
+                card.classList.add("border-[#f50]/40");
+                if (label) label.className = "absolute bottom-2 left-3 text-[11px] font-bold text-[#f50] pointer-events-none";
+            } else {
+                card.classList.remove("border-[#f50]/40");
+                if (label) label.className = "absolute bottom-2 left-3 text-[11px] font-bold text-white/50 group-hover:text-white transition-colors pointer-events-none";
+            }
+        });
+
+        // 6. Comps (Competitions) Rendering
+        if (car.comps && Array.isArray(car.comps) && car.comps.length > 0) {
+            let compsHtml = car.comps.map(comp => `
+                <div class="flex flex-col gap-3 border border-white/5 p-4 rounded-lg bg-black/40 hover:border-[#f50]/30 transition-colors">
+                    <div class="flex items-center gap-4">
+                        ${comp.logo ? `<img src="${comp.logo}" alt="${comp.name || 'Logo'}" class="h-10 w-auto object-contain bg-white/5 rounded p-1" />` : ''}
+                        <div>
+                            <h4 class="font-bold text-white text-sm">${comp.name || 'Unnamed Competition'}</h4>
+                            ${comp.date ? `<span class="text-xs text-[#f50] font-medium tracking-wider">${formatCompDate(comp.date)}</span>` : ''}
+                        </div>
+                    </div>
+                    ${comp.description ? `<p class="text-xs text-white/60 leading-relaxed">${comp.description}</p>` : ''}
+                    
+                    ${comp.achievements && Object.keys(comp.achievements).length > 0 ? `
+                        <div class="mt-2 space-y-1.5 border-t border-white/5 pt-3">
+                            <h5 class="text-[9px] tracking-widest text-white/40 uppercase font-semibold mb-2">${dict.classifications}</h5>
+                            ${Object.entries(comp.achievements).map(([key, value]) => {
+                                const translatedKey = dict[key.toLowerCase().replace(/\s+/g, '')] || key;
+                                return `
+                                    <div class="flex justify-between text-xs border-b border-white/5 pb-1 last:border-0">
+                                        <span class="text-white/60">${translatedKey}</span>
+                                        <span class="font-bold text-white text-right max-w-[60%]">${formatPlacement(value, currentLang)}</span>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+
+            html += `
+                <div class="w-full mt-2 bg-[#151515] border border-white/5 rounded-lg p-5 shadow-xl">
+                    <h3 class="font-bold text-[#f50] mb-4 text-[10px] tracking-widest uppercase">${dict.competitions}</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        ${compsHtml}
+                    </div>
+                </div>
+            `;
+        }
+
         detailsContainer.innerHTML = html;
         
-        // Hide the container if no tabs were created
         if (html.trim() === '') {
             detailsContainer.classList.add('hidden');
         } else {
             detailsContainer.classList.remove('hidden');
         }
+    }
 
-        // ... (Keep your existing active state logic for the car-selector)
+    function formatPlacement(val, language) {
+        if (!val || isNaN(val)) return val || 'TBA';
+        if (language === 'pt') {
+            return `${val}º lugar`;
+        } else {
+            const num = parseInt(val);
+            if (num === 1) return '1st place';
+            if (num === 2) return '2nd place';
+            if (num === 3) return '3rd place';
+            return `${num}th place`;
+        }
+    }
+
+    function formatCompDate(dateStr) {
+        if (!dateStr) return '';
+        // Splits strings like "July 2024" into ["July", "2024"]
+        const parts = dateStr.trim().split(' ');
+        if (parts.length === 2) {
+            const monthKey = parts[0].toLowerCase();
+            const year = parts[1];
+            const translatedMonth = dict.months[monthKey] || parts[0];
+            return `${translatedMonth} ${year}`;
+        }
+        return dateStr;
     }
 
     function renderFields(fields) {

@@ -48,6 +48,29 @@ export const translations = {
     ended:"Ended",
     //Rollout
     newCreation:"Our most recent creation",
+    garage_obj: {
+      selectModel: "SELECT MODEL",
+      view360: "360º View",
+      competitions: "Competitions & Achievements",
+      classifications: "Classifications",
+      // Spec categories
+      performance: "Performance",
+      powertrain: "Powertrain",
+      suspension:"suspension",
+
+      // Achievement keys
+      overall: "Overall",
+      cost: "Cost Report",
+      design: "Engineering Design",
+      business: "Business Plan Presentation",
+
+      months: {
+        january: "January", february: "February", march: "March",
+        april: "April", may: "May", june: "June",
+        july: "July", august: "August", september: "September",
+        october: "October", november: "November", december: "December"
+      }
+    },
   },
   pt: {
     title: "Bem vindo",
@@ -97,5 +120,25 @@ export const translations = {
     ended:"Terminou",
     //Rollout
     newCreation:"A nossa criação mais recente",
+    garage_obj: {
+      selectModel: "SELECIONAR MODELO",
+      view360: "Vista 360º",
+      competitions: "Competições e Resultados",
+      classifications: "Classificações",
+      // Spec categories
+      performance: "Desempenho",
+      suspension:"Suspensão",
+      // Achievement keys
+      overall: "Geral",
+      cost: "Relatório de Custos",
+      design: "Projeto de Engenharia",
+      business: "Plano de Negócios",
+      months: {
+                january: "Janeiro", february: "Fevereiro", march: "Março",
+                april: "Abril", may: "Maio", june: "Junho",
+                july: "Julho", august: "Agosto", september: "Setembro",
+                october: "Outubro", november: "Novembro", december: "Dezembro"
+      }
+    }
   }
 };
