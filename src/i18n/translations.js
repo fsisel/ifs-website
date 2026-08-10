@@ -44,7 +44,7 @@ export const translations = {
     minutes:"Minutes",
     seconds:"Seconds",
     compIn:"Competition starts in",
-    compEnds:"Copmetition ends in",
+    compEnds:"Competition ends in",
     ended:"Ended",
     //Rollout
     newCreation:"Our most recent creation",
