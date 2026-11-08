@@ -1,12 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Navbar from "../../components/navbar.astro";
-import Footer from "../../components/Footer.astro";
 import "../../styles/global.css"
 
 import { translations } from "../../i18n/translations";
 
-const TeamLeaderPhone = "+351 925 732 781";
+const TeamLeaderPhone = "+351 964 866 434";
 export function getStaticPaths() {
   return [
     { params: { lang: "en" } },
@@ -17,23 +15,9 @@ type Lang = keyof typeof translations;
 const { lang } = Astro.params as { lang: Lang };
 const t = translations[lang] ?? translations.en;
 ---
-<script>
-  const copyVal = document.getElementById("copy")
-  const TeamLeaderPhone = "+351 925 732 781";
-  if(copyVal)
-    {copyVal.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(TeamLeaderPhone.trim());
-        console.log("Copied to clipboard");
-        alert("Copiado")
-      } catch (err) {
-        console.error("Failed to copy:", err);
-      }
-    });
-  }
-</script>
+
 <Layout>
-  <div class="flex justify-center">
+  <div class="flex justify-center min-h-10/12">
     <article class="text-black px-6 sm:px-12 lg:px-24 py-16 flex flex-col min-h-[calc(100dvh-17.5em)] w-full max-w-[120em] dark:text-white">
       <h1 class="text-3xl sm:text-4xl lg:text-5xl mb-8 lg:mb-10">{t.contacts}</h1>
       <div class="bg-[#f5f5f5] grid gap-10 p-6 sm:p-8 lg:p-10 dark:bg-[#181818] rounded-sm">
@@ -41,8 +25,9 @@ const t = translations[lang] ?? translations.en;
           <div class="text-2xl sm:text-3xl mb-2 mr-2 sm:items-center">{t.msgUs}</div>
           <div class="  sm:text-right text-lg"><span class="text-xl sm:text-2xl mr-0.5 ">Email:</span><a href="mailto:formulastudent@isel.pt" class="hover:underline sm:text-xl break-all">
               formulastudent@isel.pt
-              </a><br><span class="text-xl sm:text-2xl mr-2 ">Tel.: </span> {TeamLeaderPhone}
-            </div>  
+              </a><br>
+              <span class="text-xl sm:text-2xl mr-2">Tel.: </span> {TeamLeaderPhone}
+          </div>  
         </div> 
         <div class="px-0 sm:px-10 lg:px-20 mt-3.5">
           <!-- Form -->
